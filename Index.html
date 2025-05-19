@@ -25,8 +25,8 @@
         .navbar-logo { max-height: 50px; width: auto; }
         .product-video { width: 100%; height: 10rem; object-fit: cover; margin-bottom: 1rem; border-radius: 0.375rem; }
         .language-selector { background-color: rgba(17, 24, 39, 0.8); padding: 0.5rem 0; }
-        .language-link { display: inline-flex; align-items: center; margin: 0 0.75rem; padding: 0.5rem 0.75rem; font-size: 0.875rem; color: #D1D5DB; border-radius: 0.375rem; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; cursor: pointer; } /* cursor: pointer hozzáadva */
-        .language-link:hover, .language-link.active-lang { background-color: #374151; color: #F9FAFB; font-weight: bold; } /* Aktív nyelv kiemelése */
+        .language-link { display: inline-flex; align-items: center; margin: 0 0.75rem; padding: 0.5rem 0.75rem; font-size: 0.875rem; color: #D1D5DB; border-radius: 0.375rem; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; cursor: pointer; }
+        .language-link:hover, .language-link.active-lang { background-color: #374151; color: #F9FAFB; font-weight: bold; }
         .flag-icon { width: 20px; height: auto; margin-right: 0.5rem; border-radius: 2px; }
         .contact-info-item { margin-bottom: 0.75rem; }
         .contact-info-item strong { color: #9CA3AF; display: block; margin-bottom: 0.25rem; }
@@ -126,7 +126,7 @@
                             <div class="text-blue-400 mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" /></svg>
                             </div>
-                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="serviceFinancialTitle">Pénzügyi, Könyviteli, Pályázatírási Szolgáltatások</h3>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="serviceFinancialTitle">Pénzügyi, Könyvviteli, Pályázatírási Szolgáltatások</h3>
                             <p class="text-gray-400 text-sm" data-translate-key="serviceFinancialDesc">Teljes körű könyvelési, pályázatírási szolgáltatások , pénzügyi, támogatási, finanszírozási tanácsadás ügyintézés a vállalkozás igényeihez igazítva.</p>
                         </div>
                         <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
@@ -321,7 +321,7 @@
                      <a href="#" class="text-gray-400 hover:text-blue-400 mx-2">GitHub</a>
                 </div>
                 <p class="text-gray-500 text-sm">
-                    &copy; <span id="currentYear"></span> <span data-translate-key="footerCopyright">Pohánka És Társa Kft. Minden jog fenntartva.</span>
+                    © <span id="currentYear"></span> <span data-translate-key="footerCopyright">Pohánka És Társa Kft. Minden jog fenntartva.</span>
                 </p>
                 <p class="text-gray-600 text-xs mt-1" data-translate-key="footerInspiration">
                     Design inspiráció: <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">developers.google.com</a>
@@ -350,7 +350,8 @@
                 heroParagraph: 'Modern technológiákkal és szakértő csapatunkkal segítjük elérni üzleti céljait. Ismerje meg, hogyan tehetjük sikeressé vállalkozását!',
                 heroImageAlt: 'Főoldali kép',
                 servicesTitle: 'Szolgáltatásaink',
-                serviceFinancialTitle: 'Pénzügyi, Könyviteli, Pályázatírási Szolgáltatások',
+                // JAVÍTOTT SZÓ ITT IS
+                serviceFinancialTitle: 'Pénzügyi, Könyvviteli, Pályázatírási Szolgáltatások',
                 serviceFinancialDesc: 'Teljes körű könyvelési, pályázatírási szolgáltatások , pénzügyi, támogatási, finanszírozási tanácsadás ügyintézés a vállalkozás igényeihez igazítva.',
                 serviceResearchTitle: 'Kutatások és adatelemzés igény szerint, teljes kiértékeléssel',
                 serviceResearchDesc: 'Szeretne információhoz jutni piaci igényekről? Keresleti hozzáállás érdekli a vevői környezet jelenlegi trendje? Vagy vásárolni szeretne egy terméket? A kutató és kiértékelő technológiánkkal rövid idő alatt megtaláljuk a választ, kiértékeljük, kielemezzük és dokumentáljuk az Ön részére.',
@@ -412,7 +413,7 @@
                 heroParagraph: 'With modern technologies and our expert team, we help you achieve your business goals. Discover how we can make your business successful!',
                 heroImageAlt: 'Main page image',
                 servicesTitle: 'Our Services',
-                serviceFinancialTitle: 'Financial, Accounting, Grant Writing Services',
+                serviceFinancialTitle: 'Financial, Accounting, Grant Writing Services', // Accounting - helyes angolul
                 serviceFinancialDesc: 'Full-scale accounting, grant writing services, financial, support, and funding consulting tailored to your business needs.',
                 serviceResearchTitle: 'Custom Research and Data Analysis with Full Evaluation',
                 serviceResearchDesc: 'Need insights into market demands? Curious about current customer trends or looking to purchase a product? Our research and evaluation technology quickly finds answers, evaluates, analyzes, and documents them for you.',
@@ -473,7 +474,7 @@
                 heroParagraph: 'Mit modernen Technologien und unserem Expertenteam helfen wir Ihnen, Ihre Geschäftsziele zu erreichen. Entdecken Sie, wie wir Ihr Unternehmen erfolgreich machen können!',
                 heroImageAlt: 'Startseitenbild',
                 servicesTitle: 'Unsere Dienstleistungen',
-                serviceFinancialTitle: 'Finanz-, Buchhaltungs- und Fördermittelantragsdienste',
+                serviceFinancialTitle: 'Finanz-, Buchhaltungs- und Fördermittelantragsdienste', // Buchhaltung - helyes németül
                 serviceFinancialDesc: 'Umfassende Buchhaltungs-, Fördermittelantragsdienste, Finanz-, Unterstützungs- und Finanzierungsberatung, zugeschnitten auf Ihre Geschäftsanforderungen.',
                 serviceResearchTitle: 'Maßgeschneiderte Forschung und Datenanalyse mit vollständiger Auswertung',
                 serviceResearchDesc: 'Benötigen Sie Einblicke in Marktanforderungen? Interessieren Sie sich für aktuelle Kundentrends oder möchten Sie ein Produkt kaufen? Unsere Forschungs- und Auswertungstechnologie findet schnell Antworten, bewertet, analysiert und dokumentiert diese für Sie.',
@@ -526,7 +527,7 @@
                     const key = element.getAttribute('data-translate-key');
                     if (translations[lang][key]) {
                         if (element.hasAttribute('data-alt-hu')) { // Speciális kezelés alt attribútumokhoz
-                            element.alt = translations[lang][key];
+                            element.alt = translations[lang][element.getAttribute(`data-alt-${lang}`)]; // Dinamikus alt text
                         } else if (key === 'heroTitle' || key === 'footerInspiration') { // HTML tartalmú elemek
                              element.innerHTML = translations[lang][key];
                         } else {
@@ -554,7 +555,6 @@
             const savedLanguage = localStorage.getItem('selectedLanguage') || 'hu';
             switchLanguage(savedLanguage);
 
-            // Eseményfigyelők a főmenü görgetéséhez (ez a korábbi kódodból van, lehet, hogy finomítani kell a többnyelvűséggel)
             document.getElementById('currentYear').textContent = new Date().getFullYear();
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -572,7 +572,6 @@
                 while(--index >= 0 && sections[index] && window.scrollY + 100 < sections[index].offsetTop) {} 
                 
                 allNavLinks.forEach((link) => {
-                    // Csak a nav-link-active osztályt távolítjuk el, ha nem nyelvválasztó link
                     if (!link.classList.contains('language-link')) {
                         link.classList.remove('nav-link-active');
                     }
@@ -588,7 +587,7 @@
                     if (mobileMenu) {
                         const mobileLink = mobileMenu.querySelector(`a[href="#${activeSectionId}"]`); 
                         if (mobileLink) {
-                            mobileLink.classList.add('nav-link-active'); // Mobil menüben is kiemeljük
+                            mobileLink.classList.add('nav-link-active'); 
                         }
                     }
                 } else if (sections.length > 0 && sections[0]) { 
@@ -612,7 +611,6 @@
                 mobileMenu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
                         mobileMenu.classList.add('hidden');
-                        // A changeLinkState itt is meghívható, hogy az aktív link frissüljön kattintás után is
                         setTimeout(changeLinkState, 0); 
                     });
                 });
