@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="hu"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pohánka És Társa Kft - Modern Weboldal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            color: #D1D5DB;
+        }
+        .background-video-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; overflow: hidden; }
+        #bgVideo { min-width: 100%; min-height: 100%; width: auto; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover; }
+        .content-wrapper { position: relative; z-index: 1; }
+        .nav-link-active { color: #3B82F6; border-bottom: 2px solid #3B82F6; }
+        html { scroll-behavior: smooth; }
+        .dev-inspired-card { background-color: rgba(31, 41, 55, 0.95); border: 1px solid #374151; }
+        .dev-inspired-button { background-color: #3B82F6; color: white; transition: background-color 0.3s ease; }
+        .dev-inspired-button:hover { background-color: #2563EB; }
+        .section-title { font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; color: #F3F4F6; }
+        .navbar-logo { max-height: 50px; width: auto; }
+        .product-video { width: 100%; height: 10rem; object-fit: cover; margin-bottom: 1rem; border-radius: 0.375rem; }
+        .language-selector { background-color: rgba(17, 24, 39, 0.8); padding: 0.5rem 0; }
+        .language-link { display: inline-flex; align-items: center; margin: 0 0.75rem; padding: 0.5rem 0.75rem; font-size: 0.875rem; color: #D1D5DB; border-radius: 0.375rem; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; cursor: pointer; } /* cursor: pointer hozzáadva */
+        .language-link:hover, .language-link.active-lang { background-color: #374151; color: #F9FAFB; font-weight: bold; } /* Aktív nyelv kiemelése */
+        .flag-icon { width: 20px; height: auto; margin-right: 0.5rem; border-radius: 2px; }
+        .contact-info-item { margin-bottom: 0.75rem; }
+        .contact-info-item strong { color: #9CA3AF; display: block; margin-bottom: 0.25rem; }
+        .contact-logo-large { max-width: 200px; margin-bottom: 1rem; }
+        .map-container { height: 400px; border-radius: 0.5rem; overflow: hidden; }
+        .hero-image-container { margin-top: 2.5rem; }
+        .hero-image { max-width: 300px; max-height: 150px; width: auto; height: auto; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); display: block; margin-left: auto; margin-right: auto; }
+
+        @media (max-width: 768px) {
+            .language-selector { padding: 0.5rem; justify-content: center; }
+            .language-link { margin: 0.25rem; padding: 0.5rem; }
+            .contact-section-layout { flex-direction: column; }
+            .contact-info-column, .map-column { width: 100%; }
+            .map-column { margin-top: 2rem; }
+            .hero-image { max-width: 200px; max-height: 100px; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="background-video-container">
+        <video autoplay loop muted playsinline id="bgVideo">
+            <source src="Hattervideo.mp4" type="video/mp4">
+            A böngésződ nem támogatja a HTML5 videó lejátszást.
+        </video>
+    </div>
+
+    <div class="content-wrapper">
+        <header class="bg-gray-800/80 backdrop-blur-md shadow-lg sticky top-0 z-40">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <div>
+                    <a href="#" class="flex items-center">
+                        <img src="logo.jpg" alt="Pohánka És Társa Kft Logó" class="navbar-logo mr-3">
+                        <span class="text-xl font-bold text-white">Pohánka És Társa Kft</span>
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="nav-links-desktop" class="hidden md:flex space-x-4">
+                    <a href="#home" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium nav-link-active" data-translate-key="navHome">Kezdőlap</a>
+                    <a href="#services" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navServices">Szolgáltatások</a>
+                    <a href="#products" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navProducts">Termékek</a>
+                    <a href="#references" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navReferences">Referenciák</a>
+                    <a href="#offer" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navOffer">Ajánlatkérés</a>
+                    <a href="#contact" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navContact">Kapcsolat</a>
+                </div>
+            </nav>
+            <div id="mobile-menu" class="md:hidden hidden absolute top-[82px] left-0 w-full bg-gray-800/95 shadow-lg z-50">
+                 <a href="#home" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navHomeMobile">Kezdőlap</a>
+                 <a href="#services" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navServicesMobile">Szolgáltatások</a>
+                 <a href="#products" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navProductsMobile">Termékek</a>
+                 <a href="#references" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navReferencesMobile">Referenciák</a>
+                 <a href="#offer" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navOfferMobile">Ajánlatkérés</a>
+                 <a href="#contact" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center" data-translate-key="navContactMobile">Kapcsolat</a>
+            </div>
+
+            <div class="language-selector">
+                <div class="container mx-auto px-6 flex justify-center md:justify-end items-center">
+                    <a onclick="switchLanguage('hu')" class="language-link">
+                        <img src="lh.jpg" alt="Magyar zászló" class="flag-icon">HU
+                    </a>
+                    <a onclick="switchLanguage('en')" class="language-link">
+                        <img src="le.jpg" alt="Angol zászló" class="flag-icon">EN
+                    </a>
+                    <a onclick="switchLanguage('de')" class="language-link">
+                        <img src="ld.jpg" alt="Német zászló" class="flag-icon">DE
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="home" class="py-20 md:py-32 bg-gradient-to-br from-gray-900/90 to-slate-800/90">
+                <div class="container mx-auto px-6 text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight" data-translate-key="heroTitle">
+                        Innovatív Megoldások <span class="text-blue-400">Vállalkozásának</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto" data-translate-key="heroParagraph">
+                        Modern technológiákkal és szakértő csapatunkkal segítjük elérni üzleti céljait. Ismerje meg, hogyan tehetjük sikeressé vállalkozását!
+                    </p>
+                    <div class="hero-image-container">
+                        <img src="fl.jpg" alt="Főoldali kép" class="hero-image" data-translate-key="heroImageAlt" data-alt-hu="Főoldali kép" data-alt-en="Main page image" data-alt-de="Startseitenbild">
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="py-16 md:py-24 bg-gray-900/90">
+                <div class="container mx-auto px-6">
+                    <h2 class="section-title" data-translate-key="servicesTitle">Szolgáltatásaink</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
+                            <div class="text-blue-400 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="serviceFinancialTitle">Pénzügyi, Könyviteli, Pályázatírási Szolgáltatások</h3>
+                            <p class="text-gray-400 text-sm" data-translate-key="serviceFinancialDesc">Teljes körű könyvelési, pályázatírási szolgáltatások , pénzügyi, támogatási, finanszírozási tanácsadás ügyintézés a vállalkozás igényeihez igazítva.</p>
+                        </div>
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
+                            <div class="text-blue-400 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zM3.75 6a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zM3.75 18a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zM14.25 6.75v10.5M10.5 17.25h3.75M3 3h18M3 21h18" /></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="serviceResearchTitle">Kutatások és adatelemzés igény szerint, teljes kiértékeléssel</h3>
+                            <p class="text-gray-400 text-sm" data-translate-key="serviceResearchDesc">Szeretne információhoz jutni piaci igényekről? Keresleti hozzáállás érdekli a vevői környezet jelenlegi trendje? Vagy vásárolni szeretne egy terméket? A kutató és kiértékelő technológiánkkal rövid idő alatt megtaláljuk a választ, kiértékeljük, kielemezzük és dokumentáljuk az Ön részére.</p>
+                        </div>
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
+                            <div class="text-blue-400 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 100 15 7.5 7.5 0 000-15zM21 21l-5.197-5.197M15 10.5a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5a.75.75 0 01.75-.75zM10.5 10.5c.803 0 1.573-.092 2.278-.256M10.5 10.5A4.505 4.505 0 006 15" /></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="serviceMarketingTitle">Marketing (Hirdetés) Stratégia kidolgozása</h3>
+                            <p class="text-gray-400 text-sm" data-translate-key="serviceMarketingDesc">Ha több ügyfelet szeretne, több vevőt, kidolgozzuk az online jelenlét segítségével minél több emberhez jusson el a vállalkozása.</p>
+                        </div>
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
+                            <div class="text-blue-400 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="serviceWebdevTitle">Webfejlesztés</h3>
+                            <p class="text-gray-400 text-sm" data-translate-key="serviceWebdevDesc">Modern, reszponzív weboldalak és webalkalmazások fejlesztése a legújabb technológiákkal. Előnyök: gyorsaság, biztonság, egyedi design.</p>
+                        </div>
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
+                            <div class="text-blue-400 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="serviceMobileTitle">Mobilalkalmazás Fejlesztés</h3>
+                            <p class="text-gray-400 text-sm" data-translate-key="serviceMobileDesc">Natív és cross-platform mobilappok iOS-re és Androidra. Előnyök: felhasználóbarát felület, push értesítések, offline működés.</p>
+                        </div>
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
+                            <div class="text-blue-400 mb-4">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="serviceCloudTitle">Felhő alapú megoldások, Alkalmazások, Programok létrehozása.</h3>
+                            <p class="text-gray-400 text-sm" data-translate-key="serviceCloudDesc">Vállalkozás vezetést segítő programok, adatbázis, nyilvántartás kezelő, projekt tervező programok a vállalkozás igényeire szabva.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="products" class="py-16 md:py-24 bg-slate-800/90">
+                <div class="container mx-auto px-6">
+                    <h2 class="section-title" data-translate-key="productsTitle">Kiemelt Termékeink</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl overflow-hidden">
+                            <video autoplay loop muted playsinline class="product-video">
+                                <source src="alfa.mp4" type="video/mp4">
+                                A böngésződ nem támogatja a HTML5 videó lejátszást.
+                            </video>
+                            <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="product1Title">Projektmenedzser Szoftver</h3>
+                            <p class="text-gray-400 text-sm mb-3" data-translate-key="product1Desc">Intuitív szoftver a projektek hatékony kezeléséhez, csapatmunkához és határidők követéséhez.</p>
+                        </div>
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl overflow-hidden">
+                            <video autoplay loop muted playsinline class="product-video">
+                                <source src="beta.mp4" type="video/mp4">
+                                A böngésződ nem támogatja a HTML5 videó lejátszást.
+                            </video>
+                            <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="product2Title">Ügyfélkapcsolat-kezelő program</h3>
+                            <p class="text-gray-400 text-sm mb-3" data-translate-key="product2Desc">Ügyfélkapcsolat-kezelő rendszer kis- és középvállalkozások számára, testreszabható modulokkal.</p>
+                        </div>
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl overflow-hidden">
+                             <video autoplay loop muted playsinline class="product-video">
+                                <source src="gamma.mp4" type="video/mp4">
+                                A böngésződ nem támogatja a HTML5 videó lejátszást.
+                            </video>
+                            <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="product3Title">E-kereskedelmi Platform</h3>
+                            <p class="text-gray-400 text-sm mb-3" data-translate-key="product3Desc">Teljeskörű megoldás automatizált felület létrehozására, amely a kereskedelmi lebonyolításban, az ügyfélkapcsolat kezelésében, nyilvántartásában segíti a felhasználót, átláthatóvá, és egyszerűbbé teszi a kereskedelmi kapcsolat szereplői között lévő igények, tevékenységek, információk hatékony, gyors, és pontos lebonyolítását.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="references" class="py-16 md:py-24 bg-gray-900/90">
+                <div class="container mx-auto px-6">
+                    <h2 class="section-title" data-translate-key="referencesTitle">Referencia Munkáink</h2>
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div class="dev-inspired-card rounded-lg shadow-xl p-6 md:p-8">
+                            <img src="AI.jpg" alt="AI Projekt Referencia Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md">
+                            <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref1Title">Nagyvállalati Portál Fejlesztése</h3>
+                            <p class="text-gray-400 mb-4" data-translate-key="ref1Desc">Egyedi fejlesztésű, teljes portál rendszer amely egy vevői adatbázis és annak rendelés állományát valamint a gyártok készletnyilvántartását összefésüli és kezeli a vevői igényekkel. A fuvarszervezéssel egybe hangolva. Még fejlesztés alatt , tesztelés a Mesterséges Intelligencia által vezérelt automatizálása bevezetése a gyorsabb és átláthatóbb nyilvántartás érdekében.</p>
+                            <span class="inline-block bg-blue-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Firebase</span>
+                            <span class="inline-block bg-green-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Google Cloud</span>
+                            <span class="inline-block bg-yellow-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Egyedi API</span>
+                        </div>
+                        <div class="dev-inspired-card rounded-lg shadow-xl p-6 md:p-8">
+                            <img src="p2.jpg" alt="P2 Projekt Referencia Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md">
+                            <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref2Title">Mobilalkalmazás mely a felhasználó igényére szabható</h3>
+                            <p class="text-gray-400 mb-4" data-translate-key="ref2Desc">Fő funkciói a tevékenységünk megtervezése, nyomon követesé, integrálható adatbázisokkal bővítve (könyvelési adatok, pillanatnyi költségvetés, pénzeszköz és költség mozgás ellenőrzése, készletnyilvántartás felügyelete, statisztikák készítése, vállalkozás igényeire szabva. "Minden egy helyen átláthatóan" fejlesztés alatt.. a MI alapú rendszer bevezetésének fejlesztése folyik.</p>
+                            <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Flutter</span>
+                            <span class="inline-block bg-orange-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Firebase Auth</span>
+                            <span class="inline-block bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Realtime Database</span>
+                        </div>
+                    </div>
+                     <div class="text-center mt-12">
+                        <a href="#" class="dev-inspired-button font-semibold px-8 py-3 rounded-lg text-lg inline-block" data-translate-key="refButton">Fejlesztés alatt.. a béta verziók hamarosan elérhetőek lesznek!</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="offer" class="py-16 md:py-24 bg-slate-800/90">
+                <div class="container mx-auto px-6">
+                    <h2 class="section-title" data-translate-key="offerTitle">Ajánlatkérés</h2>
+                    <div class="max-w-3xl mx-auto dev-inspired-card p-8 md:p-12 rounded-lg shadow-2xl">
+                        <p class="text-gray-300 text-center mb-8 text-lg" data-translate-key="offerSubTitle">Kérdése van, vagy ajánlatot szeretne kérni? Töltse ki az alábbi űrlapot, és hamarosan felvesszük Önnel a kapcsolatot!</p>
+                        <form action="#" method="POST">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formName">Teljes Név</label>
+                                    <input type="text" name="name" id="name" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Pl. Minta János">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formEmail">Email Cím</label>
+                                    <input type="email" name="email" id="email" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Pl. email@example.com">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formSubject">Tárgy</label>
+                                <input type="text" name="subject" id="subject" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Pl. Árajánlatkérés webfejlesztésre">
+                            </div>
+                            <div class="mb-8">
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formMessage">Üzenet</label>
+                                <textarea name="message" id="message" rows="5" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Írja le itt részletesen, miben segíthetünk..."></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="dev-inspired-button font-semibold px-10 py-3.5 rounded-lg text-lg" data-translate-key="formSend">
+                                    Üzenet Küldése
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="py-16 md:py-24 bg-gray-900/90">
+                <div class="container mx-auto px-6">
+                    <h2 class="section-title" data-translate-key="contactTitle">Kapcsolat</h2>
+                    <div class="dev-inspired-card p-8 md:p-10 rounded-lg shadow-2xl">
+                        <div class="flex flex-wrap md:flex-nowrap gap-8 contact-section-layout">
+                            <div class="w-full md:w-1/2 contact-info-column">
+                                <img src="logo.jpg" alt="Pohánka És Társa Kft Logó" class="contact-logo-large mx-auto md:mx-0">
+                                <h3 class="text-2xl font-semibold text-white mb-3 text-center md:text-left">Pohánka És Társa Kft</h3>
+                                <div class="contact-info-item">
+                                    <strong data-translate-key="contactHQ">Székhely:</strong>
+                                    <span>8900 Zalaegerszeg, Berek utca 38, Hungary</span>
+                                </div>
+                                <div class="contact-info-item">
+                                    <strong data-translate-key="contactOffice">Irodánk címe (térképen):</strong>
+                                    <span>8900 Zalaegerszeg, Kossuth Lajos utca 39, Hungary</span>
+                                </div>
+                                <div class="contact-info-item">
+                                    <strong data-translate-key="contactTax">Adószám:</strong>
+                                    <span>14728864-2-20</span>
+                                </div>
+                                <div class="contact-info-item mt-6">
+                                    <strong class="text-lg" data-translate-key="contactPhones">Telefonszámok:</strong>
+                                    <p class="leading-relaxed">+36 30 429 1227 (Pohánka József Péter - Cégvezető)</p>
+                                    <p class="leading-relaxed">+36 20 485 5420 (Pohánka Józsefné - Tulajdonos, könyvelési és pénzügyi vezető)</p>
+                                    <p class="leading-relaxed">+36 20 471 8600 (Kocsis Ivett - Pályázati szakértő)</p>
+                                </div>
+                                <div class="contact-info-item mt-6">
+                                    <strong class="text-lg" data-translate-key="contactEmails">Email címek:</strong>
+                                    <p class="leading-relaxed"><a href="mailto:peter@pohanka.company" class="text-blue-400 hover:text-blue-300">peter@pohanka.company</a> <span data-translate-key="emailPeterDesc">(ajánlatkérés, szolgáltatások, programokkal kapcsolatos kérdések)</span></p>
+                                    <p class="leading-relaxed"><a href="mailto:piroska@sze-po.hu" class="text-blue-400 hover:text-blue-300">piroska@sze-po.hu</a> <span data-translate-key="emailPiroskaDesc">(könyvelés)</span></p>
+                                    <p class="leading-relaxed"><a href="mailto:support@pohanka.company" class="text-blue-400 hover:text-blue-300">support@pohanka.company</a> <span data-translate-key="emailSupportDesc">(ügyfélszolgálat, egyéb kérdések)</span></p>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2 map-column">
+                                <div class="map-container">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2721.467055265764!2d16.8410188158406!3d46.845354479142324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4768cbf973009031%3A0x9140177673231825!2sZalaegerszeg%2C%20Kossuth%20Lajos%20u.%2039%2C%208900%20Hungary!5e0!3m2!1shu!2shu!4v1678886400000!5m2!1shu!2shu"
+                                        width="100%"
+                                        height="100%"
+                                        style="border:0;"
+                                        allowfullscreen=""
+                                        loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-gray-900/95 border-t border-gray-700">
+            <div class="container mx-auto px-6 py-8 text-center">
+                <div class="mb-4">
+                     <a href="#" class="text-gray-400 hover:text-blue-400 mx-2">Facebook</a> |
+                     <a href="#" class="text-gray-400 hover:text-blue-400 mx-2">LinkedIn</a> |
+                     <a href="#" class="text-gray-400 hover:text-blue-400 mx-2">GitHub</a>
+                </div>
+                <p class="text-gray-500 text-sm">
+                    &copy; <span id="currentYear"></span> <span data-translate-key="footerCopyright">Pohánka És Társa Kft. Minden jog fenntartva.</span>
+                </p>
+                <p class="text-gray-600 text-xs mt-1" data-translate-key="footerInspiration">
+                    Design inspiráció: <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">developers.google.com</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Fordítások objektuma
+        const translations = {
+            hu: {
+                navHome: 'Kezdőlap',
+                navServices: 'Szolgáltatások',
+                navProducts: 'Termékek',
+                navReferences: 'Referenciák',
+                navOffer: 'Ajánlatkérés',
+                navContact: 'Kapcsolat',
+                navHomeMobile: 'Kezdőlap',
+                navServicesMobile: 'Szolgáltatások',
+                navProductsMobile: 'Termékek',
+                navReferencesMobile: 'Referenciák',
+                navOfferMobile: 'Ajánlatkérés',
+                navContactMobile: 'Kapcsolat',
+                heroTitle: 'Innovatív Megoldások <span class="text-blue-400">Vállalkozásának</span>',
+                heroParagraph: 'Modern technológiákkal és szakértő csapatunkkal segítjük elérni üzleti céljait. Ismerje meg, hogyan tehetjük sikeressé vállalkozását!',
+                heroImageAlt: 'Főoldali kép',
+                servicesTitle: 'Szolgáltatásaink',
+                serviceFinancialTitle: 'Pénzügyi, Könyviteli, Pályázatírási Szolgáltatások',
+                serviceFinancialDesc: 'Teljes körű könyvelési, pályázatírási szolgáltatások , pénzügyi, támogatási, finanszírozási tanácsadás ügyintézés a vállalkozás igényeihez igazítva.',
+                serviceResearchTitle: 'Kutatások és adatelemzés igény szerint, teljes kiértékeléssel',
+                serviceResearchDesc: 'Szeretne információhoz jutni piaci igényekről? Keresleti hozzáállás érdekli a vevői környezet jelenlegi trendje? Vagy vásárolni szeretne egy terméket? A kutató és kiértékelő technológiánkkal rövid idő alatt megtaláljuk a választ, kiértékeljük, kielemezzük és dokumentáljuk az Ön részére.',
+                serviceMarketingTitle: 'Marketing (Hirdetés) Stratégia kidolgozása',
+                serviceMarketingDesc: 'Ha több ügyfelet szeretne, több vevőt, kidolgozzuk az online jelenlét segítségével minél több emberhez jusson el a vállalkozása.',
+                serviceWebdevTitle: 'Webfejlesztés',
+                serviceWebdevDesc: 'Modern, reszponzív weboldalak és webalkalmazások fejlesztése a legújabb technológiákkal. Előnyök: gyorsaság, biztonság, egyedi design.',
+                serviceMobileTitle: 'Mobilalkalmazás Fejlesztés',
+                serviceMobileDesc: 'Natív és cross-platform mobilappok iOS-re és Androidra. Előnyök: felhasználóbarát felület, push értesítések, offline működés.',
+                serviceCloudTitle: 'Felhő alapú megoldások, Alkalmazások, Programok létrehozása.',
+                serviceCloudDesc: 'Vállalkozás vezetést segítő programok, adatbázis, nyilvántartás kezelő, projekt tervező programok a vállalkozás igényeire szabva.',
+                productsTitle: 'Kiemelt Termékeink',
+                product1Title: 'Projektmenedzser Szoftver',
+                product1Desc: 'Intuitív szoftver a projektek hatékony kezeléséhez, csapatmunkához és határidők követéséhez.',
+                product2Title: 'Ügyfélkapcsolat-kezelő program',
+                product2Desc: 'Ügyfélkapcsolat-kezelő rendszer kis- és középvállalkozások számára, testreszabható modulokkal.',
+                product3Title: 'E-kereskedelmi Platform',
+                product3Desc: 'Teljeskörű megoldás automatizált felület létrehozására, amely a kereskedelmi lebonyolításban, az ügyfélkapcsolat kezelésében, nyilvántartásában segíti a felhasználót, átláthatóvá, és egyszerűbbé teszi a kereskedelmi kapcsolat szereplői között lévő igények, tevékenységek, információk hatékony, gyors, és pontos lebonyolítását.',
+                referencesTitle: 'Referencia Munkáink',
+                ref1Title: 'Nagyvállalati Portál Fejlesztése',
+                ref1Desc: 'Egyedi fejlesztésű, teljes portál rendszer amely egy vevői adatbázis és annak rendelés állományát valamint a gyártok készletnyilvántartását összefésüli és kezeli a vevői igényekkel. A fuvarszervezéssel egybe hangolva. Még fejlesztés alatt , tesztelés a Mesterséges Intelligencia által vezérelt automatizálása bevezetése a gyorsabb és átláthatóbb nyilvántartás érdekében.',
+                ref2Title: 'Mobilalkalmazás mely a felhasználó igényére szabható',
+                ref2Desc: 'Fő funkciói a tevékenységünk megtervezése, nyomon követesé, integrálható adatbázisokkal bővítve (könyvelési adatok, pillanatnyi költségvetés, pénzeszköz és költség mozgás ellenőrzése, készletnyilvántartás felügyelete, statisztikák készítése, vállalkozás igényeire szabva. "Minden egy helyen átláthatóan" fejlesztés alatt.. a MI alapú rendszer bevezetésének fejlesztése folyik.',
+                refButton: 'Fejlesztés alatt.. a béta verziók hamarosan elérhetőek lesznek!',
+                offerTitle: 'Ajánlatkérés',
+                offerSubTitle: 'Kérdése van, vagy ajánlatot szeretne kérni? Töltse ki az alábbi űrlapot, és hamarosan felvesszük Önnel a kapcsolatot!',
+                formName: 'Teljes Név',
+                formEmail: 'Email Cím',
+                formSubject: 'Tárgy',
+                formMessage: 'Üzenet',
+                formSend: 'Üzenet Küldése',
+                contactTitle: 'Kapcsolat',
+                contactHQ: 'Székhely:',
+                contactOffice: 'Irodánk címe (térképen):',
+                contactTax: 'Adószám:',
+                contactPhones: 'Telefonszámok:',
+                contactEmails: 'Email címek:',
+                emailPeterDesc: '(ajánlatkérés, szolgáltatások, programokkal kapcsolatos kérdések)',
+                emailPiroskaDesc: '(könyvelés)',
+                emailSupportDesc: '(ügyfélszolgálat, egyéb kérdések)',
+                footerCopyright: 'Pohánka És Társa Kft. Minden jog fenntartva.',
+                footerInspiration: 'Design inspiráció: <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">developers.google.com</a>'
+
+            },
+            en: {
+                navHome: 'Home',
+                navServices: 'Services',
+                navProducts: 'Products',
+                navReferences: 'References',
+                navOffer: 'Request Offer',
+                navContact: 'Contact',
+                navHomeMobile: 'Home',
+                navServicesMobile: 'Services',
+                navProductsMobile: 'Products',
+                navReferencesMobile: 'References',
+                navOfferMobile: 'Request Offer',
+                navContactMobile: 'Contact',
+                heroTitle: 'Innovative Solutions for Your <span class="text-blue-400">Business</span>',
+                heroParagraph: 'With modern technologies and our expert team, we help you achieve your business goals. Discover how we can make your business successful!',
+                heroImageAlt: 'Main page image',
+                servicesTitle: 'Our Services',
+                serviceFinancialTitle: 'Financial, Accounting, Grant Writing Services',
+                serviceFinancialDesc: 'Full-scale accounting, grant writing services, financial, support, and funding consulting tailored to your business needs.',
+                serviceResearchTitle: 'Custom Research and Data Analysis with Full Evaluation',
+                serviceResearchDesc: 'Need insights into market demands? Curious about current customer trends or looking to purchase a product? Our research and evaluation technology quickly finds answers, evaluates, analyzes, and documents them for you.',
+                serviceMarketingTitle: 'Marketing (Advertising) Strategy Development',
+                serviceMarketingDesc: 'If you want more clients and customers, we will develop your online presence to reach as many people as possible.',
+                serviceWebdevTitle: 'Web Development',
+                serviceWebdevDesc: 'Development of modern, responsive websites and web applications using the latest technologies. Advantages: speed, security, custom design.',
+                serviceMobileTitle: 'Mobile Application Development',
+                serviceMobileDesc: 'Native and cross-platform mobile apps for iOS and Android. Advantages: user-friendly interface, push notifications, offline functionality.',
+                serviceCloudTitle: 'Cloud-based Solutions, Application and Program Development.',
+                serviceCloudDesc: 'Business management support programs, database and record management, project planning programs tailored to business needs.',
+                productsTitle: 'Featured Products',
+                product1Title: 'Project Management Software',
+                product1Desc: 'Intuitive software for efficient project management, teamwork, and deadline tracking.',
+                product2Title: 'Customer Relationship Management Program',
+                product2Desc: 'CRM system for small and medium-sized businesses with customizable modules.',
+                product3Title: 'E-commerce Platform',
+                product3Desc: 'Comprehensive solution for creating an automated interface that assists users in commercial transactions, customer relationship management, and record-keeping, making needs, activities, and information between commercial parties transparent, simpler, efficient, fast, and accurate.',
+                referencesTitle: 'Our References',
+                ref1Title: 'Enterprise Portal Development',
+                ref1Desc: 'Custom-developed, full portal system that consolidates and manages customer databases, order statuses, and manufacturer inventory with customer demands, coordinated with logistics. Still under development, testing AI-driven automation for faster and more transparent record-keeping.',
+                ref2Title: 'User-Customizable Mobile Application',
+                ref2Desc: 'Main functions include planning and tracking our activities, enhanced with integrable databases (accounting data, real-time budget, cash flow and cost monitoring, inventory management, statistics generation, tailored to business needs). "Everything transparently in one place" under development... AI-based system implementation is in progress.',
+                refButton: 'Under development... beta versions will be available soon!',
+                offerTitle: 'Request for Offer',
+                offerSubTitle: 'Have a question or want to request an offer? Fill out the form below, and we will contact you soon!',
+                formName: 'Full Name',
+                formEmail: 'Email Address',
+                formSubject: 'Subject',
+                formMessage: 'Message',
+                formSend: 'Send Message',
+                contactTitle: 'Contact',
+                contactHQ: 'Headquarters:',
+                contactOffice: 'Our Office (on map):',
+                contactTax: 'Tax Number:',
+                contactPhones: 'Phone Numbers:',
+                contactEmails: 'Email Addresses:',
+                emailPeterDesc: '(offer requests, services, program-related questions)',
+                emailPiroskaDesc: '(accounting)',
+                emailSupportDesc: '(customer support, other questions)',
+                footerCopyright: 'Pohánka És Társa Kft. All rights reserved.',
+                footerInspiration: 'Design inspiration: <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">developers.google.com</a>'
+            },
+            de: {
+                navHome: 'Startseite',
+                navServices: 'Dienstleistungen',
+                navProducts: 'Produkte',
+                navReferences: 'Referenzen',
+                navOffer: 'Angebot Anfordern',
+                navContact: 'Kontakt',
+                navHomeMobile: 'Startseite',
+                navServicesMobile: 'Dienstleistungen',
+                navProductsMobile: 'Produkte',
+                navReferencesMobile: 'Referenzen',
+                navOfferMobile: 'Angebot Anfordern',
+                navContactMobile: 'Kontakt',
+                heroTitle: 'Innovative Lösungen für Ihr <span class="text-blue-400">Unternehmen</span>',
+                heroParagraph: 'Mit modernen Technologien und unserem Expertenteam helfen wir Ihnen, Ihre Geschäftsziele zu erreichen. Entdecken Sie, wie wir Ihr Unternehmen erfolgreich machen können!',
+                heroImageAlt: 'Startseitenbild',
+                servicesTitle: 'Unsere Dienstleistungen',
+                serviceFinancialTitle: 'Finanz-, Buchhaltungs- und Fördermittelantragsdienste',
+                serviceFinancialDesc: 'Umfassende Buchhaltungs-, Fördermittelantragsdienste, Finanz-, Unterstützungs- und Finanzierungsberatung, zugeschnitten auf Ihre Geschäftsanforderungen.',
+                serviceResearchTitle: 'Maßgeschneiderte Forschung und Datenanalyse mit vollständiger Auswertung',
+                serviceResearchDesc: 'Benötigen Sie Einblicke in Marktanforderungen? Interessieren Sie sich für aktuelle Kundentrends oder möchten Sie ein Produkt kaufen? Unsere Forschungs- und Auswertungstechnologie findet schnell Antworten, bewertet, analysiert und dokumentiert diese für Sie.',
+                serviceMarketingTitle: 'Entwicklung von Marketing- (Werbe-) Strategien',
+                serviceMarketingDesc: 'Wenn Sie mehr Kunden gewinnen möchten, entwickeln wir Ihre Online-Präsenz, um so viele Menschen wie möglich zu erreichen.',
+                serviceWebdevTitle: 'Webentwicklung',
+                serviceWebdevDesc: 'Entwicklung moderner, responsiver Websites und Webanwendungen mit den neuesten Technologien. Vorteile: Geschwindigkeit, Sicherheit, individuelles Design.',
+                serviceMobileTitle: 'Mobile Anwendungsentwicklung',
+                serviceMobileDesc: 'Native und plattformübergreifende mobile Apps für iOS und Android. Vorteile: benutzerfreundliche Oberfläche, Push-Benachrichtigungen, Offline-Funktionalität.',
+                serviceCloudTitle: 'Cloud-basierte Lösungen, Anwendungs- und Programmentwicklung.',
+                serviceCloudDesc: 'Programme zur Unterstützung der Unternehmensführung, Datenbank- und Registerverwaltung, Projektplanungsprogramme, zugeschnitten auf die Bedürfnisse des Unternehmens.',
+                productsTitle: 'Ausgewählte Produkte',
+                product1Title: 'Projektmanagement-Software',
+                product1Desc: 'Intuitive Software für effizientes Projektmanagement, Teamarbeit und Terminverfolgung.',
+                product2Title: 'Kundenbeziehungsmanagement-Programm',
+                product2Desc: 'CRM-System für kleine und mittlere Unternehmen mit anpassbaren Modulen.',
+                product3Title: 'E-Commerce-Plattform',
+                product3Desc: 'Umfassende Lösung zur Erstellung einer automatisierten Oberfläche, die Benutzer bei kommerziellen Transaktionen, Kundenbeziehungsmanagement und Datenführung unterstützt und Bedürfnisse, Aktivitäten und Informationen zwischen Handelspartnern transparent, einfacher, effizient, schnell und genau macht.',
+                referencesTitle: 'Unsere Referenzen',
+                ref1Title: 'Entwicklung eines Unternehmensportals',
+                ref1Desc: 'Individuell entwickeltes, vollständiges Portalsystem, das eine Kundendatenbank und deren Bestellstatus sowie den Lagerbestand der Hersteller konsolidiert und mit den Kundenanforderungen verwaltet, koordiniert mit der Logistik. Noch in Entwicklung, Testen der KI-gesteuerten Automatisierung für eine schnellere und transparentere Datenführung.',
+                ref2Title: 'Benutzerdefinierbare mobile Anwendung',
+                ref2Desc: 'Hauptfunktionen umfassen die Planung und Verfolgung unserer Aktivitäten, erweitert um integrierbare Datenbanken (Buchhaltungsdaten, Echtzeitbudget, Cashflow- und Kostenüberwachung, Bestandsverwaltung, Statistikerstellung, zugeschnitten auf Geschäftsanforderungen). "Alles transparent an einem Ort" in Entwicklung... Die Implementierung eines KI-basierten Systems ist im Gange.',
+                refButton: 'In Entwicklung... Beta-Versionen werden bald verfügbar sein!',
+                offerTitle: 'Angebotsanfrage',
+                offerSubTitle: 'Haben Sie eine Frage oder möchten Sie ein Angebot anfordern? Füllen Sie das folgende Formular aus, und wir werden uns bald mit Ihnen in Verbindung setzen!',
+                formName: 'Vollständiger Name',
+                formEmail: 'Email Adresse',
+                formSubject: 'Betreff',
+                formMessage: 'Nachricht',
+                formSend: 'Nachricht Senden',
+                contactTitle: 'Kontakt',
+                contactHQ: 'Hauptsitz:',
+                contactOffice: 'Unser Büro (auf der Karte):',
+                contactTax: 'Steuernummer:',
+                contactPhones: 'Telefonnummern:',
+                contactEmails: 'E-Mail-Adressen:',
+                emailPeterDesc: '(Angebotsanfragen, Dienstleistungen, Fragen zu Programmen)',
+                emailPiroskaDesc: '(Buchhaltung)',
+                emailSupportDesc: '(Kundendienst, sonstige Fragen)',
+                footerCopyright: 'Pohánka És Társa Kft. Alle Rechte vorbehalten.',
+                footerInspiration: 'Design-Inspiration: <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">developers.google.com</a>'
+            }
+        };
+
+        // Nyelvváltó funkció
+        function switchLanguage(lang) {
+            if (translations[lang]) {
+                document.querySelectorAll('[data-translate-key]').forEach(element => {
+                    const key = element.getAttribute('data-translate-key');
+                    if (translations[lang][key]) {
+                        if (element.hasAttribute('data-alt-hu')) { // Speciális kezelés alt attribútumokhoz
+                            element.alt = translations[lang][key];
+                        } else if (key === 'heroTitle' || key === 'footerInspiration') { // HTML tartalmú elemek
+                             element.innerHTML = translations[lang][key];
+                        } else {
+                            element.textContent = translations[lang][key];
+                        }
+                    }
+                });
+                document.documentElement.lang = lang; // HTML lang attribútum frissítése
+                localStorage.setItem('selectedLanguage', lang); // Kiválasztott nyelv mentése
+
+                // Aktív nyelv link kiemelése
+                document.querySelectorAll('.language-link').forEach(link => {
+                    link.classList.remove('active-lang');
+                    if (link.getAttribute('onclick') === `switchLanguage('${lang}')`) {
+                        link.classList.add('active-lang');
+                    }
+                });
+            } else {
+                console.error(`Language ${lang} not found in translations.`);
+            }
+        }
+
+        // Kezdeti nyelv beállítása és eseményfigyelők hozzáadása
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'hu';
+            switchLanguage(savedLanguage);
+
+            // Eseményfigyelők a főmenü görgetéséhez (ez a korábbi kódodból van, lehet, hogy finomítani kell a többnyelvűséggel)
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinksDesktop = document.getElementById('nav-links-desktop');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const sections = document.querySelectorAll('section[id]');
+            const allNavLinks = document.querySelectorAll('#nav-links-desktop a, #mobile-menu a');
+
+            function changeLinkState() {
+                let index = sections.length;
+                while(--index >= 0 && sections[index] && window.scrollY + 100 < sections[index].offsetTop) {} 
+                
+                allNavLinks.forEach((link) => {
+                    // Csak a nav-link-active osztályt távolítjuk el, ha nem nyelvválasztó link
+                    if (!link.classList.contains('language-link')) {
+                        link.classList.remove('nav-link-active');
+                    }
+                });
+                
+                const activeSectionId = (index >= 0 && sections[index]) ? sections[index].id : null;
+
+                if (activeSectionId) {
+                    const desktopLink = navLinksDesktop.querySelector(`a[href="#${activeSectionId}"]`); 
+                    if (desktopLink) {
+                         desktopLink.classList.add('nav-link-active');
+                    }
+                    if (mobileMenu) {
+                        const mobileLink = mobileMenu.querySelector(`a[href="#${activeSectionId}"]`); 
+                        if (mobileLink) {
+                            mobileLink.classList.add('nav-link-active'); // Mobil menüben is kiemeljük
+                        }
+                    }
+                } else if (sections.length > 0 && sections[0]) { 
+                    const firstSectionId = sections[0].id;
+                    const desktopLink = navLinksDesktop.querySelector(`a[href="#${firstSectionId}"]`);
+                    if (desktopLink) {
+                         desktopLink.classList.add('nav-link-active');
+                    }
+                     if (mobileMenu) {
+                        const mobileLink = mobileMenu.querySelector(`a[href="#${firstSectionId}"]`);
+                        if (mobileLink) {
+                            mobileLink.classList.add('nav-link-active');
+                        }
+                    }
+                }
+            }
+            changeLinkState(); 
+            window.addEventListener('scroll', changeLinkState);
+
+            if (mobileMenu) {
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        // A changeLinkState itt is meghívható, hogy az aktív link frissüljön kattintás után is
+                        setTimeout(changeLinkState, 0); 
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
