@@ -34,6 +34,18 @@
         .map-container { height: 400px; border-radius: 0.5rem; overflow: hidden; }
         .hero-image-container { margin-top: 2.5rem; }
         .hero-image { max-width: 300px; max-height: 150px; width: auto; height: auto; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); display: block; margin-left: auto; margin-right: auto; }
+        .reference-link {
+            display: inline-block;
+            margin-top: 1rem; /* Tailwind mt-4 */
+            color: #60A5FA; /* Tailwind blue-400 */
+            font-weight: 500; /* Tailwind font-medium */
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        .reference-link:hover {
+            color: #3B82F6; /* Tailwind blue-500 */
+            text-decoration: underline;
+        }
 
         @media (max-width: 768px) {
             .language-selector { padding: 0.5rem; justify-content: center; }
@@ -208,17 +220,20 @@
                             <img src="AI.jpg" alt="AI Projekt Referencia Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md">
                             <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref1Title">Nagyvállalati Portál Fejlesztése</h3>
                             <p class="text-gray-400 mb-4" data-translate-key="ref1Desc">Egyedi fejlesztésű, teljes portál rendszer amely egy vevői adatbázis és annak rendelés állományát valamint a gyártok készletnyilvántartását összefésüli és kezeli a vevői igényekkel. A fuvarszervezéssel egybe hangolva. Még fejlesztés alatt , tesztelés a Mesterséges Intelligencia által vezérelt automatizálása bevezetése a gyorsabb és átláthatóbb nyilvántartás érdekében.</p>
-                            <span class="inline-block bg-blue-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Firebase</span>
-                            <span class="inline-block bg-green-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Google Cloud</span>
-                            <span class="inline-block bg-yellow-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Egyedi API</span>
+                            <a href="Pohi AI App.html" class="reference-link" data-translate-key="ref1Link">Betekintés a felületre →</a>
+                            <div class="mt-4"> <span class="inline-block bg-blue-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Firebase</span>
+                                <span class="inline-block bg-green-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Google Cloud</span>
+                                <span class="inline-block bg-yellow-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Egyedi API</span>
+                            </div>
                         </div>
                         <div class="dev-inspired-card rounded-lg shadow-xl p-6 md:p-8">
                             <img src="p2.jpg" alt="P2 Projekt Referencia Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md">
                             <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref2Title">Mobilalkalmazás mely a felhasználó igényére szabható</h3>
                             <p class="text-gray-400 mb-4" data-translate-key="ref2Desc">Fő funkciói a tevékenységünk megtervezése, nyomon követesé, integrálható adatbázisokkal bővítve (könyvelési adatok, pillanatnyi költségvetés, pénzeszköz és költség mozgás ellenőrzése, készletnyilvántartás felügyelete, statisztikák készítése, vállalkozás igényeire szabva. "Minden egy helyen átláthatóan" fejlesztés alatt.. a MI alapú rendszer bevezetésének fejlesztése folyik.</p>
-                            <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Flutter</span>
-                            <span class="inline-block bg-orange-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Firebase Auth</span>
-                            <span class="inline-block bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Realtime Database</span>
+                            <div class="mt-auto pt-4"> <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Flutter</span>
+                                <span class="inline-block bg-orange-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Firebase Auth</span>
+                                <span class="inline-block bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Realtime Database</span>
+                            </div>
                         </div>
                     </div>
                      <div class="text-center mt-12">
@@ -350,7 +365,6 @@
                 heroParagraph: 'Modern technológiákkal és szakértő csapatunkkal segítjük elérni üzleti céljait. Ismerje meg, hogyan tehetjük sikeressé vállalkozását!',
                 heroImageAlt: 'Főoldali kép',
                 servicesTitle: 'Szolgáltatásaink',
-                // JAVÍTOTT SZÓ ITT IS
                 serviceFinancialTitle: 'Pénzügyi, Könyvviteli, Pályázatírási Szolgáltatások',
                 serviceFinancialDesc: 'Teljes körű könyvelési, pályázatírási szolgáltatások , pénzügyi, támogatási, finanszírozási tanácsadás ügyintézés a vállalkozás igényeihez igazítva.',
                 serviceResearchTitle: 'Kutatások és adatelemzés igény szerint, teljes kiértékeléssel',
@@ -373,6 +387,7 @@
                 referencesTitle: 'Referencia Munkáink',
                 ref1Title: 'Nagyvállalati Portál Fejlesztése',
                 ref1Desc: 'Egyedi fejlesztésű, teljes portál rendszer amely egy vevői adatbázis és annak rendelés állományát valamint a gyártok készletnyilvántartását összefésüli és kezeli a vevői igényekkel. A fuvarszervezéssel egybe hangolva. Még fejlesztés alatt , tesztelés a Mesterséges Intelligencia által vezérelt automatizálása bevezetése a gyorsabb és átláthatóbb nyilvántartás érdekében.',
+                ref1Link: 'Betekintés a felületre →', // Új fordítási kulcs
                 ref2Title: 'Mobilalkalmazás mely a felhasználó igényére szabható',
                 ref2Desc: 'Fő funkciói a tevékenységünk megtervezése, nyomon követesé, integrálható adatbázisokkal bővítve (könyvelési adatok, pillanatnyi költségvetés, pénzeszköz és költség mozgás ellenőrzése, készletnyilvántartás felügyelete, statisztikák készítése, vállalkozás igényeire szabva. "Minden egy helyen átláthatóan" fejlesztés alatt.. a MI alapú rendszer bevezetésének fejlesztése folyik.',
                 refButton: 'Fejlesztés alatt.. a béta verziók hamarosan elérhetőek lesznek!',
@@ -413,7 +428,7 @@
                 heroParagraph: 'With modern technologies and our expert team, we help you achieve your business goals. Discover how we can make your business successful!',
                 heroImageAlt: 'Main page image',
                 servicesTitle: 'Our Services',
-                serviceFinancialTitle: 'Financial, Accounting, Grant Writing Services', // Accounting - helyes angolul
+                serviceFinancialTitle: 'Financial, Accounting, Grant Writing Services', 
                 serviceFinancialDesc: 'Full-scale accounting, grant writing services, financial, support, and funding consulting tailored to your business needs.',
                 serviceResearchTitle: 'Custom Research and Data Analysis with Full Evaluation',
                 serviceResearchDesc: 'Need insights into market demands? Curious about current customer trends or looking to purchase a product? Our research and evaluation technology quickly finds answers, evaluates, analyzes, and documents them for you.',
@@ -435,6 +450,7 @@
                 referencesTitle: 'Our References',
                 ref1Title: 'Enterprise Portal Development',
                 ref1Desc: 'Custom-developed, full portal system that consolidates and manages customer databases, order statuses, and manufacturer inventory with customer demands, coordinated with logistics. Still under development, testing AI-driven automation for faster and more transparent record-keeping.',
+                ref1Link: 'Insight into the interface →', // Új fordítási kulcs
                 ref2Title: 'User-Customizable Mobile Application',
                 ref2Desc: 'Main functions include planning and tracking our activities, enhanced with integrable databases (accounting data, real-time budget, cash flow and cost monitoring, inventory management, statistics generation, tailored to business needs). "Everything transparently in one place" under development... AI-based system implementation is in progress.',
                 refButton: 'Under development... beta versions will be available soon!',
@@ -474,7 +490,7 @@
                 heroParagraph: 'Mit modernen Technologien und unserem Expertenteam helfen wir Ihnen, Ihre Geschäftsziele zu erreichen. Entdecken Sie, wie wir Ihr Unternehmen erfolgreich machen können!',
                 heroImageAlt: 'Startseitenbild',
                 servicesTitle: 'Unsere Dienstleistungen',
-                serviceFinancialTitle: 'Finanz-, Buchhaltungs- und Fördermittelantragsdienste', // Buchhaltung - helyes németül
+                serviceFinancialTitle: 'Finanz-, Buchhaltungs- und Fördermittelantragsdienste', 
                 serviceFinancialDesc: 'Umfassende Buchhaltungs-, Fördermittelantragsdienste, Finanz-, Unterstützungs- und Finanzierungsberatung, zugeschnitten auf Ihre Geschäftsanforderungen.',
                 serviceResearchTitle: 'Maßgeschneiderte Forschung und Datenanalyse mit vollständiger Auswertung',
                 serviceResearchDesc: 'Benötigen Sie Einblicke in Marktanforderungen? Interessieren Sie sich für aktuelle Kundentrends oder möchten Sie ein Produkt kaufen? Unsere Forschungs- und Auswertungstechnologie findet schnell Antworten, bewertet, analysiert und dokumentiert diese für Sie.',
@@ -496,6 +512,7 @@
                 referencesTitle: 'Unsere Referenzen',
                 ref1Title: 'Entwicklung eines Unternehmensportals',
                 ref1Desc: 'Individuell entwickeltes, vollständiges Portalsystem, das eine Kundendatenbank und deren Bestellstatus sowie den Lagerbestand der Hersteller konsolidiert und mit den Kundenanforderungen verwaltet, koordiniert mit der Logistik. Noch in Entwicklung, Testen der KI-gesteuerten Automatisierung für eine schnellere und transparentere Datenführung.',
+                ref1Link: 'Einblick in die Benutzeroberfläche →', // Új fordítási kulcs
                 ref2Title: 'Benutzerdefinierbare mobile Anwendung',
                 ref2Desc: 'Hauptfunktionen umfassen die Planung und Verfolgung unserer Aktivitäten, erweitert um integrierbare Datenbanken (Buchhaltungsdaten, Echtzeitbudget, Cashflow- und Kostenüberwachung, Bestandsverwaltung, Statistikerstellung, zugeschnitten auf Geschäftsanforderungen). "Alles transparent an einem Ort" in Entwicklung... Die Implementierung eines KI-basierten Systems ist im Gange.',
                 refButton: 'In Entwicklung... Beta-Versionen werden bald verfügbar sein!',
@@ -526,19 +543,18 @@
                 document.querySelectorAll('[data-translate-key]').forEach(element => {
                     const key = element.getAttribute('data-translate-key');
                     if (translations[lang][key]) {
-                        if (element.hasAttribute('data-alt-hu')) { // Speciális kezelés alt attribútumokhoz
-                            element.alt = translations[lang][element.getAttribute(`data-alt-${lang}`)]; // Dinamikus alt text
-                        } else if (key === 'heroTitle' || key === 'footerInspiration') { // HTML tartalmú elemek
+                        if (element.tagName === 'IMG' && element.hasAttribute('data-alt-hu')) { 
+                            element.alt = translations[lang][key]; 
+                        } else if (key === 'heroTitle' || key === 'footerInspiration') { 
                              element.innerHTML = translations[lang][key];
                         } else {
                             element.textContent = translations[lang][key];
                         }
                     }
                 });
-                document.documentElement.lang = lang; // HTML lang attribútum frissítése
-                localStorage.setItem('selectedLanguage', lang); // Kiválasztott nyelv mentése
+                document.documentElement.lang = lang; 
+                localStorage.setItem('selectedLanguage', lang); 
 
-                // Aktív nyelv link kiemelése
                 document.querySelectorAll('.language-link').forEach(link => {
                     link.classList.remove('active-lang');
                     if (link.getAttribute('onclick') === `switchLanguage('${lang}')`) {
@@ -550,7 +566,6 @@
             }
         }
 
-        // Kezdeti nyelv beállítása és eseményfigyelők hozzáadása
         document.addEventListener('DOMContentLoaded', () => {
             const savedLanguage = localStorage.getItem('selectedLanguage') || 'hu';
             switchLanguage(savedLanguage);
