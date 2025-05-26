@@ -36,18 +36,18 @@
         .hero-image { max-width: 300px; max-height: 150px; width: auto; height: auto; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); display: block; margin-left: auto; margin-right: auto; }
         .reference-link {
             display: inline-block;
-            margin-top: 1rem; /* Tailwind mt-4 */
-            color: #60A5FA; /* Tailwind blue-400 */
-            font-weight: 500; /* Tailwind font-medium */
+            margin-top: 1rem; 
+            color: #60A5FA; 
+            font-weight: 500; 
             text-decoration: none;
             transition: color 0.2s ease-in-out;
         }
         .reference-link:hover {
-            color: #3B82F6; /* Tailwind blue-500 */
+            color: #3B82F6; 
             text-decoration: underline;
         }
 
-        @media (max-width: 768px) { /* Reszponzív beállítások kisebb képernyőkre */
+        @media (max-width: 768px) { 
             .language-selector { padding: 0.5rem; justify-content: center; }
             .language-link { margin: 0.25rem; padding: 0.5rem; }
             .contact-section-layout { flex-direction: column; }
@@ -56,12 +56,28 @@
             .hero-image { max-width: 200px; max-height: 100px; }
         }
     </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17050054168"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17050054168');
+    </script>
+    <script>
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17050054168/bqv8CJHRzc0aEJjcjMI_',
+          'value': 1.0,
+          'currency': 'HUF'
+      });
+    </script>
 </head>
 <body class="antialiased">
 
     <div class="background-video-container">
         <video autoplay loop muted playsinline id="bgVideo">
-            <source src="Hattervideo.mp4" type="video/mp4">
+            <source src="Hattervideo.mp4" type="video/mp4" onerror="this.parentElement.innerHTML = 'Videó hiba: A háttérvideó nem tölthető be.';">
             A böngésződ nem támogatja a HTML5 videó lejátszást.
         </video>
     </div>
@@ -71,7 +87,7 @@
             <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
                 <div>
                     <a href="#" class="flex items-center">
-                        <img src="logo.jpg" alt="Pohánka És Társa Kft Logó" class="navbar-logo mr-3">
+                        <img src="logo.jpg" alt="Pohánka És Társa Kft Logó" class="navbar-logo mr-3" onerror="this.alt='Logó nem tölthető be'; this.src='https://placehold.co/150x50/111827/D1D5DB?text=Logó';">
                         <span class="text-xl font-bold text-white">Pohánka És Társa Kft</span>
                     </a>
                 </div>
@@ -84,18 +100,22 @@
                 </div>
                 <div id="nav-links-desktop" class="hidden md:flex space-x-4">
                     <a href="#home" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium nav-link-active" data-translate-key="navHome">Kezdőlap</a>
+                    <a href="#about" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navAbout">Rólunk</a>
+                    <a href="#philosophy" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navPhilosophy">Értékeink</a>
                     <a href="#services" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navServices">Szolgáltatások</a>
                     <a href="#products" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navProducts">Termékek</a>
-                    <a href="#references" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navReferences">Referenciák</a>
+                    <a href="#references" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navReferences">Kiemelt Projektek</a>
                     <a href="#offer" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navOffer">Ajánlatkérés</a>
                     <a href="#contact" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navContact">Kapcsolat</a>
                 </div>
             </nav>
             <div id="mobile-menu" class="md:hidden hidden absolute top-[82px] left-0 w-full bg-gray-800/95 shadow-lg z-50">
                  <a href="#home" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navHomeMobile">Kezdőlap</a>
+                 <a href="#about" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navAboutMobile">Rólunk</a>
+                 <a href="#philosophy" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navPhilosophyMobile">Értékeink</a>
                  <a href="#services" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navServicesMobile">Szolgáltatások</a>
                  <a href="#products" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navProductsMobile">Termékek</a>
-                 <a href="#references" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navReferencesMobile">Referenciák</a>
+                 <a href="#references" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navReferencesMobile">Kiemelt Projektek</a>
                  <a href="#offer" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navOfferMobile">Ajánlatkérés</a>
                  <a href="#contact" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center" data-translate-key="navContactMobile">Kapcsolat</a>
             </div>
@@ -103,13 +123,13 @@
             <div class="language-selector">
                 <div class="container mx-auto px-6 flex justify-center md:justify-end items-center">
                     <a onclick="switchLanguage('hu')" class="language-link">
-                        <img src="lh.jpg" alt="Magyar zászló" class="flag-icon">HU
+                        <img src="lh.jpg" alt="Magyar zászló" class="flag-icon" onerror="this.alt='HU'; this.src='https://placehold.co/20x13/DD2C2C/FFFFFF?text=HU';">HU
                     </a>
                     <a onclick="switchLanguage('en')" class="language-link">
-                        <img src="le.jpg" alt="Angol zászló" class="flag-icon">EN
+                        <img src="le.jpg" alt="Angol zászló" class="flag-icon" onerror="this.alt='EN'; this.src='https://placehold.co/20x13/00247D/FFFFFF?text=EN';">EN
                     </a>
                     <a onclick="switchLanguage('de')" class="language-link">
-                        <img src="ld.jpg" alt="Német zászló" class="flag-icon">DE
+                        <img src="ld.jpg" alt="Német zászló" class="flag-icon" onerror="this.alt='DE'; this.src='https://placehold.co/20x13/000000/FFCE00?text=DE';">DE
                     </a>
                 </div>
             </div>
@@ -119,13 +139,80 @@
             <section id="home" class="py-20 md:py-32 bg-gradient-to-br from-gray-900/90 to-slate-800/90">
                 <div class="container mx-auto px-6 text-center">
                     <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight" data-translate-key="heroTitle">
-                        Innovatív Megoldások <span class="text-blue-400">Vállalkozásának</span>
+                        Professzionális Technológiai Megoldások <span class="text-blue-400">Mindenki Számára</span> Személyre Szabva
                     </h1>
                     <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto" data-translate-key="heroParagraph">
                         Modern technológiákkal és szakértő csapatunkkal segítjük elérni üzleti céljait. Ismerje meg, hogyan tehetjük sikeressé vállalkozását!
                     </p>
                     <div class="hero-image-container">
-                        <img src="fl.jpg" alt="Főoldali kép" class="hero-image" data-translate-key="heroImageAlt" data-alt-hu="Főoldali kép" data-alt-en="Main page image" data-alt-de="Startseitenbild">
+                        <img src="fl.jpg" alt="Főoldali kép" class="hero-image" data-translate-key="heroImageAlt" data-alt-hu="Főoldali kép" data-alt-en="Main page image" data-alt-de="Startseitenbild" onerror="this.alt=this.getAttribute('data-alt-' + (localStorage.getItem('selectedLanguage') || 'hu')); this.src='https://placehold.co/300x150/1F2937/9CA3AF?text=Főoldali+Kép';">
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="py-16 md:py-24 bg-gray-800/90">
+                <div class="container mx-auto px-6">
+                    <h2 class="section-title" data-translate-key="aboutTitle">Rólunk</h2>
+                    <div class="max-w-3xl mx-auto text-gray-300 text-lg leading-relaxed space-y-6 text-left md:text-justify">
+                        <p data-translate-key="aboutParagraph1">
+                            A Pohánka És Társa Kft. 2009-ben alakult. Történetünk egy bátor döntéssel kezdődött: egy bolti eladó 40 évesen, munka és három gyermek mellett, elhatározta, hogy többre vágyik. Elvégezte a mérlegképes könyvelő képesítést, és megalapította a Pohánka És Társa Kft.-t, szeretett „negyedik gyermekét”.
+                        </p>
+                        <p data-translate-key="aboutParagraph2">
+                            A sors különös fintora, hogy legkisebb gyermeke, én (Pohánka Péter), szintén erre az útra léptem, követve drága Édesanyám nyomdokait. Kilenc év könyvelés után tettem egy kitérőt, hogy kutassam az utam és keressem a helyem a világban. Rengeteg tapasztalattal gazdagodva tértem vissza idén, hogy a megszerzett tudást, ismereteket és tapasztalatokat ne csak a könyvelésben, hanem a vállalkozások fejlődésének és komplex működésének támogatásában is kamatoztassam meglévő és leendő ügyfeleimmel.
+                        </p>
+                        <p data-translate-key="aboutParagraph3">
+                            „És mégis hogyan?” Hiszünk abban, hogy az Alkotók ideje jött el, ahol a technológia az ecset, Te vagy a Művész, és a siker a Te Alkotásod! Cégünk küldetése, hogy a Művészt inspirációval, ötletekkel és megoldásokkal vértezze fel, hogy mesterműve valóban sikeres legyen. Ha felkeltettük érdeklődésedet, tanulmányozd tovább weboldalunkat! Folyamatosan bővíteni fogjuk hasznos tartalmakkal, esettanulmányokkal, bemutatókkal és egyéb érdekességekkel, amelyekkel foglalkozunk.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="philosophy" class="py-16 md:py-24 bg-gray-900/90">
+                <div class="container mx-auto px-6">
+                    <h2 class="section-title" data-translate-key="philosophyTitle">Értékek és Filozófia</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300 flex flex-col">
+                            <div class="text-blue-400 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="philosophyCard1Title">Értékek és Filozófia</h3>
+                            <div class="space-y-2 text-gray-400 text-sm">
+                                <p data-translate-key="philosophyCard1P1"></p>
+                                <p data-translate-key="philosophyCard1P2"></p>
+                                <p data-translate-key="philosophyCard1P3"></p>
+                            </div>
+                        </div>
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300 flex flex-col">
+                            <div class="text-blue-400 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.432 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="philosophyCard2Title">Jövőképünk</h3>
+                            <div class="space-y-2 text-gray-400 text-sm">
+                                <p data-translate-key="philosophyCard2P1"></p>
+                                <p data-translate-key="philosophyCard2MovedText"></p>
+                                <p data-translate-key="philosophyCard2P2"></p>
+                            </div>
+                        </div>
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300 flex flex-col">
+                            <div class="text-blue-400 mb-4">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                   <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                 </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="philosophyCard3Title">Elkötelezettségünk és Csapatunk</h3>
+                            <div class="space-y-2 text-gray-400 text-sm">
+                                <p data-translate-key="philosophyCard3P1"></p>
+                                <p class="mt-3 font-semibold text-gray-300" data-translate-key="philosophyCard3TeamIntro"></p>
+                                <p data-translate-key="philosophyCard3TeamP1"></p>
+                                <p data-translate-key="philosophyCard3TeamP2"></p>
+                                <p data-translate-key="philosophyCard3TeamP3"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -185,24 +272,24 @@
                     <h2 class="section-title" data-translate-key="productsTitle">Kiemelt Termékeink</h2>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="dev-inspired-card p-6 rounded-lg shadow-xl overflow-hidden">
-                            <video autoplay loop muted playsinline class="product-video">
-                                <source src="alfa.mp4" type="video/mp4">
+                            <video autoplay loop muted playsinline class="product-video" poster="https://placehold.co/600x400/1F2937/374151?text=Videó+előkép">
+                                <source src="alfa.mp4" type="video/mp4" onerror="this.parentElement.innerHTML = 'Videó hiba: Az alfa.mp4 nem tölthető be.';">
                                 A böngésződ nem támogatja a HTML5 videó lejátszást.
                             </video>
                             <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="product1Title">Projektmenedzser Szoftver</h3>
                             <p class="text-gray-400 text-sm mb-3" data-translate-key="product1Desc">Intuitív szoftver a projektek hatékony kezeléséhez, csapatmunkához és határidők követéséhez.</p>
                         </div>
                         <div class="dev-inspired-card p-6 rounded-lg shadow-xl overflow-hidden">
-                            <video autoplay loop muted playsinline class="product-video">
-                                <source src="beta.mp4" type="video/mp4">
+                            <video autoplay loop muted playsinline class="product-video" poster="https://placehold.co/600x400/1F2937/374151?text=Videó+előkép">
+                                <source src="beta.mp4" type="video/mp4" onerror="this.parentElement.innerHTML = 'Videó hiba: A beta.mp4 nem tölthető be.';">
                                 A böngésződ nem támogatja a HTML5 videó lejátszást.
                             </video>
                             <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="product2Title">Ügyfélkapcsolat-kezelő program</h3>
                             <p class="text-gray-400 text-sm mb-3" data-translate-key="product2Desc">Ügyfélkapcsolat-kezelő rendszer kis- és középvállalkozások számára, testreszabható modulokkal.</p>
                         </div>
                         <div class="dev-inspired-card p-6 rounded-lg shadow-xl overflow-hidden">
-                             <video autoplay loop muted playsinline class="product-video">
-                                <source src="gamma.mp4" type="video/mp4">
+                             <video autoplay loop muted playsinline class="product-video" poster="https://placehold.co/600x400/1F2937/374151?text=Videó+előkép">
+                                <source src="gamma.mp4" type="video/mp4" onerror="this.parentElement.innerHTML = 'Videó hiba: A gamma.mp4 nem tölthető be.';">
                                 A böngésződ nem támogatja a HTML5 videó lejátszást.
                             </video>
                             <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="product3Title">E-kereskedelmi Platform</h3>
@@ -214,21 +301,22 @@
 
             <section id="references" class="py-16 md:py-24 bg-gray-900/90">
                 <div class="container mx-auto px-6">
-                    <h2 class="section-title" data-translate-key="referencesTitle">Referencia Munkáink</h2>
+                    <h2 class="section-title" data-translate-key="referencesTitle">Kiemelt Projektek</h2>
                     <div class="grid md:grid-cols-2 gap-10">
                         <div class="dev-inspired-card rounded-lg shadow-xl p-6 md:p-8">
-                            <img src="AI.jpg" alt="AI Projekt Referencia Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md">
-                            <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref1Title">Nagyvállalati Portál Fejlesztése</h3>
+                            <img src="AI.jpg" alt="AI Projekt Referencia Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md" onerror="this.alt='Referencia kép nem tölthető be'; this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=Projekt+Alfa';">
+                            <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref1Title">Projekt Alfa</h3>
                             <p class="text-gray-400 mb-4" data-translate-key="ref1Desc">Egyedi fejlesztésű, teljes portál rendszer amely egy vevői adatbázis és annak rendelés állományát valamint a gyártok készletnyilvántartását összefésüli és kezeli a vevői igényekkel. A fuvarszervezéssel egybe hangolva. Még fejlesztés alatt , tesztelés a Mesterséges Intelligencia által vezérelt automatizálása bevezetése a gyorsabb és átláthatóbb nyilvántartás érdekében.</p>
-                            <a href="Pohi-AI-App.html" class="reference-link" data-translate-key="ref1Link">Betekintés a felületre →</a>
-                            <div class="mt-4"> <span class="inline-block bg-blue-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Firebase</span>
+                            <img src="Alfa_teszt.gif" alt="Projekt Alfa animáció" class="w-full h-auto rounded-md my-4 shadow-md" onerror="this.alt='Alfa teszt GIF nem tölthető be'; this.src='https://placehold.co/600x300/1F2937/9CA3AF?text=Alfa+GIF';">
+                            <div class="mt-4"> 
+                                <span class="inline-block bg-blue-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Firebase</span>
                                 <span class="inline-block bg-green-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Google Cloud</span>
                                 <span class="inline-block bg-yellow-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Egyedi API</span>
                             </div>
                         </div>
                         <div class="dev-inspired-card rounded-lg shadow-xl p-6 md:p-8">
-                            <img src="p2.jpg" alt="P2 Projekt Referencia Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md">
-                            <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref2Title">Mobilalkalmazás mely a felhasználó igényére szabható</h3>
+                            <img src="p2.jpg" alt="P2 Projekt Referencia Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md" onerror="this.alt='Referencia kép nem tölthető be'; this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=Projekt+Béta';">
+                            <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref2Title">Projekt Béta</h3>
                             <p class="text-gray-400 mb-4" data-translate-key="ref2Desc">Fő funkciói a tevékenységünk megtervezése, nyomon követesé, integrálható adatbázisokkal bővítve (könyvelési adatok, pillanatnyi költségvetés, pénzeszköz és költség mozgás ellenőrzése, készletnyilvántartás felügyelete, statisztikák készítése, vállalkozás igényeire szabva. "Minden egy helyen átláthatóan" fejlesztés alatt.. a MI alapú rendszer bevezetésének fejlesztése folyik.</p>
                             <div class="mt-auto pt-4"> <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Flutter</span>
                                 <span class="inline-block bg-orange-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Firebase Auth</span>
@@ -247,7 +335,7 @@
                     <h2 class="section-title" data-translate-key="offerTitle">Ajánlatkérés</h2>
                     <div class="max-w-3xl mx-auto dev-inspired-card p-8 md:p-12 rounded-lg shadow-2xl">
                         <p class="text-gray-300 text-center mb-8 text-lg" data-translate-key="offerSubTitle">Kérdése van, vagy ajánlatot szeretne kérni? Töltse ki az alábbi űrlapot, és hamarosan felvesszük Önnel a kapcsolatot!</p>
-                        <form action="#" method="POST">
+                        <form action="#" method="POST" onsubmit="event.preventDefault(); showCustomAlert('Köszönjük az ajánlatkérését! Hamarosan felvesszük Önnel a kapcsolatot.', 'success'); this.reset();">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                 <div>
                                     <label for="name" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formName">Teljes Név</label>
@@ -282,7 +370,7 @@
                     <div class="dev-inspired-card p-8 md:p-10 rounded-lg shadow-2xl">
                         <div class="flex flex-wrap md:flex-nowrap gap-8 contact-section-layout">
                             <div class="w-full md:w-1/2 contact-info-column">
-                                <img src="logo.jpg" alt="Pohánka És Társa Kft Logó" class="contact-logo-large mx-auto md:mx-0">
+                                <img src="logo.jpg" alt="Pohánka És Társa Kft Logó" class="contact-logo-large mx-auto md:mx-0" onerror="this.alt='Logó nem tölthető be'; this.src='https://placehold.co/200x80/111827/D1D5DB?text=Logó';">
                                 <h3 class="text-2xl font-semibold text-white mb-3 text-center md:text-left">Pohánka És Társa Kft</h3>
                                 <div class="contact-info-item">
                                     <strong data-translate-key="contactHQ">Székhely:</strong>
@@ -312,13 +400,14 @@
                             <div class="w-full md:w-1/2 map-column">
                                 <div class="map-container">
                                     <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2721.467055265764!2d16.8410188158406!3d46.845354479142324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4768cbf973009031%3A0x9140177673231825!2sZalaegerszeg%2C%20Kossuth%20Lajos%20u.%2039%2C%208900%20Hungary!5e0!3m2!1shu!2shu!4v1678886400000!5m2!1shu!2shu"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2727.779231154281!2d16.842626315850873!3d46.84699897914227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4768cbf914dd753b%3A0x3aa7acc50a50e1d4!2sZalaegerszeg%2C%20Kossuth%20Lajos%20u.%2039%2C%208900%20Hungary!5e0!3m2!1shu!2shu!4v1620830000000"
                                         width="100%"
                                         height="100%"
                                         style="border:0;"
                                         allowfullscreen=""
                                         loading="lazy"
-                                        referrerpolicy="no-referrer-when-downgrade">
+                                        referrerpolicy="no-referrer-when-downgrade"
+                                        title="Irodánk térképen">
                                     </iframe>
                                 </div>
                             </div>
@@ -345,50 +434,67 @@
         </footer>
     </div>
 
+    <div id="customAlertModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 hidden transition-opacity duration-300 ease-in-out">
+        <div class="bg-gray-800 p-6 md:p-8 rounded-lg shadow-2xl max-w-sm w-full mx-4 transform transition-all duration-300 ease-in-out scale-95 opacity-0" id="customAlertBox">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="customAlertTitle" class="text-xl font-semibold text-white">Értesítés</h3>
+                <button id="customAlertCloseButton" class="text-gray-400 hover:text-white">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <p id="customAlertMessage" class="text-gray-300 mb-6"></p>
+            <div class="text-right">
+                <button id="customAlertOkButton" class="dev-inspired-button px-6 py-2 rounded-md text-sm font-medium">OK</button>
+            </div>
+        </div>
+    </div>
+
+
     <script>
-        // Fordítások objektuma
         const translations = {
             hu: {
                 navHome: 'Kezdőlap',
+                navAbout: 'Rólunk',
+                navPhilosophy: 'Értékeink', 
                 navServices: 'Szolgáltatások',
                 navProducts: 'Termékek',
-                navReferences: 'Referenciák',
+                navReferences: 'Kiemelt Projektek', 
                 navOffer: 'Ajánlatkérés',
                 navContact: 'Kapcsolat',
                 navHomeMobile: 'Kezdőlap',
+                navAboutMobile: 'Rólunk',
+                navPhilosophyMobile: 'Értékeink', 
                 navServicesMobile: 'Szolgáltatások',
                 navProductsMobile: 'Termékek',
-                navReferencesMobile: 'Referenciák',
+                navReferencesMobile: 'Kiemelt Projektek', 
                 navOfferMobile: 'Ajánlatkérés',
                 navContactMobile: 'Kapcsolat',
-                heroTitle: 'Innovatív Megoldások <span class="text-blue-400">Vállalkozásának</span>',
+                heroTitle: 'Professzionális Technológiai Megoldások <span class="text-blue-400">Mindenki Számára</span> Személyre Szabva',
                 heroParagraph: 'Modern technológiákkal és szakértő csapatunkkal segítjük elérni üzleti céljait. Ismerje meg, hogyan tehetjük sikeressé vállalkozását!',
                 heroImageAlt: 'Főoldali kép',
-                servicesTitle: 'Szolgáltatásaink',
-                serviceFinancialTitle: 'Pénzügyi, Könyvviteli, Pályázatírási Szolgáltatások',
-                serviceFinancialDesc: 'Teljes körű könyvelési, pályázatírási szolgáltatások , pénzügyi, támogatási, finanszírozási tanácsadás ügyintézés a vállalkozás igényeihez igazítva.',
-                serviceResearchTitle: 'Kutatások és adatelemzés igény szerint, teljes kiértékeléssel',
-                serviceResearchDesc: 'Szeretne információhoz jutni piaci igényekről? Keresleti hozzáállás érdekli a vevői környezet jelenlegi trendje? Vagy vásárolni szeretne egy terméket? A kutató és kiértékelő technológiánkkal rövid idő alatt megtaláljuk a választ, kiértékeljük, kielemezzük és dokumentáljuk az Ön részére.',
-                serviceMarketingTitle: 'Marketing (Hirdetés) Stratégia kidolgozása',
-                serviceMarketingDesc: 'Ha több ügyfelet szeretne, több vevőt, kidolgozzuk az online jelenlét segítségével minél több emberhez jusson el a vállalkozása.',
-                serviceWebdevTitle: 'Webfejlesztés',
-                serviceWebdevDesc: 'Modern, reszponzív weboldalak és webalkalmazások fejlesztése a legújabb technológiákkal. Előnyök: gyorsaság, biztonság, egyedi design.',
-                serviceMobileTitle: 'Mobilalkalmazás Fejlesztés',
-                serviceMobileDesc: 'Natív és cross-platform mobilappok iOS-re és Androidra. Előnyök: felhasználóbarát felület, push értesítések, offline működés.',
-                serviceCloudTitle: 'Felhő alapú megoldások, Alkalmazások, Programok létrehozása.',
-                serviceCloudDesc: 'Vállalkozás vezetést segítő programok, adatbázis, nyilvántartás kezelő, projekt tervező programok a vállalkozás igényeire szabva.',
-                productsTitle: 'Kiemelt Termékeink',
-                product1Title: 'Projektmenedzser Szoftver',
-                product1Desc: 'Intuitív szoftver a projektek hatékony kezeléséhez, csapatmunkához és határidők követéséhez.',
-                product2Title: 'Ügyfélkapcsolat-kezelő program',
-                product2Desc: 'Ügyfélkapcsolat-kezelő rendszer kis- és középvállalkozások számára, testreszabható modulokkal.',
-                product3Title: 'E-kereskedelmi Platform',
-                product3Desc: 'Teljeskörű megoldás automatizált felület létrehozására, amely a kereskedelmi lebonyolításban, az ügyfélkapcsolat kezelésében, nyilvántartásában segíti a felhasználót, átláthatóvá, és egyszerűbbé teszi a kereskedelmi kapcsolat szereplői között lévő igények, tevékenységek, információk hatékony, gyors, és pontos lebonyolítását.',
-                referencesTitle: 'Referencia Munkáink',
-                ref1Title: 'Nagyvállalati Portál Fejlesztése',
+                aboutTitle: 'Rólunk',
+                aboutParagraph1: 'A Pohánka És Társa Kft. 2009-ben alakult. Történetünk egy bátor döntéssel kezdődött: egy bolti eladó 40 évesen, munka és három gyermek mellett, elhatározta, hogy többre vágyik. Elvégezte a mérlegképes könyvelő képesítést, és megalapította a Pohánka És Társa Kft.-t, szeretett „negyedik gyermekét”.',
+                aboutParagraph2: 'A sors különös fintora, hogy legkisebb gyermeke, én (Pohánka Péter), szintén erre az útra léptem, követve drága Édesanyám nyomdokait. Kilenc év könyvelés után tettem egy kitérőt, hogy kutassam az utam és keressem a helyem a világban. Rengeteg tapasztalattal gazdagodva tértem vissza idén, hogy a megszerzett tudást, ismereteket és tapasztalatokat ne csak a könyvelésben, hanem a vállalkozások fejlődésének és komplex működésének támogatásában is kamatoztassam meglévő és leendő ügyfeleimmel.',
+                aboutParagraph3: '„És mégis hogyan?” Hiszünk abban, hogy az Alkotók ideje jött el, ahol a technológia az ecset, Te vagy a Művész, és a siker a Te Alkotásod! Cégünk küldetése, hogy a Művészt inspirációval, ötletekkel és megoldásokkal vértezze fel, hogy mesterműve valóban sikeres legyen. Ha felkeltettük érdeklődésedet, tanulmányozd tovább weboldalunkat! Folyamatosan bővíteni fogjuk hasznos tartalmakkal, esettanulmányokkal, bemutatókkal és egyéb érdekességekkel, amelyekkel foglalkozunk.',
+                philosophyTitle: 'Értékek és Filozófia', 
+                philosophyCard1Title: 'Értékek és Filozófia', 
+                philosophyCard1P1: 'Alapvető értékeink a szakértelem, megbízhatóság, ügyfélközpontúság és a folyamatos fejlődés iránti elkötelezettség.', 
+                philosophyCard1P2: 'Munkánk során a legmodernebb technológiákat ötvözzük a mély iparági ismeretekkel.', 
+                philosophyCard1P3: 'Nem csak szoftvert fejlesztünk, programokat, alkalmazásokat, applikációkat készítünk, hanem a Mesterséges Intelligencia Google támogatásának köszönhetően, az Ők általuk kifejlesztett legújabb technológiájú modellek állnak a rendelkezésünkre, melyeket ha okosan beleépítjük a vállalkozás ökoszisztémájába, olyan hatékonyságot érhetünk el amivel nem csak esélyünk van egy gazdaságosabb működést elérni, hanem a legértékesebb dolgot is mellé kapjuk, ami nem más mint a manapság mindennél értékesebb dolog, az IDŐ..!', 
+                philosophyCard2Title: 'Jövőképünk', 
+                philosophyCard2P1: 'Hiszünk a technológia erejében, hogy jobbá tegye a vállalkozások mindennapjait és új távlatokat nyisson a növekedésben. Folyamatosan kutatjuk az innovatív megoldásokat, hogy ügyfeleink mindig a piaci verseny élvonalában maradhassanak.',
+                philosophyCard2MovedText: 'Képzeljétek el, hogy mennyire felgyorsult körülöttünk az idő, mindenki rohan, az információ sebessége manapság kulcskérdés az élet minden területén. Igaz ez az üzleti életre is: ki tud előbb megszerezni egy piacot? Ki tudja először vírusként elterjeszteni a terméket, amit értékesíteni szeretne? Ki tudja meg először mikor, mire érdemes pályázni? Mennyi lesz a Ft/Euro árfolyam várható alakulása? Mi a fogyasztók viselkedése, érdeklődése jelenleg stb...?', 
+                philosophyCard2P2: 'Mi képesek leszünk rá, hogy ezeket és még elképesztőbb dolgokat beleépítsünk a stratégiánkba, hogy a kitűzött rövid, és hosszútávú céljaid elérésében segítséget nyújtsunk.',
+                philosophyCard3Title: 'Elkötelezettségünk és Csapatunk', 
+                philosophyCard3P1: 'Elkötelezettek vagyunk ügyfeleink sikere mellett. Minden projektet partnerségként kezelünk, szorosan együttműködve a legjobb eredmények elérése érdekében, biztosítva az átláthatóságot és a kölcsönös bizalmat.', 
+                philosophyCard3TeamIntro: 'Szakértő csapatunk:', 
+                philosophyCard3TeamP1: "Szakértő csapatunk tagjai több éves tapasztalattal rendelkeznek a könyviteli, pályázatírási, finanszírozási, pénzügyi, vám ügyintézés, munkavédelmi, munkaügyi engedélyezés területén, komplett engedélyezési kapcsolat rendszerünk van kiépítve az iparkamarával és a növényegészségügyi hivatallal egyaránt. Elemző, és piackutató módszerünk egyedülálló az országban. Kereskedelmi és logisztikai kapcsolatunk van hazai, és nemzetközi fuvarozó cégekkel és hajózási szállítási szolgáltatókkal.",
+                philosophyCard3TeamP2: "Büszkék vagyunk sokszínű csapatunkra, ahol a pénzügyi szakemberek, fejlesztők és marketingesek tudása összeadódik.",
+                philosophyCard3TeamP3: "Folyamatosan képezzük magunkat, hogy mindig naprakész tudással álljunk ügyfeleink rendelkezésére.",
+                referencesTitle: 'Kiemelt Projektek', 
+                ref1Title: 'Projekt Alfa', 
                 ref1Desc: 'Egyedi fejlesztésű, teljes portál rendszer amely egy vevői adatbázis és annak rendelés állományát valamint a gyártok készletnyilvántartását összefésüli és kezeli a vevői igényekkel. A fuvarszervezéssel egybe hangolva. Még fejlesztés alatt , tesztelés a Mesterséges Intelligencia által vezérelt automatizálása bevezetése a gyorsabb és átláthatóbb nyilvántartás érdekében.',
-                ref1Link: 'Betekintés a felületre →',
-                ref2Title: 'Mobilalkalmazás mely a felhasználó igényére szabható',
+                ref2Title: 'Projekt Béta', 
                 ref2Desc: 'Fő funkciói a tevékenységünk megtervezése, nyomon követesé, integrálható adatbázisokkal bővítve (könyvelési adatok, pillanatnyi költségvetés, pénzeszköz és költség mozgás ellenőrzése, készletnyilvántartás felügyelete, statisztikák készítése, vállalkozás igényeire szabva. "Minden egy helyen átláthatóan" fejlesztés alatt.. a MI alapú rendszer bevezetésének fejlesztése folyik.',
                 refButton: 'Fejlesztés alatt.. a béta verziók hamarosan elérhetőek lesznek!',
                 offerTitle: 'Ajánlatkérés',
@@ -413,45 +519,47 @@
             },
             en: {
                 navHome: 'Home',
+                navAbout: 'About Us',
+                navPhilosophy: 'Our Values', 
                 navServices: 'Services',
                 navProducts: 'Products',
-                navReferences: 'References',
+                navReferences: 'Featured Projects', 
                 navOffer: 'Request Offer',
                 navContact: 'Contact',
                 navHomeMobile: 'Home',
+                navAboutMobile: 'About Us',
+                navPhilosophyMobile: 'Our Values', 
                 navServicesMobile: 'Services',
                 navProductsMobile: 'Products',
-                navReferencesMobile: 'References',
+                navReferencesMobile: 'Featured Projects', 
                 navOfferMobile: 'Request Offer',
                 navContactMobile: 'Contact',
-                heroTitle: 'Innovative Solutions for Your <span class="text-blue-400">Business</span>',
+                heroTitle: 'Professional Technological Solutions <span class="text-blue-400">For Everyone</span> Tailored Personally',
                 heroParagraph: 'With modern technologies and our expert team, we help you achieve your business goals. Discover how we can make your business successful!',
                 heroImageAlt: 'Main page image',
-                servicesTitle: 'Our Services',
-                serviceFinancialTitle: 'Financial, Accounting, Grant Writing Services', 
-                serviceFinancialDesc: 'Full-scale accounting, grant writing services, financial, support, and funding consulting tailored to your business needs.',
-                serviceResearchTitle: 'Custom Research and Data Analysis with Full Evaluation',
-                serviceResearchDesc: 'Need insights into market demands? Curious about current customer trends or looking to purchase a product? Our research and evaluation technology quickly finds answers, evaluates, analyzes, and documents them for you.',
-                serviceMarketingTitle: 'Marketing (Advertising) Strategy Development',
-                serviceMarketingDesc: 'If you want more clients and customers, we will develop your online presence to reach as many people as possible.',
-                serviceWebdevTitle: 'Web Development',
-                serviceWebdevDesc: 'Development of modern, responsive websites and web applications using the latest technologies. Advantages: speed, security, custom design.',
-                serviceMobileTitle: 'Mobile Application Development',
-                serviceMobileDesc: 'Native and cross-platform mobile apps for iOS and Android. Advantages: user-friendly interface, push notifications, offline functionality.',
-                serviceCloudTitle: 'Cloud-based Solutions, Application and Program Development.',
-                serviceCloudDesc: 'Business management support programs, database and record management, project planning programs tailored to business needs.',
-                productsTitle: 'Featured Products',
-                product1Title: 'Project Management Software',
-                product1Desc: 'Intuitive software for efficient project management, teamwork, and deadline tracking.',
-                product2Title: 'Customer Relationship Management Program',
-                product2Desc: 'CRM system for small and medium-sized businesses with customizable modules.',
-                product3Title: 'E-commerce Platform',
-                product3Desc: 'Comprehensive solution for creating an automated interface that assists users in commercial transactions, customer relationship management, and record-keeping, making needs, activities, and information between commercial parties transparent, simpler, efficient, fast, and accurate.',
-                referencesTitle: 'Our References',
-                ref1Title: 'Enterprise Portal Development',
+                aboutTitle: 'About Us', 
+                aboutParagraph1: 'Pohánka & Társa Kft. was founded in 2009. Our story began with a brave decision: a shop assistant at 40, while working and raising three children, decided she wanted more. She completed her certified accountant qualification and founded Pohánka & Társa Kft., her beloved "fourth child".', 
+                aboutParagraph2: 'As a peculiar twist of fate, her youngest child, myself (Péter Pohánka), also embarked on this path, following in my dear mother\'s footsteps. After nine years in accounting, I took a detour to explore my path and find my place in the world. I returned this year enriched with a wealth of experience, ready to apply the acquired knowledge, insights, and experiences not only in accounting but also in supporting the development and complex operations of businesses for our existing and future clients.', 
+                aboutParagraph3: '"And how, exactly?" We believe the time of Creators has come, where technology is the brush, you are the Artist, and success is your Creation! Our company\'s mission is to arm the Artist with inspiration, ideas, and solutions, so their masterpiece can be truly successful. If we\'ve piqued your interest, continue to explore our website! We will be constantly expanding it with useful content, case studies, presentations, and other interesting topics we are involved in.', 
+                philosophyTitle: 'Values and Philosophy', 
+                philosophyCard1Title: 'Values and Philosophy', 
+                philosophyCard1P1: 'Our core values are expertise, reliability, customer focus, and a commitment to continuous improvement.', 
+                philosophyCard1P2: 'In our work, we combine the most modern technologies with deep industry knowledge.', 
+                philosophyCard1P3: 'We not only develop software, programs, and applications, but thanks to the support of Google\'s Artificial Intelligence, the latest technology models developed by them are at our disposal. If we intelligently integrate these into the business ecosystem, we can achieve an efficiency that not only gives us a chance for more economical operation but also provides the most valuable thing: TIME..!', 
+                philosophyCard2Title: 'Our Vision', 
+                philosophyCard2P1: 'We believe in the power of technology to improve the daily lives of businesses and open new horizons for growth. We are constantly researching innovative solutions so our clients can always stay at the forefront of market competition.',
+                philosophyCard2MovedText: 'This is also true for business: who can capture a market first? Who can first spread their product virally? Who can find out first when and what to apply for? What will be the expected HUF/Euro exchange rate? What is current consumer behavior and interest, etc...?', 
+                philosophyCard2P2: 'We will be able to incorporate these and even more amazing things into our strategy to help you achieve your set short-term and long-term goals.',
+                philosophyCard3Title: 'Our Commitment and Team', 
+                philosophyCard3P1: 'We are committed to the success of our clients. We treat every project as a partnership, working closely together to achieve the best results, ensuring transparency and mutual trust.',
+                philosophyCard3TeamIntro: "Our Expert Team:", 
+                philosophyCard3TeamP1: "Members of our expert team have several years of experience in accounting, grant writing, financing, financial and customs administration, occupational safety, and labor licensing. We have a complete licensing contact system established with the Chamber of Commerce and the plant health office. Our analytical and market research method is unique in the country. We have commercial and logistical connections with domestic and international transport companies and shipping service providers.",
+                philosophyCard3TeamP2: "We are proud of our diverse team, where the knowledge of financial experts, developers, and marketers comes together.",
+                philosophyCard3TeamP3: "We continuously train ourselves to always provide our clients with up-to-date knowledge.",
+                referencesTitle: 'Featured Projects', 
+                ref1Title: 'Project Alpha', 
                 ref1Desc: 'Custom-developed, full portal system that consolidates and manages customer databases, order statuses, and manufacturer inventory with customer demands, coordinated with logistics. Still under development, testing AI-driven automation for faster and more transparent record-keeping.',
-                ref1Link: 'Insight into the interface →',
-                ref2Title: 'User-Customizable Mobile Application',
+                ref2Title: 'Project Beta', 
                 ref2Desc: 'Main functions include planning and tracking our activities, enhanced with integrable databases (accounting data, real-time budget, cash flow and cost monitoring, inventory management, statistics generation, tailored to business needs). "Everything transparently in one place" under development... AI-based system implementation is in progress.',
                 refButton: 'Under development... beta versions will be available soon!',
                 offerTitle: 'Request for Offer',
@@ -475,45 +583,47 @@
             },
             de: {
                 navHome: 'Startseite',
+                navAbout: 'Über uns',
+                navPhilosophy: 'Unsere Werte', 
                 navServices: 'Dienstleistungen',
                 navProducts: 'Produkte',
-                navReferences: 'Referenzen',
+                navReferences: 'Ausgewählte Projekte', 
                 navOffer: 'Angebot Anfordern',
                 navContact: 'Kontakt',
                 navHomeMobile: 'Startseite',
+                navAboutMobile: 'Über uns',
+                navPhilosophyMobile: 'Unsere Werte', 
                 navServicesMobile: 'Dienstleistungen',
                 navProductsMobile: 'Produkte',
-                navReferencesMobile: 'Referenzen',
+                navReferencesMobile: 'Ausgewählte Projekte', 
                 navOfferMobile: 'Angebot Anfordern',
                 navContactMobile: 'Kontakt',
-                heroTitle: 'Innovative Lösungen für Ihr <span class="text-blue-400">Unternehmen</span>',
+                heroTitle: 'Professionelle Technologische Lösungen <span class="text-blue-400">Für Jeden</span> Personalisiert',
                 heroParagraph: 'Mit modernen Technologien und unserem Expertenteam helfen wir Ihnen, Ihre Geschäftsziele zu erreichen. Entdecken Sie, wie wir Ihr Unternehmen erfolgreich machen können!',
                 heroImageAlt: 'Startseitenbild',
-                servicesTitle: 'Unsere Dienstleistungen',
-                serviceFinancialTitle: 'Finanz-, Buchhaltungs- und Fördermittelantragsdienste', 
-                serviceFinancialDesc: 'Umfassende Buchhaltungs-, Fördermittelantragsdienste, Finanz-, Unterstützungs- und Finanzierungsberatung, zugeschnitten auf Ihre Geschäftsanforderungen.',
-                serviceResearchTitle: 'Maßgeschneiderte Forschung und Datenanalyse mit vollständiger Auswertung',
-                serviceResearchDesc: 'Benötigen Sie Einblicke in Marktanforderungen? Interessieren Sie sich für aktuelle Kundentrends oder möchten Sie ein Produkt kaufen? Unsere Forschungs- und Auswertungstechnologie findet schnell Antworten, bewertet, analysiert und dokumentiert diese für Sie.',
-                serviceMarketingTitle: 'Entwicklung von Marketing- (Werbe-) Strategien',
-                serviceMarketingDesc: 'Wenn Sie mehr Kunden gewinnen möchten, entwickeln wir Ihre Online-Präsenz, um so viele Menschen wie möglich zu erreichen.',
-                serviceWebdevTitle: 'Webentwicklung',
-                serviceWebdevDesc: 'Entwicklung moderner, responsiver Websites und Webanwendungen mit den neuesten Technologien. Vorteile: Geschwindigkeit, Sicherheit, individuelles Design.',
-                serviceMobileTitle: 'Mobile Anwendungsentwicklung',
-                serviceMobileDesc: 'Native und plattformübergreifende mobile Apps für iOS und Android. Vorteile: benutzerfreundliche Oberfläche, Push-Benachrichtigungen, Offline-Funktionalität.',
-                serviceCloudTitle: 'Cloud-basierte Lösungen, Anwendungs- und Programmentwicklung.',
-                serviceCloudDesc: 'Programme zur Unterstützung der Unternehmensführung, Datenbank- und Registerverwaltung, Projektplanungsprogramme, zugeschnitten auf die Bedürfnisse des Unternehmens.',
-                productsTitle: 'Ausgewählte Produkte',
-                product1Title: 'Projektmanagement-Software',
-                product1Desc: 'Intuitive Software für effizientes Projektmanagement, Teamarbeit und Terminverfolgung.',
-                product2Title: 'Kundenbeziehungsmanagement-Programm',
-                product2Desc: 'CRM-System für kleine und mittlere Unternehmen mit anpassbaren Modulen.',
-                product3Title: 'E-Commerce-Plattform',
-                product3Desc: 'Umfassende Lösung zur Erstellung einer automatisierten Oberfläche, die Benutzer bei kommerziellen Transaktionen, Kundenbeziehungsmanagement und Datenführung unterstützt und Bedürfnisse, Aktivitäten und Informationen zwischen Handelspartnern transparent, einfacher, effizient, schnell und genau macht.',
-                referencesTitle: 'Unsere Referenzen',
-                ref1Title: 'Entwicklung eines Unternehmensportals',
+                aboutTitle: 'Über uns', 
+                aboutParagraph1: 'Die Pohánka & Társa Kft. wurde 2009 gegründet. Unsere Geschichte begann mit einer mutigen Entscheidung: Eine Verkäuferin im Alter von 40 Jahren beschloss, während sie arbeitete und drei Kinder großzog, dass sie mehr wollte. Sie absolvierte ihre Bilanzbuchhalterprüfung und gründete die Pohánka & Társa Kft., ihr geliebtes „viertes Kind“.', 
+                aboutParagraph2: 'Wie eine besondere Laune des Schicksals trat auch ihr jüngstes Kind, ich (Péter Pohánka), in die Fußstapfen meiner lieben Mutter. Nach neun Jahren in der Buchhaltung machte ich einen Abstecher, um meinen Weg zu erkunden und meinen Platz in der Welt zu finden. Bereichert um vielfältige Erfahrungen kehrte ich dieses Jahr zurück, um das erworbene Wissen, die Erkenntnisse und Erfahrungen nicht nur in der Buchhaltung, sondern auch bei der Unterstützung der Entwicklung und komplexen Betriebsabläufe von Unternehmen für unsere bestehenden und zukünftigen Kunden einzusetzen.', 
+                aboutParagraph3: '„Und wie genau?“ Wir glauben, dass die Zeit der Schöpfer gekommen ist, in der die Technologie der Pinsel ist, Sie der Künstler sind und der Erfolg Ihre Schöpfung ist! Die Mission unseres Unternehmens ist es, den Künstler mit Inspiration, Ideen und Lösungen auszustatten, damit sein Meisterwerk wirklich erfolgreich sein kann. Wenn wir Ihr Interesse geweckt haben, erkunden Sie unsere Website weiter! Wir werden sie ständig mit nützlichen Inhalten, Fallstudien, Präsentationen und anderen interessanten Themen, mit denen wir uns beschäftigen, erweitern.', 
+                philosophyTitle: 'Werte und Philosophie', 
+                philosophyCard1Title: 'Werte und Philosophie', 
+                philosophyCard1P1: 'Unsere Grundwerte sind Fachwissen, Zuverlässigkeit, Kundenorientierung und das Engagement für kontinuierliche Verbesserung.', 
+                philosophyCard1P2: 'Bei unserer Arbeit kombinieren wir modernste Technologien mit tiefem Branchenwissen.', 
+                philosophyCard1P3: 'Wir entwickeln nicht nur Software, Programme und Anwendungen, sondern dank der Unterstützung durch die künstliche Intelligenz von Google stehen uns die von ihnen entwickelten neuesten Technologiemodelle zur Verfügung. Wenn wir diese intelligent in das Ökosystem des Unternehmens integrieren, können wir eine Effizienz erreichen, die uns nicht nur die Chance auf einen wirtschaftlicheren Betrieb gibt, sondern auch das Wertvollste liefert: ZEIT..!', 
+                philosophyCard2Title: 'Unsere Vision', 
+                philosophyCard2P1: 'Wir glauben an die Kraft der Technologie, den Alltag von Unternehmen zu verbessern und neue Wachstumshorizonte zu eröffnen. Wir erforschen ständig innovative Lösungen, damit unsere Kunden stets an der Spitze des Marktwettbewerbs bleiben können.',
+                philosophyCard2MovedText: 'Dies gilt auch für die Geschäftswelt: Wer kann einen Markt zuerst erobern? Wer kann sein Produkt zuerst viral verbreiten? Wer erfährt zuerst, wann und wofür es sich zu bewerben lohnt? Wie wird sich der HUF/Euro-Wechselkurs voraussichtlich entwickeln? Was ist das aktuelle Verbraucherverhalten und -interesse usw...?', 
+                philosophyCard2P2: 'Wir werden in der Lage sein, diese und noch erstaunlichere Dinge in unsere Strategie einzubauen, um Ihnen zu helfen, Ihre gesetzten kurz- und langfristigen Ziele zu erreichen.',
+                philosophyCard3Title: 'Unser Engagement und Team', 
+                philosophyCard3P1: 'Wir engagieren uns für den Erfolg unserer Kunden. Jedes Projekt behandeln wir als Partnerschaft und arbeiten eng zusammen, um die besten Ergebnisse zu erzielen, wobei wir Transparenz und gegenseitiges Vertrauen gewährleisten.',
+                philosophyCard3TeamIntro: "Unser Expertenteam:", 
+                philosophyCard3TeamP1: "Die Mitglieder unseres Expertenteams verfügen über mehrjährige Erfahrung in den Bereichen Buchhaltung, Fördermittelbeantragung, Finanzierung, Finanz- und Zollverwaltung, Arbeitssicherheit und Arbeitsgenehmigungen. Wir verfügen über ein komplettes Genehmigungskontaktsystem mit der Handelskammer und dem Pflanzengesundheitsamt. Unsere Analyse- und Marktforschungsmethode ist landesweit einzigartig. Wir verfügen über Handels- und Logistikverbindungen zu in- und ausländischen Transportunternehmen und Schifffahrtsdienstleistern.",
+                philosophyCard3TeamP2: "Wir sind stolz auf unser vielfältiges Team, in dem sich das Wissen von Finanzexperten, Entwicklern und Marketingfachleuten vereint.",
+                philosophyCard3TeamP3: "Wir bilden uns ständig weiter, um unseren Kunden stets aktuelles Wissen zur Verfügung stellen zu können.",
+                referencesTitle: 'Ausgewählte Projekte', 
+                ref1Title: 'Projekt Alpha', 
                 ref1Desc: 'Individuell entwickeltes, vollständiges Portalsystem, das eine Kundendatenbank und deren Bestellstatus sowie den Lagerbestand der Hersteller konsolidiert und mit den Kundenanforderungen verwaltet, koordiniert mit der Logistik. Noch in Entwicklung, Testen der KI-gesteuerten Automatisierung für eine schnellere und transparentere Datenführung.',
-                ref1Link: 'Einblick in die Benutzeroberfläche →',
-                ref2Title: 'Benutzerdefinierbare mobile Anwendung',
+                ref2Title: 'Projekt Beta', 
                 ref2Desc: 'Hauptfunktionen umfassen die Planung und Verfolgung unserer Aktivitäten, erweitert um integrierbare Datenbanken (Buchhaltungsdaten, Echtzeitbudget, Cashflow- und Kostenüberwachung, Bestandsverwaltung, Statistikerstellung, zugeschnitten auf Geschäftsanforderungen). "Alles transparent an einem Ort" in Entwicklung... Die Implementierung eines KI-basierten Systems ist im Gange.',
                 refButton: 'In Entwicklung... Beta-Versionen werden bald verfügbar sein!',
                 offerTitle: 'Angebotsanfrage',
@@ -537,108 +647,209 @@
             }
         };
 
-        // Nyelvváltó funkció
+        function showCustomAlert(message, type = 'info') {
+            const modal = document.getElementById('customAlertModal');
+            const alertBox = document.getElementById('customAlertBox');
+            const titleElement = document.getElementById('customAlertTitle');
+            const messageElement = document.getElementById('customAlertMessage');
+            const okButton = document.getElementById('customAlertOkButton');
+            const closeButton = document.getElementById('customAlertCloseButton');
+
+            messageElement.textContent = message;
+            alertBox.classList.remove('border-blue-500', 'border-green-500', 'border-red-500', 'border-l-4'); 
+            if (type === 'success') {
+                titleElement.textContent = 'Siker!';
+                alertBox.classList.add('border-l-4', 'border-green-500');
+            } else if (type === 'error') {
+                titleElement.textContent = 'Hiba!';
+                alertBox.classList.add('border-l-4', 'border-red-500');
+            } else {
+                titleElement.textContent = 'Értesítés';
+                 alertBox.classList.add('border-l-4', 'border-blue-500');
+            }
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                alertBox.classList.remove('scale-95', 'opacity-0');
+                alertBox.classList.add('scale-100', 'opacity-100');
+            }, 10); 
+
+            const closeAlert = () => {
+                alertBox.classList.remove('scale-100', 'opacity-100');
+                alertBox.classList.add('scale-95', 'opacity-0');
+                modal.classList.add('opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300); 
+            };
+
+            okButton.onclick = closeAlert;
+            closeButton.onclick = closeAlert;
+            modal.onclick = (event) => {
+                if (event.target === modal) { 
+                    closeAlert();
+                }
+            };
+        }
+
         function switchLanguage(lang) {
+            console.log(`[LangSwitch] Attempting to switch to: ${lang}`);
             if (translations[lang]) {
                 document.querySelectorAll('[data-translate-key]').forEach(element => {
                     const key = element.getAttribute('data-translate-key');
-                    if (translations[lang][key]) {
-                        if (element.tagName === 'IMG' && element.hasAttribute('data-alt-hu')) { // Kép alt textjének fordítása
-                            element.alt = translations[lang][key]; 
-                        } else if (key === 'heroTitle' || key === 'footerInspiration') { // HTML-t tartalmazó elemek fordítása
-                             element.innerHTML = translations[lang][key];
+                    // console.log(`[LangSwitch] Processing element with key: ${key}`);
+                    if (translations[lang][key] !== undefined) {
+                        const translationText = translations[lang][key];
+                        // console.log(`[LangSwitch] Found translation for ${key} in ${lang}: "${translationText.substring(0, 50)}..."`);
+
+                        const useInnerHTML = 
+                            key === 'heroTitle' ||
+                            key === 'footerInspiration' ||
+                            key === 'heroParagraph' ||
+                            key.startsWith('aboutParagraph') ||
+                            key.startsWith('philosophyCard1P') ||
+                            key.startsWith('philosophyCard2P') || 
+                            key === 'philosophyCard2MovedText' ||
+                            key.startsWith('philosophyCard3P') ||
+                            key.startsWith('philosophyCard3Team') ||
+                            key.endsWith('Desc') || // Catches all ...Desc keys
+                            key.startsWith('teamP') || // For team paragraphs
+                            key.startsWith('whyUsP');  // For why us paragraphs
+                        
+                        if (element.tagName === 'IMG' && key === 'heroImageAlt') {
+                             // console.log(`[LangSwitch] Setting alt for heroImageAlt: ${translationText}`);
+                             element.alt = translationText;
+                        } else if (element.tagName === 'IMG') { 
+                             // console.log(`[LangSwitch] Setting alt for ${key}: ${translationText || element.alt}`);
+                             element.alt = translationText || element.alt;
+                        } else if (useInnerHTML) {
+                            // console.log(`[LangSwitch] Using innerHTML for ${key}`);
+                            element.innerHTML = translationText;
                         } else {
-                            element.textContent = translations[lang][key];
+                            // console.log(`[LangSwitch] Using textContent for ${key}`);
+                            element.textContent = translationText;
                         }
+                    } else {
+                        console.warn(`[LangSwitch] No translation found for key: "${key}" in language: "${lang}"`);
                     }
                 });
-                document.documentElement.lang = lang; // HTML lang attribútum frissítése
-                localStorage.setItem('selectedLanguage', lang); // Kiválasztott nyelv mentése
+                document.documentElement.lang = lang; 
+                localStorage.setItem('selectedLanguage', lang); 
+                console.log(`[LangSwitch] Language set to: ${lang} and saved to localStorage.`);
 
-                // Aktív nyelv gomb stílusának frissítése
                 document.querySelectorAll('.language-link').forEach(link => {
                     link.classList.remove('active-lang');
                     if (link.getAttribute('onclick') === `switchLanguage('${lang}')`) {
                         link.classList.add('active-lang');
                     }
                 });
+                
+                document.querySelectorAll('img[onerror*="placehold.co"]').forEach(img => {
+                    const currentLang = localStorage.getItem('selectedLanguage') || 'hu';
+                    const altAttributeName = `data-alt-${currentLang}`; 
+                    const translateKey = img.getAttribute('data-translate-key'); 
+
+                    if (img.hasAttribute(altAttributeName)) { 
+                         img.alt = img.getAttribute(altAttributeName);
+                    } else if (translateKey && translations[currentLang] && translations[currentLang][translateKey]) { 
+                        if (translateKey !== 'heroImageAlt') { // heroImageAlt is handled above
+                           img.alt = translations[currentLang][translateKey];
+                        }
+                    }
+                });
             } else {
-                console.error(`Language ${lang} not found in translations.`);
+                console.error(`[LangSwitch] Language pack for "${lang}" not found in translations object.`);
             }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Mentett nyelv betöltése vagy alapértelmezett magyar
             const savedLanguage = localStorage.getItem('selectedLanguage') || 'hu';
-            switchLanguage(savedLanguage);
+            switchLanguage(savedLanguage); 
 
-            // Aktuális év beállítása a láblécben
             document.getElementById('currentYear').textContent = new Date().getFullYear();
-            
-            // Mobil menü kezelése
+
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            const navLinksDesktop = document.getElementById('nav-links-desktop'); // Asztali nav linkek konténere
+            const navLinksDesktop = document.getElementById('nav-links-desktop'); 
 
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
 
-            // Navigációs linkek aktív állapotának kezelése görgetéskor
-            const sections = document.querySelectorAll('section[id]');
-            const allNavLinks = document.querySelectorAll('#nav-links-desktop a, #mobile-menu a'); // Minden nav link (asztali és mobil)
+            const sections = document.querySelectorAll('main section[id]');
+            const allNavLinks = document.querySelectorAll('#nav-links-desktop a, #mobile-menu a');
 
             function changeLinkState() {
                 let index = sections.length;
-                // Megkeresi az aktuálisan látható szekciót
-                while(--index >= 0 && sections[index] && window.scrollY + 100 < sections[index].offsetTop) {} 
-                
-                // Minden linkről eltávolítja az aktív állapotot
+                const offset = window.innerHeight * 0.4; 
+
+                while(--index >= 0 && sections[index] && window.scrollY + offset < sections[index].offsetTop) {}
+
                 allNavLinks.forEach((link) => {
-                    if (!link.classList.contains('language-link')) { // Nyelvválasztó linkeket kihagyja
+                    if (!link.classList.contains('language-link')) { 
                         link.classList.remove('nav-link-active');
                     }
                 });
-                
+
                 const activeSectionId = (index >= 0 && sections[index]) ? sections[index].id : null;
 
                 if (activeSectionId) {
-                    const desktopLink = navLinksDesktop.querySelector(`a[href="#${activeSectionId}"]`); 
-                    if (desktopLink) {
-                         desktopLink.classList.add('nav-link-active');
-                    }
-                    if (mobileMenu) { // Ellenőrizzük, hogy a mobil menü létezik-e
-                        const mobileLink = mobileMenu.querySelector(`a[href="#${activeSectionId}"]`); 
-                        if (mobileLink) {
-                            mobileLink.classList.add('nav-link-active'); 
+                    if (navLinksDesktop) {
+                        const desktopLink = navLinksDesktop.querySelector(`a[href="#${activeSectionId}"]`);
+                        if (desktopLink) {
+                             desktopLink.classList.add('nav-link-active');
                         }
                     }
-                } else if (sections.length > 0 && sections[0]) { // Ha nincs aktív szekció (pl. oldal tetején), az első legyen aktív
-                    const firstSectionId = sections[0].id;
-                    const desktopLink = navLinksDesktop.querySelector(`a[href="#${firstSectionId}"]`);
-                    if (desktopLink) {
-                         desktopLink.classList.add('nav-link-active');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) { 
+                        const mobileLink = mobileMenu.querySelector(`a[href="#${activeSectionId}"]`);
+                        if (mobileLink) {
+                            mobileMenu.querySelectorAll('a').forEach(ml => ml.classList.remove('nav-link-active'));
+                            mobileLink.classList.add('nav-link-active');
+                        }
                     }
-                     if (mobileMenu) { // Ellenőrizzük, hogy a mobil menü létezik-e
+                } else if (sections.length > 0 && sections[0]) { 
+                    const firstSectionId = sections[0].id;
+                    if (navLinksDesktop) {
+                        const desktopLink = navLinksDesktop.querySelector(`a[href="#${firstSectionId}"]`);
+                        if (desktopLink) {
+                            desktopLink.classList.add('nav-link-active');
+                        }
+                    }
+                     if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                         const mobileLink = mobileMenu.querySelector(`a[href="#${firstSectionId}"]`);
                         if (mobileLink) {
+                             mobileMenu.querySelectorAll('a').forEach(ml => ml.classList.remove('nav-link-active'));
                             mobileLink.classList.add('nav-link-active');
                         }
                     }
                 }
             }
-            changeLinkState(); // Kezdeti állapot beállítása
-            window.addEventListener('scroll', changeLinkState); // Figyeli a görgetést
+            if (sections.length > 0) {
+                changeLinkState(); 
+                window.addEventListener('scroll', changeLinkState); 
+            }
 
-            // Mobil menü linkjeire kattintva bezárja a menüt és frissíti az aktív linket
-            if (mobileMenu) { // Ellenőrizzük, hogy a mobil menü létezik-e
+            if (mobileMenu) {
                 mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
+                    link.addEventListener('click', (e) => {
+                        const targetId = link.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
                         mobileMenu.classList.add('hidden');
-                        setTimeout(changeLinkState, 0); // Kis késleltetés, hogy a görgetés befejeződjön
+                        setTimeout(() => {
+                            changeLinkState();
+                        }, 50); 
                     });
                 });
             }
+
+            document.querySelectorAll('img[onerror], video[onerror]').forEach(media => {
+                media.addEventListener('error', function() {
+                    console.warn(`Hiba a médiafájl betöltésekor: ${this.src || this.currentSrc}`);
+                });
+            });
         });
     </script>
 </body>
