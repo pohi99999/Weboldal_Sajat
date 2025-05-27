@@ -353,7 +353,9 @@
                             <img src="p2.jpg" alt="P2 Projekt Referencia Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md" onerror="this.alt='Referencia kép nem tölthető be'; this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=Projekt+Béta';">
                             <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref2Title">Projekt Béta</h3>
                             <p class="text-gray-400 mb-4" data-translate-key="ref2Desc">Fő funkciói a tevékenységünk megtervezése, nyomon követesé, integrálható adatbázisokkal bővítve (könyvelési adatok, pillanatnyi költségvetés, pénzeszköz és költség mozgás ellenőrzése, készletnyilvántartás felügyelete, statisztikák készítése, vállalkozás igényeire szabva. "Minden egy helyen átláthatóan" fejlesztés alatt.. a MI alapú rendszer bevezetésének fejlesztése folyik.</p>
-                            <div class="mt-auto pt-4"> <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Flutter</span>
+                            <img src="Beta_teszt.gif" alt="Projekt Béta animáció" class="w-full h-auto rounded-md my-4 shadow-md" onerror="this.alt='Béta teszt GIF nem tölthető be'; this.src='https://placehold.co/600x300/1F2937/9CA3AF?text=Béta+GIF';">
+                            <div class="mt-auto pt-4"> 
+                                <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Flutter</span>
                                 <span class="inline-block bg-orange-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Firebase Auth</span>
                                 <span class="inline-block bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Realtime Database</span>
                             </div>
@@ -526,7 +528,7 @@
                 philosophyCard3TeamP1: "Szakértő csapatunk tagjai több éves tapasztalattal rendelkeznek a könyviteli, pályázatírási, finanszírozási, pénzügyi, vám ügyintézés, munkavédelmi, munkaügyi engedélyezés területén, komplett engedélyezési kapcsolat rendszerünk van kiépítve az iparkamarával és a növényegészségügyi hivatallal egyaránt. Elemző, és piackutató módszerünk egyedülálló az országban. Kereskedelmi és logisztikai kapcsolatunk van hazai, és nemzetközi fuvarozó cégekkel és hajózási szállítási szolgáltatókkal.",
                 philosophyCard3TeamP2: "Büszkék vagyunk sokszínű csapatunkra, ahol a pénzügyi szakemberek, fejlesztők és marketingesek tudása összeadódik.",
                 philosophyCard3TeamP3: "Folyamatosan képezzük magunkat, hogy mindig naprakész tudással álljunk ügyfeleink rendelkezésére.",
-                servicesTitle: 'Szolgáltatási Csomagjaink', // MÓDOSÍTVA
+                servicesTitle: 'Szolgáltatási Csomagjaink', 
                 package1Title: 'Könyvelési, pályázatírási szolgáltatások csomag',
                 package1Desc: 'Teljeskörű pénzügyi megoldások vállalkozása számára.',
                 package2Title: 'Vállalkozás fejlesztés digitális eszközökkel és tanácsadással',
@@ -608,7 +610,7 @@
                 philosophyCard3TeamP1: "Members of our expert team have several years of experience in accounting, grant writing, financing, financial and customs administration, occupational safety, and labor licensing. We have a complete licensing contact system established with the Chamber of Commerce and the plant health office. Our analytical and market research method is unique in the country. We have commercial and logistical connections with domestic and international transport companies and shipping service providers.",
                 philosophyCard3TeamP2: "We are proud of our diverse team, where the knowledge of financial experts, developers, and marketers comes together.",
                 philosophyCard3TeamP3: "We continuously train ourselves to always provide our clients with up-to-date knowledge.",
-                servicesTitle: 'Our Service Packages', // MODIFIED
+                servicesTitle: 'Our Service Packages', 
                 package1Title: 'Accounting, Grant Writing Services Package',
                 package1Desc: 'Comprehensive financial solutions for your business.',
                 package2Title: 'Business Development with Digital Tools and Consulting',
@@ -689,7 +691,7 @@
                 philosophyCard3TeamP1: "Die Mitglieder unseres Expertenteams verfügen über mehrjährige Erfahrung in den Bereichen Buchhaltung, Fördermittelbeantragung, Finanzierung, Finanz- und Zollverwaltung, Arbeitssicherheit und Arbeitsgenehmigungen. Wir verfügen über ein komplettes Genehmigungskontaktsystem mit der Handelskammer und dem Pflanzengesundheitsamt. Unsere Analyse- und Marktforschungsmethode ist landesweit einzigartig. Wir verfügen über Handels- und Logistikverbindungen zu in- und ausländischen Transportunternehmen und Schifffahrtsdienstleistern.",
                 philosophyCard3TeamP2: "Wir sind stolz auf unser vielfältiges Team, in dem sich das Wissen von Finanzexperten, Entwicklern und Marketingfachleuten vereint.",
                 philosophyCard3TeamP3: "Wir bilden uns ständig weiter, um unseren Kunden stets aktuelles Wissen zur Verfügung stellen zu können.",
-                servicesTitle: 'Unsere Leistungspakete', // MODIFIZIERT
+                servicesTitle: 'Unsere Leistungspakete', 
                 package1Title: 'Paket für Buchhaltung und Fördermittelanträge',
                 package1Desc: 'Umfassende Finanzlösungen für Ihr Unternehmen.',
                 package2Title: 'Unternehmensentwicklung mit digitalen Werkzeugen und Beratung',
@@ -802,7 +804,7 @@
                             key.endsWith('Desc') || 
                             key.startsWith('teamP') || 
                             key.startsWith('whyUsP') ||
-                            key === 'package2SubTitle'; // Új kulcs az alcímhez
+                            key === 'package2SubTitle';
                         
                         if (element.tagName === 'IMG' && key === 'heroImageAlt') {
                              element.alt = translationText;
