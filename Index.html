@@ -311,8 +311,8 @@
                                 <source src="alfa.mp4" type="video/mp4" onerror="this.parentElement.innerHTML = 'Videó hiba: Az alfa.mp4 nem tölthető be.';">
                                 A böngésződ nem támogatja a HTML5 videó lejátszást.
                             </video>
-                            <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="product1Title">Projektmenedzser Szoftver</h3>
-                            <p class="text-gray-400 text-sm mb-3" data-translate-key="product1Desc">Intuitív szoftver a projektek hatékony kezeléséhez, csapatmunkához és határidők követéséhez.</p>
+                            <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="product1Title">Tervezési, Projektfeladatokat Segítő Szoftverek</h3>
+                            <p class="text-gray-400 text-sm mb-3" data-translate-key="product1Desc">Intuitív szoftverek a projektek hatékony kezeléséhez, csapatmunkához és határidők követéséhez.</p>
                         </div>
                         <div class="dev-inspired-card p-6 rounded-lg shadow-xl overflow-hidden">
                             <video autoplay loop muted playsinline class="product-video" poster="https://placehold.co/600x400/1F2937/374151?text=Videó+előkép">
@@ -367,6 +367,15 @@
                 </div>
             </section>
 
+            <section id="blog" class="py-16 md:py-24 bg-slate-800/90">
+                <div class="container mx-auto px-6">
+                    <h2 class="section-title" data-translate-key="blogTitle">Blog bejegyzések, Esettanulmányok, Segédanyagok, Ötletelések, Hasznos linkek</h2>
+                    <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl">
+                        <p class="text-gray-300 text-center" data-translate-key="blogContentPlaceholder">Hamarosan érkeznek ide a legfrissebb blog bejegyzések, érdekes esettanulmányok, hasznos segédanyagok és inspiráló ötletek. Látogass vissza később!</p>
+                        </div>
+                </div>
+            </section>
+
             <section id="offer" class="py-16 md:py-24 bg-slate-800/90">
                 <div class="container mx-auto px-6">
                     <h2 class="section-title" data-translate-key="offerTitle">Ajánlatkérés</h2>
@@ -401,6 +410,14 @@
                 </div>
             </section>
 
+            <section id="awards" class="py-16 md:py-24 bg-gray-900/90"> <div class="container mx-auto px-6">
+                    <h2 class="section-title" data-translate-key="awardsTitle">Elismerések, Eredmények</h2>
+                    <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl">
+                        <p class="text-gray-300 text-center" data-translate-key="awardsContentPlaceholder">Büszkék vagyunk eddigi elismeréseinkre és eredményeinkre. Hamarosan itt részletezzük őket!</p>
+                        </div>
+                </div>
+            </section>
+
             <section id="contact" class="py-16 md:py-24 bg-gray-900/90">
                 <div class="container mx-auto px-6">
                     <h2 class="section-title" data-translate-key="contactTitle">Kapcsolat</h2>
@@ -423,7 +440,7 @@
                                 </div>
                                 <div class="contact-info-item mt-6">
                                     <strong class="text-lg" data-translate-key="contactPhones">Telefonszámok:</strong>
-                                    <p class="leading-relaxed">+36 30 429 1227 (Pohánka József Péter - Cégvezető)</p>
+                                    <p class="leading-relaxed">+36 30 429 1227, +36 30 244 6779 (Pohánka József Péter - Cégvezető)</p>
                                     <p class="leading-relaxed">+36 20 485 5420 (Pohánka Józsefné - Tulajdonos, könyvelési és pénzügyi vezető)</p>
                                     <p class="leading-relaxed">+36 20 471 8600 (Kocsis Ivett - Pályázati szakértő)</p>
                                 </div>
@@ -551,6 +568,8 @@
                 ref2Title: 'GP-Pilot', 
                 ref2Desc: 'Fő funkciói a tevékenységünk megtervezése, nyomon követesé, integrálható adatbázisokkal bővítve (könyvelési adatok, pillanatnyi költségvetés, pénzeszköz és költség mozgás ellenőrzése, készletnyilvántartás felügyelete, statisztikák készítése, vállalkozás igényeire szabva. "Minden egy helyen átláthatóan" fejlesztés alatt.. a MI alapú rendszer bevezetésének fejlesztése folyik.',
                 refButton: 'Fejlesztés alatt.. a béta verziók hamarosan elérhetőek lesznek!',
+                blogTitle: "Blog bejegyzések, Esettanulmányok, Segédanyagok, Ötletelések, Hasznos linkek", 
+                blogContentPlaceholder: "Hamarosan érkeznek ide a legfrissebb blog bejegyzések, érdekes esettanulmányok, hasznos segédanyagok és inspiráló ötletek. Látogass vissza később!", 
                 offerTitle: 'Ajánlatkérés',
                 offerSubTitle: 'Kérdése van, vagy ajánlatot szeretne kérni? Töltse ki az alábbi űrlapot, és hamarosan felvesszük Önnel a kapcsolatot!',
                 formName: 'Teljes Név',
@@ -558,6 +577,8 @@
                 formSubject: 'Tárgy',
                 formMessage: 'Üzenet',
                 formSend: 'Üzenet Küldése',
+                awardsTitle: "Elismerések, Eredmények", // ÚJ
+                awardsContentPlaceholder: "Büszkék vagyunk eddigi elismeréseinkre és eredményeinkre. Hamarosan itt részletezzük őket!", // ÚJ
                 contactTitle: 'Kapcsolat',
                 contactHQ: 'Székhely:',
                 contactOffice: 'Irodánk címe (térképen):',
@@ -633,6 +654,8 @@
                 ref2Title: 'GP-Pilot', 
                 ref2Desc: 'Main functions include planning and tracking our activities, enhanced with integrable databases (accounting data, real-time budget, cash flow and cost monitoring, inventory management, statistics generation, tailored to business needs). "Everything transparently in one place" under development... AI-based system implementation is in progress.',
                 refButton: 'Under development... beta versions will be available soon!',
+                blogTitle: "Blog Posts, Case Studies, Resources, Brainstorming, Useful Links", 
+                blogContentPlaceholder: "The latest blog posts, interesting case studies, useful resources, and inspiring ideas will be here soon. Visit back later!", 
                 offerTitle: 'Request for Offer',
                 offerSubTitle: 'Have a question or want to request an offer? Fill out the form below, and we will contact you soon!',
                 formName: 'Full Name',
@@ -640,6 +663,8 @@
                 formSubject: 'Subject',
                 formMessage: 'Message',
                 formSend: 'Send Message',
+                awardsTitle: "Awards, Achievements", // NEW
+                awardsContentPlaceholder: "We are proud of our awards and achievements so far. We will detail them here soon!", // NEW
                 contactTitle: 'Contact',
                 contactHQ: 'Headquarters:',
                 contactOffice: 'Our Office (on map):',
@@ -714,6 +739,8 @@
                 ref2Title: 'GP-Pilot', 
                 ref2Desc: 'Hauptfunktionen umfassen die Planung und Verfolgung unserer Aktivitäten, erweitert um integrierbare Datenbanken (Buchhaltungsdaten, Echtzeitbudget, Cashflow- und Kostenüberwachung, Bestandsverwaltung, Statistikerstellung, zugeschnitten auf Geschäftsanforderungen). "Alles transparent an einem Ort" in Entwicklung... Die Implementierung eines KI-basierten Systems ist im Gange.',
                 refButton: 'In Entwicklung... Beta-Versionen werden bald verfügbar sein!',
+                blogTitle: "Blog-Beiträge, Fallstudien, Materialien, Brainstorming, Nützliche Links", 
+                blogContentPlaceholder: "Die neuesten Blog-Beiträge, interessante Fallstudien, nützliche Materialien und inspirierende Ideen finden Sie bald hier. Besuchen Sie uns später wieder!", 
                 offerTitle: 'Angebotsanfrage',
                 offerSubTitle: 'Haben Sie eine Frage oder möchten Sie ein Angebot anfordern? Füllen Sie das folgende Formular aus, und wir werden uns bald mit Ihnen in Verbindung setzen!',
                 formName: 'Vollständiger Name',
@@ -721,6 +748,8 @@
                 formSubject: 'Betreff',
                 formMessage: 'Nachricht',
                 formSend: 'Nachricht Senden',
+                awardsTitle: "Auszeichnungen, Erfolge", // NEW
+                awardsContentPlaceholder: "Wir sind stolz auf unsere bisherigen Auszeichnungen und Erfolge. Wir werden sie hier bald detailliert beschreiben!", // NEW
                 contactTitle: 'Kontakt',
                 contactHQ: 'Hauptsitz:',
                 contactOffice: 'Unser Büro (auf der Karte):',
@@ -804,7 +833,9 @@
                             key.endsWith('Desc') || 
                             key.startsWith('teamP') || 
                             key.startsWith('whyUsP') ||
-                            key === 'package2SubTitle';
+                            key === 'package2SubTitle' ||
+                            key === 'blogContentPlaceholder' || // Új kulcsok az innerHTML-hez
+                            key === 'awardsContentPlaceholder';  // Új kulcsok az innerHTML-hez
                         
                         if (element.tagName === 'IMG' && key === 'heroImageAlt') {
                              element.alt = translationText;
