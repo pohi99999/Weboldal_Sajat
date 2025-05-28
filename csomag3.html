@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alapozza meg üzleti döntéseit szakértői kutatással, elemzéssel és kiértékeléssel! Fedezze fel piaci lehetőségeit a Pohánka Kft. segítségével." data-translate-meta-description="package3MetaDesc">
     <title>Kutatás, Elemzés és Kiértékelés - Pohánka És Társa Kft.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,6 +98,7 @@
         const detailTranslations = {
             hu: {
                 navBackToServices: 'Vissza a Szolgáltatásokhoz',
+                package3MetaDesc: 'Alapozza meg üzleti döntéseit szakértői kutatással, elemzéssel és kiértékeléssel! Fedezze fel piaci lehetőségeit a Pohánka Kft. segítségével.',
                 package3DetailTitle: 'Kutatás, Elemzés és Kiértékelés Szolgáltatások Részletei',
                 package3DetailP1: 'Alapozza meg üzleti döntéseit megbízható adatokkal és szakértői elemzésekkel! Kutatási és kiértékelési csomagunkkal segítünk feltárni a piaci lehetőségeket, megérteni ügyfelei igényeit és optimalizálni stratégiáját.',
                 package3WhatIncludes: 'Mit tartalmaz a csomag?',
@@ -113,6 +115,7 @@
             },
             en: {
                 navBackToServices: 'Back to Services',
+                package3MetaDesc: 'Base your business decisions on expert research, analysis, and evaluation! Discover your market opportunities with the help of Pohánka Kft.!',
                 package3DetailTitle: 'Details of Research, Analysis, and Evaluation Services',
                 package3DetailP1: 'Base your business decisions on reliable data and expert analysis! Our research and evaluation package helps you explore market opportunities, understand customer needs, and optimize your strategy.',
                 package3WhatIncludes: 'What does the package include?',
@@ -129,6 +132,7 @@
             },
             de: {
                 navBackToServices: 'Zurück zu den Dienstleistungen',
+                package3MetaDesc: 'Stützen Sie Ihre Geschäftsentscheidungen auf Expertenforschung, -analyse und -bewertung! Entdecken Sie Ihre Marktchancen mit Hilfe von Pohánka Kft.!',
                 package3DetailTitle: 'Details zu Forschungs-, Analyse- und Bewertungsdiensten',
                 package3DetailP1: 'Stützen Sie Ihre Geschäftsentscheidungen auf zuverlässige Daten und Expertenanalysen! Unser Forschungs- und Bewertungspaket hilft Ihnen, Marktchancen zu erkunden, Kundenbedürfnisse zu verstehen und Ihre Strategie zu optimieren.',
                 package3WhatIncludes: 'Was beinhaltet das Paket?',
@@ -156,6 +160,16 @@
                          console.warn(`[DetailLangSwitch] No translation for key: ${key} in ${lang}`);
                     }
                 });
+                
+                const metaDescElement = document.querySelector('meta[name="description"]');
+                const metaDescKey = metaDescElement ? metaDescElement.getAttribute('data-translate-meta-description') : null;
+                if (metaDescElement && metaDescKey && detailTranslations[lang][metaDescKey]) {
+                    metaDescElement.setAttribute('content', detailTranslations[lang][metaDescKey]);
+                    console.log(`[DetailLangSwitch] Meta description updated for ${lang}`);
+                } else if (metaDescKey) {
+                    console.warn(`[DetailLangSwitch] No meta description translation for key: ${metaDescKey} in ${lang}`);
+                }
+
                 document.documentElement.lang = lang;
                 localStorage.setItem('selectedLanguage', lang); 
                 console.log(`[DetailLangSwitch] Detail page language set to: ${lang}`);

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teljes körű könyvelési szolgáltatások és sikeres pályázatírás egy helyen. Bízza ránk pénzügyeit és pályázatait a Pohánka Kft.-nél!" data-translate-meta-description="package1MetaDesc">
     <title>Könyvelési, Pályázatírási Szolgáltatások - Pohánka És Társa Kft.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,14 +25,21 @@
             display: inline-block;
             margin-top: 2rem;
             margin-bottom: 1rem;
-            color: #60A5FA; /* Tailwind blue-400 */
-            font-weight: 500; /* Tailwind font-medium */
+            color: #60A5FA; 
+            font-weight: 500; 
             text-decoration: none;
             transition: color 0.2s ease-in-out;
         }
         .back-link:hover {
-            color: #3B82F6; /* Tailwind blue-500 */
+            color: #3B82F6; 
             text-decoration: underline;
+        }
+        .prose-custom ul {
+            list-style-type: disc;
+            padding-left: 1.5rem; 
+        }
+        .prose-custom ul li {
+            padding-left: 0.5rem; 
         }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17050054168"></script>
@@ -43,10 +51,10 @@
     </script>
     <script>
       gtag('event', 'conversion', {
-          'send_to': 'AW-17050054168/bqv8CJHRzc0aEJjcjMI_', // Ellenőrizd, hogy ez az azonosító megfelelő-e, vagy van-e külön az aloldalakra
+          'send_to': 'AW-17050054168/bqv8CJHRzc0aEJjcjMI_', 
           'value': 1.0,
           'currency': 'HUF',
-          'page_path': '/csomag1.html' // Opcionális: oldal elérési útjának megadása
+          'page_path': '/csomag1.html' 
       });
     </script>
 </head>
@@ -72,7 +80,7 @@
                     <h1 class="section-title mb-8" data-translate-key="package1DetailTitle">Könyvelési, Pályázatírási Szolgáltatások Részletei</h1>
                     
                     <div class="dev-inspired-card p-6 md:p-10 rounded-lg shadow-2xl">
-                        <div class="prose prose-invert max-w-none text-gray-300 space-y-4">
+                        <div class="prose-custom prose-invert max-w-none text-gray-300 space-y-4">
                             <p data-translate-key="package1DetailP1">
                                 Itt részletezheted a könyvelési és pályázatírási szolgáltatások csomagjának tartalmát. Például:
                             </p>
@@ -85,7 +93,7 @@
                                 <li data-translate-key="package1DetailItem6">Pénzügyi tanácsadás, adóoptimalizálás.</li>
                                 <li data-translate-key="package1DetailItem7">Képviselet hatóságok előtt.</li>
                             </ul>
-                            </div>
+                        </div>
                     </div>
                     <div class="text-center mt-8">
                         <a href="index.html#offer" class="dev-inspired-button px-8 py-3 rounded-lg text-lg inline-block" data-translate-key="requestOfferButton">Ajánlatkérés erre a csomagra</a>
@@ -104,10 +112,10 @@
     </div>
 
     <script>
-        // Alapvető fordítások az új oldalhoz
         const detailTranslations = {
             hu: {
                 navBackToServices: 'Vissza a Szolgáltatásokhoz',
+                package1MetaDesc: 'Teljes körű könyvelési szolgáltatások és sikeres pályázatírás egy helyen. Bízza ránk pénzügyeit és pályázatait a Pohánka Kft.-nél!',
                 package1DetailTitle: 'Könyvelési, Pályázatírási Szolgáltatások Részletei',
                 package1DetailP1: 'Itt részletezheted a könyvelési és pályázatírási szolgáltatások csomagjának tartalmát. Például:',
                 package1DetailItem1: 'Teljes körű könyvelés (analitikus és szintetikus).',
@@ -122,6 +130,7 @@
             },
             en: {
                 navBackToServices: 'Back to Services',
+                package1MetaDesc: 'Comprehensive accounting services and successful grant writing in one place. Entrust your finances and applications to Pohánka Kft.!',
                 package1DetailTitle: 'Details of Accounting and Grant Writing Services',
                 package1DetailP1: 'Here you can detail the contents of the accounting and grant writing services package. For example:',
                 package1DetailItem1: 'Full accounting services (analytical and synthetic).',
@@ -136,6 +145,7 @@
             },
             de: {
                 navBackToServices: 'Zurück zu den Dienstleistungen',
+                package1MetaDesc: 'Umfassende Buchhaltungsdienstleistungen und erfolgreiche Fördermittelanträge aus einer Hand. Vertrauen Sie Ihre Finanzen und Anträge Pohánka Kft. an!',
                 package1DetailTitle: 'Details zu Buchhaltungs- und Fördermittelantragsdiensten',
                 package1DetailP1: 'Hier können Sie den Inhalt des Pakets für Buchhaltungs- und Fördermittelantragsdienste detailliert beschreiben. Zum Beispiel:',
                 package1DetailItem1: 'Vollständige Buchhaltungsdienstleistungen (analytisch und synthetisch).',
@@ -156,13 +166,23 @@
                 document.querySelectorAll('[data-translate-key]').forEach(element => {
                     const key = element.getAttribute('data-translate-key');
                     if (detailTranslations[lang][key] !== undefined) {
-                        element.textContent = detailTranslations[lang][key];
+                        element.innerHTML = detailTranslations[lang][key];
                     } else {
                          console.warn(`[DetailLangSwitch] No translation for key: ${key} in ${lang}`);
                     }
                 });
+                
+                const metaDescElement = document.querySelector('meta[name="description"]');
+                const metaDescKey = metaDescElement ? metaDescElement.getAttribute('data-translate-meta-description') : null;
+                if (metaDescElement && metaDescKey && detailTranslations[lang][metaDescKey]) {
+                    metaDescElement.setAttribute('content', detailTranslations[lang][metaDescKey]);
+                    console.log(`[DetailLangSwitch] Meta description updated for ${lang}`);
+                } else if (metaDescKey) {
+                    console.warn(`[DetailLangSwitch] No meta description translation for key: ${metaDescKey} in ${lang}`);
+                }
+
                 document.documentElement.lang = lang;
-                localStorage.setItem('selectedLanguage', lang); // A főoldal nyelvét is frissítjük, ha itt vált
+                localStorage.setItem('selectedLanguage', lang); 
                 console.log(`[DetailLangSwitch] Detail page language set to: ${lang}`);
             } else {
                  console.error(`[DetailLangSwitch] Language pack for "${lang}" not found.`);

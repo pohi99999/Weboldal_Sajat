@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Egyedi szoftverfejlesztés vállalkozása speciális igényeire szabva. Megbízható, hatékony és skálázható programok a Pohánka Kft.-től." data-translate-meta-description="package5MetaDesc">
     <title>Egyedi Programfejlesztés - Pohánka És Társa Kft.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,6 +101,7 @@
         const detailTranslations = {
             hu: {
                 navBackToServices: 'Vissza a Szolgáltatásokhoz',
+                package5MetaDesc: 'Egyedi szoftverfejlesztés vállalkozása speciális igényeire szabva. Megbízható, hatékony és skálázható programok a Pohánka Kft.-től.',
                 package5DetailTitle: 'Egyedi Programfejlesztési Szolgáltatások Részletei',
                 package5DetailP1: 'Amikor a dobozos szoftverek nem nyújtanak megfelelő megoldást, egyedi programfejlesztési szolgáltatásunkkal segítünk megvalósítani specifikus üzleti igényeit. Legyen szó komplex vállalati rendszerről vagy egyedi funkcionalitású asztali alkalmazásról, szakértő csapatunk készen áll a kihívásra.',
                 package5WhatIncludes: 'Mit foglal magában ez a csomag?',
@@ -119,6 +121,7 @@
             },
             en: {
                 navBackToServices: 'Back to Services',
+                package5MetaDesc: 'Custom software development tailored to your business\'s specific needs. Reliable, efficient, and scalable programs from Pohánka Kft.!',
                 package5DetailTitle: 'Details of Custom Program Development Services',
                 package5DetailP1: 'When off-the-shelf software doesn\'t provide an adequate solution, our custom program development service helps realize your specific business needs. Whether it\'s a complex enterprise system or a desktop application with unique functionality, our expert team is ready for the challenge.',
                 package5WhatIncludes: 'What does this package include?',
@@ -138,6 +141,7 @@
             },
             de: {
                 navBackToServices: 'Zurück zu den Dienstleistungen',
+                package5MetaDesc: 'Individuelle Softwareentwicklung, zugeschnitten auf die spezifischen Bedürfnisse Ihres Unternehmens. Zuverlässige, effiziente und skalierbare Programme von Pohánka Kft.!',
                 package5DetailTitle: 'Details zu individuellen Programmentwicklungsdiensten',
                 package5DetailP1: 'Wenn Standardsoftware keine adäquate Lösung bietet, hilft unser individueller Programmentwicklungsservice, Ihre spezifischen Geschäftsanforderungen zu realisieren. Ob es sich um ein komplexes Unternehmenssystem oder eine Desktop-Anwendung mit einzigartiger Funktionalität handelt, unser Expertenteam ist bereit für die Herausforderung.',
                 package5WhatIncludes: 'Was beinhaltet dieses Paket?',
@@ -167,6 +171,16 @@
                          console.warn(`[DetailLangSwitch] No translation for key: ${key} in ${lang}`);
                     }
                 });
+                
+                const metaDescElement = document.querySelector('meta[name="description"]');
+                const metaDescKey = metaDescElement ? metaDescElement.getAttribute('data-translate-meta-description') : null;
+                if (metaDescElement && metaDescKey && detailTranslations[lang][metaDescKey]) {
+                    metaDescElement.setAttribute('content', detailTranslations[lang][metaDescKey]);
+                    console.log(`[DetailLangSwitch] Meta description updated for ${lang}`);
+                } else if (metaDescKey) {
+                    console.warn(`[DetailLangSwitch] No meta description translation for key: ${metaDescKey} in ${lang}`);
+                }
+
                 document.documentElement.lang = lang;
                 localStorage.setItem('selectedLanguage', lang);
             } else {

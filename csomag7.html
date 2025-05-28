@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Egyedi igényekre szabott speciális megoldások a Pohánka Kft.-től. Ha nem találta, amit keresett, vegye fel velünk a kapcsolatot egyedi ajánlatért!" data-translate-meta-description="package7MetaDesc">
     <title>Egyéb Szolgáltatások - Pohánka És Társa Kft.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,6 +99,7 @@
         const detailTranslations = {
             hu: {
                 navBackToServices: 'Vissza a Szolgáltatásokhoz',
+                package7MetaDesc: 'Egyedi igényekre szabott speciális megoldások a Pohánka Kft.-től. Ha nem találta, amit keresett, vegye fel velünk a kapcsolatot egyedi ajánlatért!',
                 package7DetailTitle: 'Egyéb Szolgáltatásaink Részletei',
                 package7DetailP1: 'A fentebb felsorolt fő szolgáltatási területeinken túlmenően, rugalmasan alkalmazkodunk ügyfeleink egyedi igényeihez. Ha olyan speciális feladattal, kihívással vagy ötlettel rendelkezik, amely nem illeszkedik pontosan a standard csomagjainkba, ne habozzon felvenni velünk a kapcsolatot!',
                 package7WhatIncludes: 'Milyen egyéb területeken számíthat ránk?',
@@ -115,6 +117,7 @@
             },
             en: {
                 navBackToServices: 'Back to Services',
+                package7MetaDesc: 'Special solutions tailored to unique needs from Pohánka Kft. If you haven\'t found what you\'re looking for, contact us for a custom offer!',
                 package7DetailTitle: 'Details of Our Other Services',
                 package7DetailP1: 'Beyond our main service areas listed above, we flexibly adapt to our clients\' unique needs. If you have a special task, challenge, or idea that doesn\'t fit neatly into our standard packages, do not hesitate to contact us!',
                 package7WhatIncludes: 'In what other areas can you count on us?',
@@ -132,6 +135,7 @@
             },
             de: {
                 navBackToServices: 'Zurück zu den Dienstleistungen',
+                package7MetaDesc: 'Spezielle Lösungen, zugeschnitten auf individuelle Bedürfnisse von Pohánka Kft. Wenn Sie nicht gefunden haben, wonach Sie suchen, kontaktieren Sie uns für ein individuelles Angebot!',
                 package7DetailTitle: 'Details zu unseren sonstigen Dienstleistungen',
                 package7DetailP1: 'Über die oben aufgeführten Hauptdienstleistungsbereiche hinaus passen wir uns flexibel an die individuellen Bedürfnisse unserer Kunden an. Wenn Sie eine spezielle Aufgabe, Herausforderung oder Idee haben, die nicht genau in unsere Standardpakete passt, zögern Sie nicht, uns zu kontaktieren!',
                 package7WhatIncludes: 'In welchen anderen Bereichen können Sie auf uns zählen?',
@@ -159,6 +163,16 @@
                          console.warn(`[DetailLangSwitch] No translation for key: ${key} in ${lang}`);
                     }
                 });
+                
+                const metaDescElement = document.querySelector('meta[name="description"]');
+                const metaDescKey = metaDescElement ? metaDescElement.getAttribute('data-translate-meta-description') : null;
+                if (metaDescElement && metaDescKey && detailTranslations[lang][metaDescKey]) {
+                    metaDescElement.setAttribute('content', detailTranslations[lang][metaDescKey]);
+                    console.log(`[DetailLangSwitch] Meta description updated for ${lang}`);
+                } else if (metaDescKey) {
+                    console.warn(`[DetailLangSwitch] No meta description translation for key: ${metaDescKey} in ${lang}`);
+                }
+
                 document.documentElement.lang = lang;
                 localStorage.setItem('selectedLanguage', lang);
             } else {

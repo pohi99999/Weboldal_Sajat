@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Növelje vállalkozása hatékonyságát és online jelenlétét! Start, Medium és Pro csomagjaink digitális eszközökkel és szakértői tanácsadással segítik a fejlődést." data-translate-meta-description="package2MetaDesc">
     <title>Vállalkozás Fejlesztési Csomagok - Pohánka És Társa Kft.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,10 +43,10 @@
         }
          .prose-custom ul {
             list-style-type: disc;
-            padding-left: 1.5rem; /* Beljebb húzza a listajeleket */
+            padding-left: 1.5rem; 
         }
         .prose-custom ul li {
-            padding-left: 0.5rem; /* Térköz a listajel és a szöveg között */
+            padding-left: 0.5rem; 
         }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17050054168"></script>
@@ -149,6 +150,7 @@
         const detailTranslations = {
             hu: {
                 navBackToServices: 'Vissza a Szolgáltatásokhoz',
+                package2MetaDesc: 'Növelje vállalkozása hatékonyságát és online jelenlétét! Start, Medium és Pro csomagjaink digitális eszközökkel és szakértői tanácsadással segítik a fejlődést.',
                 package2DetailTitle: 'Vállalkozás Fejlesztési Csomagok Részletei',
                 package2DetailSubTitle: '(start, medium, pro csomagok)',
                 package2Intro: 'Válassza ki az Ön vállalkozásának legmegfelelőbb fejlesztési csomagot, hogy digitális eszközeinkkel és szakértői tanácsadásunkkal a legtöbbet hozhassa ki cégéből! Minden csomagunk személyre szabható.',
@@ -178,6 +180,7 @@
             },
             en: {
                 navBackToServices: 'Back to Services',
+                package2MetaDesc: 'Boost your business efficiency and online presence! Our Start, Medium, and Pro packages help you grow with digital tools and expert consulting.',
                 package2DetailTitle: 'Details of Business Development Packages',
                 package2DetailSubTitle: '(start, medium, pro packages)',
                 package2Intro: 'Choose the development package that best suits your business to get the most out of your company with our digital tools and expert advice! All our packages are customizable.',
@@ -207,6 +210,7 @@
             },
             de: {
                 navBackToServices: 'Zurück zu den Dienstleistungen',
+                package2MetaDesc: 'Steigern Sie die Effizienz und Online-Präsenz Ihres Unternehmens! Unsere Start-, Medium- und Pro-Pakete unterstützen Ihr Wachstum mit digitalen Werkzeugen und Expertenberatung.',
                 package2DetailTitle: 'Details der Unternehmensentwicklungspakete',
                 package2DetailSubTitle: '(Start-, Medium-, Pro-Pakete)',
                 package2Intro: 'Wählen Sie das Entwicklungspaket, das am besten zu Ihrem Unternehmen passt, um mit unseren digitalen Werkzeugen und unserer Expertenberatung das Beste aus Ihrem Unternehmen herauszuholen! Alle unsere Pakete sind anpassbar.',
@@ -242,11 +246,21 @@
                 document.querySelectorAll('[data-translate-key]').forEach(element => {
                     const key = element.getAttribute('data-translate-key');
                     if (detailTranslations[lang][key] !== undefined) {
-                        element.innerHTML = detailTranslations[lang][key]; // Használjunk innerHTML-t, hogy a formázás is működjön, ha van
+                        element.innerHTML = detailTranslations[lang][key];
                     } else {
                          console.warn(`[DetailLangSwitch] No translation for key: ${key} in ${lang}`);
                     }
                 });
+                
+                const metaDescElement = document.querySelector('meta[name="description"]');
+                const metaDescKey = metaDescElement ? metaDescElement.getAttribute('data-translate-meta-description') : null;
+                if (metaDescElement && metaDescKey && detailTranslations[lang][metaDescKey]) {
+                    metaDescElement.setAttribute('content', detailTranslations[lang][metaDescKey]);
+                    console.log(`[DetailLangSwitch] Meta description updated for ${lang}`);
+                } else if (metaDescKey) {
+                    console.warn(`[DetailLangSwitch] No meta description translation for key: ${metaDescKey} in ${lang}`);
+                }
+
                 document.documentElement.lang = lang;
                 localStorage.setItem('selectedLanguage', lang); 
                 console.log(`[DetailLangSwitch] Detail page language set to: ${lang}`);

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern, reszponzív weboldal készítés és egyedi kisebb alkalmazások fejlesztése vállalkozásának. Gyors, biztonságos és felhasználóbarát megoldások a Pohánka Kft.-től!" data-translate-meta-description="package4MetaDesc">
     <title>Weboldal és Kisebb Alkalmazások Fejlesztése - Pohánka És Társa Kft.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,6 +125,7 @@
         const detailTranslations = {
             hu: {
                 navBackToServices: 'Vissza a Szolgáltatásokhoz',
+                package4MetaDesc: 'Modern, reszponzív weboldal készítés és egyedi kisebb alkalmazások fejlesztése vállalkozásának. Gyors, biztonságos és felhasználóbarát megoldások a Pohánka Kft.-től!',
                 package4DetailTitle: 'Weboldal és Kisebb Alkalmazások Fejlesztésének Részletei',
                 package4DetailP1: 'Legyen szó egy modern bemutatkozó weboldalról, egyedi landing page-ről vagy egy kisebb, specifikus funkciót ellátó webes alkalmazásról, mi megvalósítjuk elképzeléseit a legújabb technológiák felhasználásával.',
                 package4WhatIncludes: 'Mit tartalmazhat a csomag?',
@@ -143,6 +145,7 @@
             },
             en: {
                 navBackToServices: 'Back to Services',
+                package4MetaDesc: 'Modern, responsive website creation and custom small application development for your business. Fast, secure, and user-friendly solutions from Pohánka Kft.!',
                 package4DetailTitle: 'Details of Website and Small Application Development',
                 package4DetailP1: 'Whether it\'s a modern introductory website, a custom landing page, or a smaller web application with specific functions, we realize your ideas using the latest technologies.',
                 package4WhatIncludes: 'What can the package include?',
@@ -162,6 +165,7 @@
             },
             de: {
                 navBackToServices: 'Zurück zu den Dienstleistungen',
+                package4MetaDesc: 'Erstellung moderner, responsiver Webseiten und Entwicklung benutzerdefinierter kleiner Anwendungen für Ihr Unternehmen. Schnelle, sichere und benutzerfreundliche Lösungen von Pohánka Kft.!',
                 package4DetailTitle: 'Details zur Entwicklung von Websites und kleineren Anwendungen',
                 package4DetailP1: 'Ob es sich um eine moderne Einführungswebsite, eine benutzerdefinierte Landingpage oder eine kleinere Webanwendung mit spezifischen Funktionen handelt, wir realisieren Ihre Ideen mit den neuesten Technologien.',
                 package4WhatIncludes: 'Was kann das Paket beinhalten?',
@@ -182,6 +186,7 @@
         };
 
         function switchDetailPageLanguage(lang) {
+            console.log(`[DetailLangSwitch] Attempting to switch detail page to: ${lang}`);
             if (detailTranslations[lang]) {
                 document.querySelectorAll('[data-translate-key]').forEach(element => {
                     const key = element.getAttribute('data-translate-key');
@@ -191,8 +196,19 @@
                          console.warn(`[DetailLangSwitch] No translation for key: ${key} in ${lang}`);
                     }
                 });
+                // Meta leírás frissítése
+                const metaDescElement = document.querySelector('meta[name="description"]');
+                const metaDescKey = metaDescElement.getAttribute('data-translate-meta-description');
+                if (metaDescElement && metaDescKey && detailTranslations[lang][metaDescKey]) {
+                    metaDescElement.setAttribute('content', detailTranslations[lang][metaDescKey]);
+                    console.log(`[DetailLangSwitch] Meta description updated for ${lang}`);
+                } else {
+                    console.warn(`[DetailLangSwitch] No meta description translation for key: ${metaDescKey} in ${lang}`);
+                }
+
                 document.documentElement.lang = lang;
-                localStorage.setItem('selectedLanguage', lang);
+                localStorage.setItem('selectedLanguage', lang); 
+                console.log(`[DetailLangSwitch] Detail page language set to: ${lang}`);
             } else {
                  console.error(`[DetailLangSwitch] Language pack for "${lang}" not found.`);
             }

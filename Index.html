@@ -2,6 +2,7 @@
 <html lang="hu"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pohánka És Társa Kft: Innovatív technológiai megoldások, szoftverfejlesztés, pénzügyi tanácsadás és marketing stratégiák vállalkozásának sikeréért." data-translate-meta-description="indexMetaDesc">
     <title>Pohánka És Társa Kft - Modern Weboldal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -589,6 +590,7 @@
                 heroTitle: 'Professzionális Technológiai Megoldások <span class="text-blue-400">Mindenki Számára</span> Személyre Szabva',
                 heroParagraph: 'Modern technológiákkal és szakértő csapatunkkal segítjük elérni üzleti céljait. Ismerje meg, hogyan tehetjük sikeressé vállalkozását!',
                 heroImageAlt: 'Főoldali kép',
+                indexMetaDesc: "Pohánka És Társa Kft: Innovatív technológiai megoldások, szoftverfejlesztés, pénzügyi tanácsadás és marketing stratégiák vállalkozásának sikeréért.",
                 aboutTitle: 'Rólunk',
                 aboutParagraph1: 'A Pohánka És Társa Kft. 2009-ben alakult. Történetünk egy bátor döntéssel kezdődött: egy bolti eladó 40 évesen, munka és három gyermek mellett, elhatározta, hogy többre vágyik. Elvégezte a mérlegképes könyvelő képesítést, és megalapította a Pohánka És Társa Kft.-t, szeretett „negyedik gyermekét”.',
                 aboutParagraph2: 'A sors különös fintora, hogy legkisebb gyermeke, én (Pohánka Péter), szintén erre az útra léptem, követve drága Édesanyám nyomdokait. Kilenc év könyvelés után tettem egy kitérőt, hogy kutassam az utam és keressem a helyem a világban. Rengeteg tapasztalattal gazdagodva tértem vissza idén, hogy a megszerzett tudást, ismereteket és tapasztalatokat ne csak a könyvelésben, hanem a vállalkozások fejlődésének és komplex működésének támogatásában is kamatoztassam meglévő és leendő ügyfeleimmel.',
@@ -688,6 +690,7 @@
                 heroTitle: 'Professional Technological Solutions <span class="text-blue-400">For Everyone</span> Tailored Personally',
                 heroParagraph: 'With modern technologies and our expert team, we help you achieve your business goals. Discover how we can make your business successful!',
                 heroImageAlt: 'Main page image',
+                indexMetaDesc: "Pohánka És Társa Kft: Innovative technological solutions, software development, financial consulting, and marketing strategies for your business success.",
                 aboutTitle: 'About Us', 
                 aboutParagraph1: 'Pohánka & Társa Kft. was founded in 2009. Our story began with a brave decision: a shop assistant at 40, while working and raising three children, decided she wanted more. She completed her certified accountant qualification and founded Pohánka & Társa Kft., her beloved "fourth child".', 
                 aboutParagraph2: 'As a peculiar twist of fate, her youngest child, myself (Péter Pohánka), also embarked on this path, following in my dear mother\'s footsteps. After nine years in accounting, I took a detour to explore my path and find my place in the world. I returned this year enriched with a wealth of experience, ready to apply the acquired knowledge, insights, and experiences not only in accounting but also in supporting the development and complex operations of businesses for our existing and future clients.', 
@@ -786,6 +789,7 @@
                 heroTitle: 'Professionelle Technologische Lösungen <span class="text-blue-400">Für Jeden</span> Personalisiert',
                 heroParagraph: 'Mit modernen Technologien und unserem Expertenteam helfen wir Ihnen, Ihre Geschäftsziele zu erreichen. Entdecken Sie, wie wir Ihr Unternehmen erfolgreich machen können!',
                 heroImageAlt: 'Startseitenbild',
+                indexMetaDesc: "Pohánka És Társa Kft: Innovative technologische Lösungen, Softwareentwicklung, Finanzberatung und Marketingstrategien für Ihren Geschäftserfolg.",
                 aboutTitle: 'Über uns', 
                 aboutParagraph1: 'Die Pohánka & Társa Kft. wurde 2009 gegründet. Unsere Geschichte begann mit einer mutigen Entscheidung: Eine Verkäuferin im Alter von 40 Jahren beschloss, während sie arbeitete und drei Kinder großzog, dass sie mehr wollte. Sie absolvierte ihre Bilanzbuchhalterprüfung und gründete die Pohánka & Társa Kft., ihr geliebtes „viertes Kind“.', 
                 aboutParagraph2: 'Wie eine besondere Laune des Schicksals trat auch ihr jüngstes Kind, ich (Péter Pohánka), in die Fußstapfen meiner lieben Mutter. Nach neun Jahren in der Buchhaltung machte ich einen Abstecher, um meinen Weg zu erkunden und meinen Platz in der Welt zu finden. Bereichert um vielfältige Erfahrungen kehrte ich dieses Jahr zurück, um das erworbene Wissen, die Erkenntnisse und Erfahrungen nicht nur in der Buchhaltung, sondern auch bei der Unterstützung der Entwicklung und komplexen Betriebsabläufe von Unternehmen für unsere bestehenden und zukünftigen Kunden einzusetzen.', 
@@ -953,6 +957,17 @@
                         console.warn(`[LangSwitch] No translation found for key: "${key}" in language: "${lang}"`);
                     }
                 });
+                // Meta leírás frissítése a főoldalon
+                const metaDescElement = document.querySelector('meta[name="description"]');
+                const metaDescKey = metaDescElement ? metaDescElement.getAttribute('data-translate-meta-description') : null;
+                if (metaDescElement && metaDescKey && translations[lang][metaDescKey]) {
+                    metaDescElement.setAttribute('content', translations[lang][metaDescKey]);
+                    console.log(`[LangSwitch] Main page meta description updated for ${lang}`);
+                } else if (metaDescKey) {
+                    console.warn(`[LangSwitch] No meta description translation for key: ${metaDescKey} in ${lang} on main page`);
+                }
+
+
                 document.documentElement.lang = lang; 
                 localStorage.setItem('selectedLanguage', lang); 
                 console.log(`[LangSwitch] Language set to: ${lang} and saved to localStorage.`);
