@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+Az alábbi sorok megakadályozzák a csomag részletező oldalak feltérképezését,
+ha nem szeretnéd, hogy ezek külön jelenjenek meg a keresési eredmények között,
+vagy ha a tartalmuk nagyrészt megegyezik a főoldalon lévő összefoglalóval.
+Ha szeretnéd, hogy ezeket is indexeljék, töröld ki az alábbi Disallow sorokat.
+Disallow: /csomag1.html
+Disallow: /csomag2.html
+Disallow: /csomag3.html
+Disallow: /csomag4.html
+Disallow: /csomag5.html
+Disallow: /csomag6.html
+Disallow: /csomag7.html
+
+Ha van sitemap.xml fájlod (ami ajánlott), itt add meg a teljes URL-jét:
+Sitemap: https://www.ateweboldaladcime.hu/sitemap.xml
