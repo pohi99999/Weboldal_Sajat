@@ -67,6 +67,31 @@
             color: #9CA3AF; 
             text-align: center;
         }
+        .ai-refine-button {
+            background-color: #8B5CF6; /* Lila gomb */
+            color: white;
+            transition: background-color 0.3s ease;
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            margin-top: 0.5rem;
+        }
+        .ai-refine-button:hover {
+            background-color: #7C3AED;
+        }
+        .loading-spinner {
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #8B5CF6; /* Purple */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
 
         @media (max-width: 768px) { 
@@ -405,7 +430,7 @@
                     <h2 class="section-title" data-translate-key="offerTitle">Ajánlatkérés</h2>
                     <div class="max-w-3xl mx-auto dev-inspired-card p-8 md:p-12 rounded-lg shadow-2xl">
                         <p class="text-gray-300 text-center mb-8 text-lg" data-translate-key="offerSubTitle">Kérdése van, vagy ajánlatot szeretne kérni? Töltse ki az alábbi űrlapot, és hamarosan felvesszük Önnel a kapcsolatot!</p>
-                        <form action="#" method="POST" onsubmit="event.preventDefault(); showCustomAlert('Köszönjük az ajánlatkérését! Hamarosan felvesszük Önnel a kapcsolatot.', 'success'); this.reset();">
+                        <form action="https://formspree.io/f/mrbqnrdy" method="POST">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                 <div>
                                     <label for="name" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formName">Teljes Név</label>
@@ -420,9 +445,15 @@
                                 <label for="subject" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formSubject">Tárgy</label>
                                 <input type="text" name="subject" id="subject" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Pl. Árajánlatkérés webfejlesztésre">
                             </div>
-                            <div class="mb-8">
+                            <div class="mb-6">
                                 <label for="message" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formMessage">Üzenet</label>
                                 <textarea name="message" id="message" rows="5" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Írja le itt részletesen, miben segíthetünk..."></textarea>
+                                <div class="mt-2 text-right">
+                                    <button type="button" id="refineMessageButton" class="ai-refine-button">
+                                        <span data-translate-key="formAiRefine">Üzenet finomítása AI-val ✨</span>
+                                        <div id="refineLoader" class="loading-spinner hidden inline-block"></div>
+                                    </button>
+                                </div>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="dev-inspired-button font-semibold px-10 py-3.5 rounded-lg text-lg" data-translate-key="formSend">
@@ -552,17 +583,20 @@
         </footer>
     </div>
 
-    <div id="customAlertModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 hidden transition-opacity duration-300 ease-in-out">
-        <div class="bg-gray-800 p-6 md:p-8 rounded-lg shadow-2xl max-w-sm w-full mx-4 transform transition-all duration-300 ease-in-out scale-95 opacity-0" id="customAlertBox">
+    <div id="aiRefineModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 hidden transition-opacity duration-300 ease-in-out">
+        <div class="bg-gray-800 p-6 md:p-8 rounded-lg shadow-2xl max-w-lg w-full mx-4 transform transition-all duration-300 ease-in-out scale-95 opacity-0" id="aiRefineBox">
             <div class="flex justify-between items-center mb-4">
-                <h3 id="customAlertTitle" class="text-xl font-semibold text-white">Értesítés</h3>
-                <button id="customAlertCloseButton" class="text-gray-400 hover:text-white">
+                <h3 class="text-xl font-semibold text-white" data-translate-key="aiModalTitle">AI Javaslat az Üzenethez</h3>
+                <button id="aiRefineCloseButton" class="text-gray-400 hover:text-white">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
-            <p id="customAlertMessage" class="text-gray-300 mb-6"></p>
-            <div class="text-right">
-                <button id="customAlertOkButton" class="dev-inspired-button px-6 py-2 rounded-md text-sm font-medium">OK</button>
+            <div id="aiRefinedMessageContainer" class="text-gray-300 mb-6 bg-gray-700/50 p-4 rounded-md min-h-[100px] max-h-[300px] overflow-y-auto">
+                <p id="aiRefinedMessage" data-translate-key="aiModalLoading">Finomítás folyamatban...</p>
+            </div>
+            <div class="flex justify-end space-x-3">
+                <button id="aiUseTextButton" class="dev-inspired-button px-6 py-2 rounded-md text-sm font-medium" data-translate-key="aiModalUseButton">Szöveg használata</button>
+                <button id="aiRefineModalCloseButtonBottom" class="bg-gray-600 hover:bg-gray-500 text-white px-6 py-2 rounded-md text-sm font-medium" data-translate-key="aiModalCloseButton">Bezárás</button>
             </div>
         </div>
     </div>
@@ -641,7 +675,12 @@
                 formEmail: 'Email Cím',
                 formSubject: 'Tárgy',
                 formMessage: 'Üzenet',
+                formAiRefine: 'Üzenet finomítása AI-val ✨',
                 formSend: 'Üzenet Küldése',
+                aiModalTitle: 'AI Javaslat az Üzenethez',
+                aiModalLoading: 'Finomítás folyamatban...',
+                aiModalUseButton: 'Szöveg használata',
+                aiModalCloseButton: 'Bezárás',
                 awardsTitle: "Elismerések, Eredmények", 
                 awardsContentPlaceholder: "Büszkék vagyunk eddigi elismeréseinkre és eredményeinkre. Hamarosan itt részletezzük őket!", 
                 awardCaption1: "Fejlesztői elismerés a google.com-tól",
@@ -741,7 +780,12 @@
                 formEmail: 'Email Address',
                 formSubject: 'Subject',
                 formMessage: 'Message',
+                formAiRefine: 'Refine message with AI ✨',
                 formSend: 'Send Message',
+                aiModalTitle: 'AI Suggestion for Message',
+                aiModalLoading: 'Refining in progress...',
+                aiModalUseButton: 'Use This Text',
+                aiModalCloseButton: 'Close',
                 awardsTitle: "Awards, Achievements", 
                 awardsContentPlaceholder: "We are proud of our awards and achievements so far. We will detail them here soon!", 
                 awardCaption1: "Developer recognition from google.com",
@@ -840,9 +884,14 @@
                 formEmail: 'Email Adresse',
                 formSubject: 'Betreff',
                 formMessage: 'Nachricht',
+                formAiRefine: 'Nachricht mit KI verfeinern ✨',
                 formSend: 'Nachricht Senden',
+                aiModalTitle: 'KI-Vorschlag für Nachricht',
+                aiModalLoading: 'Verfeinerung läuft...',
+                aiModalUseButton: 'Diesen Text verwenden',
+                aiModalCloseButton: 'Schließen',
                 awardsTitle: "Auszeichnungen, Erfolge", 
-                awardsContentPlaceholder: "Wir sind stolz auf unsere bisherigen Auszeichnungen und Erfolge. Wir werden sie hier bald detailliert beschreiben!", 
+                awardsContentPlaceholder: "Wir sind stolz auf unsere bisherigen Auszeichnungen und Erfolge. Wir werden sie here bald detailliert beschreiben!", 
                 awardCaption1: "Entwickleranerkennung von google.com",
                 awardCaption2: "Entwickler von KI-gestützten Reiselösungsanwendungen",
                 awardCaption3: "Beherrschung aller Qualifikationen in Google Developer Trainings",
@@ -876,19 +925,29 @@
             const titleElement = document.getElementById('customAlertTitle');
             const messageElement = document.getElementById('customAlertMessage');
             const okButton = document.getElementById('customAlertOkButton');
-            const closeButton = document.getElementById('customAlertCloseButton');
+            const closeButton = document.getElementById('customAlertCloseButton'); // This was the original close button for the custom alert
+
+            // More specific checks
+            if (!modal) { console.error("CustomAlert: 'customAlertModal' not found."); return; }
+            if (!alertBox) { console.error("CustomAlert: 'customAlertBox' not found."); return; }
+            if (!titleElement) { console.error("CustomAlert: 'customAlertTitle' not found."); return; }
+            if (!messageElement) { console.error("CustomAlert: 'customAlertMessage' not found."); return; }
+            if (!okButton) { console.error("CustomAlert: 'customAlertOkButton' not found."); return; }
+            if (!closeButton) { console.error("CustomAlert: 'customAlertCloseButton' not found."); return; }
+
 
             messageElement.textContent = message;
             alertBox.classList.remove('border-blue-500', 'border-green-500', 'border-red-500', 'border-l-4'); 
+            const currentLang = localStorage.getItem('selectedLanguage') || 'hu';
             if (type === 'success') {
-                titleElement.textContent = 'Siker!';
+                titleElement.textContent = translations[currentLang]['alertSuccessTitle'] || 'Siker!';
                 alertBox.classList.add('border-l-4', 'border-green-500');
             } else if (type === 'error') {
-                titleElement.textContent = 'Hiba!';
+                titleElement.textContent = translations[currentLang]['alertErrorTitle'] || 'Hiba!';
                 alertBox.classList.add('border-l-4', 'border-red-500');
             } else {
-                titleElement.textContent = 'Értesítés';
-                 alertBox.classList.add('border-l-4', 'border-blue-500');
+                titleElement.textContent = translations[currentLang]['alertInfoTitle'] || 'Értesítés';
+                alertBox.classList.add('border-l-4', 'border-blue-500');
             }
 
             modal.classList.remove('hidden');
@@ -908,7 +967,7 @@
             };
 
             okButton.onclick = closeAlert;
-            closeButton.onclick = closeAlert;
+            closeButton.onclick = closeAlert; 
             modal.onclick = (event) => {
                 if (event.target === modal) { 
                     closeAlert();
@@ -921,11 +980,8 @@
             if (translations[lang]) {
                 document.querySelectorAll('[data-translate-key]').forEach(element => {
                     const key = element.getAttribute('data-translate-key');
-                    // console.log(`[LangSwitch] Processing element with key: ${key}`);
                     if (translations[lang][key] !== undefined) {
                         const translationText = translations[lang][key];
-                        // console.log(`[LangSwitch] Found translation for ${key} in ${lang}: "${translationText.substring(0, 50)}..."`);
-
                         const useInnerHTML = 
                             key === 'heroTitle' ||
                             key === 'footerInspiration' ||
@@ -957,7 +1013,7 @@
                         console.warn(`[LangSwitch] No translation found for key: "${key}" in language: "${lang}"`);
                     }
                 });
-                // Meta leírás frissítése a főoldalon
+                
                 const metaDescElement = document.querySelector('meta[name="description"]');
                 const metaDescKey = metaDescElement ? metaDescElement.getAttribute('data-translate-meta-description') : null;
                 if (metaDescElement && metaDescKey && translations[lang][metaDescKey]) {
@@ -966,7 +1022,6 @@
                 } else if (metaDescKey) {
                     console.warn(`[LangSwitch] No meta description translation for key: ${metaDescKey} in ${lang} on main page`);
                 }
-
 
                 document.documentElement.lang = lang; 
                 localStorage.setItem('selectedLanguage', lang); 
@@ -996,6 +1051,84 @@
                 console.error(`[LangSwitch] Language pack for "${lang}" not found in translations object.`);
             }
         }
+
+        // Gemini API Hívás
+        async function refineMessageWithAI() {
+            const messageTextarea = document.getElementById('message');
+            const originalMessage = messageTextarea.value;
+            const refineButton = document.getElementById('refineMessageButton');
+            const refineLoader = document.getElementById('refineLoader');
+            const aiRefinedMessageElement = document.getElementById('aiRefinedMessage');
+            const aiModal = document.getElementById('aiRefineModal');
+            const aiModalBox = document.getElementById('aiRefineBox');
+            const currentLang = localStorage.getItem('selectedLanguage') || 'hu';
+
+            if (!originalMessage.trim()) {
+                showCustomAlert(translations[currentLang]['formEmptyMessageError'] || 'Kérjük, először írjon valamit az üzenet mezőbe!', 'error');
+                return;
+            }
+
+            refineButton.disabled = true;
+            refineButton.querySelector('span[data-translate-key="formAiRefine"]').classList.add('hidden');
+            refineLoader.classList.remove('hidden');
+            aiRefinedMessageElement.textContent = translations[currentLang]['aiModalLoading'] || 'Finomítás folyamatban...';
+            
+            aiModal.classList.remove('hidden');
+            setTimeout(() => {
+                aiModal.classList.remove('opacity-0');
+                aiModalBox.classList.remove('scale-95', 'opacity-0');
+                aiModalBox.classList.add('scale-100', 'opacity-100');
+            }, 10);
+
+            let prompt;
+            if (currentLang === 'en') {
+                prompt = `Please rephrase and correct this business message to make it more professional, polite, and grammatically correct, while preserving the original intent. If the message is too short or unclear, provide suggestions for expansion for better clarity. The response should ONLY contain the improved message, without any other comments or greetings: "${originalMessage}"`;
+            } else if (currentLang === 'de') {
+                prompt = `Bitte formulieren Sie diese geschäftliche Nachricht um und korrigieren Sie sie, um sie professioneller, höflicher und grammatisch korrekter zu machen, wobei die ursprüngliche Absicht erhalten bleibt. Wenn die Nachricht zu kurz oder unklar ist, machen Sie Vorschläge zur Erweiterung für eine bessere Verständlichkeit. Die Antwort sollte NUR die verbesserte Nachricht enthalten, ohne weitere Kommentare oder Begrüßungen: "${originalMessage}"`;
+            } else { // hu
+                prompt = `Kérlek, fogalmazd át és javítsd ki ezt az üzleti üzenetet, hogy professzionálisabb, udvariasabb és nyelvtanilag helyesebb legyen, miközben megőrzi az eredeti szándékot. Ha az üzenet túl rövid vagy nem egyértelmű, adj javaslatokat a bővítésére a jobb érthetőség érdekében. A válasz csak a javított üzenetet tartalmazza, mindenféle egyéb kommentár vagy üdvözlés nélkül: "${originalMessage}"`;
+            }
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = ""; 
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    console.error('Gemini API error:', errorData);
+                    throw new Error(`API hiba: ${response.status} ${response.statusText}. Részletek: ${JSON.stringify(errorData)}`);
+                }
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const refinedText = result.candidates[0].content.parts[0].text;
+                    aiRefinedMessageElement.textContent = refinedText;
+                } else {
+                    console.error('Unexpected API response structure:', result);
+                    aiRefinedMessageElement.textContent = 'Hiba történt az AI válasz feldolgozása közben. Próbálja újra később.';
+                }
+            } catch (error) {
+                console.error('Hiba a Gemini API hívása közben:', error);
+                aiRefinedMessageElement.textContent = `Hiba történt: ${error.message}. Kérjük, próbálja meg később.`;
+            } finally {
+                refineButton.disabled = false;
+                refineButton.querySelector('span[data-translate-key="formAiRefine"]').classList.remove('hidden');
+                refineLoader.classList.add('hidden');
+            }
+        }
+
 
         document.addEventListener('DOMContentLoaded', () => {
             const savedLanguage = localStorage.getItem('selectedLanguage') || 'hu';
@@ -1084,6 +1217,52 @@
                     console.warn(`Hiba a médiafájl betöltésekor: ${this.src || this.currentSrc}`);
                 });
             });
+
+            // AI Finomító Gomb eseménykezelője
+            const refineButton = document.getElementById('refineMessageButton');
+            if (refineButton) {
+                refineButton.addEventListener('click', refineMessageWithAI);
+            }
+
+            // AI Modal bezáró gombok
+            const aiModal = document.getElementById('aiRefineModal');
+            const aiModalBox = document.getElementById('aiRefineBox');
+            const aiRefineCloseButton = document.getElementById('aiRefineCloseButton');
+            const aiRefineModalCloseButtonBottom = document.getElementById('aiRefineModalCloseButtonBottom');
+            const aiUseTextButton = document.getElementById('aiUseTextButton');
+            const messageTextarea = document.getElementById('message');
+
+            const closeAiModal = () => {
+                if (aiModal && aiModalBox) {
+                    aiModalBox.classList.remove('scale-100', 'opacity-100');
+                    aiModalBox.classList.add('scale-95', 'opacity-0');
+                    aiModal.classList.add('opacity-0');
+                    setTimeout(() => {
+                        aiModal.classList.add('hidden');
+                    }, 300);
+                }
+            };
+
+            if (aiRefineCloseButton) aiRefineCloseButton.onclick = closeAiModal;
+            if (aiRefineModalCloseButtonBottom) aiRefineModalCloseButtonBottom.onclick = closeAiModal;
+            if (aiModal) {
+                aiModal.onclick = (event) => {
+                    if (event.target === aiModal) { 
+                        closeAiModal();
+                    }
+                };
+            }
+            if (aiUseTextButton && messageTextarea) {
+                aiUseTextButton.addEventListener('click', () => {
+                    const refinedText = document.getElementById('aiRefinedMessage').textContent;
+                    const currentLang = localStorage.getItem('selectedLanguage') || 'hu';
+                    if (refinedText !== (translations[currentLang]['aiModalLoading'] || 'Finomítás folyamatban...')) {
+                        messageTextarea.value = refinedText;
+                    }
+                    closeAiModal();
+                });
+            }
+
         });
     </script>
 </body>
