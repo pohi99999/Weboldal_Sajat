@@ -410,11 +410,12 @@
                 </div>
             </section>
 
-            <section id="awards" class="py-16 md:py-24 bg-gray-900/90"> <div class="container mx-auto px-6">
+             <section id="awards" class="py-16 md:py-24 bg-gray-900/90">
+                <div class="container mx-auto px-6">
                     <h2 class="section-title" data-translate-key="awardsTitle">Elismerések, Eredmények</h2>
                     <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl">
                         <p class="text-gray-300 text-center" data-translate-key="awardsContentPlaceholder">Büszkék vagyunk eddigi elismeréseinkre és eredményeinkre. Hamarosan itt részletezzük őket!</p>
-                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -577,8 +578,8 @@
                 formSubject: 'Tárgy',
                 formMessage: 'Üzenet',
                 formSend: 'Üzenet Küldése',
-                awardsTitle: "Elismerések, Eredmények", // ÚJ
-                awardsContentPlaceholder: "Büszkék vagyunk eddigi elismeréseinkre és eredményeinkre. Hamarosan itt részletezzük őket!", // ÚJ
+                awardsTitle: "Elismerések, Eredmények", 
+                awardsContentPlaceholder: "Büszkék vagyunk eddigi elismeréseinkre és eredményeinkre. Hamarosan itt részletezzük őket!", 
                 contactTitle: 'Kapcsolat',
                 contactHQ: 'Székhely:',
                 contactOffice: 'Irodánk címe (térképen):',
@@ -663,8 +664,8 @@
                 formSubject: 'Subject',
                 formMessage: 'Message',
                 formSend: 'Send Message',
-                awardsTitle: "Awards, Achievements", // NEW
-                awardsContentPlaceholder: "We are proud of our awards and achievements so far. We will detail them here soon!", // NEW
+                awardsTitle: "Awards, Achievements", 
+                awardsContentPlaceholder: "We are proud of our awards and achievements so far. We will detail them here soon!", 
                 contactTitle: 'Contact',
                 contactHQ: 'Headquarters:',
                 contactOffice: 'Our Office (on map):',
@@ -748,8 +749,8 @@
                 formSubject: 'Betreff',
                 formMessage: 'Nachricht',
                 formSend: 'Nachricht Senden',
-                awardsTitle: "Auszeichnungen, Erfolge", // NEW
-                awardsContentPlaceholder: "Wir sind stolz auf unsere bisherigen Auszeichnungen und Erfolge. Wir werden sie hier bald detailliert beschreiben!", // NEW
+                awardsTitle: "Auszeichnungen, Erfolge", 
+                awardsContentPlaceholder: "Wir sind stolz auf unsere bisherigen Auszeichnungen und Erfolge. Wir werden sie hier bald detailliert beschreiben!", 
                 contactTitle: 'Kontakt',
                 contactHQ: 'Hauptsitz:',
                 contactOffice: 'Unser Büro (auf der Karte):',
@@ -834,8 +835,8 @@
                             key.startsWith('teamP') || 
                             key.startsWith('whyUsP') ||
                             key === 'package2SubTitle' ||
-                            key === 'blogContentPlaceholder' || // Új kulcsok az innerHTML-hez
-                            key === 'awardsContentPlaceholder';  // Új kulcsok az innerHTML-hez
+                            key === 'blogContentPlaceholder' || 
+                            key === 'awardsContentPlaceholder';  
                         
                         if (element.tagName === 'IMG' && key === 'heroImageAlt') {
                              element.alt = translationText;
