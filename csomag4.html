@@ -20,6 +20,18 @@
         .back-link:hover { color: #3B82F6; text-decoration: underline; }
         .prose-custom ul { list-style-type: disc; padding-left: 1.5rem; }
         .prose-custom ul li { padding-left: 0.5rem; }
+        .reference-link {
+            display: inline-block;
+            margin-top: 1rem; 
+            color: #60A5FA; 
+            font-weight: 500; 
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        .reference-link:hover {
+            color: #3B82F6; 
+            text-decoration: underline;
+        }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17050054168"></script>
     <script>
@@ -57,6 +69,7 @@
             <div class="container mx-auto px-6">
                 <section id="package-detail-4">
                     <h1 class="section-title mb-8" data-translate-key="package4DetailTitle">Weboldal és Kisebb Alkalmazások Fejlesztésének Részletei</h1>
+                    
                     <div class="dev-inspired-card p-6 md:p-10 rounded-lg shadow-2xl">
                         <div class="prose-custom prose-invert max-w-none text-gray-300 space-y-4">
                             <p data-translate-key="package4DetailP1">
@@ -76,6 +89,19 @@
                             <p data-translate-key="package4DetailP2">
                                 Célunk, hogy olyan digitális megoldásokat hozzunk létre, amelyek nemcsak esztétikusak, de funkcionálisak, felhasználóbarátok és segítik üzleti céljai elérését.
                             </p>
+                        </div>
+
+                        <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl mt-8 border-t border-gray-700">
+                            <h4 class="text-xl font-semibold text-white mb-4 text-center" data-translate-key="package4RefTitle">Referencia Munka Weboldal: Kovács Krisztián EV részére</h4>
+                            <img src="refw.jpg" alt="Kovács Krisztián EV Weboldal Referencia" class="w-full h-auto object-contain rounded-md my-4 shadow-md max-h-96 mx-auto" onerror="this.alt='Referencia kép nem tölthető be'; this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=Referencia+Weboldal';">
+                            <div class="text-center">
+                                <a href="https://kovacskrisztianauto.netlify.app/" target="_blank" rel="noopener noreferrer" class="reference-link inline-flex items-center" data-translate-key="package4RefLink">
+                                    Weboldal megtekintése
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="text-center mt-8">
@@ -110,6 +136,8 @@
                 package4Item7: 'Alapvető keresőoptimalizálás (SEO), hogy oldala könnyebben megtalálható legyen.',
                 package4Item8: 'Weboldal karbantartás, frissítések és technikai támogatás.',
                 package4DetailP2: 'Célunk, hogy olyan digitális megoldásokat hozzunk létre, amelyek nemcsak esztétikusak, de funkcionálisak, felhasználóbarátok és segítik üzleti céljai elérését.',
+                package4RefTitle: 'Referencia Munka Weboldal: Kovács Krisztián EV részére',
+                package4RefLink: 'Weboldal megtekintése →',
                 requestOfferButton: 'Ajánlatkérés erre a csomagra',
                 footerCopyright: 'Pohánka És Társa Kft. Minden jog fenntartva.'
             },
@@ -127,6 +155,8 @@
                 package4Item7: 'Basic search engine optimization (SEO) to make your site easier to find.',
                 package4Item8: 'Website maintenance, updates, and technical support.',
                 package4DetailP2: 'Our goal is to create digital solutions that are not only aesthetic but also functional, user-friendly, and help achieve your business goals.',
+                package4RefTitle: 'Reference Website: For Kovács Krisztián EV',
+                package4RefLink: 'View Website →',
                 requestOfferButton: 'Request Offer for this Package',
                 footerCopyright: 'Pohánka És Társa Kft. All rights reserved.'
             },
@@ -144,6 +174,8 @@
                 package4Item7: 'Grundlegende Suchmaschinenoptimierung (SEO), damit Ihre Seite leichter gefunden wird.',
                 package4Item8: 'Website-Wartung, Updates und technischer Support.',
                 package4DetailP2: 'Unser Ziel ist es, digitale Lösungen zu schaffen, die nicht nur ästhetisch, sondern auch funktional, benutzerfreundlich sind und Ihnen helfen, Ihre Geschäftsziele zu erreichen.',
+                package4RefTitle: 'Referenz-Website: Für Kovács Krisztián EV',
+                package4RefLink: 'Webseite ansehen →',
                 requestOfferButton: 'Angebot für dieses Paket anfordern',
                 footerCopyright: 'Pohánka És Társa Kft. Alle Rechte vorbehalten.'
             }
