@@ -46,6 +46,27 @@
             color: #3B82F6; 
             text-decoration: underline;
         }
+        .linkedin-embed-container {
+            background-color: rgba(31, 41, 55, 0.8); 
+            border: 1px solid #4B5563; 
+            border-radius: 0.5rem; 
+            padding: 1rem; 
+            margin-bottom: 1.5rem; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .linkedin-embed-container iframe {
+            max-width: 100%;
+            border-radius: 0.375rem; 
+        }
+        .linkedin-caption {
+            margin-top: 0.75rem; 
+            font-size: 0.875rem; 
+            color: #9CA3AF; 
+            text-align: center;
+        }
+
 
         @media (max-width: 768px) { 
             .language-selector { padding: 0.5rem; justify-content: center; }
@@ -150,7 +171,8 @@
                 </div>
             </section>
 
-            <section id="about" class="py-16 md:py-24 bg-gray-900/90"> <div class="container mx-auto px-6">
+            <section id="about" class="py-16 md:py-24 bg-gray-900/90"> 
+                <div class="container mx-auto px-6">
                     <h2 class="section-title" data-translate-key="aboutTitle">Rólunk</h2>
                     <div class="dev-inspired-card max-w-3xl mx-auto p-6 md:p-10 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
                         <div class="text-gray-300 text-lg leading-relaxed space-y-6 text-left md:text-justify">
@@ -414,8 +436,39 @@
              <section id="awards" class="py-16 md:py-24 bg-gray-900/90">
                 <div class="container mx-auto px-6">
                     <h2 class="section-title" data-translate-key="awardsTitle">Elismerések, Eredmények</h2>
-                    <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl">
-                        <p class="text-gray-300 text-center" data-translate-key="awardsContentPlaceholder">Büszkék vagyunk eddigi elismeréseinkre és eredményeinkre. Hamarosan itt részletezzük őket!</p>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <div class="linkedin-embed-container">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333506255858176002" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 1"></iframe>
+                            <p class="linkedin-caption" data-translate-key="awardCaption1">Fejlesztői elismerés a google.com-tól</p>
+                        </div>
+                        <div class="linkedin-embed-container">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333506659744374785" height="507" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 2"></iframe>
+                            <p class="linkedin-caption" data-translate-key="awardCaption2">Mesterséges Intelligenciával működő utazási alkalmazásmegoldási fejlesztő</p>
+                        </div>
+                        <div class="linkedin-embed-container">
+                           <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333506413983379458" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 3"></iframe>
+                           <p class="linkedin-caption" data-translate-key="awardCaption3">Az Összes Képesítés Elsajátítása a Google Fejlesztői Képzésein</p>
+                        </div>
+                        <div class="linkedin-embed-container">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333504812069588993" height="498" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 4"></iframe>
+                            <p class="linkedin-caption" data-translate-key="awardCaption4">A Google Térkép Platform Innovátorok tagja</p>
+                        </div>
+                        <div class="linkedin-embed-container">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333502692071215104" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 5"></iframe>
+                            <p class="linkedin-caption" data-translate-key="awardCaption5">Google Cloud Innovátorok tagja</p>
+                        </div>
+                        <div class="linkedin-embed-container">
+                             <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333502412860686338" height="498" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 6"></iframe>
+                             <p class="linkedin-caption" data-translate-key="awardCaption6">Google Cloud és NVIDIA fejlesztői csoport tagja</p>
+                        </div>
+                        <div class="linkedin-embed-container">
+                             <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333502034995810304" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 7"></iframe>
+                             <p class="linkedin-caption" data-translate-key="awardCaption7">Firebase Studio Fejlesztője</p>
+                        </div>
+                        <div class="linkedin-embed-container">
+                             <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333506812144418816" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 8"></iframe>
+                             <p class="linkedin-caption" data-translate-key="awardCaption8">Google Fejlesztői Tag</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -581,6 +634,14 @@
                 formSend: 'Üzenet Küldése',
                 awardsTitle: "Elismerések, Eredmények", 
                 awardsContentPlaceholder: "Büszkék vagyunk eddigi elismeréseinkre és eredményeinkre. Hamarosan itt részletezzük őket!", 
+                awardCaption1: "Fejlesztői elismerés a google.com-tól",
+                awardCaption2: "Mesterséges Intelligenciával működő utazási alkalmazásmegoldási fejlesztő",
+                awardCaption3: "Az Összes Képesítés Elsajátítása a Google Fejlesztői Képzésein",
+                awardCaption4: "A Google Térkép Platform Innovátorok tagja",
+                awardCaption5: "Google Cloud Innovátorok tagja",
+                awardCaption6: "Google Cloud és NVIDIA fejlesztői csoport tagja",
+                awardCaption7: "Firebase Studio Fejlesztője",
+                awardCaption8: "Google Fejlesztői Tag",
                 contactTitle: 'Kapcsolat',
                 contactHQ: 'Székhely:',
                 contactOffice: 'Irodánk címe (térképen):',
@@ -670,6 +731,14 @@
                 formSend: 'Send Message',
                 awardsTitle: "Awards, Achievements", 
                 awardsContentPlaceholder: "We are proud of our awards and achievements so far. We will detail them here soon!", 
+                awardCaption1: "Developer recognition from google.com",
+                awardCaption2: "AI-powered travel application solution developer",
+                awardCaption3: "Mastery of All Qualifications in Google Developer Training",
+                awardCaption4: "Member of Google Maps Platform Innovators",
+                awardCaption5: "Member of Google Cloud Innovators",
+                awardCaption6: "Member of Google Cloud and NVIDIA developer group",
+                awardCaption7: "Firebase Studio Developer",
+                awardCaption8: "Google Developer Member",
                 contactTitle: 'Contact',
                 contactHQ: 'Headquarters:',
                 contactOffice: 'Our Office (on map):',
@@ -758,6 +827,14 @@
                 formSend: 'Nachricht Senden',
                 awardsTitle: "Auszeichnungen, Erfolge", 
                 awardsContentPlaceholder: "Wir sind stolz auf unsere bisherigen Auszeichnungen und Erfolge. Wir werden sie hier bald detailliert beschreiben!", 
+                awardCaption1: "Entwickleranerkennung von google.com",
+                awardCaption2: "Entwickler von KI-gestützten Reiselösungsanwendungen",
+                awardCaption3: "Beherrschung aller Qualifikationen in Google Developer Trainings",
+                awardCaption4: "Mitglied der Google Maps Platform Innovators",
+                awardCaption5: "Mitglied der Google Cloud Innovators",
+                awardCaption6: "Mitglied der Google Cloud und NVIDIA Entwicklergruppe",
+                awardCaption7: "Firebase Studio Entwickler",
+                awardCaption8: "Google Developer Mitglied",
                 contactTitle: 'Kontakt',
                 contactHQ: 'Hauptsitz:',
                 contactOffice: 'Unser Büro (auf der Karte):',
@@ -846,7 +923,8 @@
                             key.startsWith('whyUsP') ||
                             key === 'package2SubTitle' ||
                             key === 'blogContentPlaceholder' || 
-                            key === 'awardsContentPlaceholder';  
+                            key === 'awardsContentPlaceholder' ||
+                            key.startsWith('awardCaption'); 
                         
                         if (element.tagName === 'IMG' && key === 'heroImageAlt') {
                              element.alt = translationText;
