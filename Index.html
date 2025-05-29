@@ -47,7 +47,7 @@
             color: #3B82F6; 
             text-decoration: underline;
         }
-        .linkedin-embed-container {
+        .linkedin-embed-container, .image-embed-container { 
             background-color: rgba(31, 41, 55, 0.8); 
             border: 1px solid #4B5563; 
             border-radius: 0.5rem; 
@@ -56,19 +56,24 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 400px; 
         }
-        .linkedin-embed-container iframe {
+        .linkedin-embed-container iframe, .image-embed-container img {
             max-width: 100%;
             border-radius: 0.375rem; 
         }
-        .linkedin-caption {
+        .image-embed-container img { 
+            object-fit: contain; 
+            max-height: 380px; 
+        }
+        .linkedin-caption, .image-caption { 
             margin-top: 0.75rem; 
             font-size: 0.875rem; 
             color: #9CA3AF; 
             text-align: center;
         }
         .ai-refine-button {
-            background-color: #8B5CF6; /* Lila gomb */
+            background-color: #8B5CF6; 
             color: white;
             transition: background-color 0.3s ease;
             font-size: 0.875rem;
@@ -80,8 +85,8 @@
             background-color: #7C3AED;
         }
         .loading-spinner {
-            border: 4px solid #f3f3f3; /* Light grey */
-            border-top: 4px solid #8B5CF6; /* Purple */
+            border: 4px solid #f3f3f3; 
+            border-top: 4px solid #8B5CF6; 
             border-radius: 50%;
             width: 24px;
             height: 24px;
@@ -509,6 +514,10 @@
                             <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333531520541843456" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 10"></iframe>
                             <p class="linkedin-caption" data-translate-key="awardCaption10">Google I/O 2025 Hivatalos Regisztrált Tagja</p>
                         </div>
+                        <div class="image-embed-container">
+                            <img src="tanu.jpg" alt="Tanúsítvány Kép" onerror="this.alt='Tanúsítvány kép nem tölthető be'; this.src='https://placehold.co/504x378/1F2937/9CA3AF?text=Tanúsítvány';">
+                            <p class="image-caption" data-translate-key="awardCaptionTanu">A Classica-2 Kft Cégvezetésem alatt (3év) 3,2 milliárdos forgalmat bonyolított le.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -676,11 +685,15 @@
                 formSubject: 'Tárgy',
                 formMessage: 'Üzenet',
                 formAiRefine: 'Üzenet finomítása AI-val ✨',
+                formEmptyMessageError: 'Kérjük, először írjon valamit az üzenet mezőbe!',
                 formSend: 'Üzenet Küldése',
                 aiModalTitle: 'AI Javaslat az Üzenethez',
                 aiModalLoading: 'Finomítás folyamatban...',
                 aiModalUseButton: 'Szöveg használata',
                 aiModalCloseButton: 'Bezárás',
+                alertSuccessTitle: 'Siker!',
+                alertErrorTitle: 'Hiba!',
+                alertInfoTitle: 'Értesítés',
                 awardsTitle: "Elismerések, Eredmények", 
                 awardsContentPlaceholder: "Büszkék vagyunk eddigi elismeréseinkre és eredményeinkre. Hamarosan itt részletezzük őket!", 
                 awardCaption1: "Fejlesztői elismerés a google.com-tól",
@@ -693,6 +706,7 @@
                 awardCaption8: "Google Fejlesztői Tag",
                 awardCaption9: "Android fejlesztő",
                 awardCaption10: "Google I/O 2025 Hivatalos Regisztrált Tagja",
+                awardCaptionTanu: "A Classica-2 Kft Cégvezetésem alatt (3év) 3,2 milliárdos forgalmat bonyolított le.",
                 contactTitle: 'Kapcsolat',
                 contactHQ: 'Székhely:',
                 contactOffice: 'Irodánk címe (térképen):',
@@ -781,11 +795,15 @@
                 formSubject: 'Subject',
                 formMessage: 'Message',
                 formAiRefine: 'Refine message with AI ✨',
+                formEmptyMessageError: 'Please write something in the message field first!',
                 formSend: 'Send Message',
                 aiModalTitle: 'AI Suggestion for Message',
                 aiModalLoading: 'Refining in progress...',
                 aiModalUseButton: 'Use This Text',
                 aiModalCloseButton: 'Close',
+                alertSuccessTitle: 'Success!',
+                alertErrorTitle: 'Error!',
+                alertInfoTitle: 'Notification',
                 awardsTitle: "Awards, Achievements", 
                 awardsContentPlaceholder: "We are proud of our awards and achievements so far. We will detail them here soon!", 
                 awardCaption1: "Developer recognition from google.com",
@@ -798,6 +816,7 @@
                 awardCaption8: "Google Developer Member",
                 awardCaption9: "Android Developer",
                 awardCaption10: "Official Registered Member of Google I/O 2025",
+                awardCaptionTanu: "Under my management at Classica-2 Kft (3 years), the company achieved a turnover of 3.2 billion.",
                 contactTitle: 'Contact',
                 contactHQ: 'Headquarters:',
                 contactOffice: 'Our Office (on map):',
@@ -902,6 +921,7 @@
                 awardCaption8: "Google Developer Mitglied",
                 awardCaption9: "Android-Entwickler",
                 awardCaption10: "Offiziell registriertes Mitglied der Google I/O 2025",
+                awardCaptionTanu: "Unter meiner Leitung bei Classica-2 Kft (3 Jahre) erzielte das Unternehmen einen Umsatz von 3,2 Milliarden.",
                 contactTitle: 'Kontakt',
                 contactHQ: 'Hauptsitz:',
                 contactOffice: 'Unser Büro (auf der Karte):',
@@ -925,30 +945,31 @@
             const titleElement = document.getElementById('customAlertTitle');
             const messageElement = document.getElementById('customAlertMessage');
             const okButton = document.getElementById('customAlertOkButton');
-            const closeButton = document.getElementById('customAlertCloseButton'); // This was the original close button for the custom alert
+            const closeButton = document.getElementById('customAlertCloseButton'); 
 
-            // More specific checks
-            if (!modal) { console.error("CustomAlert: 'customAlertModal' not found."); return; }
-            if (!alertBox) { console.error("CustomAlert: 'customAlertBox' not found."); return; }
-            if (!titleElement) { console.error("CustomAlert: 'customAlertTitle' not found."); return; }
-            if (!messageElement) { console.error("CustomAlert: 'customAlertMessage' not found."); return; }
-            if (!okButton) { console.error("CustomAlert: 'customAlertOkButton' not found."); return; }
-            if (!closeButton) { console.error("CustomAlert: 'customAlertCloseButton' not found."); return; }
-
+            if (!modal || !alertBox || !titleElement || !messageElement || !okButton || !closeButton) {
+                 console.error("CustomAlert: One or more modal elements are missing from the DOM.");
+                 if(typeof alert !== 'undefined') alert(message); 
+                 return; 
+            }
 
             messageElement.textContent = message;
             alertBox.classList.remove('border-blue-500', 'border-green-500', 'border-red-500', 'border-l-4'); 
             const currentLang = localStorage.getItem('selectedLanguage') || 'hu';
+            let alertTitle = '';
+
             if (type === 'success') {
-                titleElement.textContent = translations[currentLang]['alertSuccessTitle'] || 'Siker!';
+                alertTitle = translations[currentLang]['alertSuccessTitle'] || 'Siker!';
                 alertBox.classList.add('border-l-4', 'border-green-500');
             } else if (type === 'error') {
-                titleElement.textContent = translations[currentLang]['alertErrorTitle'] || 'Hiba!';
+                alertTitle = translations[currentLang]['alertErrorTitle'] || 'Hiba!';
                 alertBox.classList.add('border-l-4', 'border-red-500');
             } else {
-                titleElement.textContent = translations[currentLang]['alertInfoTitle'] || 'Értesítés';
+                alertTitle = translations[currentLang]['alertInfoTitle'] || 'Értesítés';
                 alertBox.classList.add('border-l-4', 'border-blue-500');
             }
+            titleElement.textContent = alertTitle;
+
 
             modal.classList.remove('hidden');
             setTimeout(() => {
