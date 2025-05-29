@@ -126,31 +126,48 @@
             filter: grayscale(0%);
         }
         
-        footer .container > div:not(:last-child) { 
+        footer .container > div:not(.copyright-inspiration-wrapper) { 
              display: flex;
              flex-direction: column; 
              align-items: center; 
         }
-        @media (min-width: 768px) { 
-            footer .container > div:not(:last-child) {
-                 flex-direction: row; 
-                 justify-content: space-between; 
-                 align-items: flex-start; 
+         @media (min-width: 768px) { 
+            footer .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-wrap: wrap; /* Hozzáadva a tördeléshez */
             }
             .footer-partners {
                 margin-top: 0;
                 padding-top: 0;
                 border-top: none;
-                max-width: 50%; 
-            }
-            .footer-partners-title {
-                text-align: left;
-            }
-            .partner-logos-container {
-                justify-content: flex-start;
+                /* max-width: 50%;  Eltávolítva vagy csökkentve, hogy több hely legyen */
+                flex-basis: 100%; /* Alapértelmezetten teljes szélesség mobilon */
+                margin-bottom: 1rem; /* Térköz mobilon */
             }
             .footer-social-links {
                 text-align: right;
+                flex-basis: 100%; /* Alapértelmezetten teljes szélesség mobilon */
+            }
+             .copyright-inspiration-wrapper {
+                width: 100%; /* Teljes szélesség, hogy középre kerüljön */
+                text-align: center; /* Szöveg középre igazítása */
+                margin-top: 1.5rem; /* Térköz a felette lévő elemekhez */
+            }
+        }
+        @media (min-width: 1024px) { /* lg breakpoint vagy amilyet használsz */
+            .footer-partners {
+                flex-basis: auto; /* Visszaállítjuk, hogy egymás mellé kerülhessenek */
+                margin-bottom: 0;
+                max-width: 60%; /* Finomhangolás a jobb elrendezéshez */
+            }
+            .footer-social-links {
+                flex-basis: auto;
+                text-align: right;
+            }
+             .copyright-inspiration-wrapper {
+                margin-top: 1rem; /* Kisebb térköz nagyobb képernyőn */
             }
         }
 
@@ -279,7 +296,8 @@
 
             <section id="philosophy" class="py-16 md:py-24 bg-gray-900/90">
                 <div class="container mx-auto px-6">
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"> <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"> 
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
                             <div>
                                 <div class="text-blue-400 mb-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
@@ -512,7 +530,8 @@
                 </div>
             </section>
             
-            <section id="awards" class="py-16 md:py-24 bg-gray-900/90"> <div class="container mx-auto px-6">
+            <section id="awards" class="py-16 md:py-24 bg-gray-900/90"> 
+                <div class="container mx-auto px-6">
                     <h2 class="section-title" data-translate-key="awardsTitle">Elismerések, Eredmények</h2>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         <div class="linkedin-embed-container">
@@ -661,22 +680,26 @@
         </main>
 
         <footer class="bg-gray-900/95 border-t border-gray-700">
-            <div class="container mx-auto px-6 py-8 text-center">
-                 <div class="footer-partners mb-8 md:mb-0 md:mr-auto"> <h4 class="footer-partners-title" data-translate-key="footerPartnersTitle">Fő támogatóink és partnereink:</h4>
-                    <div class="partner-logos-container">
-                        <img src="tam1.png" alt="Támogató 1 Logó" class="partner-logo" onerror="this.style.display='none'">
-                        <img src="tam2.png" alt="Támogató 2 Logó" class="partner-logo" onerror="this.style.display='none'">
-                        <img src="tam3.png" alt="Támogató 3 Logó" class="partner-logo" onerror="this.style.display='none'">
-                        <img src="tam4.png" alt="Támogató 4 Logó" class="partner-logo" onerror="this.style.display='none'">
-                        <img src="tam5.png" alt="Támogató 5 Logó" class="partner-logo" onerror="this.style.display='none'">
+            <div class="container mx-auto px-6 py-8">
+                <div class="md:flex md:justify-between md:items-start">
+                    <div class="footer-partners mb-8 md:mb-0 md:mr-auto md:max-w-[calc(50%-1rem)]"> <h4 class="footer-partners-title" data-translate-key="footerPartnersTitle">Fő támogatóink és partnereink:</h4>
+                        <div class="partner-logos-container">
+                            <img src="tam1.png" alt="Támogató 1 Logó" class="partner-logo" onerror="this.style.display='none'">
+                            <img src="tam2.png" alt="Támogató 2 Logó" class="partner-logo" onerror="this.style.display='none'">
+                            <img src="tam3.png" alt="Támogató 3 Logó" class="partner-logo" onerror="this.style.display='none'">
+                            <img src="tam4.png" alt="Támogató 4 Logó" class="partner-logo" onerror="this.style.display='none'">
+                            <img src="tam5.png" alt="Támogató 5 Logó" class="partner-logo" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                    <div class="footer-social-links text-center md:text-right md:max-w-[calc(50%-1rem)]">
+                        <div class="mb-4">
+                             <a href="https://www.facebook.com/pohankakft" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">Facebook</a> |
+                             <a href="https://www.linkedin.com/in/j%C3%B3zsef-p%C3%A9ter-poh%C3%A1nka-402423184/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">LinkedIn</a> |
+                             <a href="https://github.com/pohi99999" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">GitHub</a>
+                        </div>
                     </div>
                 </div>
-                <div class="footer-social-links">
-                    <div class="mb-4">
-                         <a href="https://www.facebook.com/pohankakft" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">Facebook</a> |
-                         <a href="https://www.linkedin.com/in/j%C3%B3zsef-p%C3%A9ter-poh%C3%A1nka-402423184/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">LinkedIn</a> |
-                         <a href="https://github.com/pohi99999" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">GitHub</a>
-                    </div>
+                <div class="copyright-inspiration-wrapper text-center border-t border-gray-700 pt-6 mt-6 md:mt-8">
                     <p class="text-gray-500 text-sm">
                         © <span id="currentYear"></span> <span data-translate-key="footerCopyright">Pohánka És Társa Kft. Minden jog fenntartva.</span>
                     </p>
@@ -1402,6 +1425,10 @@
                     
                     if (content) {
                         content.classList.toggle('hidden');
+                        // ARIA attribútumok frissítése
+                        const isExpanded = !content.classList.contains('hidden');
+                        header.setAttribute('aria-expanded', isExpanded.toString());
+                        content.setAttribute('aria-hidden', (!isExpanded).toString());
                     }
                     if (icon) {
                         icon.classList.toggle('rotate-180');
