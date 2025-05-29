@@ -107,17 +107,17 @@
             font-weight: 600; 
             color: #9CA3AF; 
             margin-bottom: 0.75rem; 
-            text-align: left; /* Alapértelmezetten balra igazítva */
+            text-align: left; 
         }
         .partner-logos-container {
             display: flex;
             flex-wrap: wrap; 
             gap: 1rem; 
             align-items: center;
-            justify-content: flex-start; /* Alapértelmezetten balra igazítva */
+            justify-content: flex-start; 
         }
         .partner-logo {
-            max-height: 30px; /* Kicsit kisebb logók a láblécben */
+            max-height: 30px; 
             width: auto;
             filter: grayscale(60%); 
             transition: filter 0.3s ease;
@@ -125,23 +125,23 @@
         .partner-logo:hover {
             filter: grayscale(0%);
         }
-        /* A lábléc tartalmi részének flexbox beállításai */
-        footer .container > div:not(:last-child) { /* Az utolsó p tag kivételével */
+        
+        footer .container > div:not(:last-child) { 
              display: flex;
-             flex-direction: column; /* Alapértelmezetten egymás alá */
-             align-items: center; /* Középre igazítás mobilon */
+             flex-direction: column; 
+             align-items: center; 
         }
-        @media (min-width: 768px) { /* md breakpoint */
+        @media (min-width: 768px) { 
             footer .container > div:not(:last-child) {
-                 flex-direction: row; /* Egymás mellé nagyobb képernyőn */
-                 justify-content: space-between; /* Térköz elosztása */
-                 align-items: flex-start; /* Felfele igazítás */
+                 flex-direction: row; 
+                 justify-content: space-between; 
+                 align-items: flex-start; 
             }
             .footer-partners {
                 margin-top: 0;
                 padding-top: 0;
                 border-top: none;
-                max-width: 50%; /* Hogy elférjen a jobb oldali rész mellett */
+                max-width: 50%; 
             }
             .footer-partners-title {
                 text-align: left;
@@ -411,7 +411,8 @@
                             <a href="csomag8.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton">Részletek</a>
                         </div>
 
-                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300 lg:col-span-1 md:col-span-2 col-span-1"> <div class="text-blue-400 mb-4">
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300 lg:col-span-1 md:col-span-2 col-span-1"> 
+                             <div class="text-blue-400 mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
                             </div>
                             <div>
@@ -497,49 +498,8 @@
                         </div>
                 </div>
             </section>
-
-            <section id="offer" class="py-16 md:py-24 bg-slate-800/90">
-                <div class="container mx-auto px-6">
-                    <h2 class="section-title" data-translate-key="offerTitle">Ajánlatkérés</h2>
-                    <div class="max-w-3xl mx-auto dev-inspired-card p-8 md:p-12 rounded-lg shadow-2xl">
-                        <p class="text-gray-300 text-center mb-8 text-lg" data-translate-key="offerSubTitle">Kérdése van, vagy ajánlatot szeretne kérni? Töltse ki az alábbi űrlapot, és hamarosan felvesszük Önnel a kapcsolatot!</p>
-                        <form action="https://formspree.io/f/mrbqnrdy" method="POST">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formName">Teljes Név</label>
-                                    <input type="text" name="name" id="name" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Pl. Minta János">
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formEmail">Email Cím</label>
-                                    <input type="email" name="email" id="email" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Pl. email@example.com">
-                                </div>
-                            </div>
-                            <div class="mb-6">
-                                <label for="subject" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formSubject">Tárgy</label>
-                                <input type="text" name="subject" id="subject" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Pl. Árajánlatkérés webfejlesztésre">
-                            </div>
-                            <div class="mb-6">
-                                <label for="message" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formMessage">Üzenet</label>
-                                <textarea name="message" id="message" rows="5" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Írja le itt részletesen, miben segíthetünk..."></textarea>
-                                <div class="mt-2 text-right">
-                                    <button type="button" id="refineMessageButton" class="ai-refine-button">
-                                        <span data-translate-key="formAiRefine">Üzenet finomítása AI-val ✨</span>
-                                        <div id="refineLoader" class="loading-spinner hidden inline-block"></div>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="dev-inspired-button font-semibold px-10 py-3.5 rounded-lg text-lg" data-translate-key="formSend">
-                                    Üzenet Küldése
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
-
-             <section id="awards" class="py-16 md:py-24 bg-gray-900/90">
-                <div class="container mx-auto px-6">
+            
+            <section id="awards" class="py-16 md:py-24 bg-gray-900/90"> <div class="container mx-auto px-6">
                     <h2 class="section-title" data-translate-key="awardsTitle">Elismerések, Eredmények</h2>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         <div class="linkedin-embed-container">
@@ -586,6 +546,50 @@
                             <img src="tanu.jpg" alt="Tanúsítvány Kép" onerror="this.alt='Tanúsítvány kép nem tölthető be'; this.src='https://placehold.co/504x378/1F2937/9CA3AF?text=Tanúsítvány';">
                             <p class="image-caption" data-translate-key="awardCaptionTanu">A Classica-2 Kft Cégvezetésem alatt (3év) 3,2 milliárdos forgalmat bonyolított le.</p>
                         </div>
+                         <div class="image-embed-container">
+                            <img src="tanu2.jpg" alt="Másik Tanúsítvány Kép" onerror="this.alt='Másik tanúsítvány kép nem tölthető be'; this.src='https://placehold.co/504x378/1F2937/9CA3AF?text=Tanúsítvány+2';">
+                            <p class="image-caption" data-translate-key="awardCaptionTanu2">A+ Tanúsítványunk, a legmagasabb minősítői besorolás ami a Cégek Minőségét rangsorolja Magyarországon.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="offer" class="py-16 md:py-24 bg-slate-800/90">
+                <div class="container mx-auto px-6">
+                    <h2 class="section-title" data-translate-key="offerTitle">Ajánlatkérés</h2>
+                    <div class="max-w-3xl mx-auto dev-inspired-card p-8 md:p-12 rounded-lg shadow-2xl">
+                        <p class="text-gray-300 text-center mb-8 text-lg" data-translate-key="offerSubTitle">Kérdése van, vagy ajánlatot szeretne kérni? Töltse ki az alábbi űrlapot, és hamarosan felvesszük Önnel a kapcsolatot!</p>
+                        <form action="https://formspree.io/f/mrbqnrdy" method="POST">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formName">Teljes Név</label>
+                                    <input type="text" name="name" id="name" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Pl. Minta János">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formEmail">Email Cím</label>
+                                    <input type="email" name="email" id="email" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Pl. email@example.com">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formSubject">Tárgy</label>
+                                <input type="text" name="subject" id="subject" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Pl. Árajánlatkérés webfejlesztésre">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-1" data-translate-key="formMessage">Üzenet</label>
+                                <textarea name="message" id="message" rows="5" required class="w-full px-4 py-2.5 bg-gray-700/80 border border-gray-600 text-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500" placeholder="Írja le itt részletesen, miben segíthetünk..."></textarea>
+                                <div class="mt-2 text-right">
+                                    <button type="button" id="refineMessageButton" class="ai-refine-button">
+                                        <span data-translate-key="formAiRefine">Üzenet finomítása AI-val ✨</span>
+                                        <div id="refineLoader" class="loading-spinner hidden inline-block"></div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="dev-inspired-button font-semibold px-10 py-3.5 rounded-lg text-lg" data-translate-key="formSend">
+                                    Üzenet Küldése
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </section>
@@ -788,6 +792,7 @@
                 awardCaption9: "Android fejlesztő",
                 awardCaption10: "Google I/O 2025 Hivatalos Regisztrált Tagja",
                 awardCaptionTanu: "A Classica-2 Kft Cégvezetésem alatt (3év) 3,2 milliárdos forgalmat bonyolított le.",
+                awardCaptionTanu2: "A+ Tanúsítványunk, a legmagasabb minősítői besorolás ami a Cégek Minőségét rangsorolja Magyarországon.",
                 contactTitle: 'Kapcsolat',
                 contactHQ: 'Székhely:',
                 contactOffice: 'Irodánk címe (térképen):',
@@ -800,7 +805,7 @@
                 emailPeterDesc: '(ajánlatkérés, szolgáltatások, programokkal kapcsolatos kérdések)',
                 emailPiroskaDesc: '(könyvelés)',
                 emailSupportDesc: '(ügyfélszolgálat, egyéb kérdések)',
-                footerPartnersTitle: "Fő támogatóink és partnereink:", // ÚJ
+                footerPartnersTitle: "Fő támogatóink és partnereink:", 
                 footerCopyright: 'Pohánka És Társa Kft. Minden jog fenntartva.',
                 footerInspiration: 'Design inspiráció: <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">developers.google.com</a>'
 
@@ -901,6 +906,7 @@
                 awardCaption9: "Android Developer",
                 awardCaption10: "Official Registered Member of Google I/O 2025",
                 awardCaptionTanu: "Under my management at Classica-2 Kft (3 years), the company achieved a turnover of 3.2 billion.",
+                awardCaptionTanu2: "Our A+ Certificate, the highest rating that ranks the Quality of Companies in Hungary.",
                 contactTitle: 'Contact',
                 contactHQ: 'Headquarters:',
                 contactOffice: 'Our Office (on map):',
@@ -913,7 +919,7 @@
                 emailPeterDesc: '(offer requests, services, program-related questions)',
                 emailPiroskaDesc: '(accounting)',
                 emailSupportDesc: '(customer support, other questions)',
-                footerPartnersTitle: "Our Main Supporters and Partners:", // NEW
+                footerPartnersTitle: "Our Main Supporters and Partners:", 
                 footerCopyright: 'Pohánka És Társa Kft. All rights reserved.',
                 footerInspiration: 'Design inspiration: <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">developers.google.com</a>'
             },
@@ -1009,6 +1015,7 @@
                 awardCaption9: "Android-Entwickler",
                 awardCaption10: "Offiziell registriertes Mitglied der Google I/O 2025",
                 awardCaptionTanu: "Unter meiner Leitung bei Classica-2 Kft (3 Jahre) erzielte das Unternehmen einen Umsatz von 3,2 Milliarden.",
+                awardCaptionTanu2: "Unser A+ Zertifikat, die höchste Bewertung, die die Qualität von Unternehmen in Ungarn einstuft.",
                 contactTitle: 'Kontakt',
                 contactHQ: 'Hauptsitz:',
                 contactOffice: 'Unser Büro (auf der Karte):',
@@ -1021,7 +1028,7 @@
                 emailPeterDesc: '(Angebotsanfragen, Dienstleistungen, Fragen zu Programmen)',
                 emailPiroskaDesc: '(Buchhaltung)',
                 emailSupportDesc: '(Kundendienst, sonstige Fragen)',
-                footerPartnersTitle: "Unsere Hauptförderer und Partner:", // NEW
+                footerPartnersTitle: "Unsere Hauptförderer und Partner:", 
                 footerCopyright: 'Pohánka És Társa Kft. Alle Rechte vorbehalten.',
                 footerInspiration: 'Design-Inspiration: <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">developers.google.com</a>'
             }
