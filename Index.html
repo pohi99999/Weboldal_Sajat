@@ -97,6 +97,62 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .footer-partners {
+            margin-top: 1.5rem; 
+            padding-top: 1.5rem; 
+            border-top: 1px solid #374151; 
+        }
+        .footer-partners-title {
+            font-size: 1rem; 
+            font-weight: 600; 
+            color: #9CA3AF; 
+            margin-bottom: 0.75rem; 
+            text-align: left; /* Alapértelmezetten balra igazítva */
+        }
+        .partner-logos-container {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 1rem; 
+            align-items: center;
+            justify-content: flex-start; /* Alapértelmezetten balra igazítva */
+        }
+        .partner-logo {
+            max-height: 30px; /* Kicsit kisebb logók a láblécben */
+            width: auto;
+            filter: grayscale(60%); 
+            transition: filter 0.3s ease;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0%);
+        }
+        /* A lábléc tartalmi részének flexbox beállításai */
+        footer .container > div:not(:last-child) { /* Az utolsó p tag kivételével */
+             display: flex;
+             flex-direction: column; /* Alapértelmezetten egymás alá */
+             align-items: center; /* Középre igazítás mobilon */
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+            footer .container > div:not(:last-child) {
+                 flex-direction: row; /* Egymás mellé nagyobb képernyőn */
+                 justify-content: space-between; /* Térköz elosztása */
+                 align-items: flex-start; /* Felfele igazítás */
+            }
+            .footer-partners {
+                margin-top: 0;
+                padding-top: 0;
+                border-top: none;
+                max-width: 50%; /* Hogy elférjen a jobb oldali rész mellett */
+            }
+            .footer-partners-title {
+                text-align: left;
+            }
+            .partner-logos-container {
+                justify-content: flex-start;
+            }
+            .footer-social-links {
+                text-align: right;
+            }
+        }
 
 
         @media (max-width: 768px) { 
@@ -342,7 +398,7 @@
                             <a href="csomag6.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton">Részletek</a>
                         </div>
                         
-                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
+                         <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
                             <div class="text-blue-400 mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5A2.625 2.625 0 005.625 21h12.75c.621 0 1.17-.238 1.598-.632M21 14.25V9.75a2.625 2.625 0 00-2.625-2.625H5.625A2.625 2.625 0 003 9.75v4.5m18 0v-2.625c0-.621-.504-1.125-1.125-1.125H19.5M3 14.25v-2.625c0-.621.504-1.125 1.125-1.125H4.5m0 0V5.625A2.625 2.625 0 017.125 3h9.75c1.446 0 2.625 1.179 2.625 2.625V7.5M4.5 7.5H19.5" />
@@ -355,8 +411,7 @@
                             <a href="csomag8.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton">Részletek</a>
                         </div>
 
-                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300 lg:col-span-1 md:col-span-2 col-span-1">
-                             <div class="text-blue-400 mb-4">
+                        <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300 lg:col-span-1 md:col-span-2 col-span-1"> <div class="text-blue-400 mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
                             </div>
                             <div>
@@ -590,17 +645,28 @@
 
         <footer class="bg-gray-900/95 border-t border-gray-700">
             <div class="container mx-auto px-6 py-8 text-center">
-                <div class="mb-4">
-                     <a href="https://www.facebook.com/pohankakft" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">Facebook</a> |
-                     <a href="https://www.linkedin.com/in/j%C3%B3zsef-p%C3%A9ter-poh%C3%A1nka-402423184/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">LinkedIn</a> |
-                     <a href="https://github.com/pohi99999" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">GitHub</a>
+                 <div class="footer-partners mb-8 md:mb-0 md:mr-auto"> <h4 class="footer-partners-title" data-translate-key="footerPartnersTitle">Fő támogatóink és partnereink:</h4>
+                    <div class="partner-logos-container">
+                        <img src="tam1.png" alt="Támogató 1 Logó" class="partner-logo" onerror="this.style.display='none'">
+                        <img src="tam2.png" alt="Támogató 2 Logó" class="partner-logo" onerror="this.style.display='none'">
+                        <img src="tam3.png" alt="Támogató 3 Logó" class="partner-logo" onerror="this.style.display='none'">
+                        <img src="tam4.png" alt="Támogató 4 Logó" class="partner-logo" onerror="this.style.display='none'">
+                        <img src="tam5.png" alt="Támogató 5 Logó" class="partner-logo" onerror="this.style.display='none'">
+                    </div>
                 </div>
-                <p class="text-gray-500 text-sm">
-                    © <span id="currentYear"></span> <span data-translate-key="footerCopyright">Pohánka És Társa Kft. Minden jog fenntartva.</span>
-                </p>
-                <p class="text-gray-600 text-xs mt-1" data-translate-key="footerInspiration">
-                    Design inspiráció: <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">developers.google.com</a>
-                </p>
+                <div class="footer-social-links">
+                    <div class="mb-4">
+                         <a href="https://www.facebook.com/pohankakft" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">Facebook</a> |
+                         <a href="https://www.linkedin.com/in/j%C3%B3zsef-p%C3%A9ter-poh%C3%A1nka-402423184/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">LinkedIn</a> |
+                         <a href="https://github.com/pohi99999" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">GitHub</a>
+                    </div>
+                    <p class="text-gray-500 text-sm">
+                        © <span id="currentYear"></span> <span data-translate-key="footerCopyright">Pohánka És Társa Kft. Minden jog fenntartva.</span>
+                    </p>
+                    <p class="text-gray-600 text-xs mt-1" data-translate-key="footerInspiration">
+                        Design inspiráció: <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">developers.google.com</a>
+                    </p>
+                </div>
             </div>
         </footer>
     </div>
@@ -734,6 +800,7 @@
                 emailPeterDesc: '(ajánlatkérés, szolgáltatások, programokkal kapcsolatos kérdések)',
                 emailPiroskaDesc: '(könyvelés)',
                 emailSupportDesc: '(ügyfélszolgálat, egyéb kérdések)',
+                footerPartnersTitle: "Fő támogatóink és partnereink:", // ÚJ
                 footerCopyright: 'Pohánka És Társa Kft. Minden jog fenntartva.',
                 footerInspiration: 'Design inspiráció: <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">developers.google.com</a>'
 
@@ -846,6 +913,7 @@
                 emailPeterDesc: '(offer requests, services, program-related questions)',
                 emailPiroskaDesc: '(accounting)',
                 emailSupportDesc: '(customer support, other questions)',
+                footerPartnersTitle: "Our Main Supporters and Partners:", // NEW
                 footerCopyright: 'Pohánka És Társa Kft. All rights reserved.',
                 footerInspiration: 'Design inspiration: <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">developers.google.com</a>'
             },
@@ -953,6 +1021,7 @@
                 emailPeterDesc: '(Angebotsanfragen, Dienstleistungen, Fragen zu Programmen)',
                 emailPiroskaDesc: '(Buchhaltung)',
                 emailSupportDesc: '(Kundendienst, sonstige Fragen)',
+                footerPartnersTitle: "Unsere Hauptförderer und Partner:", // NEW
                 footerCopyright: 'Pohánka És Társa Kft. Alle Rechte vorbehalten.',
                 footerInspiration: 'Design-Inspiration: <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">developers.google.com</a>'
             }
