@@ -97,24 +97,17 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        .footer-partners {
-            margin-top: 1.5rem; 
-            padding-top: 1.5rem; 
-            border-top: 1px solid #374151; 
-        }
         .footer-partners-title {
             font-size: 1rem; 
             font-weight: 600; 
             color: #9CA3AF; 
             margin-bottom: 0.75rem; 
-            text-align: left; 
         }
         .partner-logos-container {
             display: flex;
             flex-wrap: wrap; 
             gap: 1rem; 
             align-items: center;
-            justify-content: flex-start; 
         }
         .partner-logo {
             max-height: 30px; 
@@ -126,51 +119,28 @@
             filter: grayscale(0%);
         }
         
-        footer .container > div:not(.copyright-inspiration-wrapper) { 
-             display: flex;
-             flex-direction: column; 
-             align-items: center; 
-        }
-         @media (min-width: 768px) { 
-            footer .container {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                flex-wrap: wrap; /* Hozzáadva a tördeléshez */
+        @media (max-width: 767px) { /* Mobilon a partnerek és social linkek középre igazítva, egymás alatt */
+            .footer-partners, .footer-social-links {
+                text-align: center;
             }
-            .footer-partners {
-                margin-top: 0;
-                padding-top: 0;
-                border-top: none;
-                /* max-width: 50%;  Eltávolítva vagy csökkentve, hogy több hely legyen */
-                flex-basis: 100%; /* Alapértelmezetten teljes szélesség mobilon */
-                margin-bottom: 1rem; /* Térköz mobilon */
+            .partner-logos-container {
+                justify-content: center;
+            }
+            .footer-partners-title {
+                text-align: center;
+            }
+        }
+        @media (min-width: 768px) { /* md és nagyobb képernyőkön */
+            .footer-partners-title {
+                text-align: left;
+            }
+            .partner-logos-container {
+                justify-content: flex-start;
             }
             .footer-social-links {
                 text-align: right;
-                flex-basis: 100%; /* Alapértelmezetten teljes szélesség mobilon */
-            }
-             .copyright-inspiration-wrapper {
-                width: 100%; /* Teljes szélesség, hogy középre kerüljön */
-                text-align: center; /* Szöveg középre igazítása */
-                margin-top: 1.5rem; /* Térköz a felette lévő elemekhez */
             }
         }
-        @media (min-width: 1024px) { /* lg breakpoint vagy amilyet használsz */
-            .footer-partners {
-                flex-basis: auto; /* Visszaállítjuk, hogy egymás mellé kerülhessenek */
-                margin-bottom: 0;
-                max-width: 60%; /* Finomhangolás a jobb elrendezéshez */
-            }
-            .footer-social-links {
-                flex-basis: auto;
-                text-align: right;
-            }
-             .copyright-inspiration-wrapper {
-                margin-top: 1rem; /* Kisebb térköz nagyobb képernyőn */
-            }
-        }
-
 
         @media (max-width: 768px) { 
             .language-selector { padding: 0.5rem; justify-content: center; }
@@ -304,11 +274,11 @@
                                       <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                                     </svg>
                                 </div>
-                                <div class="philosophy-toggle-header flex justify-between items-center cursor-pointer mb-2">
+                                <div class="philosophy-toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
                                     <h3 class="text-xl font-semibold text-white" data-translate-key="philosophyCard1Title">Értékek és Filozófia</h3>
                                     <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </div>
-                                <div class="philosophy-content hidden space-y-2 text-gray-400 text-sm">
+                                <div class="philosophy-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
                                     <p data-translate-key="philosophyCard1P1"></p>
                                     <p data-translate-key="philosophyCard1P2"></p>
                                     <p data-translate-key="philosophyCard1P3"></p>
@@ -323,11 +293,11 @@
                                       <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
                                 </div>
-                                <div class="philosophy-toggle-header flex justify-between items-center cursor-pointer mb-2">
+                                <div class="philosophy-toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
                                     <h3 class="text-xl font-semibold text-white" data-translate-key="philosophyCard2Title">Jövőképünk</h3>
                                     <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </div>
-                                <div class="philosophy-content hidden space-y-2 text-gray-400 text-sm">
+                                <div class="philosophy-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
                                     <p data-translate-key="philosophyCard2P1"></p>
                                     <p data-translate-key="philosophyCard2MovedText"></p>
                                     <p data-translate-key="philosophyCard2P2"></p>
@@ -341,11 +311,11 @@
                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                                      </svg>
                                 </div>
-                                <div class="philosophy-toggle-header flex justify-between items-center cursor-pointer mb-2">
+                                <div class="philosophy-toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
                                     <h3 class="text-xl font-semibold text-white" data-translate-key="philosophyCard3Title">Elkötelezettségünk és Csapatunk</h3>
                                     <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </div>
-                                <div class="philosophy-content hidden space-y-2 text-gray-400 text-sm">
+                                <div class="philosophy-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
                                     <p data-translate-key="philosophyCard3P1"></p>
                                     <p class="mt-3 font-semibold text-gray-300" data-translate-key="philosophyCard3TeamIntro"></p>
                                     <p data-translate-key="philosophyCard3TeamP1"></p>
@@ -681,8 +651,9 @@
 
         <footer class="bg-gray-900/95 border-t border-gray-700">
             <div class="container mx-auto px-6 py-8">
-                <div class="md:flex md:justify-between md:items-start">
-                    <div class="footer-partners mb-8 md:mb-0 md:mr-auto md:max-w-[calc(50%-1rem)]"> <h4 class="footer-partners-title" data-translate-key="footerPartnersTitle">Fő támogatóink és partnereink:</h4>
+                <div class="md:flex md:justify-between md:items-start mb-6"> 
+                    <div class="footer-partners mb-8 md:mb-0"> 
+                        <h4 class="footer-partners-title" data-translate-key="footerPartnersTitle">Fő támogatóink és partnereink:</h4>
                         <div class="partner-logos-container">
                             <img src="tam1.png" alt="Támogató 1 Logó" class="partner-logo" onerror="this.style.display='none'">
                             <img src="tam2.png" alt="Támogató 2 Logó" class="partner-logo" onerror="this.style.display='none'">
@@ -691,7 +662,7 @@
                             <img src="tam5.png" alt="Támogató 5 Logó" class="partner-logo" onerror="this.style.display='none'">
                         </div>
                     </div>
-                    <div class="footer-social-links text-center md:text-right md:max-w-[calc(50%-1rem)]">
+                    <div class="footer-social-links text-center md:text-right">
                         <div class="mb-4">
                              <a href="https://www.facebook.com/pohankakft" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">Facebook</a> |
                              <a href="https://www.linkedin.com/in/j%C3%B3zsef-p%C3%A9ter-poh%C3%A1nka-402423184/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">LinkedIn</a> |
@@ -699,7 +670,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="copyright-inspiration-wrapper text-center border-t border-gray-700 pt-6 mt-6 md:mt-8">
+                <div class="copyright-inspiration-wrapper text-center border-t border-gray-700 pt-6">
                     <p class="text-gray-500 text-sm">
                         © <span id="currentYear"></span> <span data-translate-key="footerCopyright">Pohánka És Társa Kft. Minden jog fenntartva.</span>
                     </p>
@@ -791,6 +762,13 @@
                 package8Title: 'Kereskedelemi És Fuvarszervezési Szolgáltatás',
                 package8Desc: 'Komplett kereskedelmi kapcsolat kiépítése, értékesítési szállítási folyamatok (Vám, Ekaer, Engedélyek, Okmányok) teljeskörű lebonyolítása.',
                 detailsButton: 'Részletek',
+                productsTitle: 'Kiemelt Termékeink', // HOZZÁADVA
+                product1Title: 'Tervezési, Projektfeladatokat Segítő Szoftverek',
+                product1Desc: 'Intuitív szoftverek a projektek hatékony kezeléséhez, csapatmunkához és határidők követéséhez.',
+                product2Title: 'Ügyfélkapcsolat-kezelő program',
+                product2Desc: 'Ügyfélkapcsolat-kezelő rendszer kis- és középvállalkozások számára, testreszabható modulokkal.',
+                product3Title: 'E-kereskedelmi Platform',
+                product3Desc: 'Teljeskörű megoldás automatizált felület létrehozására, amely a kereskedelmi lebonyolításban, az ügyfélkapcsolat kezelésében, nyilvántartásában segíti a felhasználót, átláthatóvá, és egyszerűbbé teszi a kereskedelmi kapcsolat szereplői között lévő igények, tevékenységek, információk hatékony, gyors, és pontos lebonyolítását.',
                 referencesTitle: 'Betekintés, Munkáink', 
                 ref1Title: 'Pohi AI Pro', 
                 ref1Desc: 'Egyedi fejlesztésű, teljes portál rendszer amely egy vevői adatbázis és annak rendelés állományát valamint a gyártok készletnyilvántartását összefésüli és kezeli a vevői igényekkel. A fuvarszervezéssel egybe hangolva. Még fejlesztés alatt , tesztelés a Mesterséges Intelligencia által vezérelt automatizálása bevezetése a gyorsabb és átláthatóbb nyilvántartás érdekében.',
@@ -905,6 +883,13 @@
                 package8Title: 'Commercial and Freight Forwarding Services',
                 package8Desc: 'Complete establishment of commercial relations, full management of sales and shipping processes (Customs, EKAER, Permits, Documents).',
                 detailsButton: 'Details',
+                productsTitle: 'Featured Products', // ADDED
+                product1Title: 'Design and Project Task Support Software',
+                product1Desc: 'Intuitive software for efficient project management, teamwork, and deadline tracking.',
+                product2Title: 'Customer Relationship Management (CRM) Program',
+                product2Desc: 'CRM system for small and medium-sized businesses, with customizable modules.',
+                product3Title: 'E-commerce Platform',
+                product3Desc: 'Comprehensive solution for creating an automated interface that assists users in trade execution, customer relationship management, and record-keeping, making the needs, activities, and information among commercial partners efficient, fast, and accurate.',
                 referencesTitle: 'Insight, Our Works', 
                 ref1Title: 'Pohi AI Pro', 
                 ref1Desc: 'Custom-developed, full portal system that consolidates and manages customer databases, order statuses, and manufacturer inventory with customer demands, coordinated with logistics. Still under development, testing AI-driven automation for faster and more transparent record-keeping.',
@@ -1018,6 +1003,13 @@
                 package8Title: 'Handels- und Speditionsdienstleistungen',
                 package8Desc: 'Vollständiger Aufbau von Handelsbeziehungen, umfassende Abwicklung von Verkaufs- und Versandprozessen (Zoll, EKAER, Genehmigungen, Dokumente).',
                 detailsButton: 'Details',
+                productsTitle: 'Ausgewählte Produkte', // ADDED
+                product1Title: 'Software für Design und Projektaufgaben',
+                product1Desc: 'Intuitive Software für effizientes Projektmanagement, Teamarbeit und Terminverfolgung.',
+                product2Title: 'Kundenbeziehungsmanagement (CRM) Programm',
+                product2Desc: 'CRM-System für kleine und mittlere Unternehmen mit anpassbaren Modulen.',
+                product3Title: 'E-Commerce-Plattform',
+                product3Desc: 'Umfassende Lösung zur Erstellung einer automatisierten Oberfläche, die den Benutzer bei der Handelsabwicklung, dem Kundenbeziehungsmanagement und der Aufzeichnung unterstützt und die Bedürfnisse, Aktivitäten und Informationen zwischen den Handelspartnern effizient, schnell und genau macht.',
                 referencesTitle: 'Einblick, Unsere Arbeiten', 
                 ref1Title: 'Pohi AI Pro', 
                 ref1Desc: 'Individuell entwickeltes, vollständiges Portalsystem, das eine Kundendatenbank und deren Bestellstatus sowie den Lagerbestand der Hersteller konsolidiert und mit den Kundenanforderungen verwaltet, koordiniert mit der Logistik. Noch in Entwicklung, Testen der KI-gesteuerten Automatisierung für eine schnellere und transparentere Datenführung.',
