@@ -119,17 +119,36 @@
         .partner-logo:hover {
             filter: grayscale(0%);
         }
-        .toggle-header { /* Általános osztály a lenyitható fejlécekhez */
+        .toggle-header { 
             cursor: pointer;
         }
-        .chevron-icon { /* Általános osztály a chevron ikonokhoz */
+        .chevron-icon { 
             transition: transform 0.2s ease-in-out;
         }
-        .rotate-180 { /* Osztály az ikon elforgatásához */
+        .rotate-180 { 
             transform: rotate(180deg);
         }
+        .blog-post-link {
+            display: inline-block;
+            margin: 1rem auto; /* Középre igazítás és térköz */
+            padding: 0.5rem 1rem;
+            background-color: #2563EB; /* Kék háttér */
+            color: white;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .blog-post-link:hover {
+            background-color: #1D4ED8; /* Sötétebb kék hoverre */
+        }
+        .blog-post-link svg {
+            width: 1.25rem; /* 20px */
+            height: 1.25rem; /* 20px */
+            display: inline-block; /* Hogy a szöveg mellett legyen */
+            vertical-align: middle;
+        }
         
-        @media (max-width: 767px) { /* Mobilon a partnerek és social linkek középre igazítva, egymás alatt */
+        @media (max-width: 767px) { 
             .footer-partners, .footer-social-links {
                 text-align: center;
             }
@@ -140,7 +159,7 @@
                 text-align: center;
             }
         }
-        @media (min-width: 768px) { /* md és nagyobb képernyőkön */
+        @media (min-width: 768px) { 
             .footer-partners-title {
                 text-align: left;
             }
@@ -510,15 +529,21 @@
                         <svg class="w-6 h-6 text-gray-400 ml-2 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
                     <div class="blog-content toggle-content hidden" aria-hidden="true">
-                        <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl max-w-2xl mx-auto">
-                            <h3 class="text-xl font-semibold text-white mb-3 text-center" data-translate-key="blogPost1Title">70% fejlesztési szinten a Pohi AI Pro!!</h3>
-                            <img src="https://drive.google.com/uc?export=view&id=17bjnVtIk6oGnQoex6hBlJCjvacp25CVt" alt="Pohi AI Pro fejlesztési állapot GIF" class="w-full h-auto object-contain rounded-md my-4 shadow-md max-h-80 mx-auto" data-translate-key="blogPost1ImageAlt" onerror="this.alt='Blog kép nem tölthető be'; this.src='https://placehold.co/600x338/1F2937/9CA3AF?text=Blog+Kép';">
-                            <p class="text-gray-400 text-center text-sm" data-translate-key="blogPost1Caption">betekintés a fejlesztés jelenlegi állapotába.</p>
+                        <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl max-w-2xl mx-auto text-center">
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="blogPost1Title">70% fejlesztési szinten a Pohi AI Pro!!</h3>
+                            <a href="https://www.facebook.com/share/v/14KaTtHiMTh/" target="_blank" rel="noopener noreferrer" class="blog-post-link my-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                                <span data-translate-key="blogLinkText">Megtekintés Facebookon</span>
+                            </a>
+                            <p class="text-gray-400 text-sm" data-translate-key="blogPost1Caption">betekintés a fejlesztés jelenlegi állapotába.</p>
                         </div>
-                        <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl max-w-2xl mx-auto mt-8">
-                            <h3 class="text-xl font-semibold text-white mb-3 text-center" data-translate-key="blogPost2Title">GP Pilot is elég jól halad! V1 kiadás.</h3>
-                            <img src="https://drive.google.com/uc?export=view&id=1JHHGh7It4kTuF18WuSDoaToUZwGwHJDV" alt="GP Pilot fejlesztési állapot GIF" class="w-full h-auto object-contain rounded-md my-4 shadow-md max-h-80 mx-auto" data-translate-key="blogPost2ImageAlt" onerror="this.alt='Blog kép 2 nem tölthető be'; this.src='https://placehold.co/600x338/1F2937/9CA3AF?text=Blog+Kép+2';">
-                            <p class="text-gray-400 text-center text-sm" data-translate-key="blogPost2Caption">betekintés a fejlesztés jelenlegi állapotába.</p>
+                        <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl max-w-2xl mx-auto mt-8 text-center">
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="blogPost2Title">GP Pilot is elég jól halad! V1 kiadás.</h3>
+                             <a href="https://www.facebook.com/share/v/19CN8iJFUj/" target="_blank" rel="noopener noreferrer" class="blog-post-link my-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                                <span data-translate-key="blogLinkText">Megtekintés Facebookon</span>
+                            </a>
+                            <p class="text-gray-400 text-sm" data-translate-key="blogPost2Caption">betekintés a fejlesztés jelenlegi állapotába.</p>
                         </div>
                     </div>
                 </div>
@@ -806,6 +831,7 @@
                 blogPost2Title: "GP Pilot is elég jól halad! V1 kiadás.",
                 blogPost2ImageAlt: "GP Pilot fejlesztési állapot GIF",
                 blogPost2Caption: "betekintés a fejlesztés jelenlegi állapotába.",
+                blogLinkText: "Megtekintés Facebookon", // ÚJ
                 blogContentPlaceholder: "Hamarosan érkeznek ide a legfrissebb blog bejegyzések, érdekes esettanulmányok, hasznos segédanyagok és inspiráló ötletek. Látogass vissza később!", 
                 offerTitle: 'Ajánlatkérés',
                 offerSubTitle: 'Kérdése van, vagy ajánlatot szeretne kérni? Töltse ki az alábbi űrlapot, és hamarosan felvesszük Önnel a kapcsolatot!',
@@ -933,6 +959,7 @@
                 blogPost2Title: "GP Pilot is also progressing well! V1 release.", 
                 blogPost2ImageAlt: "GP Pilot development status GIF", 
                 blogPost2Caption: "Insight into the current state of development.", 
+                blogLinkText: "View on Facebook", // NEW
                 blogContentPlaceholder: "The latest blog posts, interesting case studies, useful resources, and inspiring ideas will be here soon. Visit back later!", 
                 offerTitle: 'Request for Offer',
                 offerSubTitle: 'Have a question or want to request an offer? Fill out the form below, and we will contact you soon!',
@@ -1059,6 +1086,7 @@
                 blogPost2Title: "GP Pilot macht auch gute Fortschritte! V1-Veröffentlichung.", 
                 blogPost2ImageAlt: "GP Pilot Entwicklungsstatus GIF", 
                 blogPost2Caption: "Einblick in den aktuellen Entwicklungsstand.", 
+                blogLinkText: "Auf Facebook ansehen", // NEW
                 blogContentPlaceholder: "Die neuesten Blog-Beiträge, interessante Fallstudien, nützliche Materialien und inspirierende Ideen finden Sie bald hier. Besuchen Sie uns später wieder!", 
                 offerTitle: 'Angebotsanfrage',
                 offerSubTitle: 'Haben Sie eine Frage oder möchten Sie ein Angebot anfordern? Füllen Sie das folgende Formular aus, und wir werden uns bald mit Ihnen in Verbindung setzen!',
