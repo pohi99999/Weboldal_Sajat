@@ -2,6 +2,7 @@
 <html lang="hu"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Főoldal Meta Leírása -->
     <meta name="description" content="Pohánka És Társa Kft: Innovatív technológiai megoldások, szoftverfejlesztés, pénzügyi tanácsadás és marketing stratégiák vállalkozásának sikeréért." data-translate-meta-description="indexMetaDesc">
     <title>Pohánka És Társa Kft - Modern Weboldal</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -118,6 +119,15 @@
         .partner-logo:hover {
             filter: grayscale(0%);
         }
+        .toggle-header { /* Általános osztály a lenyitható fejlécekhez */
+            cursor: pointer;
+        }
+        .chevron-icon { /* Általános osztály a chevron ikonokhoz */
+            transition: transform 0.2s ease-in-out;
+        }
+        .rotate-180 { /* Osztály az ikon elforgatásához */
+            transform: rotate(180deg);
+        }
         
         @media (max-width: 767px) { /* Mobilon a partnerek és social linkek középre igazítva, egymás alatt */
             .footer-partners, .footer-social-links {
@@ -152,6 +162,7 @@
         }
     </style>
 
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17050054168"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -160,6 +171,7 @@
 
       gtag('config', 'AW-17050054168');
     </script>
+    <!-- Event snippet for Oldalmegtekintés conversion page -->
     <script>
       gtag('event', 'conversion', {
           'send_to': 'AW-17050054168/bqv8CJHRzc0aEJjcjMI_',
@@ -274,11 +286,11 @@
                                       <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                                     </svg>
                                 </div>
-                                <div class="philosophy-toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
+                                <div class="philosophy-toggle-header toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
                                     <h3 class="text-xl font-semibold text-white" data-translate-key="philosophyCard1Title">Értékek és Filozófia</h3>
                                     <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </div>
-                                <div class="philosophy-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
+                                <div class="philosophy-content toggle-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
                                     <p data-translate-key="philosophyCard1P1"></p>
                                     <p data-translate-key="philosophyCard1P2"></p>
                                     <p data-translate-key="philosophyCard1P3"></p>
@@ -293,11 +305,11 @@
                                       <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
                                 </div>
-                                <div class="philosophy-toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
+                                <div class="philosophy-toggle-header toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
                                     <h3 class="text-xl font-semibold text-white" data-translate-key="philosophyCard2Title">Jövőképünk</h3>
                                     <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </div>
-                                <div class="philosophy-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
+                                <div class="philosophy-content toggle-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
                                     <p data-translate-key="philosophyCard2P1"></p>
                                     <p data-translate-key="philosophyCard2MovedText"></p>
                                     <p data-translate-key="philosophyCard2P2"></p>
@@ -311,11 +323,11 @@
                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                                      </svg>
                                 </div>
-                                <div class="philosophy-toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
+                                <div class="philosophy-toggle-header toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
                                     <h3 class="text-xl font-semibold text-white" data-translate-key="philosophyCard3Title">Elkötelezettségünk és Csapatunk</h3>
                                     <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </div>
-                                <div class="philosophy-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
+                                <div class="philosophy-content toggle-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
                                     <p data-translate-key="philosophyCard3P1"></p>
                                     <p class="mt-3 font-semibold text-gray-300" data-translate-key="philosophyCard3TeamIntro"></p>
                                     <p data-translate-key="philosophyCard3TeamP1"></p>
@@ -493,10 +505,22 @@
 
             <section id="blog" class="py-16 md:py-24 bg-slate-800/90">
                 <div class="container mx-auto px-6">
-                    <h2 class="section-title" data-translate-key="blogTitle">Blog bejegyzések, Esettanulmányok, Segédanyagok, Ötletelések, Hasznos linkek</h2>
-                    <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl">
-                        <p class="text-gray-300 text-center" data-translate-key="blogContentPlaceholder">Hamarosan érkeznek ide a legfrissebb blog bejegyzések, érdekes esettanulmányok, hasznos segédanyagok és inspiráló ötletek. Látogass vissza később!</p>
+                    <div class="toggle-header flex justify-center items-center cursor-pointer mb-4" aria-expanded="false">
+                        <h2 class="section-title !mb-0" data-translate-key="blogTitle">Blog bejegyzések, Esettanulmányok, Segédanyagok, Ötletelések, Hasznos linkek</h2>
+                        <svg class="w-6 h-6 text-gray-400 ml-2 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="blog-content toggle-content hidden" aria-hidden="true">
+                        <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl max-w-2xl mx-auto">
+                            <h3 class="text-xl font-semibold text-white mb-3 text-center" data-translate-key="blogPost1Title">70% fejlesztési szinten a Pohi AI Pro!!</h3>
+                            <img src="bem.gif" alt="Pohi AI Pro fejlesztési állapot GIF" class="w-full h-auto object-contain rounded-md my-4 shadow-md max-h-80 mx-auto" data-translate-key="blogPost1ImageAlt" onerror="this.alt='Blog kép nem tölthető be'; this.src='https://placehold.co/600x338/1F2937/9CA3AF?text=Blog+Kép';">
+                            <p class="text-gray-400 text-center text-sm" data-translate-key="blogPost1Caption">betekintés a fejlesztés jelenlegi állapotába.</p>
                         </div>
+                        <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl max-w-2xl mx-auto mt-8">
+                            <h3 class="text-xl font-semibold text-white mb-3 text-center" data-translate-key="blogPost2Title">GP Pilot is elég jól halad! V1 kiadás.</h3>
+                            <img src="bem2.gif" alt="GP Pilot fejlesztési állapot GIF" class="w-full h-auto object-contain rounded-md my-4 shadow-md max-h-80 mx-auto" data-translate-key="blogPost2ImageAlt" onerror="this.alt='Blog kép 2 nem tölthető be'; this.src='https://placehold.co/600x338/1F2937/9CA3AF?text=Blog+Kép+2';">
+                            <p class="text-gray-400 text-center text-sm" data-translate-key="blogPost2Caption">betekintés a fejlesztés jelenlegi állapotába.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
             
@@ -776,6 +800,12 @@
                 ref2Desc: 'Fő funkciói a tevékenységünk megtervezése, nyomon követesé, integrálható adatbázisokkal bővítve (könyvelési adatok, pillanatnyi költségvetés, pénzeszköz és költség mozgás ellenőrzése, készletnyilvántartás felügyelete, statisztikák készítése, vállalkozás igényeire szabva. "Minden egy helyen átláthatóan" fejlesztés alatt.. a MI alapú rendszer bevezetésének fejlesztése folyik.',
                 refButton: 'Fejlesztés alatt.. a béta verziók hamarosan elérhetőek lesznek!',
                 blogTitle: "Blog bejegyzések, Esettanulmányok, Segédanyagok, Ötletelések, Hasznos linkek", 
+                blogPost1Title: "70% fejlesztési szinten a Pohi AI Pro!!",
+                blogPost1ImageAlt: "Pohi AI Pro fejlesztési állapot GIF",
+                blogPost1Caption: "betekintés a fejlesztés jelenlegi állapotába.",
+                blogPost2Title: "GP Pilot is elég jól halad! V1 kiadás.", // ÚJ
+                blogPost2ImageAlt: "GP Pilot fejlesztési állapot GIF", // ÚJ
+                blogPost2Caption: "betekintés a fejlesztés jelenlegi állapotába.", // ÚJ
                 blogContentPlaceholder: "Hamarosan érkeznek ide a legfrissebb blog bejegyzések, érdekes esettanulmányok, hasznos segédanyagok és inspiráló ötletek. Látogass vissza később!", 
                 offerTitle: 'Ajánlatkérés',
                 offerSubTitle: 'Kérdése van, vagy ajánlatot szeretne kérni? Töltse ki az alábbi űrlapot, és hamarosan felvesszük Önnel a kapcsolatot!',
@@ -897,6 +927,12 @@
                 ref2Desc: 'Main functions include planning and tracking our activities, enhanced with integrable databases (accounting data, real-time budget, cash flow and cost monitoring, inventory management, statistics generation, tailored to business needs). "Everything transparently in one place" under development... AI-based system implementation is in progress.',
                 refButton: 'Under development... beta versions will be available soon!',
                 blogTitle: "Blog Posts, Case Studies, Resources, Brainstorming, Useful Links", 
+                blogPost1Title: "Pohi AI Pro at 70% Development Level!!",
+                blogPost1ImageAlt: "Pohi AI Pro development status GIF",
+                blogPost1Caption: "Insight into the current state of development.",
+                blogPost2Title: "GP Pilot is also progressing well! V1 release.", // NEW
+                blogPost2ImageAlt: "GP Pilot development status GIF", // NEW
+                blogPost2Caption: "Insight into the current state of development.", // NEW
                 blogContentPlaceholder: "The latest blog posts, interesting case studies, useful resources, and inspiring ideas will be here soon. Visit back later!", 
                 offerTitle: 'Request for Offer',
                 offerSubTitle: 'Have a question or want to request an offer? Fill out the form below, and we will contact you soon!',
@@ -1016,7 +1052,13 @@
                 ref2Title: 'GP-Pilot', 
                 ref2Desc: 'Hauptfunktionen umfassen die Planung und Verfolgung unserer Aktivitäten, erweitert um integrierbare Datenbanken (Buchhaltungsdaten, Echtzeitbudget, Cashflow- und Kostenüberwachung, Bestandsverwaltung, Statistikerstellung, zugeschnitten auf Geschäftsanforderungen). "Alles transparent an einem Ort" in Entwicklung... Die Implementierung eines KI-basierten Systems ist im Gange.',
                 refButton: 'In Entwicklung... Beta-Versionen werden bald verfügbar sein!',
-                blogTitle: "Blog-Beiträge, Fallstudien, Materialien, Brainstorming, Nützliche Links", 
+                blogTitle: "Blog-Beiträge, Fallstudien, Materialien, Brainstorming, Nützliche Links",
+                blogPost1Title: "Pohi AI Pro auf 70% Entwicklungsstand!!",
+                blogPost1ImageAlt: "Pohi AI Pro Entwicklungsstatus GIF",
+                blogPost1Caption: "Einblick in den aktuellen Entwicklungsstand.",
+                blogPost2Title: "GP Pilot macht auch gute Fortschritte! V1-Veröffentlichung.", // NEW
+                blogPost2ImageAlt: "GP Pilot Entwicklungsstatus GIF", // NEW
+                blogPost2Caption: "Einblick in den aktuellen Entwicklungsstand.", // NEW
                 blogContentPlaceholder: "Die neuesten Blog-Beiträge, interessante Fallstudien, nützliche Materialien und inspirierende Ideen finden Sie bald hier. Besuchen Sie uns später wieder!", 
                 offerTitle: 'Angebotsanfrage',
                 offerSubTitle: 'Haben Sie eine Frage oder möchten Sie ein Angebot anfordern? Füllen Sie das folgende Formular aus, und wir werden uns bald mit Ihnen in Verbindung setzen!',
@@ -1063,15 +1105,17 @@
         };
 
         function showCustomAlert(message, type = 'info') {
-            const modal = document.getElementById('customAlertModal');
-            const alertBox = document.getElementById('customAlertBox');
-            const titleElement = document.getElementById('customAlertTitle');
-            const messageElement = document.getElementById('customAlertMessage');
-            const okButton = document.getElementById('customAlertOkButton');
-            const closeButton = document.getElementById('customAlertCloseButton'); 
+            const modal = document.getElementById('customAlertModal'); // This ID doesn't exist in the provided HTML
+            const alertBox = document.getElementById('customAlertBox'); // This ID doesn't exist
+            const titleElement = document.getElementById('customAlertTitle'); // This ID doesn't exist
+            const messageElement = document.getElementById('customAlertMessage'); // This ID doesn't exist
+            const okButton = document.getElementById('customAlertOkButton'); // This ID doesn't exist
+            const closeButton = document.getElementById('customAlertCloseButton');  // This ID doesn't exist
 
+            // Check if all elements are present to avoid errors
             if (!modal || !alertBox || !titleElement || !messageElement || !okButton || !closeButton) {
-                 console.error("CustomAlert: One or more modal elements are missing from the DOM.");
+                 console.error("CustomAlert: One or more modal elements are missing from the DOM. Alert functionality will be limited.");
+                 // Fallback to browser alert if modal elements are not found
                  if(typeof alert !== 'undefined') alert(message); 
                  return; 
             }
@@ -1406,18 +1450,14 @@
                     closeAiModal();
                 });
             }
-             // Filozófia kártyák lenyitása
-            document.querySelectorAll('.philosophy-toggle-header').forEach(header => {
+             // Általános lenyitó/összecsukó logika
+            document.querySelectorAll('.toggle-header').forEach(header => {
                 header.addEventListener('click', () => {
-                    const card = header.closest('.dev-inspired-card');
-                    if (!card) return;
-
-                    const content = card.querySelector('.philosophy-content');
+                    const content = header.nextElementSibling; 
                     const icon = header.querySelector('.chevron-icon');
                     
-                    if (content) {
+                    if (content && content.classList.contains('toggle-content')) {
                         content.classList.toggle('hidden');
-                        // ARIA attribútumok frissítése
                         const isExpanded = !content.classList.contains('hidden');
                         header.setAttribute('aria-expanded', isExpanded.toString());
                         content.setAttribute('aria-hidden', (!isExpanded).toString());
