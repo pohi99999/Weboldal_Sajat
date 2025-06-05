@@ -2,7 +2,6 @@
 <html lang="hu"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Főoldal Meta Leírása -->
     <meta name="description" content="Pohánka És Társa Kft: Innovatív technológiai megoldások, szoftverfejlesztés, pénzügyi tanácsadás és marketing stratégiák vállalkozásának sikeréért." data-translate-meta-description="indexMetaDesc">
     <title>Pohánka És Társa Kft - Modern Weboldal</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -121,6 +120,11 @@
         }
         .toggle-header { 
             cursor: pointer;
+            transition: background-color 0.2s ease-in-out; 
+        }
+        .toggle-header:hover { /* Kiemelés hoverre a lenyitható fejléceknél */
+            background-color: rgba(55, 65, 81, 0.3); /* Enyhe sötétítés */
+            border-radius: 0.375rem; /* rounded-md */
         }
         .chevron-icon { 
             transition: transform 0.2s ease-in-out;
@@ -130,25 +134,25 @@
         }
         .blog-post-link {
             display: inline-block;
-            margin: 1rem auto; /* Középre igazítás és térköz */
+            margin: 1rem auto; 
             padding: 0.5rem 1rem;
-            background-color: #2563EB; /* Kék háttér */
+            background-color: #2563EB; 
             color: white;
             border-radius: 0.375rem;
             text-decoration: none;
             transition: background-color 0.3s ease;
         }
         .blog-post-link:hover {
-            background-color: #1D4ED8; /* Sötétebb kék hoverre */
+            background-color: #1D4ED8; 
         }
         .blog-post-link svg {
-            width: 1.25rem; /* 20px */
-            height: 1.25rem; /* 20px */
-            display: inline-block; /* Hogy a szöveg mellett legyen */
+            width: 1.25rem; 
+            height: 1.25rem; 
+            display: inline-block; 
             vertical-align: middle;
         }
         
-        @media (max-width: 767px) { 
+        @media (max-width: 767px) { /* Mobilon a partnerek és social linkek középre igazítva, egymás alatt */
             .footer-partners, .footer-social-links {
                 text-align: center;
             }
@@ -159,7 +163,7 @@
                 text-align: center;
             }
         }
-        @media (min-width: 768px) { 
+        @media (min-width: 768px) { /* md és nagyobb képernyőkön */
             .footer-partners-title {
                 text-align: left;
             }
@@ -181,7 +185,6 @@
         }
     </style>
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17050054168"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -190,7 +193,6 @@
 
       gtag('config', 'AW-17050054168');
     </script>
-    <!-- Event snippet for Oldalmegtekintés conversion page -->
     <script>
       gtag('event', 'conversion', {
           'send_to': 'AW-17050054168/bqv8CJHRzc0aEJjcjMI_',
@@ -305,11 +307,11 @@
                                       <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                                     </svg>
                                 </div>
-                                <div class="philosophy-toggle-header toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
+                                <div class="toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
                                     <h3 class="text-xl font-semibold text-white" data-translate-key="philosophyCard1Title">Értékek és Filozófia</h3>
                                     <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </div>
-                                <div class="philosophy-content toggle-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
+                                <div class="toggle-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
                                     <p data-translate-key="philosophyCard1P1"></p>
                                     <p data-translate-key="philosophyCard1P2"></p>
                                     <p data-translate-key="philosophyCard1P3"></p>
@@ -324,11 +326,11 @@
                                       <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
                                 </div>
-                                <div class="philosophy-toggle-header toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
+                                <div class="toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
                                     <h3 class="text-xl font-semibold text-white" data-translate-key="philosophyCard2Title">Jövőképünk</h3>
                                     <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </div>
-                                <div class="philosophy-content toggle-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
+                                <div class="toggle-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
                                     <p data-translate-key="philosophyCard2P1"></p>
                                     <p data-translate-key="philosophyCard2MovedText"></p>
                                     <p data-translate-key="philosophyCard2P2"></p>
@@ -342,11 +344,11 @@
                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                                      </svg>
                                 </div>
-                                <div class="philosophy-toggle-header toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
+                                <div class="toggle-header flex justify-between items-center cursor-pointer mb-2" aria-expanded="false">
                                     <h3 class="text-xl font-semibold text-white" data-translate-key="philosophyCard3Title">Elkötelezettségünk és Csapatunk</h3>
                                     <svg class="w-5 h-5 text-gray-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </div>
-                                <div class="philosophy-content toggle-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
+                                <div class="toggle-content hidden space-y-2 text-gray-400 text-sm" aria-hidden="true">
                                     <p data-translate-key="philosophyCard3P1"></p>
                                     <p class="mt-3 font-semibold text-gray-300" data-translate-key="philosophyCard3TeamIntro"></p>
                                     <p data-translate-key="philosophyCard3TeamP1"></p>
@@ -524,14 +526,14 @@
 
             <section id="blog" class="py-16 md:py-24 bg-slate-800/90">
                 <div class="container mx-auto px-6">
-                    <div class="toggle-header flex justify-center items-center cursor-pointer mb-4" aria-expanded="false">
+                    <div class="toggle-header flex justify-center items-center cursor-pointer mb-4 p-2 hover:bg-gray-700/30 rounded-md" aria-expanded="false">
                         <h2 class="section-title !mb-0" data-translate-key="blogTitle">Blog bejegyzések, Esettanulmányok, Segédanyagok, Ötletelések, Hasznos linkek</h2>
-                        <svg class="w-6 h-6 text-gray-400 ml-2 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="w-8 h-8 text-blue-400 ml-3 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
-                    <div class="blog-content toggle-content hidden" aria-hidden="true">
+                    <div class="blog-content toggle-content hidden space-y-8" aria-hidden="true">
                         <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl max-w-2xl mx-auto text-center">
                             <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="blogPost1Title">70% fejlesztési szinten a Pohi AI Pro!!</h3>
-                            <a href="https://www.facebook.com/share/v/14KaTtHiMTh/" target="_blank" rel="noopener noreferrer" class="blog-post-link my-4">
+                             <a href="https://www.facebook.com/share/v/14KaTtHiMTh/" target="_blank" rel="noopener noreferrer" class="blog-post-link my-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
                                 <span data-translate-key="blogLinkText">Megtekintés Facebookon</span>
                             </a>
@@ -539,11 +541,19 @@
                         </div>
                         <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl max-w-2xl mx-auto mt-8 text-center">
                             <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="blogPost2Title">GP Pilot is elég jól halad! V1 kiadás.</h3>
-                             <a href="https://www.facebook.com/share/v/19CN8iJFUj/" target="_blank" rel="noopener noreferrer" class="blog-post-link my-4">
+                            <a href="https://www.facebook.com/share/v/19CN8iJFUj/" target="_blank" rel="noopener noreferrer" class="blog-post-link my-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
                                 <span data-translate-key="blogLinkText">Megtekintés Facebookon</span>
                             </a>
                             <p class="text-gray-400 text-sm" data-translate-key="blogPost2Caption">betekintés a fejlesztés jelenlegi állapotába.</p>
+                        </div>
+                        <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl max-w-2xl mx-auto mt-8 text-center">
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="blogPost3Title">P-Day Light Fejlesztése elkezdődött! (kattints a linkre)</h3>
+                            <a href="https://fb.watch/A1l2CgQYhJ/" target="_blank" rel="noopener noreferrer" class="blog-post-link my-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                                <span data-translate-key="blogLinkText">Megtekintés Facebookon</span>
+                            </a>
+                            <p class="text-gray-400 text-sm" data-translate-key="blogPost3Caption">P-Day Light Bemutató videó, (Egy sokoldalú webalkalmazás a napi tervek, pénzügyek, kommunikáció és projektek kezelésére, Gemini AI asszisztenssel.)</p>
                         </div>
                     </div>
                 </div>
@@ -831,7 +841,9 @@
                 blogPost2Title: "GP Pilot is elég jól halad! V1 kiadás.",
                 blogPost2ImageAlt: "GP Pilot fejlesztési állapot GIF",
                 blogPost2Caption: "betekintés a fejlesztés jelenlegi állapotába.",
-                blogLinkText: "Megtekintés Facebookon", // ÚJ
+                blogPost3Title: "P-Day Light Fejlesztése elkezdődött! (kattints a linkre)", // ÚJ
+                blogPost3Caption: "P-Day Light Bemutató videó, (Egy sokoldalú webalkalmazás a napi tervek, pénzügyek, kommunikáció és projektek kezelésére, Gemini AI asszisztenssel.)", // ÚJ
+                blogLinkText: "Megtekintés Facebookon", 
                 blogContentPlaceholder: "Hamarosan érkeznek ide a legfrissebb blog bejegyzések, érdekes esettanulmányok, hasznos segédanyagok és inspiráló ötletek. Látogass vissza később!", 
                 offerTitle: 'Ajánlatkérés',
                 offerSubTitle: 'Kérdése van, vagy ajánlatot szeretne kérni? Töltse ki az alábbi űrlapot, és hamarosan felvesszük Önnel a kapcsolatot!',
@@ -959,7 +971,9 @@
                 blogPost2Title: "GP Pilot is also progressing well! V1 release.", 
                 blogPost2ImageAlt: "GP Pilot development status GIF", 
                 blogPost2Caption: "Insight into the current state of development.", 
-                blogLinkText: "View on Facebook", // NEW
+                blogPost3Title: "Development of P-Day Light has begun! (click the link)", // NEW
+                blogPost3Caption: "P-Day Light Demo Video, (A versatile web application for managing daily plans, finances, communication, and projects, with a Gemini AI assistant.)", // NEW
+                blogLinkText: "View on Facebook", 
                 blogContentPlaceholder: "The latest blog posts, interesting case studies, useful resources, and inspiring ideas will be here soon. Visit back later!", 
                 offerTitle: 'Request for Offer',
                 offerSubTitle: 'Have a question or want to request an offer? Fill out the form below, and we will contact you soon!',
@@ -1086,7 +1100,9 @@
                 blogPost2Title: "GP Pilot macht auch gute Fortschritte! V1-Veröffentlichung.", 
                 blogPost2ImageAlt: "GP Pilot Entwicklungsstatus GIF", 
                 blogPost2Caption: "Einblick in den aktuellen Entwicklungsstand.", 
-                blogLinkText: "Auf Facebook ansehen", // NEW
+                blogPost3Title: "Die Entwicklung von P-Day Light hat begonnen! (klicken Sie auf den Link)", // NEW
+                blogPost3Caption: "P-Day Light Demo-Video, (Eine vielseitige Webanwendung zur Verwaltung von Tagesplänen, Finanzen, Kommunikation und Projekten, mit einem Gemini AI-Assistenten.)", // NEW
+                blogLinkText: "Auf Facebook ansehen", 
                 blogContentPlaceholder: "Die neuesten Blog-Beiträge, interessante Fallstudien, nützliche Materialien und inspirierende Ideen finden Sie bald hier. Besuchen Sie uns später wieder!", 
                 offerTitle: 'Angebotsanfrage',
                 offerSubTitle: 'Haben Sie eine Frage oder möchten Sie ein Angebot anfordern? Füllen Sie das folgende Formular aus, und wir werden uns bald mit Ihnen in Verbindung setzen!',
@@ -1133,17 +1149,17 @@
         };
 
         function showCustomAlert(message, type = 'info') {
-            const modal = document.getElementById('customAlertModal'); // This ID doesn't exist in the provided HTML
-            const alertBox = document.getElementById('customAlertBox'); // This ID doesn't exist
-            const titleElement = document.getElementById('customAlertTitle'); // This ID doesn't exist
-            const messageElement = document.getElementById('customAlertMessage'); // This ID doesn't exist
-            const okButton = document.getElementById('customAlertOkButton'); // This ID doesn't exist
-            const closeButton = document.getElementById('customAlertCloseButton');  // This ID doesn't exist
+            const modal = document.getElementById('customAlertModal'); 
+            const alertBox = document.getElementById('customAlertBox'); 
+            const titleElement = document.getElementById('customAlertTitle'); 
+            const messageElement = document.getElementById('customAlertMessage'); 
+            const okButton = document.getElementById('customAlertOkButton'); 
+            const closeButton = document.getElementById('customAlertCloseButton');  
 
-            // Check if all elements are present to avoid errors
+            
             if (!modal || !alertBox || !titleElement || !messageElement || !okButton || !closeButton) {
                  console.error("CustomAlert: One or more modal elements are missing from the DOM. Alert functionality will be limited.");
-                 // Fallback to browser alert if modal elements are not found
+                 
                  if(typeof alert !== 'undefined') alert(message); 
                  return; 
             }
