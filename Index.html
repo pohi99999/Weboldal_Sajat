@@ -2,6 +2,7 @@
 <html lang="hu"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Főoldal Meta Leírása -->
     <meta name="description" content="Pohánka És Társa Kft: Innovatív technológiai megoldások, szoftverfejlesztés, pénzügyi tanácsadás és marketing stratégiák vállalkozásának sikeréért." data-translate-meta-description="indexMetaDesc">
     <title>Pohánka És Társa Kft - Modern Weboldal</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,7 +20,7 @@
         .content-wrapper { position: relative; z-index: 1; }
         .nav-link-active { color: #3B82F6; border-bottom: 2px solid #3B82F6; } /* Aktív menüpont kiemelése */
         html { scroll-behavior: smooth; } /* Sima görgetés */
-        .dev-inspired-card { background-color: rgba(31, 41, 55, 0.95); border: 1px solid #374151; display: flex; flex-direction: column; justify-content: space-between; } /* Kártya stílus és flexbox a gomb alulra igazításához */
+        .dev-inspired-card { background-color: rgba(31, 41, 55, 0.95); border: 1px solid #374151; display: flex; flex-direction: column; } 
         .dev-inspired-button { background-color: #3B82F6; color: white; transition: background-color 0.3s ease; }
         .dev-inspired-button:hover { background-color: #2563EB; }
         .section-title { font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; color: #F3F4F6; }
@@ -122,9 +123,9 @@
             cursor: pointer;
             transition: background-color 0.2s ease-in-out; 
         }
-        .toggle-header:hover { /* Kiemelés hoverre a lenyitható fejléceknél */
-            background-color: rgba(55, 65, 81, 0.3); /* Enyhe sötétítés */
-            border-radius: 0.375rem; /* rounded-md */
+        .toggle-header:hover { 
+            background-color: rgba(55, 65, 81, 0.3); 
+            border-radius: 0.375rem; 
         }
         .chevron-icon { 
             transition: transform 0.2s ease-in-out;
@@ -152,7 +153,7 @@
             vertical-align: middle;
         }
         
-        @media (max-width: 767px) { /* Mobilon a partnerek és social linkek középre igazítva, egymás alatt */
+        @media (max-width: 767px) { 
             .footer-partners, .footer-social-links {
                 text-align: center;
             }
@@ -163,7 +164,7 @@
                 text-align: center;
             }
         }
-        @media (min-width: 768px) { /* md és nagyobb képernyőkön */
+        @media (min-width: 768px) { 
             .footer-partners-title {
                 text-align: left;
             }
@@ -185,6 +186,7 @@
         }
     </style>
 
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17050054168"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -193,6 +195,7 @@
 
       gtag('config', 'AW-17050054168');
     </script>
+    <!-- Event snippet for Oldalmegtekintés conversion page -->
     <script>
       gtag('event', 'conversion', {
           'send_to': 'AW-17050054168/bqv8CJHRzc0aEJjcjMI_',
@@ -494,32 +497,46 @@
             <section id="references" class="py-16 md:py-24 bg-gray-900/90">
                 <div class="container mx-auto px-6">
                     <h2 class="section-title" data-translate-key="referencesTitle">Betekintés, Munkáink</h2>
-                    <div class="grid md:grid-cols-2 gap-10">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        <div class="dev-inspired-card rounded-lg shadow-xl p-6 md:p-8">
+                            <img src="p3.jpg" alt="P-Day Light Projekt Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md" onerror="this.alt='Referencia kép nem tölthető be'; this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=P-Day+Light';">
+                            <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref3Title">P-Day Light</h3>
+                            <p class="text-gray-400 mb-4" data-translate-key="ref3Desc">A P-Day Light egy sokoldalú, mesterséges intelligenciával támogatott mobilalkalmazás, amelyet arra terveztünk, hogy egyetlen központi helyen egyszerűsítse és segítse a felhasználók napi személyes és munkahelyi teendőinek, információinak és projektjeinek kezelését. Célja, hogy egy intuitív, átfogó digitális asszisztensst nyújtson.</p>
+                            <div class="mt-auto pt-4 text-center">
+                                <a href="https://fb.watch/A5EkDEfUa3/" target="_blank" rel="noopener noreferrer" class="dev-inspired-button inline-flex items-center font-semibold px-6 py-2 rounded-lg text-base">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span data-translate-key="ref3VideoLinkText">Videó Előnézet</span>
+                                </a>
+                            </div>
+                        </div>
                         <div class="dev-inspired-card rounded-lg shadow-xl p-6 md:p-8">
                             <img src="AI.jpg" alt="AI Projekt Referencia Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md" onerror="this.alt='Referencia kép nem tölthető be'; this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=Pohi+AI+Pro';">
                             <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref1Title">Pohi AI Pro</h3>
                             <p class="text-gray-400 mb-4" data-translate-key="ref1Desc">Egyedi fejlesztésű, teljes portál rendszer amely egy vevői adatbázis és annak rendelés állományát valamint a gyártok készletnyilvántartását összefésüli és kezeli a vevői igényekkel. A fuvarszervezéssel egybe hangolva. Még fejlesztés alatt , tesztelés a Mesterséges Intelligencia által vezérelt automatizálása bevezetése a gyorsabb és átláthatóbb nyilvántartás érdekében.</p>
-                            <img src="Alfa_teszt.gif" alt="Pohi AI Pro animáció" class="w-full h-auto rounded-md my-4 shadow-md" onerror="this.alt='Pohi AI Pro GIF nem tölthető be'; this.src='https://placehold.co/600x300/1F2937/9CA3AF?text=Pohi+AI+Pro+GIF';">
-                            <div class="mt-4"> 
-                                <span class="inline-block bg-blue-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Firebase</span>
-                                <span class="inline-block bg-green-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Google Cloud</span>
-                                <span class="inline-block bg-yellow-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Egyedi API</span>
+                             <div class="mt-auto pt-4">
+                                <div class="toggle-header flex justify-between items-center cursor-pointer p-2 hover:bg-gray-700/30 rounded-md" data-pdf-src="le2.pdf">
+                                    <span class="font-semibold text-blue-400" data-translate-key="refPdfLinkText">Leírás, Ismertető</span>
+                                    <svg class="w-5 h-5 text-blue-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                                <div class="toggle-content hidden mt-2" aria-hidden="true">
+                                </div>
                             </div>
                         </div>
                         <div class="dev-inspired-card rounded-lg shadow-xl p-6 md:p-8">
                             <img src="p2.jpg" alt="P2 Projekt Referencia Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md" onerror="this.alt='Referencia kép nem tölthető be'; this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=GP-Pilot';">
                             <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref2Title">GP-Pilot</h3>
-                            <p class="text-gray-400 mb-4" data-translate-key="ref2Desc">Fő funkciói a tevékenységünk megtervezése, nyomon követesé, integrálható adatbázisokkal bővítve (könyvelési adatok, pillanatnyi költségvetés, pénzeszköz és költség mozgás ellenőrzése, készletnyilvántartás felügyelete, statisztikák készítése, vállalkozás igényeire szabva. "Minden egy helyen átláthatóan" fejlesztés alatt.. a MI alapú rendszer bevezetésének fejlesztése folyik.</p>
-                            <img src="Beta_teszt.gif" alt="GP-Pilot animáció" class="w-full h-auto rounded-md my-4 shadow-md" onerror="this.alt='GP-Pilot GIF nem tölthető be'; this.src='https://placehold.co/600x300/1F2937/9CA3AF?text=GP-Pilot+GIF';">
+                            <p class="text-gray-400 mb-4" data-translate-key="ref2Desc">A GP-Pilot AI egy újgenerációs, mesterséges intelligenciával (Gemini AI) felvértezett mobilapplikáció, amelyet kifejezetten magyar háziorvosok számára fejlesztettünk. Célunk, hogy egy olyan intuitív, hatékony és mindenre kiterjedő eszközt adjunk az Ön kezébe, amely gyökeresen átalakítja a mindennapi munkafolyamatokat, csökkenti az adminisztratív terheket, és lehetővé teszi, hogy még több időt és energiát fordíthasson a legfontosabbra: páciensei gyógyítására.</p>
                             <div class="mt-auto pt-4"> 
-                                <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Flutter</span>
-                                <span class="inline-block bg-orange-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2 mb-2">Firebase Auth</span>
-                                <span class="inline-block bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Realtime Database</span>
+                                <div class="toggle-header flex justify-between items-center cursor-pointer p-2 hover:bg-gray-700/30 rounded-md" data-pdf-src="le3.pdf">
+                                    <span class="font-semibold text-blue-400" data-translate-key="refPdfLinkText">Leírás, Ismertető</span>
+                                    <svg class="w-5 h-5 text-blue-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                                <div class="toggle-content hidden mt-2" aria-hidden="true">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                     <div class="text-center mt-12">
-                        <a href="#" class="dev-inspired-button font-semibold px-8 py-3 rounded-lg text-lg inline-block" data-translate-key="refButton">Fejlesztés alatt.. a béta verziók hamarosan elérhetőek lesznek!</a>
                     </div>
                 </div>
             </section>
@@ -548,7 +565,7 @@
                             <p class="text-gray-400 text-sm" data-translate-key="blogPost2Caption">betekintés a fejlesztés jelenlegi állapotába.</p>
                         </div>
                         <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl max-w-2xl mx-auto mt-8 text-center">
-                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="blogPost3Title">P-Day Light Fejlesztése elkezdődött! (kattints a linkre)</h3>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="blogPost3Title">P-Day Light Fejlesztése elkezdődött!</h3>
                             <a href="https://fb.watch/A1l2CgQYhJ/" target="_blank" rel="noopener noreferrer" class="blog-post-link my-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
                                 <span data-translate-key="blogLinkText">Megtekintés Facebookon</span>
@@ -561,55 +578,60 @@
             
             <section id="awards" class="py-16 md:py-24 bg-gray-900/90"> 
                 <div class="container mx-auto px-6">
-                    <h2 class="section-title" data-translate-key="awardsTitle">Elismerések, Eredmények</h2>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        <div class="linkedin-embed-container">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333506255858176002" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 1"></iframe>
-                            <p class="linkedin-caption" data-translate-key="awardCaption1">Fejlesztői elismerés a google.com-tól</p>
-                        </div>
-                        <div class="linkedin-embed-container">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333506659744374785" height="507" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 2"></iframe>
-                            <p class="linkedin-caption" data-translate-key="awardCaption2">Mesterséges Intelligenciával működő utazási alkalmazásmegoldási fejlesztő</p>
-                        </div>
-                        <div class="linkedin-embed-container">
-                           <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333506413983379458" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 3"></iframe>
-                           <p class="linkedin-caption" data-translate-key="awardCaption3">Az Összes Képesítés Elsajátítása a Google Fejlesztői Képzésein</p>
-                        </div>
-                        <div class="linkedin-embed-container">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333504812069588993" height="498" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 4"></iframe>
-                            <p class="linkedin-caption" data-translate-key="awardCaption4">A Google Térkép Platform Innovátorok tagja</p>
-                        </div>
-                        <div class="linkedin-embed-container">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333502692071215104" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 5"></iframe>
-                            <p class="linkedin-caption" data-translate-key="awardCaption5">Google Cloud Innovátorok tagja</p>
-                        </div>
-                        <div class="linkedin-embed-container">
-                             <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333502412860686338" height="498" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 6"></iframe>
-                             <p class="linkedin-caption" data-translate-key="awardCaption6">Google Cloud és NVIDIA fejlesztői csoport tagja</p>
-                        </div>
-                        <div class="linkedin-embed-container">
-                             <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333502034995810304" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 7"></iframe>
-                             <p class="linkedin-caption" data-translate-key="awardCaption7">Firebase Studio Fejlesztője</p>
-                        </div>
-                        <div class="linkedin-embed-container">
-                             <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333506812144418816" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 8"></iframe>
-                             <p class="linkedin-caption" data-translate-key="awardCaption8">Google Fejlesztői Tag</p>
-                        </div>
-                         <div class="linkedin-embed-container">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333523737914318848" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 9"></iframe>
-                            <p class="linkedin-caption" data-translate-key="awardCaption9">Android fejlesztő</p>
-                        </div>
-                        <div class="linkedin-embed-container">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333531520541843456" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 10"></iframe>
-                            <p class="linkedin-caption" data-translate-key="awardCaption10">Google I/O 2025 Hivatalos Regisztrált Tagja</p>
-                        </div>
-                        <div class="image-embed-container">
-                            <img src="tanu.jpg" alt="Tanúsítvány Kép" onerror="this.alt='Tanúsítvány kép nem tölthető be'; this.src='https://placehold.co/504x378/1F2937/9CA3AF?text=Tanúsítvány';">
-                            <p class="image-caption" data-translate-key="awardCaptionTanu">A Classica-2 Kft Cégvezetésem alatt (3év) 3,2 milliárdos forgalmat bonyolított le.</p>
-                        </div>
-                         <div class="image-embed-container">
-                            <img src="tanu2.jpg" alt="Másik Tanúsítvány Kép" onerror="this.alt='Másik tanúsítvány kép nem tölthető be'; this.src='https://placehold.co/504x378/1F2937/9CA3AF?text=Tanúsítvány+2';">
-                            <p class="image-caption" data-translate-key="awardCaptionTanu2">A+ Tanúsítványunk, a legmagasabb minősítői besorolás ami a Cégek Minőségét rangsorolja Magyarországon.</p>
+                    <div class="toggle-header flex justify-center items-center cursor-pointer mb-4 p-2 hover:bg-gray-700/30 rounded-md" aria-expanded="false">
+                        <h2 class="section-title !mb-0" data-translate-key="awardsTitle">Elismerések, Eredmények</h2>
+                        <svg class="w-8 h-8 text-blue-400 ml-3 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="toggle-content hidden" aria-hidden="true">
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                            <div class="linkedin-embed-container">
+                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333506255858176002" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 1"></iframe>
+                                <p class="linkedin-caption" data-translate-key="awardCaption1">Fejlesztői elismerés a google.com-tól</p>
+                            </div>
+                            <div class="linkedin-embed-container">
+                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333506659744374785" height="507" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 2"></iframe>
+                                <p class="linkedin-caption" data-translate-key="awardCaption2">Mesterséges Intelligenciával működő utazási alkalmazásmegoldási fejlesztő</p>
+                            </div>
+                            <div class="linkedin-embed-container">
+                               <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333506413983379458" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 3"></iframe>
+                               <p class="linkedin-caption" data-translate-key="awardCaption3">Az Összes Képesítés Elsajátítása a Google Fejlesztői Képzésein</p>
+                            </div>
+                            <div class="linkedin-embed-container">
+                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333504812069588993" height="498" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 4"></iframe>
+                                <p class="linkedin-caption" data-translate-key="awardCaption4">A Google Térkép Platform Innovátorok tagja</p>
+                            </div>
+                            <div class="linkedin-embed-container">
+                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333502692071215104" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 5"></iframe>
+                                <p class="linkedin-caption" data-translate-key="awardCaption5">Google Cloud Innovátorok tagja</p>
+                            </div>
+                            <div class="linkedin-embed-container">
+                                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333502412860686338" height="498" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 6"></iframe>
+                                 <p class="linkedin-caption" data-translate-key="awardCaption6">Google Cloud és NVIDIA fejlesztői csoport tagja</p>
+                            </div>
+                            <div class="linkedin-embed-container">
+                                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333502034995810304" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 7"></iframe>
+                                 <p class="linkedin-caption" data-translate-key="awardCaption7">Firebase Studio Fejlesztője</p>
+                            </div>
+                            <div class="linkedin-embed-container">
+                                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333506812144418816" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 8"></iframe>
+                                 <p class="linkedin-caption" data-translate-key="awardCaption8">Google Fejlesztői Tag</p>
+                            </div>
+                             <div class="linkedin-embed-container">
+                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333523737914318848" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 9"></iframe>
+                                <p class="linkedin-caption" data-translate-key="awardCaption9">Android fejlesztő</p>
+                            </div>
+                            <div class="linkedin-embed-container">
+                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7333531520541843456" height="481" width="504" frameborder="0" allowfullscreen="" title="Beágyazott LinkedIn bejegyzés 10"></iframe>
+                                <p class="linkedin-caption" data-translate-key="awardCaption10">Google I/O 2025 Hivatalos Regisztrált Tagja</p>
+                            </div>
+                            <div class="image-embed-container">
+                                <img src="tanu.jpg" alt="Tanúsítvány Kép" onerror="this.alt='Tanúsítvány kép nem tölthető be'; this.src='https://placehold.co/504x378/1F2937/9CA3AF?text=Tanúsítvány';">
+                                <p class="image-caption" data-translate-key="awardCaptionTanu">A Classica-2 Kft Cégvezetésem alatt (3év) 3,2 milliárdos forgalmat bonyolított le.</p>
+                            </div>
+                             <div class="image-embed-container">
+                                <img src="tanu2.jpg" alt="Másik Tanúsítvány Kép" onerror="this.alt='Másik tanúsítvány kép nem tölthető be'; this.src='https://placehold.co/504x378/1F2937/9CA3AF?text=Tanúsítvány+2';">
+                                <p class="image-caption" data-translate-key="awardCaptionTanu2">A+ Tanúsítványunk, a legmagasabb minősítői besorolás ami a Cégek Minőségét rangsorolja Magyarországon.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -832,7 +854,13 @@
                 ref1Title: 'Pohi AI Pro', 
                 ref1Desc: 'Egyedi fejlesztésű, teljes portál rendszer amely egy vevői adatbázis és annak rendelés állományát valamint a gyártok készletnyilvántartását összefésüli és kezeli a vevői igényekkel. A fuvarszervezéssel egybe hangolva. Még fejlesztés alatt , tesztelés a Mesterséges Intelligencia által vezérelt automatizálása bevezetése a gyorsabb és átláthatóbb nyilvántartás érdekében.',
                 ref2Title: 'GP-Pilot', 
-                ref2Desc: 'Fő funkciói a tevékenységünk megtervezése, nyomon követesé, integrálható adatbázisokkal bővítve (könyvelési adatok, pillanatnyi költségvetés, pénzeszköz és költség mozgás ellenőrzése, készletnyilvántartás felügyelete, statisztikák készítése, vállalkozás igényeire szabva. "Minden egy helyen átláthatóan" fejlesztés alatt.. a MI alapú rendszer bevezetésének fejlesztése folyik.',
+                ref2Desc: 'A GP-Pilot AI egy újgenerációs, mesterséges intelligenciával (Gemini AI) felvértezett mobilapplikáció, amelyet kifejezetten magyar háziorvosok számára fejlesztettünk. Célunk, hogy egy olyan intuitív, hatékony és mindenre kiterjedő eszközt adjunk az Ön kezébe, amely gyökeresen átalakítja a mindennapi munkafolyamatokat, csökkenti az adminisztratív terheket, és lehetővé teszi, hogy még több időt és energiát fordíthasson a legfontosabbra: páciensei gyógyítására.',
+                ref3Title: 'P-Day Light',
+                ref3Desc: 'A P-Day Light egy sokoldalú, mesterséges intelligenciával támogatott mobilalkalmazás, amelyet arra terveztünk, hogy egyetlen központi helyen egyszerűsítse és segítse a felhasználók napi személyes és munkahelyi teendőinek, információinak és projektjeinek kezelését. Célja, hogy egy intuitív, átfogó digitális asszisztensst nyújtson.',
+                ref3VideoLinkText: 'Videó Előnézet',
+                refPdfLinkText: "Leírás, Ismertető",
+                refPdfLoading: "PDF betöltése...",
+                refPdfError: "Hiba: A PDF fájl nem tölthető be.",
                 refButton: 'Fejlesztés alatt.. a béta verziók hamarosan elérhetőek lesznek!',
                 blogTitle: "Blog bejegyzések, Esettanulmányok, Segédanyagok, Ötletelések, Hasznos linkek", 
                 blogPost1Title: "70% fejlesztési szinten a Pohi AI Pro!!",
@@ -841,8 +869,8 @@
                 blogPost2Title: "GP Pilot is elég jól halad! V1 kiadás.",
                 blogPost2ImageAlt: "GP Pilot fejlesztési állapot GIF",
                 blogPost2Caption: "betekintés a fejlesztés jelenlegi állapotába.",
-                blogPost3Title: "P-Day Light Fejlesztése elkezdődött! (kattints a linkre)", // ÚJ
-                blogPost3Caption: "P-Day Light Bemutató videó, (Egy sokoldalú webalkalmazás a napi tervek, pénzügyek, kommunikáció és projektek kezelésére, Gemini AI asszisztenssel.)", // ÚJ
+                blogPost3Title: "P-Day Light Fejlesztése elkezdődött!",
+                blogPost3Caption: "P-Day Light Bemutató videó, (Egy sokoldalú webalkalmazás a napi tervek, pénzügyek, kommunikáció és projektek kezelésére, Gemini AI asszisztenssel.)",
                 blogLinkText: "Megtekintés Facebookon", 
                 blogContentPlaceholder: "Hamarosan érkeznek ide a legfrissebb blog bejegyzések, érdekes esettanulmányok, hasznos segédanyagok és inspiráló ötletek. Látogass vissza később!", 
                 offerTitle: 'Ajánlatkérés',
@@ -962,7 +990,13 @@
                 ref1Title: 'Pohi AI Pro', 
                 ref1Desc: 'Custom-developed, full portal system that consolidates and manages customer databases, order statuses, and manufacturer inventory with customer demands, coordinated with logistics. Still under development, testing AI-driven automation for faster and more transparent record-keeping.',
                 ref2Title: 'GP-Pilot', 
-                ref2Desc: 'Main functions include planning and tracking our activities, enhanced with integrable databases (accounting data, real-time budget, cash flow and cost monitoring, inventory management, statistics generation, tailored to business needs). "Everything transparently in one place" under development... AI-based system implementation is in progress.',
+                ref2Desc: 'GP-Pilot AI is a new-generation mobile application armed with artificial intelligence (Gemini AI), developed specifically for Hungarian general practitioners. Our goal is to provide an intuitive, efficient, and comprehensive tool that radically transforms daily workflows, reduces administrative burdens, and allows you to dedicate more time and energy to what matters most: healing your patients.',
+                ref3Title: 'P-Day Light',
+                ref3Desc: 'P-Day Light is a versatile, AI-powered mobile application designed to simplify and assist users in managing their daily personal and work-related tasks, information, and projects in a single, central location. It aims to provide an intuitive, comprehensive digital assistant.',
+                ref3VideoLinkText: 'Video Preview',
+                refPdfLinkText: "Description, Guide",
+                refPdfLoading: "Loading PDF...",
+                refPdfError: "Error: The PDF file could not be loaded.",
                 refButton: 'Under development... beta versions will be available soon!',
                 blogTitle: "Blog Posts, Case Studies, Resources, Brainstorming, Useful Links", 
                 blogPost1Title: "Pohi AI Pro at 70% Development Level!!",
@@ -971,8 +1005,8 @@
                 blogPost2Title: "GP Pilot is also progressing well! V1 release.", 
                 blogPost2ImageAlt: "GP Pilot development status GIF", 
                 blogPost2Caption: "Insight into the current state of development.", 
-                blogPost3Title: "Development of P-Day Light has begun! (click the link)", // NEW
-                blogPost3Caption: "P-Day Light Demo Video, (A versatile web application for managing daily plans, finances, communication, and projects, with a Gemini AI assistant.)", // NEW
+                blogPost3Title: "Development of P-Day Light has begun!",
+                blogPost3Caption: "P-Day Light Demo Video, (A versatile web application for managing daily plans, finances, communication, and projects, with a Gemini AI assistant.)",
                 blogLinkText: "View on Facebook", 
                 blogContentPlaceholder: "The latest blog posts, interesting case studies, useful resources, and inspiring ideas will be here soon. Visit back later!", 
                 offerTitle: 'Request for Offer',
@@ -1091,7 +1125,13 @@
                 ref1Title: 'Pohi AI Pro', 
                 ref1Desc: 'Individuell entwickeltes, vollständiges Portalsystem, das eine Kundendatenbank und deren Bestellstatus sowie den Lagerbestand der Hersteller konsolidiert und mit den Kundenanforderungen verwaltet, koordiniert mit der Logistik. Noch in Entwicklung, Testen der KI-gesteuerten Automatisierung für eine schnellere und transparentere Datenführung.',
                 ref2Title: 'GP-Pilot', 
-                ref2Desc: 'Hauptfunktionen umfassen die Planung und Verfolgung unserer Aktivitäten, erweitert um integrierbare Datenbanken (Buchhaltungsdaten, Echtzeitbudget, Cashflow- und Kostenüberwachung, Bestandsverwaltung, Statistikerstellung, zugeschnitten auf Geschäftsanforderungen). "Alles transparent an einem Ort" in Entwicklung... Die Implementierung eines KI-basierten Systems ist im Gange.',
+                ref2Desc: 'GP-Pilot AI ist eine mobile Anwendung der neuen Generation, die mit künstlicher Intelligenz (Gemini AI) ausgestattet und speziell für ungarische Hausärzte entwickelt wurde. Unser Ziel ist es, Ihnen ein intuitives, effizientes und umfassendes Werkzeug an die Hand zu geben, das die täglichen Arbeitsabläufe radikal verändert, den Verwaltungsaufwand reduziert und es Ihnen ermöglicht, mehr Zeit und Energie auf das Wesentliche zu verwenden: die Heilung Ihrer Patienten.',
+                ref3Title: 'P-Day Light',
+                ref3Desc: 'P-Day Light ist eine vielseitige, KI-gestützte mobile Anwendung, die entwickelt wurde, um Benutzern die Verwaltung ihrer täglichen persönlichen und arbeitsbezogenen Aufgaben, Informationen und Projekte an einem zentralen Ort zu vereinfachen und zu unterstützen. Ziel ist es, einen intuitiven, umfassenden digitalen Assistenten bereitzustellen.',
+                ref3VideoLinkText: 'Video-Vorschau',
+                refPdfLinkText: "Beschreibung, Leitfaden",
+                refPdfLoading: "PDF wird geladen...",
+                refPdfError: "Fehler: Die PDF-Datei konnte nicht geladen werden.",
                 refButton: 'In Entwicklung... Beta-Versionen werden bald verfügbar sein!',
                 blogTitle: "Blog-Beiträge, Fallstudien, Materialien, Brainstorming, Nützliche Links",
                 blogPost1Title: "Pohi AI Pro auf 70% Entwicklungsstand!!",
@@ -1100,8 +1140,8 @@
                 blogPost2Title: "GP Pilot macht auch gute Fortschritte! V1-Veröffentlichung.", 
                 blogPost2ImageAlt: "GP Pilot Entwicklungsstatus GIF", 
                 blogPost2Caption: "Einblick in den aktuellen Entwicklungsstand.", 
-                blogPost3Title: "Die Entwicklung von P-Day Light hat begonnen! (klicken Sie auf den Link)", // NEW
-                blogPost3Caption: "P-Day Light Demo-Video, (Eine vielseitige Webanwendung zur Verwaltung von Tagesplänen, Finanzen, Kommunikation und Projekten, mit einem Gemini AI-Assistenten.)", // NEW
+                blogPost3Title: "Die Entwicklung von P-Day Light hat begonnen!",
+                blogPost3Caption: "P-Day Light Demo-Video, (Eine vielseitige Webanwendung zur Verwaltung von Tagesplänen, Finanzen, Kommunikation und Projekten, mit einem Gemini AI-Assistenten.)",
                 blogLinkText: "Auf Facebook ansehen", 
                 blogContentPlaceholder: "Die neuesten Blog-Beiträge, interessante Fallstudien, nützliche Materialien und inspirierende Ideen finden Sie bald hier. Besuchen Sie uns später wieder!", 
                 offerTitle: 'Angebotsanfrage',
@@ -1497,14 +1537,45 @@
              // Általános lenyitó/összecsukó logika
             document.querySelectorAll('.toggle-header').forEach(header => {
                 header.addEventListener('click', () => {
-                    const content = header.nextElementSibling; 
+                    const parentElement = header.closest('.dev-inspired-card') || header.parentElement;
+                    const content = parentElement.querySelector('.toggle-content');
                     const icon = header.querySelector('.chevron-icon');
                     
-                    if (content && content.classList.contains('toggle-content')) {
+                    if (content) {
                         content.classList.toggle('hidden');
                         const isExpanded = !content.classList.contains('hidden');
                         header.setAttribute('aria-expanded', isExpanded.toString());
                         content.setAttribute('aria-hidden', (!isExpanded).toString());
+
+                        // PDF betöltő logika
+                        const pdfSrc = header.getAttribute('data-pdf-src');
+                        if (pdfSrc && isExpanded && content.innerHTML.trim() === '') {
+                            const loadingText = translations[localStorage.getItem('selectedLanguage') || 'hu']['refPdfLoading'] || "PDF betöltése...";
+                            content.innerHTML = `<p class="text-center text-gray-400 p-4">${loadingText}</p>`;
+                            
+                            const pdfEmbed = document.createElement('embed');
+                            pdfEmbed.setAttribute('src', pdfSrc);
+                            pdfEmbed.setAttribute('type', 'application/pdf');
+                            pdfEmbed.setAttribute('width', '100%');
+                            pdfEmbed.setAttribute('height', '500px'); 
+                            
+                            pdfEmbed.onload = () => {
+                                content.innerHTML = '';
+                                content.appendChild(pdfEmbed);
+                            };
+                            pdfEmbed.onerror = () => {
+                                const errorText = translations[localStorage.getItem('selectedLanguage') || 'hu']['refPdfError'] || `Hiba: A PDF fájl (${pdfSrc}) nem tölthető be.`;
+                                content.innerHTML = `<p class="text-center text-red-400 p-4">${errorText}</p>`;
+                            };
+
+                            // Fallback, ha az onload nem sül el
+                            setTimeout(() => {
+                                if (content.querySelector('p')) { 
+                                    content.innerHTML = '';
+                                    content.appendChild(pdfEmbed);
+                                }
+                            }, 1000); 
+                        }
                     }
                     if (icon) {
                         icon.classList.toggle('rotate-180');
