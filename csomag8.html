@@ -14,13 +14,25 @@
         .content-wrapper { position: relative; z-index: 1; }
         .section-title { font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; color: #F3F4F6; }
         .navbar-logo { max-height: 50px; width: auto; }
-        .dev-inspired-card { background-color: rgba(31, 41, 55, 0.95); border: 1px solid #374151; }
+        .dev-inspired-card { background-color: rgba(31, 41, 55, 0.95); border: 1px solid #374151; display: flex; flex-direction: column; }
         .dev-inspired-button { background-color: #3B82F6; color: white; transition: background-color 0.3s ease; }
         .dev-inspired-button:hover { background-color: #2563EB; }
         .back-link { display: inline-block; margin-top: 2rem; margin-bottom: 1rem; color: #60A5FA; font-weight: 500; text-decoration: none; transition: color 0.2s ease-in-out; }
         .back-link:hover { color: #3B82F6; text-decoration: underline; }
         .prose-custom ul { list-style-type: disc; padding-left: 1.5rem; }
         .prose-custom ul li { padding-left: 0.5rem; }
+        /* Styles for reference cards */
+        .toggle-header { cursor: pointer; transition: background-color 0.2s ease-in-out; }
+        .toggle-header:hover { background-color: rgba(55, 65, 81, 0.3); border-radius: 0.375rem; }
+        .chevron-icon { transition: transform 0.2s ease-in-out; }
+        .rotate-180 { transform: rotate(180deg); }
+        .references-accordion-content { padding: 1.5rem; background-color: #1f2937; border-top: 1px solid #4b5563; text-align: left; }
+        .references-accordion-content h2, .references-accordion-content h3 { font-weight: 600; color: #F9FAFB; }
+        .references-accordion-content h2 { font-size: 1.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #4b5563; }
+        .references-accordion-content h3 { font-size: 1.25rem; margin-top: 1.25rem; margin-bottom: 0.75rem; }
+        .references-accordion-content p, .references-accordion-content li { color: #D1D5DB; line-height: 1.6; margin-bottom: 1rem; }
+        .references-accordion-content ul { list-style-type: disc; padding-left: 1.5rem; }
+        .references-accordion-content ul ul { list-style-type: circle; margin-top: 0.5rem; }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17050054168"></script>
     <script>
@@ -81,7 +93,35 @@
                             </p>
                         </div>
                     </div>
-                     <div class="text-center mt-8">
+
+                    <!-- NEW REFERENCE SECTION -->
+                    <section id="references" class="py-16">
+                        <h2 class="section-title" data-translate-key="referencesPlatformTitle">Referencia Platform</h2>
+                        <div class="dev-inspired-card rounded-lg shadow-xl p-6 md:p-8 max-w-3xl mx-auto">
+                             <img src="AI.jpg" alt="AI Projekt Referencia Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md" onerror="this.alt='Referencia kép nem tölthető be'; this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=Pohi+AI+Pro';">
+                            <div class="flex-grow">
+                               <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref1Title">Pohi AI Pro</h3>
+                               <p class="text-gray-400 mb-4" data-translate-key="ref1Desc"></p>
+                            </div>
+                            <div class="mt-auto pt-4 space-y-4">
+                                <div class="text-center">
+                                    <a href="https://www.facebook.com/watch/?v=717996840751826&rdid=tIQctFZbjZYOfw3z" target="_blank" rel="noopener noreferrer" class="dev-inspired-button inline-flex items-center font-semibold px-6 py-2 rounded-lg text-base">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>
+                                        <span data-translate-key="refVideoLinkText">Videó Előnézet</span>
+                                    </a>
+                                </div>
+                                <div class="toggle-header flex justify-between items-center cursor-pointer p-2 hover:bg-gray-700/30 rounded-md">
+                                    <span class="font-semibold text-blue-400" data-translate-key="refPdfLinkText">Leírás, Ismertető</span>
+                                    <svg class="w-5 h-5 text-blue-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                                <div class="toggle-content hidden mt-2 references-accordion-content" aria-hidden="true" data-translate-key="ref1AccordionContent">
+                                     <!-- Content will be populated by JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                     <div class="text-center mt-16">
                         <a href="index.html#offer" class="dev-inspired-button px-8 py-3 rounded-lg text-lg inline-block" data-translate-key="requestOfferButton">Ajánlatkérés erre a csomagra</a>
                     </div>
                 </section>
@@ -117,7 +157,13 @@
                 package8Item10: 'Logisztikai tanácsadás a költséghatékonyság és a szállítási idők optimalizálása érdekében.',
                 package8DetailP2: 'Célunk, hogy Ön a fő tevékenységére koncentrálhasson, miközben mi biztosítjuk az áruk zökkenőmentes és szabályszerű mozgását.',
                 requestOfferButton: 'Ajánlatkérés erre a csomagra',
-                footerCopyright: 'Pohánka És Társa Kft. Minden jog fenntartva.'
+                footerCopyright: 'Pohánka És Társa Kft. Minden jog fenntartva.',
+                referencesPlatformTitle: 'Referencia Platform',
+                ref1Title: 'Pohi AI Pro',
+                ref1Desc: 'Egyedi fejlesztésű, teljes portál rendszer amely egy vevői adatbázis és annak rendelés állományát valamint a gyártok készletnyilvántartását összefésüli és kezeli a vevői igényekkel. A fuvarszervezéssel egybe hangolva.',
+                refVideoLinkText: 'Videó Előnézet',
+                refPdfLinkText: 'Leírás, Ismertető',
+                ref1AccordionContent: `<h2>Pohi AI Pro: A Kereskedelem Jövője – Intelligens Megoldások a Globális Piacon</h2><p>Üdvözlöm Önöket! Ma egy olyan forradalmi platformot szeretnék bemutatni, amely újradefiniálja a gyártók, kereskedők és vevők közötti kapcsolatot, különösen a nehéz anyagok, például a faipar globális piacán, de rugalmasságának köszönhetően számos más iparágban is. Ez a Pohi AI Pro.</p><h3>A Kihívás, Amire Választ Adunk:</h3><p>A nemzetközi kereskedelem, különösen az olyan ágazatokban, mint a faipar – ahol a termékek nehezek, a beszerzés komplex, és az összeállítás precizitást igényel – tele van kihívásokkal. Korábbi, akácoszlopok gyártásával és globális értékesítésével kapcsolatos tapasztalataim rávilágítottak egy olyan rendszer szükségességére, amely képes áthidalni a piaci szereplők közötti szakadékokat, optimalizálni a folyamatokat és intelligens megoldásokat kínálni.</p><h3>A Pohi AI Pro Küldetése:</h3><p>A Pohi AI Pro célja, hogy egy központi, intelligens adatbázis-alkalmazásként szolgáljon, amely összeköti a megrendeléseket leadni kívánó vevőket a készlettel rendelkező gyártókkal. Nem csupán egy piactér, hanem egy teljes körű operációs támogató rendszer, amely a Google Gemini és Imagen API-k erejével van felvértezve.</p><h2>Jelenlegi Főbb Funkciók – Az Intelligencia Ereje Már Ma:</h2><p>A Pohi AI Pro már most is lenyűgöző funkcióarzenállal rendelkezik, amelyek három fő felhasználói szerepkörre (Adminisztrátor, Vevő, Gyártó) szabott, intuitív felületeken keresztül érhetők el:</p><h3>Vevői Oldal (Megrendelések Kezelése):</h3><ul><li><strong>Új Igények Leadása:</strong> Részletes termékjellemzők (átmérő típus, méretek, hossz, mennyiség), megjegyzések és automatikusan számított köbméter megadása.</li><li><strong>Saját Igények Nyomon Követése:</strong> Áttekintés a leadott igényekről és azok aktuális státuszáról.</li><li><strong>MI Asszisztens Vevőknek:</strong><ul><li>Alternatív Termékek Javaslása: Ha egy adott termék nem elérhető, az MI alternatívákat kínál.</li><li>Termék-összehasonlítás: Az MI segít összevetni az eredeti igényt a javasolt alternatívákkal, kiemelve előnyöket és hátrányokat.</li><li>Automatikus Megjegyzés Generálás: Az MI segít megfogalmazni a megrendeléshez csatolandó informatív megjegyzéseket.</li></ul></li></ul><h3>Gyártói Oldal (Készletkezelés):</h3><ul><li><strong>Új Készletek Feltöltése:</strong> Termékjellemzők, ár, fenntarthatósági információk, megjegyzések és automatikusan számított köbméter rögzítése.</li><li><strong>Saját Készletek Áttekintése:</strong> A feltöltött készletek és azok státuszának (elérhető, lefoglalt, eladott) kezelése.</li><li><strong>MI Asszisztens Gyártóknak:</strong><ul><li>Árjavaslatok: Az MI piaci adatok alapján javaslatot tesz a termék optimális árára.</li><li>Fenntarthatósági Jelentések: Az MI segít fenntarthatósági riportok generálásában a termékadatok alapján.</li><li>Marketing Szöveg Generálása: Az MI hatékony marketing szövegeket alkot a termékek népszerűsítésére.</li><li>Termékfotó Generálása (Imagen API): Az MI valósághű termékképeket generál a megadott specifikációk alapján.</li><li>Terméklistázás Elemzése: Az MI kiértékeli a termékleírásokat, javaslatokat tesz azok javítására.</li><li>Adatlap-kiegészítési és Kulcsszó Javaslatok: Az MI segít a termékadatlapok teljessé tételében és releváns kulcsszavak azonosításában.</li><li>Leírások Fordítása: Többnyelvű támogatás megkönnyítése.</li></ul></li></ul>`
             },
             en: {
                 navBackToServices: 'Back to Services',
@@ -137,7 +183,13 @@
                 package8Item10: 'Logistics consulting to optimize cost-effectiveness and delivery times.',
                 package8DetailP2: 'Our goal is to allow you to focus on your core activities while we ensure the smooth and compliant movement of goods.',
                 requestOfferButton: 'Request Offer for this Package',
-                footerCopyright: 'Pohánka És Társa Kft. All rights reserved.'
+                footerCopyright: 'Pohánka És Társa Kft. All rights reserved.',
+                referencesPlatformTitle: 'Reference Platform',
+                ref1Title: 'Pohi AI Pro',
+                ref1Desc: 'Custom-developed, full portal system that consolidates and manages customer databases, order statuses, and manufacturer inventory with customer demands, coordinated with logistics.',
+                refVideoLinkText: 'Video Preview',
+                refPdfLinkText: 'Description, Guide',
+                ref1AccordionContent: `<h2>Pohi AI Pro: The Future of Commerce – Intelligent Solutions for the Global Market</h2><p>Welcome! Today, I want to introduce a revolutionary platform that redefines the relationship between manufacturers, traders, and buyers, especially in the global market for heavy materials like timber, but thanks to its flexibility, in many other industries as well. This is Pohi AI Pro.</p><h3>The Challenge We Address:</h3><p>International trade, particularly in sectors like the timber industry—where products are heavy, procurement is complex, and assembly requires precision—is fraught with challenges. My previous experience with producing and globally selling acacia poles highlighted the need for a system that can bridge the gaps between market players, optimize processes, and offer intelligent solutions.</p><h3>The Mission of Pohi AI Pro:</h3><p>Pohi AI Pro aims to serve as a central, intelligent database application that connects buyers wishing to place orders with manufacturers who have stock. It's not just a marketplace, but a full-fledged operational support system, armed with the power of Google's Gemini and Imagen APIs.</p><h2>Current Key Features – The Power of Intelligence Today:</h2><p>Pohi AI Pro already boasts an impressive arsenal of features, accessible through intuitive interfaces tailored for three main user roles (Administrator, Buyer, Manufacturer):</p><h3>Buyer Side (Order Management):</h3><ul><li><strong>Placing New Demands:</strong> Detailed product specifications (diameter type, dimensions, length, quantity), notes, and automatically calculated cubic meters.</li><li><strong>Tracking Own Demands:</strong> Overview of submitted demands and their current status.</li><li><strong>AI Assistant for Buyers:</strong><ul><li>Suggesting Alternative Products: If a product is unavailable, the AI offers alternatives.</li><li>Product Comparison: The AI helps compare the original demand with suggested alternatives, highlighting pros and cons.</li><li>Automatic Note Generation: The AI helps formulate informative notes to attach to the order.</li></ul></li></ul><h3>Manufacturer Side (Inventory Management):</h3><ul><li><strong>Uploading New Stock:</strong> Recording product characteristics, price, sustainability information, notes, and automatically calculated cubic meters.</li><li><strong>Reviewing Own Stock:</strong> Managing uploaded stock and its status (available, reserved, sold).</li><li><strong>AI Assistant for Manufacturers:</strong><ul><li>Price Suggestions: The AI suggests an optimal price for the product based on market data.</li><li>Sustainability Reports: The AI helps generate sustainability reports based on product data.</li><li>Marketing Text Generation: The AI creates effective marketing copy to promote products.</li><li>Product Photo Generation (Imagen API): The AI generates realistic product images based on the provided specifications.</li><li>Product Listing Analysis: The AI evaluates product descriptions and suggests improvements.</li><li>Data Sheet Completion and Keyword Suggestions: The AI helps complete product data sheets and identify relevant keywords.</li><li>Description Translation: Facilitating multilingual support.</li></ul></li></ul>`
             },
             de: {
                 navBackToServices: 'Zurück zu den Dienstleistungen',
@@ -157,7 +209,13 @@
                 package8Item10: 'Logistikberatung zur Optimierung von Kosteneffizienz und Lieferzeiten.',
                 package8DetailP2: 'Unser Ziel ist es, Ihnen zu ermöglichen, sich auf Ihre Kernaktivitäten zu konzentrieren, während wir den reibungslosen und konformen Warenverkehr sicherstellen.',
                 requestOfferButton: 'Angebot für dieses Paket anfordern',
-                footerCopyright: 'Pohánka És Társa Kft. Alle Rechte vorbehalten.'
+                footerCopyright: 'Pohánka És Társa Kft. Alle Rechte vorbehalten.',
+                referencesPlatformTitle: 'Referenzplattform',
+                ref1Title: 'Pohi AI Pro',
+                ref1Desc: 'Individuell entwickeltes, vollständiges Portalsystem, das eine Kundendatenbank und deren Bestellstatus sowie den Lagerbestand der Hersteller konsolidiert und mit den Kundenanforderungen verwaltet, koordiniert mit der Logistik.',
+                refVideoLinkText: 'Video-Vorschau',
+                refPdfLinkText: 'Beschreibung, Leitfaden',
+                ref1AccordionContent: `<h2>Pohi AI Pro: Die Zukunft des Handels – Intelligente Lösungen für den globalen Markt</h2><p>Willkommen! Heute möchte ich eine revolutionäre Plattform vorstellen, die die Beziehung zwischen Herstellern, Händlern und Käufern neu definiert, insbesondere auf dem globalen Markt für schwere Materialien wie Holz, aber dank ihrer Flexibilität auch in vielen anderen Branchen. Das ist Pohi AI Pro.</p><h3>Die Herausforderung, der wir uns stellen:</h3><p>Der internationale Handel, insbesondere in Branchen wie der Holzwirtschaft – wo die Produkte schwer sind, die Beschaffung komplex ist und die Montage Präzision erfordert – ist voller Herausforderungen. Meine früheren Erfahrungen mit der Produktion und dem weltweiten Verkauf von Akazienpfählen haben die Notwendigkeit eines Systems aufgezeigt, das die Lücken zwischen den Marktteilnehmern überbrücken, Prozesse optimieren und intelligente Lösungen anbieten kann.</p><h3>Die Mission von Pohi AI Pro:</h3><p>Pohi AI Pro soll als zentrale, intelligente Datenbankanwendung dienen, die Käufer, die Bestellungen aufgeben möchten, mit Herstellern verbindet, die über Lagerbestände verfügen. Es ist nicht nur ein Marktplatz, sondern ein vollwertiges operatives Unterstützungssystem, das mit der Leistung der Gemini- und Imagen-APIs von Google ausgestattet ist.</p><h2>Aktuelle Hauptfunktionen – Die Kraft der Intelligenz schon heute:</h2><p>Pohi AI Pro verfügt bereits über ein beeindruckendes Arsenal an Funktionen, die über intuitive Benutzeroberflächen zugänglich sind, die auf drei Hauptbenutzerrollen (Administrator, Käufer, Hersteller) zugeschnitten sind:</p><h3>Käuferseite (Bestellverwaltung):</h3><ul><li><strong>Neue Anforderungen aufgeben:</strong> Detaillierte Produktmerkmale (Durchmessertyp, Abmessungen, Länge, Menge), Anmerkungen und automatisch berechnete Kubikmeter.</li><li><strong>Eigene Anforderungen verfolgen:</strong> Übersicht über die aufgegebenen Anforderungen und deren aktuellen Status.</li><li><strong>KI-Assistent für Käufer:</strong><ul><li>Vorschlagen alternativer Produkte: Wenn ein bestimmtes Produkt nicht verfügbar ist, bietet die KI Alternativen an.</li><li>Produktvergleich: Die KI hilft beim Vergleich der ursprünglichen Anforderung mit den vorgeschlagenen Alternativen und hebt Vor- und Nachteile hervor.</li><li>Automatische Notizgenerierung: Die KI hilft bei der Formulierung informativer Notizen, die der Bestellung beigefügt werden.</li></ul></li></ul><h3>Herstellerseite (Bestandsverwaltung):</h3><ul><li><strong>Neuen Bestand hochladen:</strong> Erfassung von Produktmerkmalen, Preis, Nachhaltigkeitsinformationen, Anmerkungen und automatisch berechneten Kubikmetern.</li><li><strong>Eigenen Bestand überprüfen:</strong> Verwaltung des hochgeladenen Bestands und seines Status (verfügbar, reserviert, verkauft).</li><li><strong>KI-Assistent für Hersteller:</strong><ul><li>Preisvorschläge: Die KI schlägt auf der Grundlage von Marktdaten einen optimalen Preis für das Produkt vor.</li><li>Nachhaltigkeitsberichte: Die KI hilft bei der Erstellung von Nachhaltigkeitsberichten auf der Grundlage von Produktdaten.</li><li>Marketingtextgenerierung: Die KI erstellt effektive Marketingtexte zur Bewerbung von Produkten.</li><li>Produktfotogenerierung (Imagen API): Die KI generiert realistische Produktbilder auf der Grundlage der angegebenen Spezifikationen.</li><li>Analyse von Produktlisten: Die KI bewertet Produktbeschreibungen und macht Verbesserungsvorschläge.</li><li>Vervollständigung von Datenblättern und Keyword-Vorschläge: Die KI hilft bei der Vervollständigung von Produktdatenblättern und der Identifizierung relevanter Keywords.</li><li>Übersetzung von Beschreibungen: Erleichterung der mehrsprachigen Unterstützung.</li></ul></li></ul>`
             }
         };
 
@@ -166,7 +224,12 @@
                 document.querySelectorAll('[data-translate-key]').forEach(element => {
                     const key = element.getAttribute('data-translate-key');
                     if (detailTranslations[lang][key] !== undefined) {
-                        element.innerHTML = detailTranslations[lang][key];
+                        const useInnerHTML = key.includes('AccordionContent');
+                        if (useInnerHTML) {
+                           element.innerHTML = detailTranslations[lang][key];
+                        } else {
+                           element.textContent = detailTranslations[lang][key];
+                        }
                     } else {
                          console.warn(`[DetailLangSwitch] No translation for key: ${key} in ${lang}`);
                     }
@@ -176,9 +239,6 @@
                 const metaDescKey = metaDescElement ? metaDescElement.getAttribute('data-translate-meta-description') : null;
                 if (metaDescElement && metaDescKey && detailTranslations[lang][metaDescKey]) {
                     metaDescElement.setAttribute('content', detailTranslations[lang][metaDescKey]);
-                    console.log(`[DetailLangSwitch] Meta description updated for ${lang}`);
-                } else if (metaDescKey) {
-                    console.warn(`[DetailLangSwitch] No meta description translation for key: ${metaDescKey} in ${lang}`);
                 }
 
                 document.documentElement.lang = lang;
@@ -194,7 +254,26 @@
                 yearSpan.textContent = new Date().getFullYear();
             }
             const savedLanguage = localStorage.getItem('selectedLanguage') || 'hu';
+            window.switchDetailPageLanguage = switchDetailPageLanguage;
             switchDetailPageLanguage(savedLanguage);
+            
+            // General toggle/accordion logic
+            document.querySelectorAll('.toggle-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling.matches('.toggle-content') ? header.nextElementSibling : header.parentElement.querySelector('.toggle-content');
+                    const icon = header.querySelector('.chevron-icon');
+                    
+                    if (content) {
+                        content.classList.toggle('hidden');
+                        const isExpanded = !content.classList.contains('hidden');
+                        header.setAttribute('aria-expanded', isExpanded.toString());
+                        content.setAttribute('aria-hidden', (!isExpanded).toString());
+                    }
+                    if (icon) {
+                        icon.classList.toggle('rotate-180');
+                    }
+                });
+            });
         });
     </script>
 </body>
