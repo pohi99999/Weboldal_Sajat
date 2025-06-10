@@ -9,7 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
+        /* Common styles from csomag2.html */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #111827; 
@@ -21,32 +24,32 @@
         .dev-inspired-card { background-color: rgba(31, 41, 55, 0.95); border: 1px solid #374151; }
         .dev-inspired-button { background-color: #3B82F6; color: white; transition: background-color 0.3s ease; }
         .dev-inspired-button:hover { background-color: #2563EB; }
-        .back-link {
-            display: inline-block;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: #60A5FA; 
-            font-weight: 500; 
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
+        .back-link { display: inline-block; margin-top: 2rem; margin-bottom: 1rem; color: #60A5FA; font-weight: 500; text-decoration: none; transition: color 0.2s ease-in-out; }
+        .back-link:hover { color: #3B82F6; text-decoration: underline; }
+        .package-subtitle { font-size: 1.5rem; font-weight: 600; color: #93C5FD; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose-custom ul { list-style-type: disc; padding-left: 1.5rem; }
+        .prose-custom ul li { padding-left: 0.5rem; }
+        
+        /* Styles from index2.html */
+        .google-sans { font-family: 'Google Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(90deg, #89B3F8, #A56EFF, #FF8BC8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
         }
-        .back-link:hover {
-            color: #3B82F6; 
-            text-decoration: underline;
+        .card-edge {
+            background-color: #1a1a1a;
+            border: 1px solid #3c4043;
+            transition: background-color 0.3s ease;
         }
-        .package-subtitle {
-            font-size: 1.5rem; /* Tailwind text-2xl */
-            font-weight: 600; /* Tailwind font-semibold */
-            color: #93C5FD; /* Tailwind text-blue-300 */
-            margin-top: 1.5rem; /* Tailwind mt-6 */
-            margin-bottom: 0.75rem; /* Tailwind mb-3 */
-        }
-         .prose-custom ul {
-            list-style-type: disc;
-            padding-left: 1.5rem; 
-        }
-        .prose-custom ul li {
-            padding-left: 0.5rem; 
+        .card-edge:hover { background-color: #2a2a2a; }
+        .hero-background-edge { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.1; overflow: hidden; }
+        .dark-blue-wrapper {
+             background: linear-gradient(140deg, #151515 0.72%, #060606 100%);
+             border: 1px solid #185ABC;
+             border-image: linear-gradient(to bottom right, #2E64DE, #3C8FE3) 1;
         }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17050054168"></script>
@@ -92,7 +95,6 @@
                             <p data-translate-key="package2Intro">
                                 Válassza ki az Ön vállalkozásának legmegfelelőbb fejlesztési csomagot, hogy digitális eszközeinkkel és szakértői tanácsadásunkkal a legtöbbet hozhassa ki cégéből! Minden csomagunk személyre szabható.
                             </p>
-
                             <div>
                                 <h2 class="package-subtitle" data-translate-key="package2StartTitle">Start Csomag</h2>
                                 <p data-translate-key="package2StartP1">Ideális választás induló vállalkozásoknak, valamint mikro- és kisvállalkozásoknak, akik szeretnék megalapozni digitális jelenlétüket és hatékonyságukat.</p>
@@ -103,7 +105,6 @@
                                     <li data-translate-key="package2StartItem4">Mini-SWOT analízis a vállalkozás erősségeinek és fejlesztendő területeinek feltárására.</li>
                                 </ul>
                             </div>
-
                             <div>
                                 <h2 class="package-subtitle" data-translate-key="package2MediumTitle">Medium Csomag</h2>
                                 <p data-translate-key="package2MediumP1">Már működő kis- és középvállalkozásoknak ajánljuk, akik szeretnék optimalizálni folyamataikat, növelni online láthatóságukat és hatékonyabban elérni célközönségüket.</p>
@@ -115,7 +116,6 @@
                                     <li data-translate-key="package2MediumItem5">Weboldal vagy webshop felhasználói élmény (UX) alapvető átvilágítása és javaslatok.</li>
                                 </ul>
                             </div>
-
                             <div>
                                 <h2 class="package-subtitle" data-translate-key="package2ProTitle">Pro Csomag</h2>
                                 <p data-translate-key="package2ProP1">Azoknak a növekedésre és komolyabb digitális transzformációra törekvő vállalkozásoknak szól, akik piacvezető szerepre törnek és kiaknáznák a legmodernebb technológiai lehetőségeket.</p>
@@ -130,7 +130,43 @@
                             </div>
                         </div>
                     </div>
-                     <div class="text-center mt-8">
+                    
+                    <!-- INSERTED CONTENT FROM index2.html -->
+                    <div id="inserted-content" class="mt-16 google-sans">
+                        <section class="mb-24 md:mb-32 text-center">
+                             <div class="max-w-4xl mx-auto">
+                                 <img src="ge2.jpg" alt="Google AI Edge Főcím" class="mx-auto mb-8 w-full max-w-4xl rounded-lg" onerror="this.alt='Főcím kép'; this.src='https://placehold.co/1200x265/060606/E8EAED?text=Google+AI+Edge';">
+                                 <h3 class="text-xl text-gray-300 mb-16 relative z-10" data-translate-key="heroSubtitleEdge">MI telepítése mobil, webes és beágyazott alkalmazásokban</h3>
+                            </div>
+                            <div class="hidden md:flex justify-center items-start gap-8 max-w-5xl mx-auto">
+                                <div class="flex-1 flex gap-4 items-center">
+                                    <svg class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                    <div>
+                                        <h4 class="font-bold text-left" data-translate-key="onDeviceTitle">Az eszközön</h4>
+                                        <p class="text-left text-gray-400" data-translate-key="onDeviceDesc">Csökkentse a késleltetést. Dolgozzon offline. Tartsa adatait helyben és privátként.</p>
+                                    </div>
+                                </div>
+                                <div class="w-px bg-gray-700 self-stretch"></div>
+                                <div class="flex-1 flex gap-4 items-center">
+                                    <svg class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    <div>
+                                        <h4 class="font-bold text-left" data-translate-key="multiPlatformTitle">Többplatformos</h4>
+                                        <p class="text-left text-gray-400" data-translate-key="multiPlatformDesc">Ugyanazt a modellt futtassa Androidon, iOS-en, weben és beágyazott rendszereken.</p>
+                                    </div>
+                                </div>
+                                <div class="w-px bg-gray-700 self-stretch"></div>
+                                <div class="flex-1 flex gap-4 items-center">
+                                    <svg class="h-8 w-8 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                                     <div>
+                                        <h4 class="font-bold text-left" data-translate-key="multiFrameworkTitle">Több keretrendszer</h4>
+                                        <p class="text-left text-gray-400" data-translate-key="multiFrameworkDesc">Kompatibilis a JAX, Keras, PyTorch és TensorFlow modellekkel.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="text-center mt-12">
                         <a href="index.html#offer" class="dev-inspired-button px-8 py-3 rounded-lg text-lg inline-block" data-translate-key="requestOfferButton">Ajánlatkérés ezekre a csomagokra</a>
                     </div>
                 </section>
@@ -176,7 +212,14 @@
                 package2ProItem5: 'Folyamatos, dedikált konzultáció és stratégiai mentorálás (havi egyeztetett óraszámban).',
                 package2ProItem6: 'Pályázati lehetőségek proaktív feltérképezése a digitális fejlesztések finanszírozásához.',
                 requestOfferButton: 'Ajánlatkérés ezekre a csomagokra',
-                footerCopyright: 'Pohánka És Társa Kft. Minden jog fenntartva.'
+                footerCopyright: 'Pohánka És Társa Kft. Minden jog fenntartva.',
+                heroSubtitleEdge: 'MI telepítése mobil, webes és beágyazott alkalmazásokban',
+                onDeviceTitle: 'Az eszközön',
+                onDeviceDesc: 'Csökkentse a késleltetést. Dolgozzon offline. Tartsa adatait helyben és privátként.',
+                multiPlatformTitle: 'Többplatformos',
+                multiPlatformDesc: 'Ugyanazt a modellt futtassa Androidon, iOS-en, weben és beágyazott rendszereken.',
+                multiFrameworkTitle: 'Több keretrendszer',
+                multiFrameworkDesc: 'Kompatibilis a JAX, Keras, PyTorch és TensorFlow modellekkel.',
             },
             en: {
                 navBackToServices: 'Back to Services',
@@ -206,7 +249,14 @@
                 package2ProItem5: 'Continuous, dedicated consultation and strategic mentoring (agreed monthly hours).',
                 package2ProItem6: 'Proactive mapping of grant opportunities for financing digital developments.',
                 requestOfferButton: 'Request Offer for these Packages',
-                footerCopyright: 'Pohánka És Társa Kft. All rights reserved.'
+                footerCopyright: 'Pohánka És Társa Kft. All rights reserved.',
+                heroSubtitleEdge: 'Deploy AI in mobile, web, and embedded applications',
+                onDeviceTitle: 'On-device',
+                onDeviceDesc: 'Reduce latency. Work offline. Keep data local and private.',
+                multiPlatformTitle: 'Multi-platform',
+                multiPlatformDesc: 'Run the same model on Android, iOS, web, and embedded systems.',
+                multiFrameworkTitle: 'Multi-framework',
+                multiFrameworkDesc: 'Compatible with JAX, Keras, PyTorch, and TensorFlow models.',
             },
             de: {
                 navBackToServices: 'Zurück zu den Dienstleistungen',
@@ -236,19 +286,23 @@
                 package2ProItem5: 'Kontinuierliche, dedizierte Beratung und strategisches Mentoring (vereinbarte monatliche Stundenzahl).',
                 package2ProItem6: 'Proaktive Ermittlung von Fördermöglichkeiten zur Finanzierung digitaler Entwicklungen.',
                 requestOfferButton: 'Angebot für diese Pakete anfordern',
-                footerCopyright: 'Pohánka És Társa Kft. Alle Rechte vorbehalten.'
+                footerCopyright: 'Pohánka És Társa Kft. Alle Rechte vorbehalten.',
+                heroSubtitleEdge: 'KI in mobilen, Web- und eingebetteten Anwendungen bereitstellen',
+                onDeviceTitle: 'Auf dem Gerät',
+                onDeviceDesc: 'Reduzieren Sie die Latenz. Arbeiten Sie offline. Halten Sie Daten lokal und privat.',
+                multiPlatformTitle: 'Multiplattform',
+                multiPlatformDesc: 'Führen Sie dasselbe Modell auf Android, iOS, im Web und auf eingebetteten Systemen aus.',
+                multiFrameworkTitle: 'Multi-Framework',
+                multiFrameworkDesc: 'Kompatibel mit JAX-, Keras-, PyTorch- und TensorFlow-Modellen.',
             }
         };
 
         function switchDetailPageLanguage(lang) {
-            console.log(`[DetailLangSwitch] Attempting to switch detail page to: ${lang}`);
             if (detailTranslations[lang]) {
                 document.querySelectorAll('[data-translate-key]').forEach(element => {
                     const key = element.getAttribute('data-translate-key');
                     if (detailTranslations[lang][key] !== undefined) {
                         element.innerHTML = detailTranslations[lang][key];
-                    } else {
-                         console.warn(`[DetailLangSwitch] No translation for key: ${key} in ${lang}`);
                     }
                 });
                 
@@ -256,16 +310,10 @@
                 const metaDescKey = metaDescElement ? metaDescElement.getAttribute('data-translate-meta-description') : null;
                 if (metaDescElement && metaDescKey && detailTranslations[lang][metaDescKey]) {
                     metaDescElement.setAttribute('content', detailTranslations[lang][metaDescKey]);
-                    console.log(`[DetailLangSwitch] Meta description updated for ${lang}`);
-                } else if (metaDescKey) {
-                    console.warn(`[DetailLangSwitch] No meta description translation for key: ${metaDescKey} in ${lang}`);
                 }
 
                 document.documentElement.lang = lang;
-                localStorage.setItem('selectedLanguage', lang); 
-                console.log(`[DetailLangSwitch] Detail page language set to: ${lang}`);
-            } else {
-                 console.error(`[DetailLangSwitch] Language pack for "${lang}" not found.`);
+                localStorage.setItem('selectedLanguage', lang);
             }
         }
 
@@ -275,6 +323,7 @@
                 yearSpan.textContent = new Date().getFullYear();
             }
             const savedLanguage = localStorage.getItem('selectedLanguage') || 'hu';
+            window.switchDetailPageLanguage = switchDetailPageLanguage;
             switchDetailPageLanguage(savedLanguage);
         });
     </script>
