@@ -78,7 +78,24 @@
                             </p>
                         </div>
                     </div>
-                    <div class="text-center mt-8">
+                    
+                    <!-- NEW REFERENCE SECTION -->
+                    <section id="references" class="pt-16">
+                        <h2 class="section-title" data-translate-key="referencesTitle">Referencia Munkák</h2>
+                        <div class="dev-inspired-card p-6 md:p-8 rounded-lg shadow-xl max-w-2xl mx-auto">
+                            <img src="refw3.jpg" alt="Elemző munka referencia" class="w-full h-auto object-contain rounded-md my-4 shadow-md max-h-96 mx-auto" onerror="this.alt='Referencia kép nem tölthető be'; this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=Elemzés+Referencia';">
+                            <div class="text-center mt-4">
+                                <a href="https://drive.google.com/drive/folders/1vU_EQojuTv6J8e5vUtFd1_MMUoZXpyn_?usp=sharing" target="_blank" rel="noopener noreferrer" class="dev-inspired-button px-6 py-3 rounded-lg text-lg inline-flex items-center">
+                                    <span class="mr-2" data-translate-key="ref3LinkText">Betekintés pár elemző munkába</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <div class="text-center mt-16">
                         <a href="index.html#offer" class="dev-inspired-button px-8 py-3 rounded-lg text-lg inline-block" data-translate-key="requestOfferButton">Ajánlatkérés erre a csomagra</a>
                     </div>
                 </section>
@@ -110,6 +127,8 @@
                 package3Item6: 'Hatásvizsgálatok és ROI (megtérülési ráta) elemzések.',
                 package3Item7: 'Iparági trendfigyelés és jövőorientált betekintések.',
                 package3DetailP2: 'Akár új terméket vezetne be, akár meglévő szolgáltatásait szeretné fejleszteni, vagy egyszerűen csak jobban megérteni a piacát, ez a csomag biztosítja a szükséges információkat a megalapozott döntésekhez.',
+                referencesTitle: 'Referencia Munkák',
+                ref3LinkText: 'Betekintés pár elemző munkába',
                 requestOfferButton: 'Ajánlatkérés erre a csomagra',
                 footerCopyright: 'Pohánka És Társa Kft. Minden jog fenntartva.'
             },
@@ -127,6 +146,8 @@
                 package3Item6: 'Impact assessments and ROI (return on investment) analyses.',
                 package3Item7: 'Industry trend monitoring and future-oriented insights.',
                 package3DetailP2: 'Whether you are introducing a new product, developing existing services, or simply want to better understand your market, this package provides the necessary information for informed decisions.',
+                referencesTitle: 'Reference Works',
+                ref3LinkText: 'Insight into some analysis work',
                 requestOfferButton: 'Request Offer for this Package',
                 footerCopyright: 'Pohánka És Társa Kft. All rights reserved.'
             },
@@ -144,6 +165,8 @@
                 package3Item6: 'Folgenabschätzungen und ROI-Analysen (Return on Investment).',
                 package3Item7: 'Beobachtung von Branchentrends und zukunftsorientierte Einblicke.',
                 package3DetailP2: 'Ob Sie ein neues Produkt einführen, bestehende Dienstleistungen weiterentwickeln oder einfach Ihren Markt besser verstehen möchten, dieses Paket liefert die notwendigen Informationen für fundierte Entscheidungen.',
+                referencesTitle: 'Referenzarbeiten',
+                ref3LinkText: 'Einblick in einige Analysearbeiten',
                 requestOfferButton: 'Angebot für dieses Paket anfordern',
                 footerCopyright: 'Pohánka És Társa Kft. Alle Rechte vorbehalten.'
             }
@@ -155,7 +178,7 @@
                 document.querySelectorAll('[data-translate-key]').forEach(element => {
                     const key = element.getAttribute('data-translate-key');
                     if (detailTranslations[lang][key] !== undefined) {
-                        element.innerHTML = detailTranslations[lang][key];
+                        element.textContent = detailTranslations[lang][key];
                     } else {
                          console.warn(`[DetailLangSwitch] No translation for key: ${key} in ${lang}`);
                     }
@@ -184,6 +207,7 @@
                 yearSpan.textContent = new Date().getFullYear();
             }
             const savedLanguage = localStorage.getItem('selectedLanguage') || 'hu';
+            window.switchDetailPageLanguage = switchDetailPageLanguage;
             switchDetailPageLanguage(savedLanguage);
         });
     </script>
