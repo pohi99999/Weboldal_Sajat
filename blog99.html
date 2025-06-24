@@ -36,8 +36,15 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F7F9FC;
+            /* A háttérszín kikommentelése, hogy a háttérkép látható legyen */
+            /* background-color: #F7F9FC; */
             color: #1E293B;
+            /* Háttérkép hozzáadása */
+            background-image: url('cs2.jpg');
+            background-size: cover; /* A kép kitölti a rendelkezésre álló területet */
+            background-position: center; /* A kép középre igazítása */
+            background-attachment: fixed; /* A háttérkép rögzítése görgetéskor */
+            background-repeat: no-repeat; /* A háttérkép ismétlésének megakadályozása */
         }
         .chart-container {
             position: relative;
@@ -57,6 +64,16 @@
             background: linear-gradient(90deg, #0052D4, #4364F7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        /* A tartalom olvashatóságának javítása a háttérképen */
+        .container, header, section, footer {
+            background-color: rgba(255, 255, 255, 0.9); /* Átlátszó fehér háttér a jobb olvashatóságért */
+            padding: 1rem; /* Kis padding a tartalom körül */
+            border-radius: 0.5rem; /* Lekerekített sarkok */
+            margin-bottom: 1rem; /* Elemek közötti távolság */
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.95); /* Kicsit kevésbé átlátszó fejléc */
         }
     </style>
 </head>
@@ -294,7 +311,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const primaryColor = '#0052D4';
     const secondaryColor = '#4364F7';
     const accentColor = '#6FB1FC';
-    const backgroundColor = 'rgba(247, 249, 252, 0.6)';
     const textColor = '#1E293B';
 
     function wrapLabels(labels, maxWidth) {
@@ -352,7 +368,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     label: 'Használati Modell',
                     data: [70, 30],
                     backgroundColor: [secondaryColor, accentColor],
-                    borderColor: '#F7F9FC',
+                    borderColor: 'rgba(255, 255, 255, 0.9)', /* A konténer háttérszínéhez igazítva */
                     borderWidth: 4
                 }]
             },
@@ -420,7 +436,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 ticks: {
                     color: textColor,
-                    backdropColor: 'rgba(247, 249, 252, 0.75)',
+                    backdropColor: 'rgba(255, 255, 255, 0.75)', /* A konténer háttérszínéhez igazítva */
                     stepSize: 2
                 },
                 suggestedMin: 0,

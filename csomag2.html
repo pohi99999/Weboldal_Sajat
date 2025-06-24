@@ -12,11 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Közös stílusok a csomag2.html-ből */
+        /* Common styles from csomag2.html */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827; 
+            /* background-color: #111827;  - Ezt a sort kikommenteltük, hogy a háttérkép látszódjon */
             color: #D1D5DB; 
+            /* Háttérkép hozzáadása */
+            background-image: url('cs2.jpg');
+            background-size: cover; /* A kép kitölti a rendelkezésre álló területet */
+            background-position: center; /* A kép középre igazítása */
+            background-attachment: fixed; /* A háttérkép rögzítése görgetéskor */
+            background-repeat: no-repeat; /* A háttérkép ismétlésének megakadályozása */
         }
         .content-wrapper { position: relative; z-index: 1; }
         .section-title { font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; color: #F3F4F6; }
@@ -30,7 +36,7 @@
         .prose-custom ul { list-style-type: disc; padding-left: 1.5rem; }
         .prose-custom ul li { padding-left: 0.5rem; }
         
-        /* Stílusok az index2.html-ből */
+        /* Styles from index2.html */
         .google-sans { font-family: 'Google Sans', sans-serif; }
         .gradient-text {
             background: linear-gradient(90deg, #89B3F8, #A56EFF, #FF8BC8);
@@ -131,11 +137,11 @@
                         </div>
                     </div>
                     
-                    <!-- BEILLESZTETT TARTALOM az index2.html-ből -->
+                    <!-- INSERTED CONTENT from index2.html -->
                     <div id="inserted-content" class="mt-16 google-sans">
                         <section class="mb-24 md:mb-32 text-center">
                              <div class="max-w-4xl mx-auto">
-                                 <img src="ge2.jpg" alt="Google AI Edge Főcím" class="mx-auto mb-8 w-full max-w-4xl rounded-lg" onerror="this.alt='Főcím kép'; this.src='https://placehold.co/1200x265/060606/E8EAED?text=Google+AI+Edge';">
+                                 <img src="ge2.jpg" alt="Google AI Edge Főcím" class="mx-auto mb-8 w-full max-w-4xl rounded-lg" onerror="this.alt='Main image could not be loaded'; this.src='https://placehold.co/1200x265/060606/E8EAED?text=Google+AI+Edge';">
                                  <h3 class="text-xl text-gray-300 mb-16 relative z-10" data-translate-key="heroSubtitleEdge">MI telepítése mobil, webes és beágyazott alkalmazásokban</h3>
                             </div>
                             <div class="hidden md:flex justify-center items-start gap-8 max-w-5xl mx-auto">
@@ -166,8 +172,8 @@
                         </section>
                     </div>
 
-                    <!-- Új gomb beillesztése ide -->
-                    <div class="text-center mt-8"> <!-- Kisebb margin-top az elhatároláshoz -->
+                    <!-- New button inserted here -->
+                    <div class="text-center mt-8"> <!-- Smaller margin-top for separation -->
                         <a href="blog99.html" class="dev-inspired-button px-6 py-2 rounded-md text-base inline-block" data-translate-key="exampleButton">Egy Példáért Katt ide!</a>
                     </div>
 
@@ -282,26 +288,26 @@
                 package2MediumItem1: 'Detailliertes digitales Audit und Ausarbeitung umfassender strategischer Vorschläge.',
                 package2MediumItem2: 'Grundlagenlegung der Online-Marketingstrategie (Zielgruppendefinition, Kanalauswahl, Kernbotschaften).',
                 package2MediumItem3: 'Professionelle Unterstützung bei der Auswahl und Implementierung von CRM- oder Projektmanagement-Tools.',
-                package2MediumItem4: 'Prozessoptimierungsberatung (max. 4 Stunden) zur Steigerung der internen Effizienz.',
-                package2MediumItem5: 'Grundlegende Überprüfung der Benutzererfahrung (UX) von Websites oder Webshops und Empfehlungen.',
+                package2MediumItem4: 'Prozessoptimierungsberatung (max. 4 óra) a belső hatékonyság növelésére.',
+                package2MediumItem5: 'Weboldal vagy webshop felhasználói élmény (UX) alapvető átvilágítása és javaslatok.',
                 package2ProTitle: 'Pro-Paket',
-                package2ProP1: 'Richtet sich an Unternehmen, die Wachstum und eine umfassende digitale Transformation anstreben, Marktführerschaft anstreben und die neuesten technológiai lehetőségeket nutzen möchten.',
-                package2ProItem1: 'Ausarbeitung einer komplexen digitalen Transformationsstrategie und eines Implementierungsplans.',
-                package2ProItem2: 'Detaillierte, mehrkanalige Online-Marketingstrategie und Kampagnenplanung.',
-                package2ProItem3: 'Bedarfsanalyse für individuelle Softwareentwicklung, Unterstützung bei der Erstellung detaillierter Spezifikationen.',
-                package2ProItem4: 'Unterstützung datengesteuerter Entscheidungsfindung, Implementierung von Business Intelligence und Reporting-Grundlagen.',
-                package2ProItem5: 'Kontinuierliche, dedizierte Beratung und strategisches Mentoring (vereinbarte monatliche Stundenzahl).',
-                package2ProItem6: 'Proaktive Ermittlung von Fördermöglichkeiten zur Finanzierung digitaler Entwicklungen.',
+                package2ProP1: 'Azoknak a növekedésre és komolyabb digitális transzformációra törekvő vállalkozásoknak szól, akik piacvezető szerepre törnek és kiaknáznák a legmodernebb technológiai lehetőségeket.',
+                package2ProItem1: 'Komplex digitális transzformációs stratégia kidolgozása és implementációs terv.',
+                package2ProItem2: 'Részletes, többcsatornás online marketing stratégia és kampánytervezés.',
+                package2ProItem3: 'Egyedi szoftverfejlesztési igények felmérése, részletes specifikáció készítésének támogatása.',
+                package2ProItem4: 'Adatvezérelt döntéshozatal támogatása, üzleti intelligencia és riporting alapok implementálása.',
+                package2ProItem5: 'Folyamatos, dedikált konzultáció és stratégiai mentorálás (havi egyeztetett óraszámban).',
+                package2ProItem6: 'Pályázati lehetőségek proaktív feltérképezése a digitális fejlesztések finanszírozásához.',
                 requestOfferButton: 'Angebot für diese Pakete anfordern',
                 exampleButton: 'Klicken Sie hier für ein Beispiel!',
                 footerCopyright: 'Pohánka És Társa Kft. Alle Rechte vorbehalten.',
-                heroSubtitleEdge: 'KI in mobilen, Web- und eingebetteten Anwendungen bereitstellen',
+                heroSubtitleEdge: 'KI in mobilen, Web- és eingebetteten Anwendungen bereitstellen',
                 onDeviceTitle: 'Auf dem Gerät',
                 onDeviceDesc: 'Reduzieren Sie die Latenz. Arbeiten Sie offline. Halten Sie Daten lokal und privat.',
                 multiPlatformTitle: 'Multiplattform',
                 multiPlatformDesc: 'Führen Sie dasselbe Modell auf Android, iOS, im Web und auf eingebetteten Systemen aus.',
                 multiFrameworkTitle: 'Multi-Framework',
-                multiFrameworkDesc: 'Kompatibel mit JAX-, Keras-, PyTorch- und TensorFlow-Modellen.',
+                multiFrameworkDesc: 'Kompatibel mit JAX-, Keras-, PyTorch- és TensorFlow-Modellen.',
             }
         };
 
