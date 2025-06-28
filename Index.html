@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="hu"> <head>
+<html lang="hu">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Főoldal Meta Leírása -->
     <meta name="description" content="Pohánka És Társa Kft: Innovatív technológiai megoldások, szoftverfejlesztés, pénzügyi tanácsadás és marketing stratégiák vállalkozásának sikeréért." data-translate-meta-description="indexMetaDesc">
     <title>Pohánka És Társa Kft - Modern Weboldal</title>
+    <!-- Favicon hozzáadása -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -163,7 +167,7 @@
         <header class="bg-gray-800/80 backdrop-blur-md shadow-lg sticky top-0 z-40">
             <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
                 <div>
-                    <a href="#" class="flex items-center">
+                    <a href="#home" class="flex items-center">
                         <img src="logo.jpg" alt="Pohánka És Társa Kft Logó" class="navbar-logo mr-3" onerror="this.alt='Logó nem tölthető be'; this.src='https://placehold.co/150x50/111827/D1D5DB?text=Logó';">
                         <span class="text-xl font-bold text-white">Pohánka És Társa Kft</span>
                     </a>
@@ -176,25 +180,25 @@
                     </button>
                 </div>
                 <div id="nav-links-desktop" class="hidden md:flex space-x-4">
-                    <a href="#home" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium nav-link-active" data-translate-key="navHome">Kezdőlap</a>
-                    <a href="#about" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navAbout">Rólunk</a>
-                    <a href="#philosophy" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navPhilosophy">Értékeink</a>
-                    <a href="#services" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navServices">Amit Kínálunk</a>
-                    <a href="#products" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navProducts">Termékek</a>
-                    <a href="#references" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navReferences">Betekintés, Munkáink</a>
-                    <a href="#offer" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navOffer">Ajánlatkérés</a>
-                    <a href="#contact" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navContact">Kapcsolat</a>
+                    <a href="#home" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium nav-link-active" data-translate-key="navHome" data-anchor-text-key="navHome">Kezdőlap</a>
+                    <a href="#about" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navAbout" data-anchor-text-key="navAbout">Rólunk</a>
+                    <a href="#philosophy" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navPhilosophy" data-anchor-text-key="navPhilosophy">Értékeink</a>
+                    <a href="#services" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navServices" data-anchor-text-key="navServices">Amit Kínálunk</a>
+                    <a href="#products" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navProducts" data-anchor-text-key="navProducts">Termékek</a>
+                    <a href="#references" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navReferences" data-anchor-text-key="navReferences">Betekintés, Munkáink</a>
+                    <a href="#offer" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navOffer" data-anchor-text-key="navOffer">Ajánlatkérés</a>
+                    <a href="#contact" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium" data-translate-key="navContact" data-anchor-text-key="navContact">Kapcsolat</a>
                 </div>
             </nav>
             <div id="mobile-menu" class="md:hidden hidden absolute top-[82px] left-0 w-full bg-gray-800/95 shadow-lg z-50">
-                 <a href="#home" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navHomeMobile">Kezdőlap</a>
-                 <a href="#about" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navAboutMobile">Rólunk</a>
-                 <a href="#philosophy" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navPhilosophyMobile">Értékeink</a>
-                 <a href="#services" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navServicesMobile">Amit Kínálunk</a>
-                 <a href="#products" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navProductsMobile">Termékek</a>
-                 <a href="#references" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navReferencesMobile">Betekintés, Munkáink</a>
-                 <a href="#offer" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navOfferMobile">Ajánlatkérés</a>
-                 <a href="#contact" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center" data-translate-key="navContactMobile">Kapcsolat</a>
+                 <a href="#home" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navHomeMobile" data-anchor-text-key="navHomeMobile">Kezdőlap</a>
+                 <a href="#about" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navAboutMobile" data-anchor-text-key="navAboutMobile">Rólunk</a>
+                 <a href="#philosophy" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navPhilosophyMobile" data-anchor-text-key="navPhilosophyMobile">Értékeink</a>
+                 <a href="#services" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navServicesMobile" data-anchor-text-key="navServicesMobile">Amit Kínálunk</a>
+                 <a href="#products" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navProductsMobile" data-anchor-text-key="navProductsMobile">Termékek</a>
+                 <a href="#references" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navReferencesMobile" data-anchor-text-key="navReferencesMobile">Betekintés, Munkáink</a>
+                 <a href="#offer" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center border-b border-gray-700" data-translate-key="navOfferMobile" data-anchor-text-key="navOfferMobile">Ajánlatkérés</a>
+                 <a href="#contact" class="block text-gray-300 hover:bg-gray-700/80 hover:text-white px-4 py-3 text-center" data-translate-key="navContactMobile" data-anchor-text-key="navContactMobile">Kapcsolat</a>
             </div>
 
             <div class="language-selector">
@@ -218,8 +222,9 @@
                     <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight" data-translate-key="heroTitle">
                         Professzionális Technológiai Megoldások <span class="text-blue-400">Mindenki Számára</span> Személyre Szabva
                     </h1>
+                    <!-- H1 tartalom finomítása: A kulcsszavak hangsúlyozása a bevezetőben. -->
                     <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto" data-translate-key="heroParagraph">
-                        Modern technológiákkal és szakértő csapatunkkal segítjük elérni üzleti céljait. Ismerje meg, hogyan tehetjük sikeressé vállalkozását!
+                        Modern technológiákkal és szakértő csapatunkkal segítjük elérni üzleti céljait. Ismerje meg innovatív **technológiai megoldásainkat**, **szoftverfejlesztési** és **marketing stratégiáinkat**, amelyekkel sikeressé tehetjük vállalkozását!
                     </p>
                     <div class="hero-image-container">
                         <img src="ge2.jpg" alt="Google AI Edge technológia banner" class="hero-image" data-translate-key="heroImageAlt" data-alt-hu="Google AI Edge technológia banner" data-alt-en="Google AI Edge technology banner" data-alt-de="Google AI Edge Technologie-Banner" onerror="this.alt=this.getAttribute('data-alt-' + (localStorage.getItem('selectedLanguage') || 'hu')); this.src='https://placehold.co/768x170/1F2937/9CA3AF?text=Google+AI+Edge';">
@@ -322,7 +327,8 @@
                                 <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="package1Title">Könyvelési, pályázatírási szolgáltatások</h3>
                                 <p class="text-gray-400 text-sm mb-4" data-translate-key="package1Desc">Teljeskörű pénzügyi megoldások vállalkozása számára.</p>
                             </div>
-                            <a href="csomag1.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton">Részletek</a>
+                            <!-- Egyedibb horgonyszöveg a "Részletek" gombokhoz -->
+                            <a href="csomag1.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton" data-anchor-text-key="detailsButtonPackage1">Részletek (Könyvelés)</a>
                         </div>
 
                         <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
@@ -334,7 +340,7 @@
                                 <p class="text-xs text-blue-300 mb-2" data-translate-key="package2SubTitle">(start, medium, pro csomag)</p>
                                 <p class="text-gray-400 text-sm mb-4" data-translate-key="package2Desc">Skálázható megoldások a vállalkozás növekedéséhez.</p>
                             </div>
-                            <a href="csomag2.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton">Részletek</a>
+                            <a href="csomag2.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton" data-anchor-text-key="detailsButtonPackage2">Részletek (Vállalkozás fejlesztés)</a>
                         </div>
 
                         <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
@@ -345,7 +351,7 @@
                                 <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="package3Title">Kutatás elemzés, kiértékelés</h3>
                                 <p class="text-gray-400 text-sm mb-4" data-translate-key="package3Desc">Mélyreható piaci betekintés és adatvezérelt döntések.</p>
                             </div>
-                            <a href="csomag3.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton">Részletek</a>
+                            <a href="csomag3.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton" data-anchor-text-key="detailsButtonPackage3">Részletek (Kutatás)</a>
                         </div>
 
                         <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
@@ -356,7 +362,7 @@
                                 <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="package4Title">Weboldal készítés, kisebb alkalmazások készítése kérés alapján</h3>
                                 <p class="text-gray-400 text-sm mb-4" data-translate-key="package4Desc">Egyedi online jelenlét és kisebb digitális megoldások.</p>
                             </div>
-                            <a href="csomag4.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton">Részletek</a>
+                            <a href="csomag4.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton" data-anchor-text-key="detailsButtonPackage4">Részletek (Weboldal)</a>
                         </div>
                         
                         <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
@@ -367,7 +373,7 @@
                                 <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="package5Title">Program fejlesztés igény szerint</h3>
                                 <p class="text-gray-400 text-sm mb-4" data-translate-key="package5Desc">Testreszabott szoftveres megoldások egyedi üzleti folyamatokra.</p>
                             </div>
-                            <a href="csomag5.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton">Részletek</a>
+                            <a href="csomag5.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton" data-anchor-text-key="detailsButtonPackage5">Részletek (Programfejlesztés)</a>
                         </div>
 
                         <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
@@ -378,7 +384,7 @@
                                 <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="package6Title">Marketing (Hirdetés) Stratégia kidolgozása</h3>
                                 <p class="text-gray-400 text-sm mb-4" data-translate-key="package6Desc">Hatékony online jelenlét és ügyfélszerzés.</p>
                             </div>
-                            <a href="csomag6.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton">Részletek</a>
+                            <a href="csomag6.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton" data-anchor-text-key="detailsButtonPackage6">Részletek (Marketing)</a>
                         </div>
                         
                          <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300">
@@ -391,7 +397,7 @@
                                 <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="package8Title">Kereskedelemi És Fuvarszervezési Szolgáltatás</h3>
                                 <p class="text-gray-400 text-sm mb-4" data-translate-key="package8Desc">Komplett kereskedelmi kapcsolat kiépítése, értékesítési szállítási folyamatok (Vám, Ekaer, Engedélyek, Okmányok) teljeskörű lebonyolítása.</p>
                             </div>
-                            <a href="csomag8.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton">Részletek</a>
+                            <a href="csomag8.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton" data-anchor-text-key="detailsButtonPackage8">Részletek (Fuvarszervezés)</a>
                         </div>
 
                         <div class="dev-inspired-card p-6 rounded-lg shadow-xl hover:shadow-blue-500/30 transition-shadow duration-300 lg:col-span-1 md:col-span-2 col-span-1"> 
@@ -402,7 +408,7 @@
                                 <h3 class="text-xl font-semibold text-white mb-2" data-translate-key="package7Title">Egyéb Szolgáltatások</h3>
                                 <p class="text-gray-400 text-sm mb-4" data-translate-key="package7Desc">Egyedi igényekre szabott, speciális megoldások.</p>
                             </div>
-                            <a href="csomag7.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton">Részletek</a>
+                            <a href="csomag7.html" class="dev-inspired-button mt-auto px-6 py-2 rounded-md text-sm font-medium text-center" data-translate-key="detailsButton" data-anchor-text-key="detailsButtonPackage7">Részletek (Egyéb szolgáltatások)</a>
                         </div>
                     </div>
                 </div>
@@ -446,6 +452,7 @@
                     <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-10">
                         <!-- P-Day Light Card -->
                         <div class="dev-inspired-card rounded-lg shadow-xl p-6 md:p-8">
+                            <!-- Alt szöveg frissítve -->
                             <img src="p3.jpg" alt="P-Day Light Projekt Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md" onerror="this.alt='Referencia kép nem tölthető be'; this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=P-Day+Light';">
                             <div class="flex-grow">
                                 <h3 class="text-2xl font-semibold text-white mb-3" data-translate-key="ref3Title">P-Day Light</h3>
@@ -469,7 +476,8 @@
                         </div>
                         <!-- Pohi AI Pro Card -->
                         <div class="dev-inspired-card rounded-lg shadow-xl p-6 md:p-8">
-                             <img src="AI.jpg" alt="AI Projekt Referencia Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md" onerror="this.alt='Referencia kép nem tölthető be'; this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=Pohi+AI+Pro';">
+                             <!-- Alt szöveg frissítve -->
+                             <img src="AI.jpg" alt="Pohi AI Pro Projekt Kép" class="w-full h-auto object-cover rounded-md mb-6 shadow-md" onerror="this.alt='Referencia kép nem tölthető be'; this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=Pohi+AI+Pro';">
                             <div class="flex-grow">
                                <h3 class="text-xl font-semibold text-white mb-3" data-translate-key="ref1Title">Pohi AI Pro</h3>
                                <p class="text-gray-400 mb-4" data-translate-key="ref1Desc">Egyedi fejlesztésű, teljes portál rendszer amely egy vevői adatbázis és annak rendelés állományát valamint a gyártok készletnyilvántartását összefésüli és kezeli a vevői igényekkel. A fuvarszervezéssel egybe hangolva. Még fejlesztés alatt , tesztelés a Mesterséges Intelligencia által vezérelt automatizálása bevezetése a gyorsabb és átláthatóbb nyilvántartás érdekében.</p>
@@ -525,13 +533,13 @@
                     </div>
                     <div class="blog-content toggle-content hidden" aria-hidden="true">
                         <div class="max-w-2xl mx-auto space-y-6">
-                            <a href="blog.html" class="blog-category-button" data-translate-key="blogLink1Text">
+                            <a href="blog.html" class="blog-category-button" data-translate-key="blogLink1Text" data-anchor-text-key="blogLink1Text">
                                 Tovább a Blog bejegyzések, Érdekes témák, segéd anyagok
                             </a>
-                            <a href="blog2.html" class="blog-category-button" data-translate-key="blogLink2Text">
+                            <a href="blog2.html" class="blog-category-button" data-translate-key="blogLink2Text" data-anchor-text-key="blogLink2Text">
                                 Betekintés az éppen készülő Projektjeinkbe
                             </a>
-                            <a href="blog3.html" class="blog-category-button" data-translate-key="blogLink3Text">
+                            <a href="blog3.html" class="blog-category-button" data-translate-key="blogLink3Text" data-anchor-text-key="blogLink3Text">
                                 Friss Hírek, és Előrejelzések a Techvilágból
                             </a>
                         </div>
@@ -708,10 +716,10 @@
                     </div>
                     <div class="footer-social-links text-center md:text-right">
                         <div class="mb-4">
-                             <a href="https://www.facebook.com/profile.php?id=61576881120445" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">Facebook</a> |
-                             <a href="https://www.linkedin.com/in/j%C3%B3zsef-p%C3%A9ter-poh%C3%A1nka-402423184/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">LinkedIn</a> |
-                             <a href="https://github.com/pohi99999" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">GitHub</a> |
-                             <a href="https://g.dev/Pohanka9" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2">Google Developer</a>
+                             <a href="https://www.facebook.com/profile.php?id=61576881120445" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2" data-anchor-text-key="facebookLink">Facebook</a> |
+                             <a href="https://www.linkedin.com/in/j%C3%B3zsef-p%C3%A9ter-poh%C3%A1nka-402423184/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2" data-anchor-text-key="linkedinLink">LinkedIn</a> |
+                             <a href="https://github.com/pohi99999" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2" data-anchor-text-key="githubLink">GitHub</a> |
+                             <a href="https://g.dev/Pohanka9" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 mx-2" data-anchor-text-key="googleDeveloperLink">Google Developer</a>
                         </div>
                     </div>
                 </div>
@@ -751,8 +759,24 @@
             hu: {
                 navHome: 'Kezdőlap', navAbout: 'Rólunk', navPhilosophy: 'Értékeink', navServices: 'Amit Kínálunk', navProducts: 'Termékek', navReferences: 'Betekintés, Munkáink', navOffer: 'Ajánlatkérés', navContact: 'Kapcsolat',
                 navHomeMobile: 'Kezdőlap', navAboutMobile: 'Rólunk', navPhilosophyMobile: 'Értékeink', navServicesMobile: 'Amit Kínálunk', navProductsMobile: 'Termékek', navReferencesMobile: 'Betekintés, Munkáink', navOfferMobile: 'Ajánlatkérés', navContactMobile: 'Kapcsolat',
+                // Frissített horgonyszöveg kulcsok a dinamikus beállításhoz
+                detailsButtonPackage1: 'Részletek (Könyvelés)',
+                detailsButtonPackage2: 'Részletek (Vállalkozás fejlesztés)',
+                detailsButtonPackage3: 'Részletek (Kutatás)',
+                detailsButtonPackage4: 'Részletek (Weboldal)',
+                detailsButtonPackage5: 'Részletek (Programfejlesztés)',
+                detailsButtonPackage6: 'Részletek (Marketing)',
+                detailsButtonPackage7: 'Részletek (Egyéb szolgáltatások)',
+                detailsButtonPackage8: 'Részletek (Fuvarszervezés)',
+                facebookLink: 'Facebook oldalunk',
+                linkedinLink: 'LinkedIn profilunk',
+                githubLink: 'GitHub profilunk',
+                googleDeveloperLink: 'Google Fejlesztői profilunk',
+                blogLink1Text: "Tovább a Blog bejegyzések, Érdekes témák, segéd anyagok",
+                blogLink2Text: "Betekintés az éppen készülő Projektjeinkbe",
+                blogLink3Text: "Friss Hírek, és Előrejelzések a Techvilágból",
                 heroTitle: 'Professzionális Technológiai Megoldások <span class="text-blue-400">Mindenki Számára</span> Személyre Szabva',
-                heroParagraph: 'Modern technológiákkal és szakértő csapatunkkal segítjük elérni üzleti céljait. Ismerje meg, hogyan tehetjük sikeressé vállalkozását!',
+                heroParagraph: 'Modern technológiákkal és szakértő csapatunkkal segítjük elérni üzleti céljait. Ismerje meg innovatív **technológiai megoldásainkat**, **szoftverfejlesztési** és **marketing stratégiáinkat**, amelyekkel sikeressé tehetjük vállalkozását!',
                 heroImageAlt: 'Google AI Edge technológia banner',
                 indexMetaDesc: "Pohánka És Társa Kft: Innovatív technológiai megoldások, szoftverfejlesztés, pénzügyi tanácsadás és marketing stratégiák vállalkozásának sikeréért.",
                 aboutTitle: 'Rólunk',
@@ -771,7 +795,7 @@
                 package6Title: 'Marketing (Hirdetés) Stratégia kidolgozása', package6Desc: 'Hatékony online jelenlét és ügyfélszerzés.',
                 package7Title: 'Egyéb Szolgáltatások', package7Desc: 'Egyedi igényekre szabott, speciális megoldások.',
                 package8Title: 'Kereskedelemi És Fuvarszervezési Szolgáltatás', package8Desc: 'Komplett kereskedelmi kapcsolat kiépítése, értékesítési szállítási folyamatok (Vám, Ekaer, Engedélyek, Okmányok) teljeskörű lebonyolítása.',
-                detailsButton: 'Részletek',
+                detailsButton: 'Részletek', // Ezt majd a JS dinamikusan felülírja a data-anchor-text-key alapján
                 productsTitle: 'Kiemelt Termékeink', 
                 product1Title: 'Tervezési, Projektfeladatokat Segítő Szoftverek', product1Desc: 'Intuitív szoftverek a projektek hatékony kezeléséhez, csapatmunkához és határidők követéséhez.',
                 product2Title: 'Ügyfélkapcsolat-kezelő program', product2Desc: 'Ügyfélkapcsolat-kezelő rendszer kis- és középvállalkozások számára, testreszabható modulokkal.',
@@ -780,8 +804,10 @@
                 ref1Title: 'Pohi AI Pro', ref1Desc: 'Egyedi fejlesztésű, teljes portál rendszer amely egy vevői adatbázis és annak rendelés állományát valamint a gyártok készletnyilvántartását összefésüli és kezeli a vevői igényekkel. A fuvarszervezéssel egybe hangolva. Még fejlesztés alatt , tesztelés a Mesterséges Intelligencia által vezérelt automatizálása bevezetése a gyorsabb és átláthatóbb nyilvántartás érdekében.',
                 ref2Title: 'GP-Pilot', ref2Desc: 'A GP-Pilot AI egy újgenerációs, mesterséges intelligenciával (Gemini AI) felvértezett mobilapplikáció, amelyet kifejezetten magyar háziorvosok számára fejlesztettünk. Célunk, hogy egy olyan intuitív, hatékony és mindenre kiterjedő eszközt adjunk az Ön kezébe, amely gyökeresen átalakítja a mindennapi munkafolyamatokat, csökkenti az adminisztratív terheket, és lehetővé teszi, hogy még több időt és energiát fordíthasson a legfontosabbra: páciensei gyógyítására.',
                 ref3Title: 'P-Day Light', ref3Desc: 'A P-Day Light egy sokoldalú, mesterséges intelligenciával támogatott mobilalkalmazás, amelyet arra terveztünk, hogy egyetlen központi helyen egyszerűsítse és segítse a felhasználók napi személyes és munkahelyi teendőinek, információinak és projektjeinek kezelését. Célja, hogy egy intuitív, átfogó digitális asszisztensst nyújtson.',
-                ref3VideoLinkText: 'Videó Előnézet', refVideoLinkText: "Videó Előnézet", refPdfLinkText: "Leírás, Ismertető",
-                ref1AccordionContent: `<h2>Pohi AI Pro: A Kereskedelem Jövője – Intelligens Megoldások a Globális Piacon</h2><p>Üdvözlöm Önöket! Ma egy olyan forradalmi platformot szeretnék bemutatni, amely újradefiniálja a gyártók, kereskedők és vevők közötti kapcsolatot, különösen a nehéz anyagok, például a faipar globális piacán, de rugalmasságának köszönhetően számos más iparágban is. Ez a Pohi AI Pro.</p><h3>A Kihívás, Amire Választ Adunk:</h3><p>A nemzetközi kereskedelem, különösen az olyan ágazatokban, mint a faipar – ahol a termékek nehezek, a beszerzés komplex, és az összeállítás precizitást igényel – tele van kihívásokkal. Korábbi, akácoszlopok gyártásával és globális értékesítésével kapcsolatos tapasztalataim rávilágítottak egy olyan rendszer szükségességére, amely képes áthidalni a piaci szereplők közötti szakadékokat, optimalizálni a folyamatokat és intelligens megoldásokat kínálni.</p><h3>A Pohi AI Pro Küldetése:</h3><p>A Pohi AI Pro célja, hogy egy központi, intelligens adatbázis-alkalmazásként szolgáljon, amely összeköti a megrendeléseket leadni kívánó vevőket a készlettel rendelkező gyártókkal. Nem csupán egy piactér, hanem egy teljes körű operációs támogató rendszer, amely a Google Gemini és Imagen API-k erejével van felvértezve.</p><h2>Jelenlegi Főbb Funkciók – Az Intelligencia Ereje Már Ma:</h2><p>A Pohi AI Pro már most is lenyűgöző funkcióarzenállal rendelkezik, amelyek három fő felhasználói szerepkörre (Adminisztrátor, Vevő, Gyártó) szabott, intuitív felületeken keresztül érhetők el:</p><h3>Vevői Oldal (Megrendelések Kezelése):</h3><ul><li><strong>Új Igények Leadása:</strong> Részletes termékjellemzők (átmérő típus, méretek, hossz, mennyiség), megjegyzések és automatikusan számított köbméter megadása.</li><li><strong>Saját Igények Nyomon Követése:</strong> Áttekintés a leadott igényekről és azok aktuális státuszáról.</li><li><strong>MI Asszisztens Vevőknek:</strong><ul><li>Alternatív Termékek Javaslása: Ha egy adott termék nem elérhető, az MI alternatívákat kínál.</li><li>Termék-összehasonlítás: Az MI segít összevetni az eredeti igényt a javasolt alternatívákkal, kiemelve előnyöket és hátrányokat.</li><li>Automatikus Megjegyzés Generálás: Az MI segít megfogalmazni a megrendeléshez csatolandó informatív megjegyzéseket.</li></ul></li></ul><h3>Gyártói Oldal (Készletkezelés):</h3><ul><li><strong>Új Készletek Feltöltése:</strong> Termékjellemzők, ár, fenntarthatósági információk, megjegyzések és automatikusan számított köbméter rögzítése.</li><li><strong>Saját Készletek Áttekintése:</strong> A feltöltött készletek és azok státuszának (elérhető, lefoglalt, eladott) kezelése.</li><li><strong>MI Asszisztens Gyártóknak:</strong><ul><li>Árjavaslatok: Az MI piaci adatok alapján javaslatot tesz a termék optimális árára.</li><li>Fenntarthatósági Jelentések: Az MI segít fenntarthatósági riportok generálásában a termékadatok alapján.</li><li>Marketing Szöveg Generálása: Az MI hatékony marketing szövegeket alkot a termékek népszerűsítésére.</li><li>Termékfotó Generálása (Imagen API): Az MI valósághű termékképeket generál a megadott specifikációk alapján.</li><li>Terméklistázás Elemzése: Az MI kiértékeli a termékleírásokat, javaslatokat tesz azok javítására.</li><li>Adatlap-kiegészítési és Kulcsszó Javaslatok: Az MI segít a termékadatlapok teljessé tételében és releváns kulcsszavak azonosításában.</li><li>Leírások Fordítása: Többnyelvű támogatás megkönnyítése.</li></ul></li></ul>`,
+                ref3VideoLinkText: 'P-Day Light Videó Előnézet', // specifikusabbá téve
+                refVideoLinkText: "GP-Pilot Videó Előnézet", // specifikusabbá téve
+                refPdfLinkText: "Leírás, Ismertető",
+                ref1AccordionContent: `<h2>Pohi AI Pro: A Kereskedelem Jövője – Intelligens Megoldások a Globális Piacon</h2><p>Üdvözlöm Önöket! Ma egy olyan forradalmi platformot szeretnék bemutatni, amely újradefiniálja a gyártók, kereskedők és vevők közötti kapcsolatot, különösen a nehéz anyagok, például a faipar globális piacán, de rugalmasságának köszönhetően számos más iparágban is. Ez a Pohi AI Pro.</p><h3>A Kihívás, Amire Választ Adunk:</h3><p>A nemzetközi kereskedelem, különösen az olyan ágazatokban, mint a faipar – ahol a termékek nehezek, a beszerzés komplex, és az összeállítás precizitást igényel – tele van kihívásokkal. Korábbi, akácoszlopok gyártásával és globális értékesítésével kapcsolatos tapasztalataim rávilágítottak egy olyan rendszer szükségességére, amely képes áthidalni a piaci szereplők közötti szakadékokat, optimalizálni a folyamatokat és intelligens megoldásokat kínálni.</p><h2>Jelenlegi Főbb Funkciók – Az Intelligencia Ereje Már Ma:</h2><p>A Pohi AI Pro már most is lenyűgöző funkcióarzenállal rendelkezik, amelyek három fő felhasználói szerepkörre (Adminisztrátor, Vevő, Gyártó) szabott, intuitív felületeken keresztül érhetők el:</p><h3>Vevői Oldal (Megrendelések Kezelése):</h3><ul><li><strong>Új Igények Leadása:</strong> Részletes termékjellemzők (átmérő típus, méretek, hossz, mennyiség), megjegyzések és automatikusan számított köbméter megadása.</li><li><strong>Saját Igények Nyomon Követése:</strong> Áttekintés a leadott igényekről és azok aktuális státuszáról.</li><li><strong>MI Asszisztens Vevőknek:</strong><ul><li>Alternatív Termékek Javaslása: Ha egy adott termék nem elérhető, az MI alternatívákat kínál.</li><li>Termék-összehasonlítás: Az MI segít összevetni az eredeti igényt a javasolt alternatívákkal, kiemelve előnyöket és hátrányokat.</li><li>Automatikus Megjegyzés Generálás: Az MI segít megfogalmazni a megrendeléshez csatolandó informatív megjegyzéseket.</li></ul></li></ul><h3>Gyártói Oldal (Készletkezelés):</h3><ul><li><strong>Új Készletek Feltöltése:</strong> Termékjellemzők, ár, fenntarthatósági információk, megjegyzések és automatikusan számított köbméter rögzítése.</li><li><strong>Saját Készletek Áttekintése:</strong> A feltöltött készletek és azok státuszának (elérhető, lefoglalt, eladott) kezelése.</li><li><strong>MI Asszisztens Gyártóknak:</strong><ul><li>Árjavaslatok: Az MI piaci adatok alapján javaslatot tesz a termék optimális árára.</li><li>Fenntarthatósági Jelentések: Az MI segít fenntarthatósági riportok generálásában a termékadatok alapján.</li><li>Marketing Szöveg Generálása: Az MI hatékony marketing szövegeket alkot a termékek népszerűsítésére.</li><li>Termékfotó Generálása (Imagen API): Az MI valósághű termékképeket generál a megadott specifikációk alapján.</li><li>Terméklistázás Elemzése: Az MI kiértékeli a termékleírásokat, javaslatokat tesz azok javítására.</li><li>Adatlap-kiegészítési és Kulcsszó Javaslatok: Az MI segít a termékadatlapok teljessé tételében és releváns kulcsszavak azonosításában.</li><li>Leírások Fordítása: Többnyelvű támogatás megkönnyítése.</li></ul></li></ul>`,
                 ref2AccordionContent: `<h2>GP-Pilot AI: Az Ön Intelligens Partnere a Háziorvosi Praxismenedzsment Forradalmasításában</h2><p>A GP-Pilot AI egy újgenerációs, mesterséges intelligenciával (Gemini AI) felvértezett mobilapplikáció, amelyet kifejezetten magyar háziorvosok számára fejlesztettünk. Célunk, hogy egy olyan intuitív, hatékony és mindenre kiterjedő eszközt adjunk az Ön kezébe, amely gyökeresen átalakítja a mindennapi munkafolyamatokat, csökkenti az adminisztratív terheket, és lehetővé teszi, hogy még több időt és energiát fordíthasson a legfontosabbra: páciensei gyógyítására.</p><h3>Mit Kínál Jelenleg a GP-Pilot AI?</h3><p>Alkalmazásunk a Gemini AI erejét kihasználva már most is számos intelligens funkcióval támogatja Önt:</p><ul><li><strong>Központi Irányítópult:</strong> Indítsa a napot egy AI által generált napi eligazítással.</li><li><strong>Intelligens Pénzügyek:</strong> Kérjen pénzügyi tanácsokat és használja az AI-t a költségtételek automatikus kategorizálásához.</li><li><strong>Okos Postafiók:</strong> Hagyja, hogy az AI összefoglalja az e-maileket és választervezeteket készítsen.</li><li><strong>Fejlett Időmenedzsment:</strong> Rögzítsen eseményeket természetes nyelven.</li><li><strong>Optimalizált Beteglátogatások:</strong> AI-alapú útvonaloptimalizálás.</li><li><strong>Mélyreható Páciensmenedzsment:</strong> Gyors AI kórtörténet-összefoglalók, gyógyszerkölcsönhatás-ellenőrző.</li><li><strong>AI-Támogatott Receptírás:</strong> Gyógyszerjavaslatok a tünetek alapján.</li><li><strong>Mindig Kéznél Lévő Gemini AI Asszisztens:</strong> Interaktív chatfelület.</li></ul><h3>Jövőképünk: Folyamatos Fejlődés az Ön Igényei Szerint</h3><p>A fejlesztés nem áll meg. Terveink között szerepel mélyebb EESZT integráció, automatizált jelentéskészítés, prediktív analitika és telemedicina modul.</p><h3>Az Ön Visszajelzése Formálja a Jövőt</h3><p>Célunk, hogy a GP-Pilot AI egy megbízható, intelligens és nélkülözhetetlen társa legyen a mindennapi gyógyító munkában.</p>`,
                 ref3AccordionContent: `<h2>P-Day Light Mobilalkalmazás Leírása</h2><h3>Mit tud a P-Day Light?</h3><p>A P-Day Light egy sokoldalú, mesterséges intelligenciával támogatott mobilalkalmazás, amelyet arra terveztünk, hogy egyetlen központi helyen egyszerűsítse és segítse a felhasználók napi személyes és munkahelyi teendőinek, információinak és projektjeinek kezelését. Célja, hogy egy intuitív, átfogó digitális asszisztensst nyújtson.</p><h3>Főbb funkciók:</h3><ul><li><strong>Integráció:</strong> Naptár, e-mailek, feladatok, költségvetések, dokumentumok egységes kezelése.</li><li><strong>Gemini AI Asszisztens:</strong> Szöveg- és képgenerálás, adat-összefoglalás, javaslatok készítése.</li><li><strong>Moduláris Felépítés:</strong> Különálló, de összekapcsolódó modulok.</li><li><strong>Adatvizualizáció:</strong> Interaktív SVG diagramok.</li><li><strong>Feladat- és Projektmenedzsment:</strong> Részletes feladatkezelő és projektek követése.</li><li><strong>Dokumentumkezelés:</strong> Dokumentumok tárolása, keresése, AI-alapú képgenerálás.</li></ul><h3>Hogyan fejlesztjük?</h3><p>React alapú webalkalmazás, TypeScript felhasználásával, React Native mobilalkalmazásba integrálva. A központi intelligenciát a Google Gemini API biztosítja.</p><h3>Kihívások és Eredmények:</h3><p><strong>Kihívások:</strong> Komplexitás kezelése, AI hatékony integrációja, széleskörű felhasználói igények kielégítése.</p><p><strong>Eredmények:</strong> Átfogó funkcionalitás, mély AI integráció, moduláris design, intuitív felület.</p>`,
                 blogTitle: "Blog bejegyzések, Esettanulmányok, Segédanyagok, Ötletelések, Hasznos linkek",
@@ -801,8 +827,24 @@
             en: {
                 navHome: 'Home', navAbout: 'About Us', navPhilosophy: 'Our Values', navServices: 'What We Offer', navProducts: 'Products', navReferences: 'Insight, Our Works', navOffer: 'Request Offer', navContact: 'Contact',
                 navHomeMobile: 'Home', navAboutMobile: 'About Us', navPhilosophyMobile: 'Our Values', navServicesMobile: 'What We Offer', navProductsMobile: 'Products', navReferencesMobile: 'Insight, Our Works', navOfferMobile: 'Request Offer', navContactMobile: 'Contact',
+                // Frissített horgonyszöveg kulcsok a dinamikus beállításhoz
+                detailsButtonPackage1: 'Details (Accounting)',
+                detailsButtonPackage2: 'Details (Business Development)',
+                detailsButtonPackage3: 'Details (Research)',
+                detailsButtonPackage4: 'Details (Website)',
+                detailsButtonPackage5: 'Details (Program Development)',
+                detailsButtonPackage6: 'Details (Marketing)',
+                detailsButtonPackage7: 'Details (Other Services)',
+                detailsButtonPackage8: 'Details (Freight Forwarding)',
+                facebookLink: 'Our Facebook page',
+                linkedinLink: 'Our LinkedIn profile',
+                githubLink: 'Our GitHub profile',
+                googleDeveloperLink: 'Our Google Developer profile',
+                blogLink1Text: "Continue to Blog Posts, Interesting Topics, Helper Materials",
+                blogLink2Text: "Insight into Our Ongoing Projects",
+                blogLink3Text: "Fresh News and Forecasts from the Tech World",
                 heroTitle: 'Professional Technological Solutions <span class="text-blue-400">For Everyone</span> Tailored Personally',
-                heroParagraph: 'With modern technologies and our expert team, we help you achieve your business goals. Discover how we can make your business successful!',
+                heroParagraph: 'With modern technologies and our expert team, we help you achieve your business goals. Discover our innovative **technological solutions**, **software development** and **marketing strategies** that can make your business successful!',
                 heroImageAlt: 'Google AI Edge technology banner',
                 indexMetaDesc: "Pohánka És Társa Kft: Innovative technological solutions, software development, financial consulting, and marketing strategies for your business success.",
                 aboutTitle: 'About Us', aboutParagraph1: 'Pohánka & Társa Kft. was founded in 2009. Our story began with a brave decision: a shop assistant at 40, while working and raising three children, decided she wanted more. She completed her certified accountant qualification and founded Pohánka & Társa Kft., her beloved "fourth child".', aboutParagraph2: 'As a peculiar twist of fate, her youngest child, myself (Péter Pohánka), also embarked on this path, following in my dear mother\'s footsteps. After nine years in accounting, I took a detour to explore my path and find my place in the world. I returned this year enriched with a wealth of experience, ready to apply the acquired knowledge, insights, and experiences not only in accounting but also in supporting the development and complex operations of businesses for our existing and future clients.', aboutParagraph3: '"And how, exactly?" We believe the time of Creators has come, where technology is the brush, you are the Artist, and success is your Creation! Our company\'s mission is to arm the Artist with inspiration, ideas, and solutions, so their masterpiece can be truly successful. If we\'ve piqued your interest, continue to explore our website! We will be constantly expanding it with useful content, case studies, presentations, and other interesting topics we are involved in.', 
@@ -827,10 +869,12 @@
                 ref1Title: 'Pohi AI Pro', ref1Desc: 'Custom-developed, full portal system that consolidates and manages customer databases, order statuses, and manufacturer inventory with customer demands, coordinated with logistics. Still under development, testing AI-driven automation for faster and more transparent record-keeping.',
                 ref2Title: 'GP-Pilot', ref2Desc: 'GP-Pilot AI is a new-generation mobile application armed with artificial intelligence (Gemini AI), developed specifically for Hungarian general practitioners. Our goal is to provide an intuitive, efficient, and comprehensive tool that radically transforms daily workflows, reduces administrative burdens, and allows you to dedicate more time and energy to what matters most: healing your patients.',
                 ref3Title: 'P-Day Light', ref3Desc: 'P-Day Light is a versatile, AI-powered mobile application designed to simplify and assist users in managing their daily personal and work-related tasks, information, and projects in a single, central location. It aims to provide an intuitive, comprehensive digital assistant.',
-                ref3VideoLinkText: 'Video Preview', refVideoLinkText: "Video Preview", refPdfLinkText: "Description, Guide",
-                ref1AccordionContent: `<h2>Pohi AI Pro: The Future of Commerce – Intelligent Solutions for the Global Market</h2><p>Welcome! Today, I want to introduce a revolutionary platform that redefines the relationship between manufacturers, traders, and buyers, especially in the global market for heavy materials like timber, but thanks to its flexibility, in many other industries as well. This is Pohi AI Pro.</p><h3>The Challenge We Address:</h3><p>International trade, particularly in sectors like the timber industry—where products are heavy, procurement is complex, and assembly requires precision—is fraught with challenges. My previous experience with producing and globally selling acacia poles highlighted the need for a system that can bridge the gaps between market players, optimize processes, and offer intelligent solutions.</p><h3>The Mission of Pohi AI Pro:</h3><p>Pohi AI Pro aims to serve as a central, intelligent database application that connects buyers wishing to place orders with manufacturers who have stock. It's not just a marketplace, but a full-fledged operational support system, armed with the power of Google's Gemini and Imagen APIs.</p><h2>Current Key Features – The Power of Intelligence Today:</h2><p>Pohi AI Pro already boasts an impressive arsenal of features, accessible through intuitive interfaces tailored for three main user roles (Administrator, Buyer, Manufacturer):</p><h3>Buyer Side (Order Management):</h3><ul><li><strong>Placing New Demands:</strong> Detailed product specifications (diameter type, dimensions, length, quantity), notes, and automatically calculated cubic meters.</li><li><strong>Tracking Own Demands:</strong> Overview of submitted demands and their current status.</li><li><strong>AI Assistant for Buyers:</strong><ul><li>Suggesting Alternative Products: If a product is unavailable, the AI offers alternatives.</li><li>Product Comparison: The AI helps compare the original demand with suggested alternatives, highlighting pros and cons.</li><li>Automatic Note Generation: The AI helps formulate informative notes to attach to the order.</li></ul></li></ul><h3>Manufacturer Side (Inventory Management):</h3><ul><li><strong>Uploading New Stock:</strong> Recording product characteristics, price, sustainability information, notes, and automatically calculated cubic meters.</li><li><strong>Reviewing Own Stock:</strong> Managing uploaded stock and its status (available, reserved, sold).</li><li><strong>AI Assistant for Manufacturers:</strong><ul><li>Price Suggestions: The AI suggests an optimal price for the product based on market data.</li><li>Sustainability Reports: The AI helps generate sustainability reports based on product data.</li><li>Marketing Text Generation: The AI creates effective marketing copy to promote products.</li><li>Product Photo Generation (Imagen API): The AI generates realistic product images based on the provided specifications.</li><li>Product Listing Analysis: The AI evaluates product descriptions and suggests improvements.</li><li>Data Sheet Completion and Keyword Suggestions: The AI helps complete product data sheets and identify relevant keywords.</li><li>Description Translation: Facilitating multilingual support.</li></ul></li></ul>`,
+                ref3VideoLinkText: 'P-Day Light Video Preview',
+                refVideoLinkText: "GP-Pilot Video Preview",
+                refPdfLinkText: "Description, Guide",
+                ref1AccordionContent: `<h2>Pohi AI Pro: The Future of Commerce – Intelligent Solutions for the Global Market</h2><p>Welcome! Today, I want to introduce a revolutionary platform that redefines the relationship between manufacturers, traders, and buyers, especially in the global market for heavy materials like timber, but thanks to its flexibility, in many other industries as well. This is Pohi AI Pro.</p><h3>The Challenge We Address:</h3><p>International trade, particularly in sectors like the timber industry—where products are heavy, procurement is complex, and assembly requires precision—is fraught with challenges. My previous experience with producing and globally selling acacia poles highlighted the need for a system that can bridge the gaps between market players, optimize processes, and offer intelligent solutions.</p><h2>Current Key Features – The Power of Intelligence Today:</h2><p>Pohi AI Pro already boasts an impressive arsenal of features, accessible through intuitive interfaces tailored for three main user roles (Administrator, Buyer, Manufacturer):</p><h3>Buyer Side (Order Management):</h3><ul><li><strong>Placing New Demands:</strong> Detailed product specifications (diameter type, dimensions, length, quantity), notes, and automatically calculated cubic meters.</li><li><strong>Tracking Own Demands:</strong> Overview of submitted demands and their current status.</li><li><strong>AI Assistant for Buyers:</strong><ul><li>Suggesting Alternative Products: If a product is unavailable, the AI offers alternatives.</li><li>Product Comparison: The AI helps compare the original demand with suggested alternatives, highlighting pros and cons.</li><li>Automatic Note Generation: The AI helps formulate informative notes to attach to the order.</li></ul></li></ul><h3>Manufacturer Side (Inventory Management):</h3><ul><li><strong>Uploading New Stock:</strong> Recording product characteristics, price, sustainability information, notes, and automatically calculated cubic meters.</li><li><strong>Reviewing Own Stock:</strong> Managing uploaded stock and its status (available, reserved, sold).</li><li><strong>AI Assistant for Manufacturers:</strong><ul><li>Price Suggestions: The AI suggests an optimal price for the product based on market data.</li><li>Sustainability Reports: The AI helps generate sustainability reports based on product data.</li><li>Marketing Text Generation: The AI creates effective marketing copy to promote products.</li><li>Product Photo Generation (Imagen API): The AI generates realistic product images based on the provided specifications.</li><li>Product Listing Analysis: The AI evaluates product descriptions and suggests improvements.</li><li>Data Sheet Completion and Keyword Suggestions: The AI helps complete product data sheets and identify relevant keywords.</li><li>Description Translation: Facilitating multilingual support.</li></ul></li></ul>`,
                 ref2AccordionContent: `<h2>GP-Pilot AI: Your Intelligent Partner in Revolutionizing General Practice Management</h2><p>GP-Pilot AI is a next-generation mobile application, supercharged with artificial intelligence (Gemini AI), developed specifically for Hungarian general practitioners. Our goal is to put an intuitive, efficient, and all-encompassing tool in your hands that fundamentally transforms daily workflows, reduces administrative burdens, and allows you to devote more time and energy to what matters most: healing your patients.</p><h3>What Does GP-Pilot AI Currently Offer?</h3><p>Leveraging the power of Gemini AI, our application already supports you with numerous intelligent features:</p><ul><li><strong>Central Dashboard:</strong> Start your day with an AI-generated daily briefing.</li><li><strong>Intelligent Finances:</strong> Get financial advice and use AI for automatic expense categorization.</li><li><strong>Smart Inbox:</strong> Let the AI summarize emails and draft replies.</li><li><strong>Advanced Time Management:</strong> Schedule events using natural language.</li><li><strong>Optimized Patient Visits:</strong> AI-based route optimization.</li><li><strong>In-depth Patient Management:</strong> Quick AI summaries of medical histories and a drug interaction checker.</li><li><strong>AI-Assisted Prescription Writing:</strong> Drug suggestions based on symptoms.</li><li><strong>Always-on Gemini AI Assistant:</strong> An interactive chat interface.</li></ul><h3>Our Vision: Continuous Development According to Your Needs</h3><p>Development doesn't stop here. We plan to add deeper EESZT integration, automated reporting, predictive analytics, and a telemedicine module.</p><h3>Your Feedback Shapes the Future</h3><p>Our goal is for GP-Pilot AI to be a reliable, intelligent, and indispensable companion in your daily healing work.</p>`,
-                ref3AccordionContent: `<h2>P-Day Light Mobile App Description</h2><h3>What is P-Day Light?</h3><p>P-Day Light is a versatile, AI-powered mobile application designed to simplify and assist users in managing their daily personal and work tasks, information, and projects in one central place. It aims to provide an intuitive, comprehensive digital assistant.</p><h3>Key Features:</h3><ul><li><strong>Integration:</strong> Unified management of calendars, emails, tasks, budgets, and documents.</li><li><strong>Gemini AI Assistant:</strong> Text and image generation, data summarization, and suggestion making.</li><li><strong>Modular Structure:</strong> Separate but interconnected modules.</li><li><strong>Data Visualization:</strong> Interactive SVG charts.</li><li><strong>Task & Project Management:</strong> Detailed task manager and project tracking.</li><li><strong>Document Management:</strong> Store, search, and generate documents with AI.</li></ul><h3>How We Develop It:</h3><p>A React-based web application using TypeScript, to be integrated into a React Native mobile app. The core intelligence is provided by the Google Gemini API.</p><h3>Challenges and Achievements:</h3><p><strong>Challenges:</strong> Managing complexity, effective AI integration, and meeting a wide range of user needs.</p><p><strong>Achievements:</strong> Comprehensive functionality, deep AI integration, modular design, and an intuitive interface.</p>`,
+                ref3AccordionContent: `<h2>P-Day Light Mobile App Description</h2><h3>What is P-Day Light?</h3><p>P-Day Light is a versatile, AI-powered mobile application designed to simplify and assist users in managing their daily personal and work tasks, information, and projects in one central place. It aims to provide an intuitive, comprehensive digital assistant.</p><h3>Key Features:</h3><ul><li><strong>Integration:</strong> Unified management of calendars, emails, tasks, budgets, and documents.</li><li><strong>Gemini AI Assistant:</strong> Text and image generation, data summarization, and suggestion making.</li><li><strong>Modular Structure:</strong> Separate but interconnected modules.</li><li><strong>Data Visualization:</strong> Interactive SVG charts.</li><li><strong>Task & Project Management:</strong> Detailed task manager and project tracking.</li><li><strong>Document Management:</strong> Store, search, and generate documents with AI.</li></ul><h3>How We Develop It:</h3><p>A React-based web application using TypeScript, to be integrated into a React Native mobile app. The core intelligence is provided by the Google Gemini API.</p><h3>Challenges and Achievements:</h3><p><strong>Challenges:</strong> Managing complexity, effective AI integration, and meeting a wide range of user needs.</p><p><strong>Achievements:</strong> Comprehensive functionality, deep AI integration, modular design, and an intuitive user interface.</p>`,
                 blogTitle: "Blog Posts, Case Studies, Helper Materials, Brainstorming, Useful Links",
                 blogLink1Text: "Continue to Blog Posts, Interesting Topics, Helper Materials",
                 blogLink2Text: "Insight into Our Ongoing Projects",
@@ -848,11 +892,27 @@
             de: {
                 navHome: 'Startseite', navAbout: 'Über uns', navPhilosophy: 'Unsere Werte', navServices: 'Was Wir Anbieten', navProducts: 'Produkte', navReferences: 'Einblick, Unsere Arbeiten', navOffer: 'Angebot Anfordern', navContact: 'Kontakt',
                 navHomeMobile: 'Startseite', navAboutMobile: 'Über uns', navPhilosophyMobile: 'Unsere Werte', navServicesMobile: 'Was Wir Anbieten', navProductsMobile: 'Produkte', navReferencesMobile: 'Einblick, Unsere Arbeiten', navOfferMobile: 'Angebot Anfordern', navContactMobile: 'Kontakt',
+                // Frissített horgonyszöveg kulcsok a dinamikus beállításhoz
+                detailsButtonPackage1: 'Details (Buchhaltung)',
+                detailsButtonPackage2: 'Details (Unternehmensentwicklung)',
+                detailsButtonPackage3: 'Details (Forschung)',
+                detailsButtonPackage4: 'Details (Website)',
+                detailsButtonPackage5: 'Details (Programmentwicklung)',
+                detailsButtonPackage6: 'Details (Marketing)',
+                detailsButtonPackage7: 'Details (Sonstige Dienstleistungen)',
+                detailsButtonPackage8: 'Details (Spedition)',
+                facebookLink: 'Unsere Facebook-Seite',
+                linkedinLink: 'Unser LinkedIn-Profil',
+                githubLink: 'Unser GitHub-Profil',
+                googleDeveloperLink: 'Unser Google Developer-Profil',
+                blogLink1Text: "Weiter zu Blogbeiträgen, Interessanten Themen, Hilfsmaterialien",
+                blogLink2Text: "Einblick in unsere aktuellen Projekte",
+                blogLink3Text: "Aktuelle Nachrichten und Prognosen aus der Tech-Welt",
                 heroTitle: 'Professionelle Technologische Lösungen <span class="text-blue-400">Für Jeden</span> Personalisiert',
-                heroParagraph: 'Mit modernen Technologien und unserem Expertenteam helfen wir Ihnen, Ihre Geschäftsziele zu erreichen. Entdecken Sie, wie wir Ihr Unternehmen erfolgreich machen können!',
+                heroParagraph: 'Mit modernen Technologien und unserem Expertenteam helfen wir Ihnen, Ihre Geschäftsziele zu erreichen. Entdecken Sie unsere innovativen **technologischen Lösungen**, **Softwareentwicklung** und **Marketingstrategien**, mit denen wir Ihr Unternehmen erfolgreich machen können!',
                 heroImageAlt: 'Google AI Edge Technologie-Banner',
                 indexMetaDesc: "Pohánka És Társa Kft: Innovative technologische Lösungen, Softwareentwicklung, Finanzberatung und Marketingstrategien für Ihren Geschäftserfolg.",
-                aboutTitle: 'Über uns', aboutParagraph1: 'Die Pohánka & Társa Kft. wurde 2009 gegründet. Unsere Geschichte begann mit einer mutigen Entscheidung: Eine Verkäuferin im Alter von 40 Jahren beschloss, während sie arbeitete und drei Kinder großzog, dass sie mehr wollte. Sie absolvierte ihre Bilanzbuchhalterprüfung und gründete die Pohánka & Társa Kft., ihr geliebtes „viertes Kind“.', aboutParagraph2: 'Wie eine besondere Laune des Schicksals trat auch ihr jüngstes Kind, ich (Péter Pohánka), in die Fußstapfen meiner lieben Mutter. Nach neun Jahren in der Buchhaltung machte ich einen Abstecher, um meinen Weg zu erkunden und meinen Platz in der Welt zu finden. Bereichert um vielfältige Erfahrungen kehrte ich dieses Jahr zurück, um das erworbene Wissen, die Erkenntnisse und Erfahrungen nicht nur in der Buchhaltung, sondern auch bei der Unterstützung der Entwicklung und komplexen Betriebsabläufe von Unternehmen für unsere bestehenden und zukünftigen Kunden einzusetzen.', aboutParagraph3: '„Und wie genau?“ Wir glauben, dass die Zeit der Schöpfer gekommen ist, in der die Technologie der Pinsel ist, Sie der Künstler sind und der Erfolg Ihre Schöpfung ist! Die Mission unseres Unternehmens ist es, den Künstler mit Inspiration, Ideen und Lösungen auszustatten, damit sein Meisterwerk wirklich erfolgreich sein kann. Wenn wir Ihr Interesse geweckt haben, erkunden Sie unsere Website weiter! Wir werden sie ständig mit nützlichen Inhalten, Fallstudien, Präsentationen und anderen interessanten Themen, mit denen wir uns beschäftigen, erweitern.', 
+                aboutTitle: 'Über uns', aboutParagraph1: 'Die Pohánka & Társa Kft. wurde 2009 gegründet. Unsere Geschichte begann mit einer mutigen Entscheidung: Eine Verkäuferin im Alter von 40 Jahren beschloss, während sie arbeitete und drei Kinder großzog, dass sie mehr wollte. Sie absolvierte ihre Bilanzbuchhalterprüfung und gründete die Pohánka & Társa Kft., ihr geliebtes „viertes Kind“.', aboutParagraph2: 'Wie eine besondere Laune des Schicksals trat auch ihr jüngstes Kind, ich (Péter Pohánka), in die Fußstapfen meiner lieben Mutter. Nach neun Jahren in der Buchhaltung machte ich einen Abstecher, um meinen Weg zu erkunden und meinen Platz in der Welt zu finden. Bereichert um vielfältige Erfahrungen kehrte ich dieses Jahr zurück, um das erworbene Wissen, die Erkenntnisse und Erfahrungen nicht nur in der Buchhaltung, sondern auch bei der Unterstützung der Entwicklung und komplexen Betriebsabläufe von Unternehmen für unsere bestehenden und zukünftigen Kunden einzusetzen.', aboutParagraph3: '"Und wie genau?" Wir glauben, dass die Zeit der Schöpfer gekommen ist, in der die Technologie der Pinsel ist, Sie der Künstler sind und der Erfolg Ihre Schöpfung ist! Die Mission unseres Unternehmens ist es, den Künstler mit Inspiration, Ideen und Lösungen auszustatten, damit sein Meisterwerk wirklich erfolgreich sein kann. Wenn wir Ihr Interesse geweckt haben, erkunden Sie unsere Website weiter! Wir werden sie ständig mit nützlichen Inhalten, Fallstudien, Präsentationen und anderen interessanten Themen, mit denen wir uns beschäftigen, erweitern.', 
                 philosophyTitle: 'Werte und Philosophie', philosophyCard1Title: 'Werte und Philosophie', philosophyCard1P1: 'Unsere Grundwerte sind Fachwissen, Zuverlässigkeit, Kundenorientierung und das Engagement für kontinuierliche Verbesserung.', philosophyCard1P2: 'Bei unserer Arbeit kombinieren wir modernste Technologien mit tiefem Branchenwissen.', philosophyCard1P3: 'Wir entwickeln nicht nur Software, Programme und Anwendungen, sondern dank der Unterstützung durch die künstliche Intelligenz von Google stehen uns die von ihnen entwickelten neuesten Technologiemodelle zur Verfügung. Wenn wir diese intelligent in das Ökosystem des Unternehmens integrieren, können wir eine Effizienz erreichen, die uns nicht nur die Chance auf einen wirtschaftlicheren Betrieb gibt, sondern auch das Wertvollste liefert: ZEIT..!', 
                 philosophyCard2Title: 'Unsere Vision', philosophyCard2P1: 'Wir glauben an die Kraft der Technologie, den Alltag von Unternehmen zu verbessern und neue Wachstumshorizonte zu eröffnen. Wir erforschen ständig innovative Lösungen, damit unsere Kunden stets an der Spitze des Marktwettbewerbs bleiben können.', philosophyCard2MovedText: 'Dies gilt auch für die Geschäftswelt: Wer kann einen Markt zuerst erobern? Wer kann sein Produkt zuerst viral verbreiten? Wer erfährt zuerst, wann und wofür es sich zu bewerben lohnt? Wie wird sich der HUF/Euro-Wechselkurs voraussichtlich entwickeln? Was ist das aktuelle Verbraucherverhalten und -interesse usw...?', philosophyCard2P2: 'Wir werden in der Lage sein, diese und noch erstaunlichere Dinge in unsere Strategie einzubauen, um Ihnen zu helfen, Ihre gesetzten kurz- und langfristigen Ziele zu erreichen.',
                 philosophyCard3Title: 'Unser Engagement und Team', philosophyCard3P1: 'Wir sind dem Erfolg unserer Kunden verpflichtet. Jedes Projekt behandeln wir als Partnerschaft und arbeiten eng zusammen, um die besten Ergebnisse zu erzielen, wobei wir Transparenz und gegenseitiges Vertrauen gewährleisten.', philosophyCard3TeamIntro: "Unser Expertenteam:", philosophyCard3TeamP1: "Die Mitglieder unseres Expertenteams verfügen über mehrjährige Erfahrung in den Bereichen Buchhaltung, Fördermittelbeantragung, Finanzierung, Finanz- und Zollverwaltung, Arbeitssicherheit und Arbeitsgenehmigungen. Wir verfügen über ein komplettes Genehmigungskontaktsystem mit der Handelskammer und dem Pflanzengesundheitsamt. Unsere Analyse- und Marktforschungsmethode ist landesweit einzigartig. Wir verfügen über Handels- und Logistikverbindungen zu in- und ausländischen Transportunternehmen und Schifffahrtsdienstleistern.", philosophyCard3TeamP2: "Wir sind stolz auf unser vielfältiges Team, in dem sich das Wissen von Finanzexperten, Entwicklern, und Marketingfachleuten vereint.", philosophyCard3TeamP3: "Wir bilden uns ständig weiter, um unseren Kunden stets aktuelles Wissen zur Verfügung stellen zu können.",
@@ -872,12 +932,14 @@
                 product3Title: 'E-Commerce-Plattform', product3Desc: 'Umfassende Lösung zur Erstellung einer automatisierten Oberfläche, die den Benutzer bei der Handelsabwicklung, dem Kundenbeziehungsmanagement und der Aufzeichnung unterstützt und die Bedürfnisse, Aktivitäten und Informationen zwischen den Handelspartnern effizient, schnell und genau macht.',
                 referencesTitle: 'Einblick, Unsere Arbeiten', 
                 ref1Title: 'Pohi AI Pro', ref1Desc: 'Individuell entwickeltes, vollständiges Portalsystem, das eine Kundendatenbank und deren Bestellstatus sowie den Lagerbestand der Hersteller konsolidiert und mit den Kundenanforderungen verwaltet, koordiniert mit der Logistik.',
-                ref2Title: 'GP-Pilot', ref2Desc: 'GP-Pilot AI ist eine mobile Anwendung der neuen Generation, die mit künstlicher Intelligenz (Gemini AI) ausgestattet und speziell für ungarische Hausärzte entwickelt wurde. Unser Ziel ist es, Ihnen ein intuitives, effizientes und umfassendes Werkzeug an die Hand zu geben, das die täglichen Arbeitsabläufe radikal verändert, den Verwaltungsaufwand reduziert und es Ihnen ermöglicht, mehr Zeit und Energie auf das Wesentliche zu verwenden: die Heilung Ihrer Patienten.',
+                ref2Title: 'GP-Pilot', ref2Desc: 'GP-Pilot AI ist eine mobile Anwendung der neuen Generation, die mit künstlicher Intelligenz (Gemini AI) ausgestattet und speziell für ungarische Hausärzte entwickelt wurde. Unser Ziel ist es, Ihnen ein intuitives, effizientes und umfassendes Werkzeug an die Hand zu geben, das die täglichen Arbeitsabläufe radikal verändert, den Verwaltungsaufwand reduziert und es Ihnen ermöglicht, mehr Zeit und Energie auf das Wichtigste zu verwenden: die Heilung Ihrer Patienten.',
                 ref3Title: 'P-Day Light', ref3Desc: 'P-Day Light ist eine vielseitige, KI-gestützte mobile Anwendung, die entwickelt wurde, um Benutzern die Verwaltung ihrer täglichen persönlichen und arbeitsbezogenen Aufgaben, Informationen und Projekte an einem zentralen Ort zu vereinfachen und zu unterstützen. Ziel ist es, einen intuitiven, umfassenden digitalen Assistenten bereitzustellen.',
-                ref3VideoLinkText: 'Video-Vorschau', refVideoLinkText: "Video-Vorschau", refPdfLinkText: "Beschreibung, Leitfaden",
-                ref1AccordionContent: `<h2>Pohi AI Pro: Die Zukunft des Handels – Intelligente Lösungen für den globalen Markt</h2><p>Willkommen! Heute möchte ich eine revolutionäre Plattform vorstellen, die die Beziehung zwischen Herstellern, Händlern und Käufern neu definiert, insbesondere auf dem globalen Markt für schwere Materialien wie Holz, aber dank ihrer Flexibilität auch in vielen anderen Branchen. Das ist Pohi AI Pro.</p><h3>Die Herausforderung, der wir uns stellen:</h3><p>Der internationale Handel, insbesondere in Branchen wie der Holzwirtschaft – wo die Produkte schwer sind, die Beschaffung komplex ist und die Montage Präzision erfordert – ist voller Herausforderungen. Meine früheren Erfahrungen mit der Produktion und dem weltweiten Verkauf von Akazienpfählen haben die Notwendigkeit eines Systems aufgezeigt, das die Lücken zwischen den Marktteilnehmern überbrücken, Prozesse optimieren und intelligente Lösungen anbieten kann.</p><h3>Die Mission von Pohi AI Pro:</h3><p>Pohi AI Pro soll als zentrale, intelligente Datenbankanwendung dienen, die Käufer, die Bestellungen aufgeben möchten, mit Herstellern verbindet, die über Lagerbestände verfügen. Es ist nicht nur ein Marktplatz, sondern ein vollwertiges operatives Unterstützungssystem, das mit der Leistung der Gemini- und Imagen-APIs von Google ausgestattet ist.</p><h2>Aktuelle Hauptfunktionen – Die Kraft der Intelligenz schon heute:</h2><p>Pohi AI Pro verfügt bereits über ein beeindruckendes Arsenal an Funktionen, die über intuitive Benutzeroberflächen zugänglich sind, die auf drei Hauptbenutzerrollen (Administrator, Käufer, Hersteller) zugeschnitten sind:</p><h3>Käuferseite (Bestellverwaltung):</h3><ul><li><strong>Neue Anforderungen aufgeben:</strong> Detaillierte Produktmerkmale (Durchmessertyp, Abmessungen, Länge, Menge), Anmerkungen und automatisch berechnete Kubikmeter.</li><li><strong>Eigene Anforderungen verfolgen:</strong> Übersicht über die aufgegebenen Anforderungen und deren aktuellen Status.</li><li><strong>KI-Assistent für Käufer:</strong><ul><li>Vorschlagen alternativer Produkte: Wenn ein bestimmtes Produkt nicht verfügbar ist, bietet die KI Alternativen an.</li><li>Produktvergleich: Die KI hilft beim Vergleich der ursprünglichen Anforderung mit den vorgeschlagenen Alternativen und hebt Vor- und Nachteile hervor.</li><li>Automatische Notizgenerierung: Die KI hilft bei der Formulierung informativer Notizen, die der Bestellung beigefügt werden.</li></ul></li></ul><h3>Herstellerseite (Bestandsverwaltung):</h3><ul><li><strong>Neuen Bestand hochladen:</strong> Erfassung von Produktmerkmalen, Preis, Nachhaltigkeitsinformationen, Anmerkungen und automatisch berechneten Kubikmetern.</li><li><strong>Eigenen Bestand überprüfen:</strong> Verwaltung des hochgeladenen Bestands und seines Status (verfügbar, reserviert, verkauft).</li><li><strong>KI-Assistent für Hersteller:</strong><ul><li>Preisvorschläge: Die KI schlägt auf der Grundlage von Marktdaten einen optimalen Preis für das Produkt vor.</li><li>Nachhaltigkeitsberichte: Die KI hilft bei der Erstellung von Nachhaltigkeitsberichten auf der Grundlage von Produktdaten.</li><li>Marketingtextgenerierung: Die KI erstellt effektive Marketingtexte zur Bewerbung von Produkten.</li><li>Produktfotogenerierung (Imagen API): Die KI generiert realistische Produktbilder auf der Grundlage der angegebenen Spezifikationen.</li><li>Analyse von Produktlisten: Die KI bewertet Produktbeschreibungen und macht Verbesserungsvorschläge.</li><li>Vervollständigung von Datenblättern und Keyword-Vorschläge: Die KI hilft bei der Vervollständigung von Produktdatenblättern und der Identifizierung relevanter Keywords.</li><li>Übersetzung von Beschreibungen: Erleichterung der mehrsprachigen Unterstützung.</li></ul></li></ul>`,
-                ref2AccordionContent: `<h2>GP-Pilot AI: Ihr intelligenter Partner bei der Revolutionierung des Praxismanagements</h2><p>GP-Pilot AI ist eine mobile Anwendung der nächsten Generation, die mit künstlicher Intelligenz (Gemini AI) ausgestattet und speziell für ungarische Hausärzte entwickelt wurde. Unser Ziel ist es, Ihnen ein intuitives, effizientes und umfassendes Werkzeug an die Hand zu geben, das die täglichen Arbeitsabläufe radikal verändert, den Verwaltungsaufwand reduziert und es Ihnen ermöglicht, mehr Zeit und Energie auf das Wichtigste zu verwenden: die Heilung Ihrer Patienten.</p><h3>Was bietet GP-Pilot AI derzeit?</h3><p>Dank der Leistungsfähigkeit von Gemini AI unterstützt Sie unsere Anwendung bereits mit zahlreichen intelligenten Funktionen:</p><ul><li><strong>Zentrales Dashboard:</strong> Beginnen Sie Ihren Tag mit einem von der KI erstellten täglichen Briefing.</li><li><strong>Intelligente Finanzen:</strong> Holen Sie sich Finanzberatung und nutzen Sie die KI zur automatischen Kategorisierung von Ausgaben.</li><li><strong>Intelligenter Posteingang:</strong> Lassen Sie die KI E-Mails zusammenfassen und Antwortentwürfe erstellen.</li><li><strong>Fortgeschrittenes Zeitmanagement:</strong> Planen Sie Ereignisse in natürlicher Sprache.</li><li><strong>Optimierte Patientenbesuche:</strong> KI-basierte Routenoptimierung.</li><li><strong>Tiefgehendes Patientenmanagement:</strong> Schnelle KI-Zusammenfassungen von Krankengeschichten und ein Prüfer für Arzneimittelwechselwirkungen.</li><li><strong>KI-gestützte Rezeptausstellung:</strong> Arzneimittelvorschläge basierend auf Symptomen.</li><li><strong>Immer verfügbarer Gemini AI Assistent:</strong> Eine interaktive Chat-Oberfläche.</li></ul><h3>Unsere Vision: Kontinuierliche Entwicklung nach Ihren Bedürfnissen</h3><p>Die Entwicklung hört hier nicht auf. Wir planen, eine tiefere EESZT-Integration, automatisierte Berichterstellung, prädiktive Analysen und ein Telemedizin-Modul hinzuzufügen.</p><h3>Ihr Feedback gestaltet die Zukunft</h3><p>Unser Ziel ist es, dass GP-Pilot AI ein zuverlässiger, intelligenter und unverzichtbarer Begleiter bei Ihrer täglichen Heilarbeit wird.</p>`,
-                ref3AccordionContent: `<h2>P-Day Light Mobile App Beschreibung</h2><h3>Was ist P-Day Light?</h3><p>P-Day Light ist eine vielseitige, KI-gestützte mobile Anwendung, die entwickelt wurde, um Benutzern die Verwaltung ihrer täglichen persönlichen und arbeitsbezogenen Aufgaben, Informationen und Projekte an einem zentralen Ort zu vereinfachen und zu unterstützen. Ziel ist es, einen intuitiven, umfassenden digitalen Assistenten bereitzustellen.</p><h3>Hauptmerkmale:</h3><ul><li><strong>Integration:</strong> Einheitliche Verwaltung von Kalendern, E-Mails, Aufgaben, Budgets und Dokumenten.</li><li><strong>Gemini AI Assistant:</strong> Text- und Bilderzeugung, Datenzusammenfassung und Vorschlagserstellung.</li><li><strong>Modularer Aufbau:</strong> Getrennte, aber miteinander verbundene Module.</li><li><strong>Datenvisualisierung:</strong> Interaktive SVG-Diagramme.</li><li><strong>Aufgaben- & Projektmanagement:</strong> Detaillierter Aufgabenmanager und Projektverfolgung.</li><li><strong>Dokumentenmanagement:</strong> Speichern, suchen und generieren Sie Dokumente mit KI.</li></ul><h3>Wie wir es entwickeln:</h3><p>Eine React-basierte Webanwendung mit TypeScript, die in eine React Native Mobile-App integriert wird. Die Kernintelligenz wird von der Google Gemini API bereitgestellt.</p><h3>Herausforderungen und Erfolge:</h3><p><strong>Herausforderungen:</strong> Komplexitätsmanagement, effektive KI-Integration und Erfüllung einer breiten Palette von Benutzeranforderungen.</p><p><strong>Erfolge:</strong> Umfassende Funktionalität, tiefe KI-Integration, modulares Design und eine intuitive Benutzeroberfläche.</p>`,
+                ref3VideoLinkText: 'P-Day Light Video-Vorschau',
+                refVideoLinkText: "GP-Pilot Video-Vorschau",
+                refPdfLinkText: "Beschreibung, Leitfaden",
+                ref1AccordionContent: `<h2>Pohi AI Pro: Die Zukunft des Handels – Intelligente Lösungen für den globalen Markt</h2><p>Willkommen! Heute möchte ich eine revolutionäre Plattform vorstellen, die die Beziehung zwischen Herstellern, Händlern und Käufern neu definiert, insbesondere auf dem globalen Markt für schwere Materialien wie Holz, aber dank ihrer Flexibilität auch in vielen anderen Branchen. Das ist Pohi AI Pro.</p><h3>Die Herausforderung, der wir uns stellen:</h3><p>Der internationale Handel, insbesondere in Branchen wie der Holzwirtschaft – wo die Produkte schwer sind, die Beschaffung komplex ist und die Montage Präzision erfordert – ist voller Herausforderungen. Meine früheren Erfahrungen mit der Produktion und dem weltweiten Verkauf von Akazienpfählen haben die Notwendigkeit eines Systems aufgezeigt, das die Lücken zwischen den Marktteilnehmern überbrücken, Prozesse optimieren und intelligente Lösungen anbieten kann.</p><h2>Aktuelle Hauptfunktionen – Die Kraft der Intelligenz schon heute:</h2><p>Pohi AI Pro verfügt bereits über ein beeindruckendes Arsenal an Funktionen, die über intuitive Benutzeroberflächen zugänglich sind, die auf drei Hauptbenutzerrollen (Administrator, Käufer, Hersteller) zugeschnitten sind:</p><h3>Käuferseite (Bestellverwaltung):</h3><ul><li><strong>Neue Anforderungen aufgeben:</strong> Detaillierte Produktmerkmale (Durchmessertyp, Abmessungen, Länge, Menge), Anmerkungen und automatisch berechnete Kubikmeter.</li><li><strong>Eigene Anforderungen verfolgen:</strong> Übersicht über die aufgegebenen Anforderungen und deren aktuellen Status.</li><li><strong>KI-Assistent für Käufer:</strong><ul><li>Vorschlagen alternativer Produkte: Wenn ein bestimmtes Produkt nicht verfügbar ist, bietet die KI Alternativen an.</li><li>Produktvergleich: Die KI hilft beim Vergleich der ursprünglichen Anforderung mit den vorgeschlagenen Alternativen und hebt Vor- und Nachteile hervor.</li><li>Automatische Notizgenerierung: Die KI hilft bei der Formulierung informativer Notizen, die der Bestellung beigefügt werden.</li></ul></li></ul><h3>Herstellerseite (Bestandsverwaltung):</h3><ul><li><strong>Neuen Bestand hochladen:</strong> Erfassung von Produktmerkmalen, Preis, Nachhaltigkeitsinformationen, Anmerkungen und automatisch berechneten Kubikmetern.</li><li><strong>Eigenen Bestand überprüfen:</strong> Verwaltung des hochgeladenen Bestands und seines Status (verfügbar, reserviert, verkauft).</li><li><strong>KI-Assistent für Hersteller:</strong><ul><li>Preisvorschläge: Die KI schlägt auf der Grundlage von Marktdaten einen optimalen Preis für das Produkt vor.</li><li>Nachhaltigkeitsberichte: Die KI hilft bei der Erstellung von Nachhaltigkeitsberichten auf der Grundlage von Produktdaten.</li><li>Marketingtextgenerierung: Die KI erstellt effektive Marketingtexte zur Bewerbung von Produkten.</li><li>Produktfotogenerierung (Imagen API): Die KI generiert realistische Produktbilder auf der Grundlage der angegebenen Spezifikationen.</li><li>Produktlistung Analyse: Die KI bewertet Produktbeschreibungen und macht Verbesserungsvorschläge.</li><li>Vervollständigung von Datenblättern und Keyword-Vorschläge: Die KI hilft bei der Vervollständigung von Produktdatenblättern und der Identifizierung relevanter Keywords.</li><li>Übersetzung von Beschreibungen: Erleichterung der mehrsprachigen Unterstützung.</li></ul></li></ul>`,
+                ref2AccordionContent: `<h2>GP-Pilot AI: Ihr intelligenter Partner bei der Revolutionierung des Praxismanagements</h2><p>GP-Pilot AI ist eine mobile Anwendung der neuen Generation, die mit künstlicher Intelligenz (Gemini AI) ausgestattet und speziell für ungarische Hausärzte entwickelt wurde. Unser Ziel ist es, Ihnen ein intuitives, effizientes und umfassendes Werkzeug an die Hand zu geben, das die täglichen Arbeitsabläufe radikal verändert, den Verwaltungsaufwand reduziert und es Ihnen ermöglicht, mehr Zeit und Energie auf das Wichtigste zu verwenden: die Heilung Ihrer Patienten.</p><h3>Was bietet GP-Pilot AI derzeit?</h3><p>Dank der Leistungsfähigkeit von Gemini AI unterstützt Sie unsere Anwendung bereits mit zahlreichen intelligenten Funktionen:</p><ul><li><strong>Zentrales Dashboard:</strong> Beginnen Sie Ihren Tag mit einem von der KI erstellten täglichen Briefing.</li><li><strong>Intelligente Finanzen:</strong> Holen Sie sich Finanzberatung und nutzen Sie die KI zur automatischen Kategorisierung von Ausgaben.</li><li><strong>Intelligenter Posteingang:</strong> Lassen Sie die KI E-Mails zusammenfassen und Antwortentwürfe erstellen.</li><li><strong>Fortgeschrittenes Zeitmanagement:</strong> Planen Sie Ereignisse in natürlicher Sprache.</li><li><strong>Optimierte Patientenbesuche:</strong> KI-basierte Routenoptimierung.</li><li><strong>Tiefgehendes Patientenmanagement:</strong> Schnelle KI-Zusammenfassungen von Krankengeschichten und ein Prüfer für Arzneimittelwechselwirkungen.</li><li><strong>KI-gestützte Rezeptausstellung:</b> Arzneimittelvorschläge basierend auf Symptomen.</li><li><strong>Immer verfügbarer Gemini AI Assistent:</strong> Eine interaktive Chat-Oberfläche.</li></ul><h3>Unsere Vision: Kontinuierliche Entwicklung nach Ihren Bedürfnissen</h3><p>Die Entwicklung hört hier nicht auf. Wir planen, eine tiefere EESZT-Integration, automatisierte Berichterstellung, prädiktive Analysen und ein Telemedizin-Modul hinzuzufügen.</p><h3>Ihr Feedback gestaltet die Zukunft</h3><p>Unser Ziel ist es, dass GP-Pilot AI ein zuverlässiger, intelligenter und unverzichtbarer Begleiter bei Ihrer täglichen Heilarbeit wird.</p>`,
+                ref3AccordionContent: `<h2>P-Day Light Mobile App Beschreibung</h2><h3>Was ist P-Day Light?</h3><p>P-Day Light ist eine vielseitige, KI-gestützte mobile Anwendung, die entwickelt wurde, um Benutzern die Verwaltung ihrer täglichen persönlichen und arbeitsbezogenen Aufgaben, Informationen und Projekte an einem zentralen Ort zu vereinfachen und zu unterstützen. Ziel ist es, einen intuitiven, umfassenden digitalen Assistenten bereitzustellen.</p><h3>Hauptmerkmale:</h3><ul><li><strong>Integration:</strong> Einheitliche Verwaltung von Kalendern, E-Mails, Aufgaben, Budgets und Dokumenten.</li><li><strong>Gemini AI Assistant:</strong> Text- und Bilderzeugung, Datenzusammenfassung und Vorschlagserstellung.</li><li><strong>Modularer Aufbau:</strong> Getrennte, aber miteinander verbundene Module.</li><li><strong>Datenvisualisierung:</strong> Interaktive SVG-Diagramme.</li><li><strong>Aufgaben- & Projektmanagement:</strong> Detaillierter Aufgabenmanager und Projektverfolgung.</li><li><strong>Dokumentenmanagement:</strong> Speichern, suchen und generieren Sie Dokumente mit KI.</li></ul><h3>Wie wir es entwickeln:</h3><p>Eine React-basierte Webanwendung mit TypeScript, die in eine React Native Mobile-App integriert wird. Die Kernintelligenz wird von der Google Gemini API bereitgestellt.</p><h3>Herausforderungen und Erfolge:</h3><p><strong>Herausforderungen:</strong> Komplexitätsmanagement, effektive KI-Integration und Erfüllung einer breiten Palette von Benutzeranforderungen.</p><p><strong>Ergebnisse:</strong> Umfassende Funktionalität, tiefe KI-Integration, modulares Design und eine intuitive Benutzeroberfläche.</p>`,
                 blogTitle: "Blogbeiträge, Fallstudien, Hilfsmaterialien, Brainstorming, Nützliche Links",
                 blogLink1Text: "Weiter zu Blogbeiträgen, Interessanten Themen, Hilfsmaterialien",
                 blogLink2Text: "Einblick in unsere aktuellen Projekte",
@@ -901,19 +963,17 @@
                     const key = element.getAttribute('data-translate-key');
                     if (translations[lang][key] !== undefined) {
                         const translationText = translations[lang][key];
-                        // UPDATED: Added check for accordion content keys
+                        // UPDATED: Added check for accordion content keys and a more general approach
                         const useInnerHTML = 
-                            key === 'heroTitle' ||
-                            key === 'footerInspiration' ||
-                            key === 'heroParagraph' ||
+                            key.includes('Title') || 
+                            key.includes('Paragraph') ||
                             key.startsWith('aboutParagraph') ||
                             key.startsWith('philosophyCard') ||
-                            key.endsWith('Desc') || // This covers refXDesc, productXDesc
-                            key.includes('AccordionContent') || // This handles the new keys
-                            key === 'package2SubTitle' ||
-                            key === 'blogContentPlaceholder' || // This seems like a placeholder, not actual content key
-                            key === 'awardsContentPlaceholder' || // Same as above
-                            key.startsWith('awardCaption'); 
+                            key.endsWith('Desc') || 
+                            key.includes('AccordionContent') || 
+                            key.includes('SubTitle') ||
+                            key.startsWith('awardCaption') ||
+                            key === 'footerInspiration';
                         
                         if (element.tagName === 'IMG' && key === 'heroImageAlt') {
                              element.alt = translationText;
@@ -926,6 +986,14 @@
                         }
                     } else {
                         console.warn(`[LangSwitch] No translation found for key: "${key}" in language: "${lang}"`);
+                    }
+                });
+
+                // Update anchor texts based on the selected language for navigation links
+                document.querySelectorAll('[data-anchor-text-key]').forEach(element => {
+                    const anchorKey = element.getAttribute('data-anchor-text-key');
+                    if (translations[lang][anchorKey] !== undefined) {
+                        element.textContent = translations[lang][anchorKey];
                     }
                 });
                 
@@ -950,12 +1018,75 @@
         }
         
         async function refineMessageWithAI() {
-            // This function remains the same as in your original file
+            const messageInput = document.getElementById('message');
+            const originalMessage = messageInput.value;
+            const refineLoader = document.getElementById('refineLoader');
+            const aiRefinedMessageElement = document.getElementById('aiRefinedMessage');
+            const aiRefineModal = document.getElementById('aiRefineModal');
+            const aiRefineBox = document.getElementById('aiRefineBox');
+
+            if (originalMessage.trim() === '') {
+                // Translations for alert message
+                const currentLang = localStorage.getItem('selectedLanguage') || 'hu';
+                const errorMessage = translations[currentLang]['formEmptyMessageError'] || 'Please write something in the message field first!';
+                aiRefinedMessageElement.innerHTML = `<p class="text-red-400">${errorMessage}</p>`;
+                aiRefineModal.classList.remove('hidden');
+                aiRefineBox.classList.remove('opacity-0', 'scale-95');
+                aiRefineBox.classList.add('opacity-100', 'scale-100');
+                return;
+            }
+
+            refineLoader.classList.remove('hidden');
+            aiRefineModal.classList.remove('hidden');
+            aiRefineBox.classList.remove('opacity-0', 'scale-95');
+            aiRefineBox.classList.add('opacity-100', 'scale-100');
+            aiRefinedMessageElement.textContent = translations[localStorage.getItem('selectedLanguage') || 'hu'].aiModalLoading;
+
+            try {
+                // Gemini API hívás
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: `Finomítsd a következő üzenetet, hogy professzionálisabb és meggyőzőbb legyen, marketinges nyelvezettel. Tartsd meg az eredeti üzenet lényegét, és csak a finomított üzenetet add vissza válaszként. Üzenet: "${originalMessage}"` }] });
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Canvas runtime fogja biztosítani
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                console.log("Gemini API response:", result); // Debugging
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    aiRefinedMessageElement.textContent = text;
+                } else {
+                    aiRefinedMessageElement.textContent = "Hiba történt az üzenet finomítása során. Kérjük, próbálja újra.";
+                }
+            } catch (error) {
+                console.error('Error refining message with AI:', error);
+                aiRefinedMessageElement.textContent = "Hiba történt az üzenet finomítása során. Kérjük, ellenőrizze az internetkapcsolatot vagy próbálja újra később.";
+            } finally {
+                refineLoader.classList.add('hidden');
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             const savedLanguage = localStorage.getItem('selectedLanguage') || 'hu';
             switchLanguage(savedLanguage); 
+
+            // Frissítés: Kezdeti horgonyszöveg beállítása a betöltött nyelv alapján
+            document.querySelectorAll('[data-anchor-text-key]').forEach(element => {
+                const anchorKey = element.getAttribute('data-anchor-text-key');
+                if (translations[savedLanguage][anchorKey] !== undefined) {
+                    element.textContent = translations[savedLanguage][anchorKey];
+                }
+            });
+
 
             document.getElementById('currentYear').textContent = new Date().getFullYear();
 
@@ -1002,12 +1133,48 @@
                 });
             });
 
-             // AI Form and Modal logic remains the same...
+             // AI Form and Modal logic 
             const refineButton = document.getElementById('refineMessageButton');
             if (refineButton) {
                 refineButton.addEventListener('click', refineMessageWithAI);
             }
-             // AI Modal close logic ...
+
+            const aiRefineModal = document.getElementById('aiRefineModal');
+            const aiRefineBox = document.getElementById('aiRefineBox');
+            const aiRefineCloseButton = document.getElementById('aiRefineCloseButton');
+            const aiRefineModalCloseButtonBottom = document.getElementById('aiRefineModalCloseButtonBottom');
+            const aiUseTextButton = document.getElementById('aiUseTextButton');
+            const messageInput = document.getElementById('message');
+            const aiRefinedMessageElement = document.getElementById('aiRefinedMessage');
+
+            function closeModal() {
+                aiRefineBox.classList.remove('opacity-100', 'scale-100');
+                aiRefineBox.classList.add('opacity-0', 'scale-95');
+                aiRefineModal.classList.add('hidden');
+            }
+
+            if (aiRefineCloseButton) {
+                aiRefineCloseButton.addEventListener('click', closeModal);
+            }
+            if (aiRefineModalCloseButtonBottom) {
+                aiRefineModalCloseButtonBottom.addEventListener('click', closeModal);
+            }
+
+            if (aiUseTextButton) {
+                aiUseTextButton.addEventListener('click', () => {
+                    messageInput.value = aiRefinedMessageElement.textContent;
+                    closeModal();
+                });
+            }
+
+            // Close modal when clicking outside
+            if (aiRefineModal) {
+                aiRefineModal.addEventListener('click', (event) => {
+                    if (event.target === aiRefineModal) {
+                        closeModal();
+                    }
+                });
+            }
         });
     </script>
 </body>
