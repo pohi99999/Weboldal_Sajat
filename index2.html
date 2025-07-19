@@ -12,23 +12,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google AI Edge - Generatív AI a peremeszközökön</title>
-    
+
     <!-- Tailwind CSS betöltése a modern stílusokért -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts betöltése az eredetihez hasonló tipográfiáért -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    
+
     <style>
+        /* Háttérvideó stílusai */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2; /* A tartalom és az overlay mögött legyen */
+            overflow: hidden;
+        }
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        /* Videó feletti átlátszó réteg a jobb olvashatóságért */
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(6, 6, 6, 0.7); /* Sötét, áttetsző réteg */
+            z-index: -1; /* A videó felett, a tartalom alatt legyen */
+        }
+
+        /* Tartalom wrapper, hogy a videó felett legyen */
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
         /* Egyedi stílusok, amelyek a Tailwind mellett szükségesek */
         body {
             font-family: 'Google Sans', sans-serif;
-            background-color: #060606;
+            background-color: transparent; /* Az alap háttérszín átlátszó legyen a videó miatt */
             color: #E8EAED;
         }
-        
+
         /* Egyedi színátmenetek a gombokhoz és kiemelésekhez */
         .gradient-text {
             background: linear-gradient(90deg, #89B3F8, #A56EFF, #FF8BC8);
@@ -43,19 +81,20 @@
             border: 1px solid #3c4043;
             transition: background-color 0.3s ease;
         }
-        
+
         .card:hover {
              background-color: #2a2a2a;
         }
 
-        /* Hero szekció háttérgrafikája SVG-ként a bonyolult animáció helyett */
+        /* Hero szekció háttérgrafikája SVG-ként a bonyolult animáció helyett
+           Most a videó _felett_ lesz, de a tartalom _alatt_ */
         .hero-background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            z-index: 0; /* A videó felett, de a tartalom alatt */
             opacity: 0.1;
             overflow: hidden;
         }
@@ -73,7 +112,7 @@
              border-image: linear-gradient(to bottom right, #2E64DE, #3C8FE3) 1;
 
         }
-        
+
         .placeholder-logo-bg {
             background-color: #222;
             display: flex;
@@ -86,10 +125,20 @@
 </head>
 <body class="bg-black text-gray-200">
 
+    <!-- Háttér videó konténer -->
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="Hattervideo.mp4" type="video/mp4" onerror="this.parentElement.innerHTML = 'Videó hiba: A háttérvideó nem tölthető be.';">
+            A böngésződ nem támogatja a HTML5 videó lejátszást.
+        </video>
+    </div>
+    <!-- Videó feletti átlátszó réteg -->
+    <div class="video-overlay"></div>
+
     <!-- Fő konténer -->
-    <div class="relative min-h-screen overflow-x-hidden">
-        
-        <!-- Háttér "grafika" -->
+    <div class="relative min-h-screen overflow-x-hidden content-wrapper">
+
+        <!-- Háttér "grafika" - most már a videó felett, de a tartalom alatt -->
         <div class="hero-background">
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -111,7 +160,7 @@
                 <rect width="100%" height="100%" fill="url(#grad3)" />
             </svg>
         </div>
-        
+
         <main class="container mx-auto px-6 py-12 md:py-24 text-center">
 
             <!-- Hero szekció -->
@@ -130,7 +179,7 @@
                     </div>
                     <div class="w-px bg-gray-700 self-stretch"></div>
                     <div class="flex-1 flex gap-4 items-center">
-                        <svg class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></path></svg>
                         <div>
                             <h4 class="font-bold text-left">Többplatformos</h4>
                             <p class="text-left text-gray-400">Ugyanazt a modellt futtassa Androidon, iOS-en, weben és beágyazott rendszereken.</p>
@@ -154,7 +203,7 @@
                     </div>
                 </div>
             </section>
-            
+
             <!-- Kész megoldások szekció -->
             <section class="mb-24 md:mb-32">
                 <h2 class="text-4xl md:text-5xl font-bold mb-16 max-w-2xl mx-auto">Kész megoldások és rugalmas keretrendszerek</h2>
@@ -172,7 +221,7 @@
                         <a href="#" class="text-blue-400 font-bold cursor-not-allowed">Ismerkedés a MediaPipe feladatokkal →</a>
                     </div>
                 </div>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-12">
                     <div class="md:col-span-5 text-center md:text-left order-2 md:order-1">
                         <h3 class="text-2xl md:text-3xl font-bold mb-4">Egyéni modellek telepítése több platformon</h3>
@@ -219,7 +268,7 @@
                      <img src="nano-characters.png" alt="Gemini Nano karakterek" class="mx-auto max-w-md w-full">
                 </div>
             </section>
-            
+
             <!-- Eszközök és keretrendszerek -->
             <section class="mb-24 md:mb-32">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-12">
@@ -232,7 +281,7 @@
                 </div>
                 <img src="tools-diagram.png" alt="Eszközök diagramja" class="w-full max-w-4xl mx-auto">
             </section>
-            
+
             <!-- Blog szekció -->
             <section>
                  <h2 class="text-4xl md:text-5xl font-bold mb-12">Legutóbbi videók és blogbejegyzések</h2>
@@ -262,12 +311,12 @@
             </section>
 
         </main>
-        
+
         <!-- Egyedi élőláb -->
         <footer class="bg-gray-900/50 backdrop-blur-sm py-8 mt-16">
             <div class="container mx-auto px-6 text-center">
                  <p class="text-lg text-gray-400 mb-4">A teljes eredeti tartalmat itt megtaláljátok --></p>
-                 <a href="https://ai.google.dev/edge" target="_blank" rel="noopener noreferrer" 
+                 <a href="https://ai.google.dev/edge" target="_blank" rel="noopener noreferrer"
                     class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300">
                      Eredeti oldal megtekintése
                  </a>
