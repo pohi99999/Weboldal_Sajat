@@ -18,8 +18,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #111827; color: #D1D5DB; }
-        .content-wrapper { position: relative; z-index: 1; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #111827; 
+            color: #D1D5DB; 
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        .content-wrapper { 
+            position: relative; 
+            z-index: 1; 
+            background-color: rgba(17, 24, 39, 0.85); /* Olvashatóságot segítő réteg */
+        }
         .section-title { font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; color: #F3F4F6; }
         .navbar-logo { max-height: 50px; width: auto; }
         .dev-inspired-button { background-color: #3B82F6; color: white; transition: background-color 0.3s ease; }
@@ -89,6 +117,12 @@
     </script>
 </head>
 <body class="antialiased">
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="ht2.mp4" type="video/mp4" onerror="this.parentElement.style.display='none';">
+            A böngésződ nem támogatja a videó lejátszást.
+        </video>
+    </div>
     <div class="content-wrapper">
         <header class="bg-gray-800/80 backdrop-blur-md shadow-lg sticky top-0 z-40">
             <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -266,9 +300,6 @@
                 const metaDescKey = metaDescElement ? metaDescElement.getAttribute('data-translate-meta-description') : null;
                 if (metaDescElement && metaDescKey && detailTranslations[lang][metaDescKey]) {
                     metaDescElement.setAttribute('content', detailTranslations[lang][metaDescKey]);
-                    console.log(`[DetailLangSwitch] Meta description updated for ${lang}`);
-                } else if (metaDescKey) {
-                    console.warn(`[DetailLangSwitch] No meta description translation for key: ${metaDescKey} in ${lang}`);
                 }
 
                 document.documentElement.lang = lang;
