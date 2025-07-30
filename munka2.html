@@ -11,13 +11,17 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827; /* Sötét háttér */
+            /* Háttérkép beállítása */
+            background-image: url('feature-3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #F3F4F6;
         }
         .content-overlay {
             position: relative;
             z-index: 1;
-            background-color: rgba(17, 24, 39, 0.85);
+            background-color: rgba(17, 24, 39, 0.85); /* Sötét, áttetsző réteg a tartalom mögött a jobb olvashatóságért */
             min-height: 100vh;
         }
         /* Galéria modális ablak */
