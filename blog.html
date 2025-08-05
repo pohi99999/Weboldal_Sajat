@@ -19,46 +19,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #111827; color: #D1D5DB; }
-        .content-wrapper { position: relative; z-index: 1; }
-        .navbar-logo { max-height: 50px; width: auto; }
-        .section-title { font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; color: #F3F4F6; }
-        .nav-link-active { color: #3B82F6; }
-        .language-selector { background-color: rgba(17, 24, 39, 0.8); padding: 0.5rem 0; }
-        .language-link { display: inline-flex; align-items: center; margin: 0 0.75rem; padding: 0.5rem 0.75rem; font-size: 0.875rem; color: #D1D5DB; border-radius: 0.375rem; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; cursor: pointer; }
-        .language-link:hover, .language-link.active-lang { background-color: #374151; color: #F9FAFB; font-weight: bold; }
-        .flag-icon { width: 20px; height: auto; margin-right: 0.5rem; border-radius: 2px; }
+        .glass-effect { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .hero-bg { background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1)), url('your-background-image.jpg'); background-size: cover; background-position: center; }
     </style>
 </head>
 <body class="antialiased">
-    <div class="content-wrapper">
-        <header class="bg-gray-800/80 backdrop-blur-md shadow-lg sticky top-0 z-40">
-            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <div>
-                    <a href="index.html" class="flex items-center">
-                        <img src="logo.jpg" alt="Pohánka És Társa Kft Logó" class="navbar-logo mr-3" onerror="this.alt='Logó'; this.src='https://placehold.co/150x50/111827/D1D5DB?text=Logó';">
-                        <span class="text-xl font-bold text-white">Pohánka És Társa Kft</span>
-                    </a>
-                </div>
-                <div id="nav-links-desktop">
-                    <a href="index.html" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">Vissza a főoldalra</a>
-                </div>
-            </nav>
+
+    <div class="min-h-screen flex flex-col">
+        <header class="sticky top-0 z-50 glass-effect">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-white">Pohánka És Társa Kft</a>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Kezdőlap</a></li>
+                        <li><a href="blog.html" class="text-white font-semibold">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
-        <main>
-            <section id="blog-content" class="py-16 md:py-24 bg-gray-900/90">
-                <div class="container mx-auto px-6">
-                    <h1 class="section-title" data-translate-key="blogPageTitle">Blog bejegyzések, Érdekes témák, segéd anyagok</h1>
-                    <div class="max-w-3xl mx-auto">
-                        <p class="text-lg text-gray-400 text-center">Hamarosan érkezünk friss tartalommal. Itt olvashat majd esettanulmányokat, szakmai cikkeket és egyéb hasznos anyagokat.</p>
+        <main class="flex-grow">
+            <section class="py-20 hero-bg">
+                <div class="container mx-auto px-6 text-center">
+                    <h1 class="text-5xl font-extrabold text-white mb-4">Blog</h1>
+                    <p class="text-xl text-gray-400">Érdekes témák és segédanyagok</p>
+                </div>
+            </section>
 
-                        <!-- Új blogbejegyzés kártya -->
-                        <div class="bg-gray-800 rounded-lg shadow-2xl overflow-hidden my-12 transform hover:scale-105 transition-transform duration-300">
-                            <div class="p-6">
+            <section class="py-20 bg-gray-900">
+                <div class="container mx-auto px-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        
+                        <!-- Függőség blogbejegyzés kártya -->
+                        <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-700 transform hover:scale-105 transition-transform duration-300">
+                            <div class="flex flex-col items-center">
                                 <h2 class="text-3xl font-bold text-white mb-4 text-center">Függőség</h2>
                                 <img src="kkk1.jpg" alt="Függőség témájú kép" class="w-full h-auto object-cover mb-6 rounded-md shadow-lg" onerror="this.alt='Hiba a kép betöltésekor'; this.src='https://placehold.co/600x400/111827/D1D5DB?text=Kép+nem+található';">
                                 <div class="text-center">
                                     <a href="függőség.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                                        Olvasd el a teljes cikket
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Függőség blogbejegyzés kártya vége -->
+
+                        <!-- Új blogbejegyzés kártya -->
+                        <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-700 transform hover:scale-105 transition-transform duration-300">
+                            <div class="flex flex-col items-center">
+                                <h2 class="text-3xl font-bold text-white mb-4 text-center">Hogyan építi Kína a világ legerősebb mesterséges intelligencia hálózatát a semmi közepén?</h2>
+                                <img src="bbb2.jpg" alt="Mesterséges intelligencia témájú kép" class="w-full h-auto object-cover mb-6 rounded-md shadow-lg" onerror="this.alt='Hiba a kép betöltésekor'; this.src='https://placehold.co/600x400/111827/D1D5DB?text=Kép+nem+található';">
+                                <div class="text-center">
+                                    <a href="Medium.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-1">
                                         Olvasd el a teljes cikket
                                     </a>
                                 </div>
@@ -77,6 +89,7 @@
             </div>
         </footer>
     </div>
+
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
