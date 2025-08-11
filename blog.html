@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17096632861"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17096632861');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blogbejegyzések, érdekes témák és segédanyagok a Pohánka És Társa Kft-től.">
+    <title>Blog - Pohánka És Társa Kft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #111827; color: #D1D5DB; }
+        .glass-effect { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .hero-bg { background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1)), url('your-background-image.jpg'); background-size: cover; background-position: center; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="min-h-screen flex flex-col">
+        <header class="sticky top-0 z-50 glass-effect">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-white">Pohánka És Társa Kft</a>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Kezdőlap</a></li>
+                        <li><a href="blog.html" class="text-white font-semibold">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            <section class="py-20 hero-bg">
+                <div class="container mx-auto px-6 text-center">
+                    <h1 class="text-5xl font-extrabold text-white mb-4">Blog</h1>
+                    <p class="text-xl text-gray-400">Érdekes témák és segédanyagok</p>
+                </div>
+            </section>
+
+            <section class="py-20 bg-gray-900">
+                <div class="container mx-auto px-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        
+                        <!-- Függőség blogbejegyzés kártya -->
+                        <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-700 transform hover:scale-105 transition-transform duration-300">
+                            <div class="flex flex-col items-center">
+                                <h2 class="text-3xl font-bold text-white mb-4 text-center">Függőség</h2>
+                                <img src="kkk1.jpg" alt="Absztrakt ábrázolás a digitális függőségről és a technológia hatásairól" class="w-full h-auto object-cover mb-6 rounded-md shadow-lg" onerror="this.alt='Hiba a kép betöltésekor'; this.src='https://placehold.co/600x400/111827/D1D5DB?text=Kép+nem+található';">
+                                <div class="text-center">
+                                    <a href="függőség.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                                        Olvasd el a teljes cikket
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Függőség blogbejegyzés kártya vége -->
+
+                        <!-- Új blogbejegyzés kártya -->
+                        <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-700 transform hover:scale-105 transition-transform duration-300">
+                            <div class="flex flex-col items-center">
+                                <h2 class="text-3xl font-bold text-white mb-4 text-center">Hogyan építi Kína a világ legerősebb mesterséges intelligencia hálózatát a semmi közepén?</h2>
+                                <img src="bbb2.jpg" alt="Mesterséges intelligencia témájú kép" class="w-full h-auto object-cover mb-6 rounded-md shadow-lg" onerror="this.alt='Hiba a kép betöltésekor'; this.src='https://placehold.co/600x400/111827/D1D5DB?text=Kép+nem+található';">
+                                <div class="text-center">
+                                    <a href="Medium.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                                        Olvasd el a teljes cikket
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Új blogbejegyzés kártya vége -->
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-gray-900/95 border-t border-gray-700">
+             <div class="container mx-auto px-6 py-8 text-center">
+                <p class="text-gray-500 text-sm">© <span id="currentYear"></span> Pohánka És Társa Kft. Minden jog fenntartva.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

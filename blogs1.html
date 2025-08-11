@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17096632861"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17096632861');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google AI Edge - Generatív AI a peremeszközökön</title>
+    
+    <!-- Tailwind CSS betöltése a modern stílusokért -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts betöltése az eredetihez hasonló tipográfiáért -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Egyedi stílusok, amelyek a Tailwind mellett szükségesek */
+        body {
+            font-family: 'Google Sans', sans-serif;
+            background-color: #000000;
+            color: #E8EAED;
+        }
+        
+        /* Egyedi színátmenetek a gombokhoz és kiemelésekhez */
+        .gradient-text {
+            background: linear-gradient(90deg, #89B3F8, #A56EFF, #FF8BC8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        .gradient-border {
+            border: 2px solid;
+            border-image-slice: 1;
+            border-width: 2px;
+            border-image-source: linear-gradient(to right, #89B3F8, #A56EFF, #FF8BC8);
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            border: 1px solid #3c4043;
+        }
+
+        /* Hero szekció háttérgrafikája SVG-ként a bonyolult animáció helyett */
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body class="bg-black text-gray-200">
+
+    <!-- Fő konténer -->
+    <div class="relative min-h-screen overflow-x-hidden">
+        
+        <!-- Háttér "grafika" -->
+        <div class="hero-background">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                        <stop offset="0%" style="stop-color:rgb(137, 179, 248);stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:rgb(0,0,0);stop-opacity:0" />
+                    </radialGradient>
+                    <radialGradient id="grad2" cx="20%" cy="30%" r="40%" fx="50%" fy="50%">
+                        <stop offset="0%" style="stop-color:rgb(165, 110, 255);stop-opacity:0.2" />
+                        <stop offset="100%" style="stop-color:rgb(0,0,0);stop-opacity:0" />
+                    </radialGradient>
+                     <radialGradient id="grad3" cx="80%" cy="70%" r="40%" fx="50%" fy="50%">
+                        <stop offset="0%" style="stop-color:rgb(255, 139, 200);stop-opacity:0.2" />
+                        <stop offset="100%" style="stop-color:rgb(0,0,0);stop-opacity:0" />
+                    </radialGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grad1)" />
+                <rect width="100%" height="100%" fill="url(#grad2)" />
+                <rect width="100%" height="100%" fill="url(#grad3)" />
+            </svg>
+        </div>
+        
+        <main class="container mx-auto px-6 py-12 md:py-24 text-center">
+
+            <!-- Hero szekció -->
+            <section class="mb-24 md:mb-32">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
+                    Hozd el a <span class="gradient-text">generatív AI-t</span><br>a peremeszközökre
+                </h1>
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 mb-8">
+                    A Google AI Edge lehetővé teszi a legújabb generatív mesterséges intelligencia modellek futtatását közvetlenül a mobil- és webalkalmazásaidban. Hozz létre magával ragadó, eszközön futó AI-élményeket, amelyek gyorsak, megbízhatóak és a felhasználói adatokat privátan kezelik.
+                </p>
+                <div class="flex justify-center items-center h-48 md:h-64">
+                    <!-- Statikus kép az animáció helyett -->
+                    <img src="https://lh3.googleusercontent.com/BfWc04RkNZUY05f2G9J157BHr37s454c3f_RmAOa6hH2I2W030dJ_GqfS_xgXwWJmBw5p8R_d1u20e_dJ35bTqIq9oE" alt="Gemini AI absztrakt grafika" class="max-h-full object-contain">
+                </div>
+            </section>
+
+            <!-- Eszközön futó AI szekció -->
+            <section class="mb-24 md:mb-32">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Megérkezett az eszközön futó generatív AI</h2>
+                <p class="max-w-2xl mx-auto text-gray-400 mb-12">
+                    A Gemini Nano, a Google leghatékonyabb, eszközön futó feladatokhoz készült modellje, már a Pixel és Samsung csúcskészülékeken is fut, lehetővé téve a fejlesztők számára, hogy lenyűgöző AI funkciókat építsenek be.
+                </p>
+                <div class="flex justify-center items-center space-x-8 md:space-x-12">
+                    <img src="https://www.gstatic.com/devrel-devsite/v132c86e33f38931b67280f554521bb279f2292f451cf7027b822d1d0505c87c7/ai/images/shared/pixel-logo.svg" alt="Google Pixel logó" class="h-8 md:h-10">
+                    <img src="https://www.gstatic.com/devrel-devsite/v132c86e33f38931b67280f554521bb279f2292f451cf7027b822d1d0505c87c7/ai/images/shared/samsung-logo.svg" alt="Samsung logó" class="h-8 md:h-10">
+                </div>
+            </section>
+
+            <!-- Gemini modellek szekció -->
+            <section class="mb-24 md:mb-32">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">A világ legképességesebb és legrugalmasabb modellje</h2>
+                <p class="max-w-2xl mx-auto text-gray-400 mb-12">A Geminit az alapoktól úgy építettük fel, hogy multimodális legyen, így zökkenőmentesen képes feldolgozni és kombinálni szöveget, kódot, képeket és hangot.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card p-8 rounded-2xl text-left">
+                        <h3 class="text-2xl font-bold mb-2 gradient-text">Gemini Nano</h3>
+                        <p class="text-gray-400">A leghatékonyabb modellünk az eszközön futó feladatokhoz.</p>
+                    </div>
+                    <div class="card p-8 rounded-2xl text-left">
+                        <h3 class="text-2xl font-bold mb-2 gradient-text">Gemini Pro</h3>
+                        <p class="text-gray-400">A legjobb modellünk a legkülönfélébb feladatok skálázásához.</p>
+                    </div>
+                    <div class="card p-8 rounded-2xl text-left">
+                        <h3 class="text-2xl font-bold mb-2 gradient-text">Gemini Ultra</h3>
+                        <p class="text-gray-400">A legnagyobb és legképességesebb modellünk a rendkívül összetett feladatokhoz.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Kezdés szekció -->
+            <section class="mb-24 md:mb-32">
+                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Fejlessz a Gemini Nano-val</h2>
+                 <p class="max-w-2xl mx-auto text-gray-400 mb-12">Használd a Google AI Edge eszközöket, hogy a Gemini Nano-t beépítsd a webes, Android vagy iOS alkalmazásodba.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div class="card p-8 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">MediaPipe</h3>
+                             <p class="text-gray-400 mb-4">Egyszerűen használható, feladatspecifikus könyvtárak, amelyekkel néhány sor kóddal integrálhatod az eszközön futó gépi tanulást.</p>
+                        </div>
+                        <a href="#" class="text-blue-400 font-bold mt-4 cursor-not-allowed">Dokumentáció megtekintése (inaktív)</a>
+                    </div>
+                     <div class="card p-8 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">LiteRT</h3>
+                             <p class="text-gray-400 mb-4">Egy pehelysúlyú, platformfüggetlen futtatókörnyezet, amely lehetővé teszi a gépi tanulási modellek futtatását peremeszközökön.</p>
+                        </div>
+                        <a href="#" class="text-blue-400 font-bold mt-4 cursor-not-allowed">Ismerd meg a LiteRT-t (inaktív)</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <!-- Egyedi élőláb -->
+        <footer class="bg-gray-900/50 backdrop-blur-sm py-8 mt-16">
+            <div class="container mx-auto px-6 text-center">
+                 <p class="text-lg text-gray-400 mb-4">A teljes eredeti tartalmat itt megtaláljátok --></p>
+                 <a href="https://ai.google.dev/edge" target="_blank" rel="noopener noreferrer" 
+                    class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300">
+                     Eredeti oldal megtekintése
+                 </a>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>

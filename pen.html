@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17096632861"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17096632861');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pohi AI Pro: The Future of Manufacturing Logistics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; 
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #665191, #a05195, #ff7c43, #ffa600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center my-12 md:my-16">
+            <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight">Pohi AI Pro</h1>
+            <p class="mt-4 text-xl md:text-2xl font-light gradient-text">Revolutionizing Manufacturing & Logistics with AI</p>
+        </header>
+
+        <main>
+            <section id="problem-solution" class="my-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-gray-800/50 p-8 rounded-2xl shadow-2xl border border-gray-700">
+                        <h2 class="text-3xl font-bold text-white mb-4">The Challenge</h2>
+                        <p class="text-lg leading-relaxed">The global acacia wood industry faces significant supply chain inefficiencies. Connecting manufacturers with available stock to customers with specific demands is a complex, fragmented process, further complicated by intricate logistics.</p>
+                    </div>
+                    <div class="text-center">
+                         <div class="relative inline-block">
+                             <span class="text-9xl text-yellow-400">💡</span>
+                             <div class="absolute top-0 left-0 w-full h-full bg-yellow-400/20 rounded-full blur-3xl -z-10"></div>
+                         </div>
+                        <h2 class="text-3xl font-bold text-white mt-4">The Vision</h2>
+                        <p class="text-lg mt-2">A centralized, AI-powered platform to streamline the entire lifecycle from order to delivery, creating a transparent and efficient marketplace.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="how-it-works" class="my-20 md:my-24">
+                <h2 class="text-4xl font-bold text-center text-white mb-2">How It Works: A Unified Ecosystem</h2>
+                <p class="text-center text-lg text-gray-400 mb-12 max-w-3xl mx-auto">Pohi AI Pro creates a seamless flow of information between customers, manufacturers, and administrators, with AI matchmaking at its core.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center md:items-stretch gap-8 md:gap-4">
+                    <div class="w-full md:w-1/4 bg-gray-900 border border-gray-700 p-6 rounded-xl shadow-lg text-center">
+                        <h3 class="text-2xl font-bold text-purple-400 mb-3">Customers</h3>
+                        <p>Submit detailed product demands and track orders in real-time.</p>
+                    </div>
+                    <div class="flex items-center justify-center text-4xl font-bold text-purple-400 transform md:-rotate-0 rotate-90">→</div>
+                    <div class="w-full md:w-2/5 bg-gray-900 border-2 border-purple-500 p-6 rounded-xl shadow-2xl text-center flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold gradient-text mb-3">Pohi AI Platform</h3>
+                        <p class="font-semibold">AI-Powered Matchmaking</p>
+                        <p>Smart Logistics & Planning</p>
+                        <p>Centralized Management</p>
+                    </div>
+                    <div class="flex items-center justify-center text-4xl font-bold text-purple-400 transform md:-rotate-0 rotate-90">→</div>
+                    <div class="w-full md:w-1/4 bg-gray-900 border border-gray-700 p-6 rounded-xl shadow-lg text-center">
+                        <h3 class="text-2xl font-bold text-purple-400 mb-3">Manufacturers</h3>
+                        <p>List available stock and manage inventory with AI-powered tools.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="features" class="my-20 md:my-24">
+                <h2 class="text-4xl font-bold text-center text-white mb-12">AI-Driven Features & Capabilities</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-700">
+                        <h3 class="text-2xl font-bold text-white text-center mb-4">Core AI Assistance Areas</h3>
+                        <p class="text-center text-gray-400 mb-6">Gemini AI is integrated across the platform to provide intelligent assistance in key operational areas.</p>
+                        <div class="chart-container h-80 md:h-96">
+                            <canvas id="aiFeaturesChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-700">
+                        <h3 class="text-2xl font-bold text-white text-center mb-4">Platform Access by Role</h3>
+                        <p class="text-center text-gray-400 mb-6">Each user role has a tailored interface with a specific set of powerful tools and features.</p>
+                        <div class="chart-container h-80 md:h-96">
+                            <canvas id="roleFeaturesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="accomplishments" class="my-20 md:my-24 text-center">
+                <h2 class="text-4xl font-bold text-white mb-12">Key Accomplishments</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-700">
+                        <p class="text-6xl font-black gradient-text">3</p>
+                        <p class="mt-2 text-xl font-bold text-white">Distinct User Roles</p>
+                        <p class="text-gray-400 mt-1">Tailored experiences for Customers, Manufacturers, & Admins.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-700">
+                        <p class="text-6xl font-black gradient-text">10+</p>
+                        <p class="mt-2 text-xl font-bold text-white">AI-Powered Features</p>
+                        <p class="text-gray-400 mt-1">From matchmaking to logistics and content generation.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-700">
+                        <p class="text-6xl font-black gradient-text">1st</p>
+                        <p class="mt-2 text-xl font-bold text-white">Innovative Concept</p>
+                        <p class="text-gray-400 mt-1">AI-driven truck loading and route optimization feature.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-700">
+                        <p class="text-6xl font-black gradient-text">3</p>
+                        <p class="mt-2 text-xl font-bold text-white">Supported Languages</p>
+                        <p class="text-gray-400 mt-1">Accessible to a global audience (EN, HU, DE).</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="roadmap" class="my-20 md:my-24">
+                <h2 class="text-4xl font-bold text-center text-white mb-12">What's Next: The Future Roadmap</h2>
+                <div class="relative px-4">
+                    <div class="absolute h-full border border-dashed border-gray-600 top-0" style="left: 50%;"></div>
+                    <div class="flex flex-col gap-12">
+                        <div class="flex items-center w-full">
+                             <div class="w-1/2 flex justify-end">
+                                <div class="w-full max-w-md p-6 bg-gray-900 rounded-xl shadow-lg border border-gray-700 text-right">
+                                    <h3 class="text-xl font-bold text-purple-400">Phase 1: Foundation</h3>
+                                    <p>Full Backend Implementation & User Authentication.</p>
+                                </div>
+                            </div>
+                            <div class="relative w-8 h-8 rounded-full bg-purple-400 shadow z-10 mx-4"></div>
+                            <div class="w-1/2"></div>
+                        </div>
+                        <div class="flex items-center w-full">
+                            <div class="w-1/2"></div>
+                            <div class="relative w-8 h-8 rounded-full bg-yellow-400 shadow z-10 mx-4"></div>
+                            <div class="w-1/2 flex justify-start">
+                               <div class="w-full max-w-md p-6 bg-gray-900 rounded-xl shadow-lg border border-gray-700">
+                                    <h3 class="text-xl font-bold text-yellow-400">Phase 2: Enhancement</h3>
+                                    <p>Real-Time Features, Enhanced AI, Mobile App.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center w-full">
+                             <div class="w-1/2 flex justify-end">
+                                <div class="w-full max-w-md p-6 bg-gray-900 rounded-xl shadow-lg border border-gray-700 text-right">
+                                    <h3 class="text-xl font-bold text-orange-400">Phase 3: Expansion</h3>
+                                    <p>Payment Gateway Integration & Wider Industry Adaptability.</p>
+                                </div>
+                            </div>
+                            <div class="relative w-8 h-8 rounded-full bg-orange-400 shadow z-10 mx-4"></div>
+                            <div class="w-1/2"></div>
+                        </div>
+                        <div class="flex items-center w-full">
+                            <div class="w-1/2"></div>
+                            <div class="relative w-8 h-8 rounded-full bg-red-400 shadow z-10 mx-4"></div>
+                            <div class="w-1/2 flex justify-start">
+                               <div class="w-full max-w-md p-6 bg-gray-900 rounded-xl shadow-lg border border-gray-700">
+                                    <h3 class="text-xl font-bold text-red-400">Phase 4: Maturity</h3>
+                                    <p>Advanced Analytics, Gamification, and Sustainability Tracking.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-16 mb-8 text-gray-500">
+            <p>©&nbsp;2025&nbsp;Pohánka És Társa Kft. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const wrapLabel = (label, maxWidth = 16) => {
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) lines.push(currentLine);
+            return lines.length > 1 ? lines : label;
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#d1d5db',
+                        font: { size: 14 }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+        };
+
+        const aiFeaturesCtx = document.getElementById('aiFeaturesChart').getContext('2d');
+        new Chart(aiFeaturesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Smart Logistics', 'Data Analysis', 'Content Generation', 'Matchmaking'],
+                datasets: [{
+                    label: 'AI Feature Distribution',
+                    data: [40, 25, 20, 15],
+                    backgroundColor: ['#665191', '#a05195', '#f95d6a', '#ffa600'],
+                    borderColor: '#0d1117',
+                    borderWidth: 4,
+                    hoverOffset: 8
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                plugins: {
+                     ...commonChartOptions.plugins,
+                    title: { display: false }
+                }
+            }
+        });
+
+        const roleFeaturesCtx = document.getElementById('roleFeaturesChart').getContext('2d');
+        const originalLabels = ['Submit & Track Demands', 'AI Alternative Suggestions', 'Manage Inventory', 'AI Price Suggestions', 'Generate Marketing Text', 'System-Wide Management', 'Advanced AI Matchmaking', 'Billing & Logistics Planning'];
+        const wrappedLabels = originalLabels.map(label => wrapLabel(label));
+        new Chart(roleFeaturesCtx, {
+            type: 'bar',
+            data: {
+                labels: wrappedLabels,
+                datasets: [
+                    {
+                        label: 'Customer',
+                        data: [1, 1, 0, 0, 0, 0, 0, 0],
+                        backgroundColor: '#665191',
+                    },
+                    {
+                        label: 'Manufacturer',
+                        data: [0, 0, 1, 1, 1, 0, 0, 0],
+                        backgroundColor: '#f95d6a',
+                    },
+                    {
+                        label: 'Administrator',
+                        data: [1, 1, 1, 1, 1, 1, 1, 1],
+                        backgroundColor: '#ffa600',
+                    }
+                ]
+            },
+            options: {
+                ...commonChartOptions,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        stacked: true,
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        ticks: { color: '#d1d5db', stepSize: 1 }
+                    },
+                    y: {
+                        stacked: true,
+                        grid: { display: false },
+                        ticks: { color: '#d1d5db' }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

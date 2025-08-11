@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17096632861"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17096632861');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Költségoptimalizált MI Ügynök Csapat Építése a Google Segítségével</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- 
+    Infographic Plan Summary:
+    Narrative Structure:
+    1. Introduction: Introduce the 5-agent AI team concept.
+    2. Toolkit: Showcase the Google technologies (Vertex AI, Gemini, GCP).
+    3. Cost Strategy: Visualize the cost-optimization model (free tiers, model comparison).
+    4. Architecture: Explain the Planner-Executor model and phased rollout via diagrams.
+    5. Agent Deep Dive: Detail each of the 5 agents, their roles, and tech stack using cards and radar charts.
+    6. Deployment & Future: Touch on Vertex AI Agent Engine and the A2A protocol.
+
+    Color Palette Selection:
+    - Chosen Palette: "Brilliant Blues" for a professional, vibrant, and tech-focused aesthetic.
+    - HEX Codes: Primary: #0052D4, Secondary: #4364F7, Accent: #6FB1FC, Background: #F7F9FC, Text: #1E293B.
+
+    Visualization Choices Summary (Confirming NO SVG / NO MERMAID JS):
+    - Agent Hierarchy Diagram: Goal: Organize. Method: HTML/CSS with Flexbox. Justification: Clear, simple, non-SVG representation of structure.
+    - Cost Model Donut Chart: Goal: Compare. Method: Chart.js (Canvas). Justification: Standard for showing composition.
+    - Model Cost Bar Chart: Goal: Compare. Method: Chart.js (Canvas). Justification: Standard for direct value comparison.
+    - Planner-Executor Flowchart: Goal: Show Process. Method: HTML/CSS with Tailwind (borders, flexbox). Justification: A clean, code-based diagram avoiding SVG/Mermaid.
+    - Agent Skills Radar Charts: Goal: Compare. Method: Chart.js (Canvas). Justification: Excellent for comparing multiple attributes across different entities.
+    - All other elements (icons, lists): Goal: Inform. Method: Unicode characters and styled HTML. Justification: Lightweight and avoids graphical assets.
+    
+    Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output. All charts are rendered on <canvas> elements by Chart.js, and diagrams are built with structured HTML and CSS.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* A háttérszín kikommentelése, hogy a háttérkép látható legyen */
+            /* background-color: #F7F9FC; */
+            color: #1E293B;
+            /* Háttérkép hozzáadása */
+            background-image: url('cs2.jpg');
+            background-size: cover; /* A kép kitölti a rendelkezésre álló területet */
+            background-position: center; /* A kép középre igazítása */
+            background-attachment: fixed; /* A háttérkép rögzítése görgetéskor */
+            background-repeat: no-repeat; /* A háttérkép ismétlésének megakadályozása */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #0052D4, #4364F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* A tartalom olvashatóságának javítása a háttérképen */
+        .container, header, section, footer {
+            background-color: rgba(255, 255, 255, 0.9); /* Átlátszó fehér háttér a jobb olvashatóságért */
+            padding: 1rem; /* Kis padding a tartalom körül */
+            border-radius: 0.5rem; /* Lekerekített sarkok */
+            margin-bottom: 1rem; /* Elemek közötti távolság */
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.95); /* Kicsit kevésbé átlátszó fejléc */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 gradient-text">Építsd Fel MI Munkatársaidat a Google Segítségével</h1>
+            <p class="max-w-3xl mx-auto text-lg text-slate-600">Vizuális útmutató egy költségoptimalizált, több ügynökből álló csapat létrehozásához a Google nagy teljesítményű és hozzáférhető MI ökoszisztémájával.</p>
+        </header>
+
+        <section id="vision" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">Az Ön 5-Ügynökös MI Csapata</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col items-center">
+                    <div class="bg-white p-4 rounded-xl shadow-lg border border-blue-200">
+                        <p class="text-xl font-bold text-center text-[#0052D4]">👑</p>
+                        <p class="font-bold text-lg">Törzsfőnök</p>
+                        <p class="text-sm text-slate-500 text-center">Felügyelő</p>
+                    </div>
+                    <div class="w-px h-12 bg-slate-300 my-2"></div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 w-full">
+                        <div class="bg-white p-4 rounded-xl shadow-md text-center">
+                            <p class="text-xl">📢</p>
+                            <p class="font-semibold">Marketing</p>
+                            <p class="text-xs text-slate-500">Stratégia és Tartalom</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-md text-center">
+                            <p class="text-xl">💻</p>
+                            <p class="font-semibold">Fejlesztő</p>
+                             <p class="text-xs text-slate-500">Kódgenerálás</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-md text-center">
+                            <p class="text-xl">📨</p>
+                            <p class="font-semibold">Kommunikáció</p>
+                             <p class="text-xs text-slate-500">Inbox Kezelés</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-md text-center">
+                            <p class="text-xl">📊</p>
+                            <p class="font-semibold">Projektmenedzser</p>
+                             <p class="text-xs text-slate-500">Feladatkövetés</p>
+                        </div>
+                    </div>
+                </div>
+                 <p class="text-center text-slate-600 mt-8">Ez az infografika bemutatja, hogyan építsünk fel egy hierarchikus MI ügynökcsapatot, amelyet egy központi felügyelő irányít, hogy hatékonyan és megfizethetően automatizálja a kulcsfontosságú üzleti funkciókat.</p>
+            </div>
+        </section>
+
+        <section id="toolkit" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">A Google MI Eszköztára</h2>
+            <p class="text-center text-slate-600 max-w-2xl mx-auto mb-12">A teljes MI munkaerő egy egységes, nagy teljesítményű Google Cloud szolgáltatásokból álló ökoszisztémára épül.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-[#0052D4]">
+                    <h3 class="text-xl font-bold mb-3">Vertex AI</h3>
+                    <p class="text-slate-600 mb-4">A központi munkapad az ügynökök építéséhez, telepítéséhez és kezeléséhez.</p>
+                    <ul class="space-y-2 text-slate-700">
+                        <li class="flex items-center"><span class="mr-2 text-[#0052D4]">●</span>Model Garden</li>
+                        <li class="flex items-center"><span class="mr-2 text-[#0052D4]">●</span>Agent Builder (No-Code)</li>
+                        <li class="flex items-center"><span class="mr-2 text-[#0052D4]">●</span>Agent Engine (Telepítés)</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-[#4364F7]">
+                    <h3 class="text-xl font-bold mb-3">Gemini Modellek</h3>
+                    <p class="text-slate-600 mb-4">A műveletek "agya", amely multimodális érvelést és generálást biztosít.</p>
+                     <ul class="space-y-2 text-slate-700">
+                        <li class="flex items-center"><span class="mr-2 text-[#4364F7]">●</span>Gemini 1.5 Pro (Komplex feladatok)</li>
+                        <li class="flex items-center"><span class="mr-2 text-[#4364F7]">●</span>Gemini 1.5 Flash (Sebesség és költség)</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-[#6FB1FC]">
+                    <h3 class="text-xl font-bold mb-3">Google Cloud Platform</h3>
+                    <p class="text-slate-600 mb-4">A támogató infrastruktúra az adatokhoz, logikához és szerver nélküli funkciókhoz.</p>
+                    <ul class="space-y-2 text-slate-700">
+                        <li class="flex items-center"><span class="mr-2 text-[#6FB1FC]">●</span>Cloud Storage</li>
+                        <li class="flex items-center"><span class="mr-2 text-[#6FB1FC]">●</span>Cloud Functions</li>
+                        <li class="flex items-center"><span class="mr-2 text-[#6FB1FC]">●</span>BigQuery</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="costs" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">Egy Költséghatékony Stratégia</h2>
+             <p class="text-center text-slate-600 max-w-2xl mx-auto mb-12">Egy MI csapat építése nem kell, hogy drága legyen. A stratégia az ingyenes erőforrások maximalizálására és az intelligens modellválasztásra támaszkodik.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
+                <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                    <p class="text-slate-500 uppercase tracking-wider text-sm">Az új ügyfelek kapnak</p>
+                    <p class="text-6xl font-extrabold text-[#0052D4] my-2">300 dollár</p>
+                    <p class="text-slate-600 font-semibold">ingyenes kreditet</p>
+                     <p class="text-xs text-slate-500 mt-2">Hogy költségek nélkül kísérletezzen és építse fel kezdeti prototípusait.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-lg font-bold text-center mb-4">Használd ki a "Mindig Ingyenes" Szintet</h3>
+                    <div class="chart-container h-64 md:h-72">
+                        <canvas id="freeTierChart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-slate-600 mt-4">Sok alapvető szolgáltatás bőséges havi ingyenes használati limittel rendelkezik, ami az alacsony volumenű működést gyakorlatilag ingyenessé teszi.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-lg font-bold text-center mb-4">Válaszd a Megfelelő Modellt a Feladathoz</h3>
+                    <div class="chart-container h-64 md:h-72">
+                        <canvas id="modelCostChart"></canvas>
+                    </div>
+                     <p class="text-center text-sm text-slate-600 mt-4">A Gemini 1.5 Flash jelentős költségcsökkentést kínál a nagy volumenű, kevésbé összetett feladatokhoz.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">A Siker Tervrajza</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold text-center mb-6">A Tervező-Végrehajtó Architektúra</h3>
+                    <div class="flex flex-col items-center space-y-2">
+                        <div class="border-2 border-slate-300 rounded-lg px-4 py-2 text-center w-4/5">
+                            <p class="font-semibold">Felhasználói Kérés</p>
+                            <p class="text-sm text-slate-500">"Vezessük be az új appunkat"</p>
+                        </div>
+                        <div class="text-2xl text-slate-400">↓</div>
+                        <div class="border-2 border-[#0052D4] bg-blue-50 rounded-lg px-4 py-2 text-center w-4/5">
+                             <p class="font-semibold">Felügyelő (Tervező)</p>
+                            <p class="text-sm text-slate-500">Lebontja a célt</p>
+                        </div>
+                        <div class="text-2xl text-slate-400">↓</div>
+                        <div class="border-t-2 border-l-2 border-r-2 border-slate-300 rounded-t-lg h-6 w-3/4"></div>
+                        <div class="grid grid-cols-4 gap-2 w-full px-4">
+                            <div class="border-2 border-slate-300 rounded-md px-2 py-1 text-center text-xs">📢 Mktg</div>
+                            <div class="border-2 border-slate-300 rounded-md px-2 py-1 text-center text-xs">💻 Fejl.</div>
+                            <div class="border-2 border-slate-300 rounded-md px-2 py-1 text-center text-xs">📨 Komm.</div>
+                            <div class="border-2 border-slate-300 rounded-md px-2 py-1 text-center text-xs">📊 PM</div>
+                        </div>
+                         <div class="border-b-2 border-l-2 border-r-2 border-slate-300 rounded-b-lg h-6 w-3/4"></div>
+                        <div class="text-2xl text-slate-400">↓</div>
+                         <div class="border-2 border-green-500 bg-green-50 rounded-lg px-4 py-2 text-center w-4/5">
+                             <p class="font-semibold">Végső Eredmény</p>
+                            <p class="text-sm text-slate-500">Befejezett projekt</p>
+                        </div>
+                    </div>
+                     <p class="text-center text-sm text-slate-600 mt-6">Ez a modell egy strukturált munkafolyamatot biztosít, ahol egy központi ügynök tervezi és delegálja a feladatokat a specializált ügynököknek.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                     <h3 class="text-xl font-bold text-center mb-6">Fázisos Bevezetés: Létra az Autonómiához</h3>
+                     <p class="text-center text-slate-600 mb-6">Kezdjen egyszerűen az azonnali értékteremtésért, majd építsen komplexitást. Ez az iteratív megközelítés minimalizálja a kockázatot és maximalizálja a tanulást.</p>
+                     <ol class="relative border-l border-slate-200">                  
+                        <li class="mb-10 ml-6">            
+                            <span class="absolute flex items-center justify-center w-8 h-8 bg-[#6FB1FC] rounded-full -left-4 ring-8 ring-white">
+                                <span class="font-bold text-white">1</span>
+                            </span>
+                            <h4 class="flex items-center mb-1 text-lg font-semibold text-gray-900">1. Fázis: No-Code és Low-Code</h4>
+                            <p class="block mb-2 text-sm font-normal leading-none text-gray-500">Azonnali érték</p>
+                            <p class="mb-4 text-base font-normal text-gray-600">Automatizáljon egyszerű feladatokat, mint az e-mail összefoglalók és projekttervek generálása a beépített Gemini funkciókkal és egyszerű szkriptekkel.</p>
+                        </li>
+                        <li class="ml-6">
+                             <span class="absolute flex items-center justify-center w-8 h-8 bg-[#0052D4] rounded-full -left-4 ring-8 ring-white">
+                                <span class="font-bold text-white">2</span>
+                            </span>
+                           <h4 class="flex items-center mb-1 text-lg font-semibold text-gray-900">2. Fázis: Pro-Code és Orchestráció</h4>
+                            <p class="block mb-2 text-sm font-normal leading-none text-gray-500">Teljes teljesítmény</p>
+                            <p class="text-base font-normal text-gray-600">Építse fel a teljesen autonóm Fejlesztő és Felügyelő ügynököket olyan keretrendszerekkel, mint a LangChain és LangGraph a maximális kontrollért.</p>
+                        </li>
+                    </ol>
+
+                </div>
+            </div>
+        </section>
+        
+        <section id="agents-deep-dive" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">Ismerje Meg MI Ügynökeit</h2>
+            <p class="text-center text-slate-600 max-w-2xl mx-auto mb-12">Minden ügynök egy specialista, a szerepéhez megfelelő eszközökkel felépítve. Képességeik vizuálisan összehasonlíthatók erősségeik megértéséhez.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-xl shadow-md p-6 lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 gap-6 items-center border-2 border-blue-200">
+                     <div class="lg:col-span-1">
+                        <h3 class="text-2xl font-bold text-[#0052D4]">👑 Törzsfőnök</h3>
+                        <p class="font-semibold text-slate-700 mb-2">(Felügyelő)</p>
+                        <p class="text-slate-600 mb-4">Az orchestrátor. A magas szintű célokat lépésről-lépésre haladó tervvé bontja és feladatokat delegál a specialista ügynököknek. Biztosítja, hogy az egész csapat egységesen dolgozzon a végső cél érdekében.</p>
+                        <p class="font-semibold text-sm">Tech Stack: <span class="font-normal bg-blue-100 text-blue-800 px-2 py-1 rounded-full">LangGraph</span> <span class="font-normal bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Gemini 1.5 Pro</span></p>
+                    </div>
+                    <div class="lg:col-span-2 chart-container h-72 md:h-80">
+                         <canvas id="supervisorAgentChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#4364F7]">📢 Marketing Ügynök</h3>
+                    <p class="text-slate-600 mb-4">Marketingstratégiákat fejleszt, tartalomötleteket generál és hirdetési szövegeket ír, válaszait valós idejű Google Keresési eredményekre alapozva.</p>
+                    <p class="font-semibold text-sm mb-4">Tech Stack: <span class="font-normal bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Gemini 1.5 Flash</span> <span class="font-normal bg-green-100 text-green-800 px-2 py-1 rounded-full">Grounding API</span></p>
+                    <div class="chart-container h-56">
+                        <canvas id="marketingAgentChart"></canvas>
+                    </div>
+                </div>
+                
+                 <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#4364F7]">💻 Fejlesztő Ügynök</h3>
+                    <p class="text-slate-600 mb-4">Egy autonóm ügynök, amely képes kódot írni, tesztelni és hibakeresést végezni egy "homokozó" környezetben. Eszközöket használ a fájlrendszerrel való interakcióhoz és a kód végrehajtásához.</p>
+                    <p class="font-semibold text-sm mb-4">Tech Stack: <span class="font-normal bg-blue-100 text-blue-800 px-2 py-1 rounded-full">LangChain</span> <span class="font-normal bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Gemini 1.5 Pro</span></p>
+                    <div class="chart-container h-56">
+                         <canvas id="developerAgentChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#4364F7]">📨 Kommunikációs Ügynök</h3>
+                    <p class="text-slate-600 mb-4">Kezeli a bejövő leveleket a hosszú e-mail láncok automatikus összegzésével, az akciópontok azonosításával és a feldolgozott üzenetek archiválásával.</p>
+                    <p class="font-semibold text-sm mb-4">Tech Stack: <span class="font-normal bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">Apps Script</span> <span class="font-normal bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Gemini 1.5 Flash</span></p>
+                    <div class="chart-container h-56">
+                         <canvas id="commsAgentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center pt-10 border-t border-slate-200">
+             <h2 class="text-3xl font-bold text-center mb-6">Telepítés és a Jövő</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md p-6 text-left">
+                    <p class="text-2xl mb-2">🚀</p>
+                    <h3 class="text-lg font-bold">Telepítés az Agent Engine-nel</h3>
+                    <p class="text-slate-600">Lépjen a prototípustól az éles környezetig egy teljesen menedzselt, skálázható és biztonságos Vertex AI környezettel, kiküszöbölve az infrastrukturális fejfájást.</p>
+                </div>
+                 <div class="bg-white rounded-xl shadow-md p-6 text-left">
+                    <p class="text-2xl mb-2">🤝</p>
+                    <h3 class="text-lg font-bold">A Jövő az Együttműködésé</h3>
+                    <p class="text-slate-600">A feltörekvő Agent2Agent (A2A) protokoll lehetővé teszi ügynökei számára, hogy együttműködjenek harmadik féltől származó ügynökökkel, létrehozva egy valódi digitális munkaerő-ökoszisztémát.</p>
+                </div>
+             </div>
+             <p class="mt-12 text-sm text-slate-500">Az infografika a "Útmutató a Költségoptimalizált, MI-Vezérelt Vállalati Ügynökcsapat Felépítéséhez a Google Ökoszisztémájában" alapján készült.</p>
+        </footer>
+
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const primaryColor = '#0052D4';
+    const secondaryColor = '#4364F7';
+    const accentColor = '#6FB1FC';
+    const textColor = '#1E293B';
+
+    function wrapLabels(labels, maxWidth) {
+        return labels.map(label => {
+            if (label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine.length > 0) {
+                lines.push(currentLine);
+            }
+            return lines;
+        });
+    }
+
+    const tooltipTitleCallback = {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        } else {
+                            return label;
+                        }
+                    }
+                }
+            },
+            legend: {
+                labels: {
+                    color: textColor
+                }
+            }
+        }
+    };
+
+    if (document.getElementById('freeTierChart')) {
+        new Chart(document.getElementById('freeTierChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Mindig Ingyenes Szint', 'Használat Alapú'],
+                datasets: [{
+                    label: 'Használati Modell',
+                    data: [70, 30],
+                    backgroundColor: [secondaryColor, accentColor],
+                    borderColor: 'rgba(255, 255, 255, 0.9)', /* A konténer háttérszínéhez igazítva */
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: textColor }
+                    },
+                    tooltip: tooltipTitleCallback.plugins.tooltip
+                }
+            }
+        });
+    }
+
+    if (document.getElementById('modelCostChart')) {
+        new Chart(document.getElementById('modelCostChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Gemini 1.5 Pro', 'Gemini 1.5 Flash'],
+                datasets: [{
+                    label: 'Relatív költség / millió token',
+                    data: [100, 35],
+                    backgroundColor: [primaryColor, accentColor],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { 
+                        beginAtZero: true,
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        ticks: { color: textColor }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: textColor }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                     tooltip: tooltipTitleCallback.plugins.tooltip
+                }
+            }
+        });
+    }
+    
+    const radarOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            r: {
+                angleLines: { color: 'rgba(0,0,0,0.1)' },
+                grid: { color: 'rgba(0,0,0,0.1)' },
+                pointLabels: {
+                    color: textColor,
+                    font: { size: 10 }
+                },
+                ticks: {
+                    color: textColor,
+                    backdropColor: 'rgba(255, 255, 255, 0.75)', /* A konténer háttérszínéhez igazítva */
+                    stepSize: 2
+                },
+                suggestedMin: 0,
+                suggestedMax: 10
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
+            },
+            tooltip: tooltipTitleCallback.plugins.tooltip
+        }
+    };
+
+    const sharedRadarLabels = ['Logika', 'Kreativitás', 'Sebesség', 'Autonómia', 'Költséghatékonyság'];
+
+    if (document.getElementById('supervisorAgentChart')) {
+        new Chart(document.getElementById('supervisorAgentChart'), {
+            type: 'radar',
+            data: {
+                labels: wrapLabels(sharedRadarLabels, 12),
+                datasets: [{
+                    label: 'Felügyelői képességek',
+                    data: [10, 7, 6, 9, 7],
+                    fill: true,
+                    backgroundColor: 'rgba(0, 82, 212, 0.2)',
+                    borderColor: primaryColor,
+                    pointBackgroundColor: primaryColor,
+                }]
+            },
+            options: radarOptions
+        });
+    }
+    
+    if (document.getElementById('marketingAgentChart')) {
+        new Chart(document.getElementById('marketingAgentChart'), {
+            type: 'radar',
+            data: {
+                labels: wrapLabels(sharedRadarLabels, 12),
+                datasets: [{
+                    label: 'Marketing képességek',
+                    data: [6, 9, 8, 5, 9],
+                    fill: true,
+                    backgroundColor: 'rgba(67, 100, 247, 0.2)',
+                    borderColor: secondaryColor,
+                    pointBackgroundColor: secondaryColor,
+                }]
+            },
+            options: radarOptions
+        });
+    }
+    
+    if (document.getElementById('developerAgentChart')) {
+        new Chart(document.getElementById('developerAgentChart'), {
+            type: 'radar',
+            data: {
+                labels: wrapLabels(sharedRadarLabels, 12),
+                datasets: [{
+                    label: 'Fejlesztői képességek',
+                    data: [9, 6, 7, 9, 6],
+                    fill: true,
+                    backgroundColor: 'rgba(67, 100, 247, 0.2)',
+                    borderColor: secondaryColor,
+                    pointBackgroundColor: secondaryColor,
+                }]
+            },
+            options: radarOptions
+        });
+    }
+
+    if (document.getElementById('commsAgentChart')) {
+        new Chart(document.getElementById('commsAgentChart'), {
+            type: 'radar',
+            data: {
+                labels: wrapLabels(sharedRadarLabels, 12),
+                datasets: [{
+                    label: 'Kommunikációs képességek',
+                    data: [7, 7, 9, 8, 10],
+                    fill: true,
+                    backgroundColor: 'rgba(67, 100, 247, 0.2)',
+                    borderColor: secondaryColor,
+                    pointBackgroundColor: secondaryColor,
+                }]
+            },
+            options: radarOptions
+        });
+    }
+
+});
+</script>
+</body>
+</html>

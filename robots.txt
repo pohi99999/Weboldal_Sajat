@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Az alábbi sorok megakadályozzák a csomag részletező oldalak feltérképezését,
+# ha nem szeretnéd, hogy ezek külön jelenjenek meg a keresési eredmények között,
+# vagy ha a tartalmuk nagyrészt megegyezik a főoldalon lévő összefoglalóval.
+# Ha szeretnéd, hogy ezeket is indexeljék, TÖRÖLD KI AZ ALÁBBI "Disallow" SOROKAT.
+# Disallow: /csomag1.html
+# Disallow: /csomag2.html
+# Disallow: /csomag3.html
+# Disallow: /csomag4.html
+# Disallow: /csomag5.html
+# Disallow: /csomag6.html
+# Disallow: /csomag7.html
+
+# Ha van sitemap.xml fájlod (ami ajánlott), itt add meg a teljes URL-jét:
+# Példa: Sitemap: https://pohanka.company/sitemap.xml
+# Kérlek, cseréld le a placeholder URL-t a saját sitemap.xml fájlod URL-jére!
+Sitemap: https://pohanka.company/sitemap.xml 
