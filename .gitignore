@@ -1,0 +1,3 @@
+
+# Ignore temporary drive upload files
+.tmp.driveupload/
