@@ -142,7 +142,8 @@
 
             <div class="language-selector">
                 <div class="container mx-auto px-6 flex justify-center md:justify-end items-center">
-                    <a onclick="switchLanguage('hu')" class="language-link">
+                    <div class="text-sm text-gray-400 mr-4 hidden md:block" data-translate-key="languageNote">Elsődleges nyelvünk: magyar</div>
+                    <a onclick="switchLanguage('hu')" class="language-link primary-lang">
                         <img src="lh.jpg" alt="Magyar zászló" class="flag-icon" onerror="this.alt='HU'; this.src='https://placehold.co/20x13/DD2C2C/FFFFFF?text=HU';">HU
                     </a>
                     <a onclick="switchLanguage('en')" class="language-link">
@@ -640,6 +641,14 @@
             <section id="contact" class="py-16 md:py-24 bg-gray-900/90">
                 <div class="container mx-auto px-6">
                     <h2 class="section-title" data-translate-key="contactTitle">Kapcsolat</h2>
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center bg-blue-600/20 border border-blue-500/30 rounded-lg px-6 py-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-400 mr-3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 011.037-.443 48.282 48.282 0 005.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                            </svg>
+                            <span class="text-blue-300 font-semibold text-lg" data-translate-key="communicationNote">Magyarul kommunikálunk</span>
+                        </div>
+                    </div>
                     <div class="dev-inspired-card p-8 md:p-10 rounded-lg shadow-2xl">
                         <div class="flex flex-wrap md:flex-nowrap gap-8 contact-section-layout">
                             <div class="w-full md:w-1/2 contact-info-column">
@@ -812,6 +821,8 @@
             hu: {
                 navHome: 'Kezdőlap', navAbout: 'Rólunk', navPhilosophy: 'Értékeink', navServices: 'Amit Kínálunk', navProducts: 'Termékek', navReferences: 'Betekintés, Munkáink', navOffer: 'Ajánlatkérés', navContact: 'Kapcsolat',
                 navHomeMobile: 'Kezdőlap', navAboutMobile: 'Rólunk', navPhilosophyMobile: 'Értékeink', navServicesMobile: 'Amit Kínálunk', navProductsMobile: 'Termékek', navReferencesMobile: 'Betekintés, Munkáink', navOfferMobile: 'Ajánlatkérés', navContactMobile: 'Kapcsolat',
+                languageNote: 'Elsődleges nyelvünk: magyar',
+                communicationNote: 'Magyarul kommunikálunk',
                 // Frissített horgonyszöveg kulcsok a dinamikus beállításhoz
                 detailsButtonPackage1: 'Részletek (Könyvelés)',
                 detailsButtonPackage2: 'Részletek (Vállalkozás fejlesztés)',
@@ -888,6 +899,8 @@
             en: {
                 navHome: 'Home', navAbout: 'About Us', navPhilosophy: 'Our Values', navServices: 'What We Offer', navProducts: 'Products', navReferences: 'Insight, Our Works', navOffer: 'Request Offer', navContact: 'Contact',
                 navHomeMobile: 'Home', navAboutMobile: 'About Us', navPhilosophyMobile: 'Our Values', navServicesMobile: 'What We Offer', navProductsMobile: 'Products', navReferencesMobile: 'Insight, Our Works', navOfferMobile: 'Request Offer', navContactMobile: 'Contact',
+                languageNote: 'Primary language: Hungarian',
+                communicationNote: 'We communicate in Hungarian',
                 // Frissített horgonyszöveg kulcsok a dinamikus beállításhoz
                 detailsButtonPackage1: 'Details (Accounting)',
                 detailsButtonPackage2: 'Details (Business Development)',
@@ -964,6 +977,8 @@
             de: {
                 navHome: 'Startseite', navAbout: 'Über uns', navPhilosophy: 'Unsere Werte', navServices: 'Was Wir Anbieten', navProducts: 'Produkte', navReferences: 'Einblick, Unsere Arbeiten', navOffer: 'Angebot Anfordern', navContact: 'Kontakt',
                 navHomeMobile: 'Startseite', navAboutMobile: 'Über uns', navPhilosophyMobile: 'Unsere Werte', navServicesMobile: 'Was Wir Anbieten', navProductsMobile: 'Produkte', navReferencesMobile: 'Einblick, Unsere Arbeiten', navOfferMobile: 'Angebot Anfordern', navContactMobile: 'Kontakt',
+                languageNote: 'Hauptsprache: Ungarisch',
+                communicationNote: 'Wir kommunizieren auf Ungarisch',
                 // Frissített horgonyszöveg kulcsok a dinamikus beállításhoz
                 detailsButtonPackage1: 'Details (Buchhaltung)',
                 detailsButtonPackage2: 'Details (Unternehmensentwicklung)',
@@ -1101,7 +1116,12 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            // Ensure Hungarian is always the default language
             const savedLanguage = localStorage.getItem('selectedLanguage') || 'hu';
+            // If no language is saved, explicitly set to Hungarian and save it
+            if (!localStorage.getItem('selectedLanguage')) {
+                localStorage.setItem('selectedLanguage', 'hu');
+            }
             switchLanguage(savedLanguage);
 
             // Frissítés: Kezdeti horgonyszöveg beállítása a betöltött nyelv alapján
