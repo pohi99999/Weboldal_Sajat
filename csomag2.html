@@ -6,7 +6,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-17096632861');
 </script>
     <meta charset="UTF-8">
@@ -18,38 +17,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Videó előtöltése -->
+    <!-- Videó és mobil statikus kép előtöltése -->
     <link rel="preload" as="video" href="AI1.mp4" type="video/mp4">
+    <link rel="preload" as="image" href="cs2-mobile.jpg">
 
     <style>
-        /* Common styles from csomag2.html */
+        /* ====== Általános stílusok ====== */
         body {
             font-family: 'Inter', sans-serif;
-            color: #D1D5DB; 
-            /* Régi háttérkép (fallbackként meghagyva kommentben) */
-            /* background-image: url('cs2.jpg'); */
-            background-color: #000; /* Fallback szín, ha a videó nem tölt be */
-            background-size: cover; 
-            background-position: center; 
-            background-attachment: fixed; 
-            background-repeat: no-repeat; 
+            color: #D1D5DB;
+            background-color: #000; /* Fallback szín */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-        /* Videó háttér konténer */
+        /* ====== Videó háttér (csak desktop / tablet) ====== */
         .video-bg {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
             overflow: hidden;
-            z-index: -2; /* Tartalom mögött */
+            z-index: -2;
         }
         .video-bg video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
-            filter: brightness(0.55); /* Sötétítés az olvashatóságért */
+            filter: brightness(0.55);
         }
-        /* Opcionális külön overlay (ha erősebb sötétítés kell) */
         .video-overlay {
             position: fixed;
             top: 0; left: 0;
@@ -69,7 +65,6 @@
         .package-subtitle { font-size: 1.5rem; font-weight: 600; color: #93C5FD; margin-top: 1.5rem; margin-bottom: 0.75rem; }
         .prose-custom ul { list-style-type: disc; padding-left: 1.5rem; }
         .prose-custom ul li { padding-left: 0.5rem; }
-        /* Styles from index2.html */
         .google-sans { font-family: 'Google Sans', sans-serif; }
         .gradient-text {
             background: linear-gradient(90deg, #89B3F8, #A56EFF, #FF8BC8);
@@ -78,11 +73,7 @@
             background-clip: text;
             text-fill-color: transparent;
         }
-        .card-edge {
-            background-color: #1a1a1a;
-            border: 1px solid #3c4043;
-            transition: background-color 0.3s ease;
-        }
+        .card-edge { background-color: #1a1a1a; border: 1px solid #3c4043; transition: background-color 0.3s ease; }
         .card-edge:hover { background-color: #2a2a2a; }
         .hero-background-edge { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.1; overflow: hidden; }
         .dark-blue-wrapper {
@@ -90,7 +81,29 @@
              border: 1px solid #185ABC;
              border-image: linear-gradient(to bottom right, #2E64DE, #3C8FE3) 1;
         }
+
+        /* ====== Mobil optimalizáció ======
+           - 768px alatt a videó eltűnik, helyette statikus kép háttér
+           - A background-attachment: fixed problémás lehet mobilon, ezért nem használjuk ott
+        */
+        @media (max-width: 768px) {
+            .video-bg, .video-overlay { display: none; }
+            body {
+                background-image: url('cs2-mobile.jpg'); /* Ha nincs ilyen, hozz létre optimalizált (~120-200KB) képet; fallback: cs2.jpg */
+                background-attachment: scroll;
+            }
+        }
+        /* ====== Preferált adatcsökkentés (pl. Chrome Lite mód, vagy OS beállítás) ====== */
+        @media (prefers-reduced-data: reduce) {
+            .video-bg, .video-overlay { display: none !important; }
+            body { background-image: url('cs2-mobile.jpg'); }
+        }
+        /* ====== Preferált mozgáscsökkentés ====== */
+        @media (prefers-reduced-motion: reduce) {
+            .video-bg video { animation: none; }
+        }
     </style>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17050054168"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -281,7 +294,7 @@
                 package2StartP1: 'Ideal for startups, micro, and small businesses looking to establish their digital presence and efficiency.',
                 package2StartItem1: 'Analysis of basic digital presence and personalized recommendations.',
                 package2StartItem2: 'Online marketing basics consultation (max. 2 hours).',
-                package2StartItem3: 'Support for introducing simpler digital tools (e.g., Google My Business optimization, basic social media advice).',
+                package2StartItem3: 'Support for introducing simpler digital tools (e.g. Google My Business optimization, basic social media advice).',
                 package2StartItem4: 'Mini-SWOT analysis to identify business strengths and areas for development.',
                 package2MediumTitle: 'Medium Package',
                 package2MediumP1: 'Recommended for existing SMEs wishing to optimize their processes, increase online visibility, and reach their target audience more effectively.',
@@ -338,7 +351,6 @@
                 package2ProItem6: 'Pályázati lehetőségek proaktív feltérképezése a digitális fejlesztések finanszírozásához.',
                 requestOfferButton: 'Angebot für diese Pakete anfordern',
                 exampleButton: 'Klicken Sie hier für ein Beispiel!',
-                footerCopyright: 'Pohánka És Társa Kft. Alle Rechte vorbehalten.',
                 heroSubtitleEdge: 'KI in mobilen, Web- und eingebetteten Anwendungen bereitstellen',
                 onDeviceTitle: 'Auf dem Gerät',
                 onDeviceDesc: 'Reduzieren Sie die Latenz. Arbeiten Sie offline. Halten Sie Daten lokal und privat.',
