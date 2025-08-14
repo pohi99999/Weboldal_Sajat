@@ -11,31 +11,57 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Növelje vállalkozása hatékonyságát és online jelenlétét! Start, Medium és Pro csomagjaink digitális eszközökkel és szakértői tanácsadással segítik a fejlődést." data-translate-meta-description="package2MetaDesc">
+    <meta name="description" content="Növelje vállalkozása hatékonyságát és online jelenlétét! Start, Medium és Pro csomagjaink digitális eszközökkel és szakértői tanácsadással segítenek a fejlődésben.">
     <title>Vállalkozás Fejlesztési Csomagok - Pohánka És Társa Kft.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Videó előtöltése -->
+    <link rel="preload" as="video" href="AI1.mp4" type="video/mp4">
 
     <style>
         /* Common styles from csomag2.html */
         body {
             font-family: 'Inter', sans-serif;
-            /* background-color: #111827;  - Ezt a sort kikommenteltük, hogy a háttérkép látszódjon */
             color: #D1D5DB; 
-            /* Háttérkép hozzáadása */
-            background-image: url('cs2.jpg');
-            background-size: cover; /* A kép kitölti a rendelkezésre álló területet */
-            background-position: center; /* A kép középre igazítása */
-            background-attachment: fixed; /* A háttérkép rögzítése görgetéskor */
-            background-repeat: no-repeat; /* A háttérkép ismétlésének megakadályozása */
+            /* Régi háttérkép (fallbackként meghagyva kommentben) */
+            /* background-image: url('cs2.jpg'); */
+            background-color: #000; /* Fallback szín, ha a videó nem tölt be */
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            background-repeat: no-repeat; 
+        }
+        /* Videó háttér konténer */
+        .video-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            overflow: hidden;
+            z-index: -2; /* Tartalom mögött */
+        }
+        .video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.55); /* Sötétítés az olvashatóságért */
+        }
+        /* Opcionális külön overlay (ha erősebb sötétítés kell) */
+        .video-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.35);
+            z-index: -1;
+            pointer-events: none;
         }
         .content-wrapper { position: relative; z-index: 1; }
         .section-title { font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; color: #F3F4F6; }
         .navbar-logo { max-height: 50px; width: auto; }
-        .dev-inspired-card { background-color: rgba(31, 41, 55, 0.95); border: 1px solid #374151; }
+        .dev-inspired-card { background-color: rgba(31, 41, 55, 0.90); border: 1px solid #374151; backdrop-filter: blur(4px); }
         .dev-inspired-button { background-color: #3B82F6; color: white; transition: background-color 0.3s ease; }
         .dev-inspired-button:hover { background-color: #2563EB; }
         .back-link { display: inline-block; margin-top: 2rem; margin-bottom: 1rem; color: #60A5FA; font-weight: 500; text-decoration: none; transition: color 0.2s ease-in-out; }
@@ -43,7 +69,6 @@
         .package-subtitle { font-size: 1.5rem; font-weight: 600; color: #93C5FD; margin-top: 1.5rem; margin-bottom: 0.75rem; }
         .prose-custom ul { list-style-type: disc; padding-left: 1.5rem; }
         .prose-custom ul li { padding-left: 0.5rem; }
-        
         /* Styles from index2.html */
         .google-sans { font-family: 'Google Sans', sans-serif; }
         .gradient-text {
@@ -69,7 +94,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17050054168"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){dataLayer.push(arguments);} 
       gtag('js', new Date());
       gtag('config', 'AW-17050054168');
     </script>
@@ -83,12 +108,21 @@
     </script>
 </head>
 <body class="antialiased">
+    <!-- Videó háttér -->
+    <div class="video-bg" aria-hidden="true">
+        <video id="bgVideo" autoplay muted loop playsinline>
+            <source src="AI1.mp4" type="video/mp4">
+            A böngésződ nem támogatja a HTML5 videót.
+        </video>
+    </div>
+    <div class="video-overlay" aria-hidden="true"></div>
+
     <div class="content-wrapper">
         <header class="bg-gray-800/80 backdrop-blur-md shadow-lg sticky top-0 z-40">
             <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
                 <div>
                     <a href="index.html" class="flex items-center">
-                        <img src="logo.jpg" alt="Pohánka És Társa Kft Logó" class="navbar-logo mr-3" onerror="this.alt='Logó nem tölthető be'; this.src='https://placehold.co/150x50/111827/D1D5DB?text=Logó';">
+                        <img src="logo.jpg" alt="Pohánka És Társa Kft Logó" class="navbar-logo mr-3" onerror="this.alt='Logó nem tölthető be'; this.src='https://placehold.co/150x50/111827/D1D5DB?text=Logo';">
                         <span class="text-xl font-bold text-white">Pohánka És Társa Kft</span>
                     </a>
                 </div>
@@ -103,11 +137,10 @@
                 <section id="package-detail-2">
                     <h1 class="section-title mb-4" data-translate-key="package2DetailTitle">Vállalkozás Fejlesztési Csomagok Részletei</h1>
                     <p class="text-center text-blue-300 mb-8" data-translate-key="package2DetailSubTitle">(start, medium, pro csomagok)</p>
-                    
                     <div class="dev-inspired-card p-6 md:p-10 rounded-lg shadow-2xl">
                         <div class="prose-custom prose-invert max-w-none text-gray-300 space-y-6">
                             <p data-translate-key="package2Intro">
-                                Válassza ki az Ön vállalkozásának legmegfelelőbb fejlesztési csomagot, hogy digitális eszközeinkkel és szakértői tanácsadásunkkal a legtöbbet hozhassa ki cégéből! Minden csomagunk személyre szabható.
+                                Válassza ki az Ön vállalkozásának legmegfelelőbb fejlesztési csomagot, hogy digitális eszközeinkkel és szakértői tanácsadásunkkal a legtöbbet hozhassa ki cégének működéséből! Minden csomagunk testreszabható igény szerint.
                             </p>
                             <div>
                                 <h2 class="package-subtitle" data-translate-key="package2StartTitle">Start Csomag</h2>
@@ -144,17 +177,16 @@
                             </div>
                         </div>
                     </div>
-                    
                     <!-- INSERTED CONTENT from index2.html -->
                     <div id="inserted-content" class="mt-16 google-sans">
                         <section class="mb-24 md:mb-32 text-center">
                              <div class="max-w-4xl mx-auto">
-                                 <img src="ge2.jpg" alt="Google AI Edge Főcím" class="mx-auto mb-8 w-full max-w-4xl rounded-lg" onerror="this.alt='Main image could not be loaded'; this.src='https://placehold.co/1200x265/060606/E8EAED?text=Google+AI+Edge';">
+                                 <img src="ge2.jpg" alt="Google AI Edge Főcím" class="mx-auto mb-8 w-full max-w-4xl rounded-lg" onerror="this.alt='Main image could not be loaded'; this.src='https://placehold.co/800x400/111827/D1D5DB?text=Image';">
                                  <h3 class="text-xl text-gray-300 mb-16 relative z-10" data-translate-key="heroSubtitleEdge">MI telepítése mobil, webes és beágyazott alkalmazásokban</h3>
                             </div>
                             <div class="hidden md:flex justify-center items-start gap-8 max-w-5xl mx-auto">
                                 <div class="flex-1 flex gap-4 items-center">
-                                    <svg class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                    <svg class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" /></svg>
                                     <div>
                                         <h4 class="font-bold text-left" data-translate-key="onDeviceTitle">Az eszközön</h4>
                                         <p class="text-left text-gray-400" data-translate-key="onDeviceDesc">Csökkentse a késleltetést. Dolgozzon offline. Tartsa adatait helyben és privátként.</p>
@@ -162,7 +194,7 @@
                                 </div>
                                 <div class="w-px bg-gray-700 self-stretch"></div>
                                 <div class="flex-1 flex gap-4 items-center">
-                                    <svg class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    <svg class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
                                     <div>
                                         <h4 class="font-bold text-left" data-translate-key="multiPlatformTitle">Többplatformos</h4>
                                         <p class="text-left text-gray-400" data-translate-key="multiPlatformDesc">Ugyanazt a modellt futtassa Androidon, iOS-en, weben és beágyazott rendszereken.</p>
@@ -170,7 +202,7 @@
                                 </div>
                                 <div class="w-px bg-gray-700 self-stretch"></div>
                                 <div class="flex-1 flex gap-4 items-center">
-                                    <svg class="h-8 w-8 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                                    <svg class="h-8 w-8 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                      <div>
                                         <h4 class="font-bold text-left" data-translate-key="multiFrameworkTitle">Több keretrendszer</h4>
                                         <p class="text-left text-gray-400" data-translate-key="multiFrameworkDesc">Kompatibilis a JAX, Keras, PyTorch és TensorFlow modellekkel.</p>
@@ -179,12 +211,10 @@
                             </div>
                         </section>
                     </div>
-
                     <!-- New button inserted here -->
                     <div class="text-center mt-8"> <!-- Smaller margin-top for separation -->
                         <a href="blog99.html" class="dev-inspired-button px-6 py-2 rounded-md text-base inline-block" data-translate-key="exampleButton">Egy Példáért Katt ide!</a>
                     </div>
-
                     <div class="text-center mt-12">
                         <a href="index.html#offer" class="dev-inspired-button px-8 py-3 rounded-lg text-lg inline-block" data-translate-key="requestOfferButton">Ajánlatkérés ezekre a csomagokra</a>
                     </div>
@@ -205,10 +235,10 @@
         const detailTranslations = {
             hu: {
                 navBackToServices: 'Vissza a Szolgáltatásokhoz',
-                package2MetaDesc: 'Növelje vállalkozása hatékonyságát és online jelenlétét! Start, Medium és Pro csomagjaink digitális eszközökkel és szakértői tanácsadással segítik a fejlődést.',
+                package2MetaDesc: 'Növelje vállalkozása hatékonyságát és online jelenlétét! Start, Medium és Pro csomagjaink digitális eszközökkel és szakértői tanácsadással segítenek a fejlődésben.',
                 package2DetailTitle: 'Vállalkozás Fejlesztési Csomagok Részletei',
                 package2DetailSubTitle: '(start, medium, pro csomagok)',
-                package2Intro: 'Válassza ki az Ön vállalkozásának legmegfelelőbb fejlesztési csomagot, hogy digitális eszközeinkkel és szakértői tanácsadásunkkal a legtöbbet hozhassa ki cégéből! Minden csomagunk személyre szabható.',
+                package2Intro: 'Válassza ki az Ön vállalkozásának legmegfelelőbb fejlesztési csomagot, hogy digitális eszközeinkkel és szakértői tanácsadásunkkal a legtöbbet hozhassa ki cégének működéséből! Minden csomagunk testreszabható igény szerint.',
                 package2StartTitle: 'Start Csomag',
                 package2StartP1: 'Ideális választás induló vállalkozásoknak, valamint mikro- és kisvállalkozásoknak, akik szeretnék megalapozni digitális jelenlétüket és hatékonyságukat.',
                 package2StartItem1: 'Alapvető digitális jelenlét elemzése és személyre szabott javaslatok.',
@@ -246,7 +276,7 @@
                 package2MetaDesc: 'Boost your business efficiency and online presence! Our Start, Medium, and Pro packages help you grow with digital tools and expert consulting.',
                 package2DetailTitle: 'Details of Business Development Packages',
                 package2DetailSubTitle: '(start, medium, pro packages)',
-                package2Intro: 'Choose the development package that best suits your business to get the most out of your company with our digital tools and expert advice! All our packages are customizable.',
+                package2Intro: 'Choose the development package that best suits your business to get the most out of your company with our digital tools and expert advice! All our packages are customizable to your needs.',
                 package2StartTitle: 'Start Package',
                 package2StartP1: 'Ideal for startups, micro, and small businesses looking to establish their digital presence and efficiency.',
                 package2StartItem1: 'Analysis of basic digital presence and personalized recommendations.',
@@ -284,7 +314,7 @@
                 package2MetaDesc: 'Steigern Sie die Effizienz und Online-Präsenz Ihres Unternehmens! Unsere Start-, Medium- und Pro-Pakete unterstützen Ihr Wachstum mit digitalen Werkzeugen und Expertenberatung.',
                 package2DetailTitle: 'Details der Unternehmensentwicklungspakete',
                 package2DetailSubTitle: '(Start-, Medium-, Pro-Pakete)',
-                package2Intro: 'Wählen Sie das Entwicklungspaket, das am besten zu Ihrem Unternehmen passt, um mit unseren digitalen Werkzeugen und unserer Expertenberatung das Beste aus Ihrem Unternehmen herauszuholen! Alle unsere Pakete sind anpassbar.',
+                package2Intro: 'Wählen Sie das Entwicklungspaket, das am besten zu Ihrem Unternehmen passt, um mit unseren digitalen Werkzeugen und unserer Expertenberatung das Beste aus Ihrem Unternehmen herauszuholen! Alle Pakete sind anpassbar.',
                 package2StartTitle: 'Start-Paket',
                 package2StartP1: 'Ideal für Start-ups sowie Kleinst- und Kleinunternehmen, die ihre digitale Präsenz und Effizienz begründen möchten.',
                 package2StartItem1: 'Analyse der grundlegenden digitalen Präsenz und personalisierte Empfehlungen.',
@@ -309,7 +339,7 @@
                 requestOfferButton: 'Angebot für diese Pakete anfordern',
                 exampleButton: 'Klicken Sie hier für ein Beispiel!',
                 footerCopyright: 'Pohánka És Társa Kft. Alle Rechte vorbehalten.',
-                heroSubtitleEdge: 'KI in mobilen, Web- és eingebetteten Anwendungen bereitstellen',
+                heroSubtitleEdge: 'KI in mobilen, Web- und eingebetteten Anwendungen bereitstellen',
                 onDeviceTitle: 'Auf dem Gerät',
                 onDeviceDesc: 'Reduzieren Sie die Latenz. Arbeiten Sie offline. Halten Sie Daten lokal und privat.',
                 multiPlatformTitle: 'Multiplattform',
@@ -327,13 +357,11 @@
                         element.innerHTML = detailTranslations[lang][key];
                     }
                 });
-                
                 const metaDescElement = document.querySelector('meta[name="description"]');
                 const metaDescKey = metaDescElement ? metaDescElement.getAttribute('data-translate-meta-description') : null;
                 if (metaDescElement && metaDescKey && detailTranslations[lang][metaDescKey]) {
                     metaDescElement.setAttribute('content', detailTranslations[lang][metaDescKey]);
                 }
-
                 document.documentElement.lang = lang;
                 localStorage.setItem('selectedLanguage', lang);
             }
