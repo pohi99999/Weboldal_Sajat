@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="hu">
-<head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17096632861"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17096632861"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'AW-17096632861');
-</script>
+      gtag('config', 'AW-17096632861');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Blogbejegyzések, érdekes témák és segédanyagok a Pohánka És Társa Kft-től.">
@@ -18,14 +19,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #111827; color: #D1D5DB; }
-        .glass-effect { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .hero-bg { background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1)), url('your-background-image.jpg'); background-size: cover; background-position: center; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #111827; /* Fallback background color */
+            color: #D1D5DB; 
+        }
+        .glass-effect { 
+            background: rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+        }
+        .blog-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .blog-card-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <div class="min-h-screen flex flex-col">
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline id="background-video">
+        <source src="hat1.mp4" type="video/mp4">
+        A böngésződ nem támogatja a videó taget.
+    </video>
+
+    <!-- Content Wrapper -->
+    <div class="relative min-h-screen flex flex-col">
         <header class="sticky top-0 z-50 glass-effect">
             <div class="container mx-auto px-6 py-4 flex justify-between items-center">
                 <a href="index.html" class="text-2xl font-bold text-white">Pohánka És Társa Kft</a>
@@ -39,44 +74,62 @@
         </header>
 
         <main class="flex-grow">
-            <section class="py-20 hero-bg">
+            <section class="py-20">
                 <div class="container mx-auto px-6 text-center">
-                    <h1 class="text-5xl font-extrabold text-white mb-4">Blog</h1>
-                    <p class="text-xl text-gray-400">Érdekes témák és segédanyagok</p>
+                    <h1 class="text-5xl font-extrabold text-white mb-4" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">Blog</h1>
+                    <p class="text-xl text-gray-300" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">Érdekes témák és segédanyagok</p>
                 </div>
             </section>
 
-            <section class="py-20 bg-gray-900">
+            <section class="py-20">
                 <div class="container mx-auto px-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Grid layout for blog cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                         
-                        <!-- Függőség blogbejegyzés kártya -->
-                        <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-700 transform hover:scale-105 transition-transform duration-300">
-                            <div class="flex flex-col items-center">
-                                <h2 class="text-3xl font-bold text-white mb-4 text-center">Függőség</h2>
-                                <img src="kkk1.jpg" alt="Absztrakt ábrázolás a digitális függőségről és a technológia hatásairól" class="w-full h-auto object-cover mb-6 rounded-md shadow-lg" onerror="this.alt='Hiba a kép betöltésekor'; this.src='https://placehold.co/600x400/111827/D1D5DB?text=Kép+nem+található';">
-                                <div class="text-center">
+                        <!-- Blog Card 1: Függőség -->
+                        <div class="blog-card bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-700 transform hover:scale-105 transition-transform duration-300">
+                            <div class="blog-card-content">
+                                <div class="flex flex-col items-center">
+                                    <h2 class="text-3xl font-bold text-white mb-4 text-center">Függőség</h2>
+                                    <img src="kkk1.jpg" alt="Absztrakt ábrázolás a digitális függőségről és a technológia hatásairól" class="w-full h-auto object-cover mb-6 rounded-md shadow-lg" onerror="this.alt='Hiba a kép betöltésekor'; this.src='https://placehold.co/600x400/111827/D1D5DB?text=Kép+nem+található';">
+                                </div>
+                                <div class="text-center mt-auto">
                                     <a href="függőség.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-1">
                                         Olvasd el a teljes cikket
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Függőség blogbejegyzés kártya vége -->
-
-                        <!-- Új blogbejegyzés kártya -->
-                        <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-700 transform hover:scale-105 transition-transform duration-300">
-                            <div class="flex flex-col items-center">
-                                <h2 class="text-3xl font-bold text-white mb-4 text-center">Hogyan építi Kína a világ legerősebb mesterséges intelligencia hálózatát a semmi közepén?</h2>
-                                <img src="bbb2.jpg" alt="Mesterséges intelligencia témájú kép" class="w-full h-auto object-cover mb-6 rounded-md shadow-lg" onerror="this.alt='Hiba a kép betöltésekor'; this.src='https://placehold.co/600x400/111827/D1D5DB?text=Kép+nem+található';">
-                                <div class="text-center">
+                        
+                        <!-- Blog Card 2: Kína AI -->
+                        <div class="blog-card bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-700 transform hover:scale-105 transition-transform duration-300">
+                           <div class="blog-card-content">
+                                <div class="flex flex-col items-center">
+                                    <h2 class="text-3xl font-bold text-white mb-4 text-center">Hogyan építi Kína a világ legerősebb mesterséges intelligencia hálózatát a semmi közepén?</h2>
+                                    <img src="bbb2.jpg" alt="Mesterséges intelligencia témájú kép" class="w-full h-auto object-cover mb-6 rounded-md shadow-lg" onerror="this.alt='Hiba a kép betöltésekor'; this.src='https://placehold.co/600x400/111827/D1D5DB?text=Kép+nem+található';">
+                                </div>
+                                <div class="text-center mt-auto">
                                     <a href="Medium.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-1">
                                         Olvasd el a teljes cikket
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Új blogbejegyzés kártya vége -->
+
+                        <!-- Blog Card 3: Gemini 2.5 -->
+                        <div class="blog-card bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-700 transform hover:scale-105 transition-transform duration-300">
+                            <div class="blog-card-content">
+                                <div class="flex flex-col items-center">
+                                    <h2 class="text-2xl font-bold text-white mb-4 text-center">Következő generációs vizuális elemek építése Gemini 2.5 Flash Image segítségével Vertex AI-n</h2>
+                                    <img src="imag.jpg" alt="Gemini 2.5 Flash Image on Vertex AI" class="w-full h-auto object-cover mb-6 rounded-md shadow-lg" onerror="this.alt='Hiba a kép betöltésekor'; this.src='https://placehold.co/600x400/111827/D1D5DB?text=Kép+nem+található';">
+                                </div>
+                                <div class="text-center mt-auto">
+                                    <a href="Blog7.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                                        Olvasd el az egész cikket
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
